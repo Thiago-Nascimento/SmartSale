@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #A200CB;
+}
+.container img{
+    height: 95px;
+    width: 204px;
+}
+.container{
+    width: 1200px;
+    margin: auto;
+}
+.container input{
+    width: 605px;
+    height: 35px;
+    margin-left: -120px;
+}
+.menu-centro{
+    display: flex;
+    justify-content: center;
+}
+.ca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.ca a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botao-login{
+    display: flex;
+    justify-content: flex-end;
+}
+#entrar{
+    width: 30px;
+    height: 35px;
+    margin: 10px;  
+}
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: center;
+    font-size: 12px;
+}
+.menu a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+footer{
+    background-image: linear-gradient(to right, rgb(162,0,203),rgb(20,204,138));
+    color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
