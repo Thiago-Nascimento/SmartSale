@@ -190,14 +190,14 @@ main {
 
 .whitebox {
     border-radius: 5px;
-    width: 1150px;
+    width: 1160px;
     height: 350px;
     background-color: white;
     padding: 20px
 }
 
 .banner-home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imagens/img4.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/img4.png);
     height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
