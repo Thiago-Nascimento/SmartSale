@@ -73,3 +73,58 @@ footer{
     align-items: center;
     justify-content: center;
 }
+
+/* paginaProduto */
+/* Verificar .container  */
+main {
+    background-color: #ebebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.produto {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.esquerdo {
+    /* background-color: white; */
+    /* height: 800px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerdo .imagem-produto {
+    width: 550px;
+    height: 550px;
+}
+
+.direito {
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.outrosProdutos {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;    
+    margin-top: 50px;
+}
+
+.outrosProdutos .produtos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cardProduto {
+    margin: 20px 20px;
+}
