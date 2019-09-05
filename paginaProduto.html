@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Página do Produto - Smart Sale</title>
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <title> Página do Produto - Smart Sale</title>
+    <link rel="stylesheet" href="./css/estilo.css">
     <style>
         :root {
             --roxo: #a200cb;
@@ -123,15 +123,16 @@
         .esquerdo {
             /* background-color: white; */
             /* height: 800px; */
-            width: 45%;
+            width: 30%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .esquerdo .imagem-produto {
-            width: 550px;
-            height: 550px;
+            width: 450px;
+            height: 450px;
+            margin: 10% 0;
         }
 
         .direito {
@@ -155,13 +156,50 @@
             color: var(--verde);
         }
 
+        .contQuantBotoes {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .quantidade {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.2em;
+            color: var(--grafite);
+        }
+
+        .quantidade input {
+            border-radius: 4px;
+            height: 30px;
+            width: 44%;
+            font-size: 0.8em;
+        }
+
         .botoes {
-            width: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 6%;
         }
 
         .botoes a {
-            padding: 5% 15%;
-            margin: 5% 5%;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: var(--roxo);
+            color: white;
+            padding: 2% 15%;
+        }
+
+        .botoes .botaoReservar {
+            background-color: var(--laranja);
+        }
+
+        .botoes .botaoComprar {
             background-color: var(--roxo);
         }
 
@@ -172,6 +210,14 @@
             margin-top: 50px;
         }
 
+        .relacionados {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: var(--grafite);
+            margin-left: 4%;
+            padding: 3% 0;
+        }
+
         .outrosProdutos .produtos {
             display: flex;
             justify-content: space-around;
@@ -179,11 +225,28 @@
         }
 
         .cardProduto {
-            margin: 20px 20px;
+            margin: 2%;
+        }
+
+        .textoCard {
+            padding: 1px;
+            margin-bottom: 10%;
+        }
+
+        .cardProduto a {
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: var(--roxo);
+            color: white;
+            padding: 2% 15%;
+        }
+
+        .botaoCard {
+            margin: 10% 0;
         }
 
         /* home */
-
         .cnjt {
             display: flex;
             justify-content: space-between;
@@ -275,116 +338,116 @@
                     <p class="nomeProduto">Feijão Carioca Tipo 1 - 1Kg</p>
                     <p class="precoProduto">R$5,00</p>
                 </div>
-                <div>
-                    <div>
+                <div class="contQuantBotoes">
+                    <div class="quantidade">
                         <label>Quantidade</label>
                         <input type="number" name="quantidade" id="">
                     </div>
                     <div class="botoes">
-                        <a href="#">Reservar</a>
-                        <a href="#">Comprar</a>
+                        <a class="botaoReservar" href="#">Reservar</a>
+                        <a class="botaoComprar" href="#">Comprar</a>
                     </div>
                 </div>
             </div>
         </section>
         <section class="outrosProdutos">
-            <p>Produtos Relacionados</p>
+            <p class="relacionados">Produtos Relacionados</p>
             <div class="produtos">
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
                 <div class="cardProduto">
                     <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <p>Feijão Codil</p>
-                    <p>R$ 10,00</p>
-                    <p>X Unidades Disponíveis</p>
-                    <p>Campos Elíseos - São Paulo</p>
-                    <a href="#" class="btn">Reserve</a>
+                    <div class="textoCard">
+                        <p>Feijão Codil</p>
+                        <p>R$ 10,00</p>
+                        <p>X Unidades Disponíveis</p>
+                        <p>Campos Elíseos - São Paulo</p>
+                    </div>
+                    <div class="botaoCard">
+                        <a href="#" class="btn">Reserve</a>
+                    </div>
                 </div>
             </div>
         </section>
