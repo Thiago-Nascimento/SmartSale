@@ -186,4 +186,106 @@ main {
     margin: auto;
     display: flex;
     justify-content: flex-end;
+
+/* paginaProduto */
+/* Verificar .container  */
+main {
+    background-color: #ebebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.produto {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.esquerdo {
+    /* background-color: white; */
+    /* height: 800px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerdo .imagem-produto {
+    width: 550px;
+    height: 550px;
+}
+
+.direito {
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.outrosProdutos {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;    
+    margin-top: 50px;
+}
+
+.outrosProdutos .produtos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cardProduto {
+    margin: 20px 20px;
+}
+
+/* home */
+
+.cnjt {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.cnjt p {
+    width: 570px;
+    height: 250px;
+}
+
+.cnjt h3 {
+    padding: 0px 0px 50px;
+}
+
+.cnjt p{
+    text-align: justify;
+    align-items: center;
+}
+.meio-home {
+    position: relative;
+    bottom: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.whitebox {
+    border-radius: 5px;
+    width: 1150px;
+    height: 350px;
+    background-color: white;
+    padding: 20px
+}
+
+.banner-home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imagens/img4.png);
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-1 {
+    width: 570px;
+    border-radius: 5px;
 }
