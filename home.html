@@ -28,7 +28,7 @@
             margin: auto;
         }
 
-        .container img {
+        #avatar {
             height: 95px;
             width: 204px;
         }
@@ -49,23 +49,22 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .containercard {
-            margin: auto;
-            width: 1170px;
+        .cardhome {
+
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            padding: 0 0 50px;
+            padding: 0 0 5px;
         }
 
         .card {
-            width: 250px;
+            width: 270px;
             line-height: 2.0;
             margin-top: 30px;
         }
 
-        .card img{
-            width: 250px;
+        .card img {
+            width: 270px;
         }
 
         .cnjt {
@@ -179,6 +178,16 @@
             color: white;
         }
 
+        .container h3 {
+            padding-botton: 5000px;
+        }
+
+        .ver {
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 20px;
+        }
+
         footer {
             background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
             color: white;
@@ -204,7 +213,7 @@
             <div class="ca">
                 <img src="img/Agrupar 110.png" alt="logo smart sale" id="avatar">
                 <label>
-                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..."
+                    <input type="search" placeholder=" Buscar produtos, marcas e muito mais ..."
                         aria-label="Faça uma busca" name="search">
                 </label>
                 <div class="botao-login">
@@ -231,47 +240,67 @@
     <main>
 
         <div class="banner-home"></div>
-        <div class="meio-home">
-            <div class="whitebox">
-                <div class="cnjt">
-                    <div>
-                        <img src="./img/img5.png" alt="Mãe cozinhando com a filha pequena" class="img-1">
-                    </div>
-                    <div>
-                        <h3>Objetivo</h3>
-                        <p>Massa sociosqu etiam ullamcorper massa porta nulla mi mattis purus, vestibulum gravida
-                            eget facilisis a rutrum dapibus nam. litora eu phasellus scelerisque aenean fusce dapibus
-                            non eu consequat duis, commodo augue duis torquent libero tortor vulputate maecenas
-                            nunc. mauris taciti quisque imperdiet neque quisque sed lacus pellentesque, porta aliquet
-                            cras elit donec a malesuada euismod, aliquam ultricies hendrerit auctor quis velit
-                            pellentesque. ut urna ac neque dolor fringilla nam sem tristique mauris, torquent aptent
-                            dapibus eleifend dui mauris dictum laoreet lacinia, pharetra nunc ad interdum sed fames
-                            lorem morbi. dolor tellus curabitur lacus eros, imperdiet per orci, habitant ultricies
-                            metus.
-                        </p>
+        <div class="container>">
+            <div class="meio-home">
+                <div class="whitebox">
+                    <div class="cnjt">
+                        <div>
+                            <img src="./img/img5.png" alt="Mãe cozinhando com a filha pequena" class="img-1">
+                        </div>
+                        <div>
+                            <h3>Objetivo</h3>
+                            <p>Massa sociosqu etiam ullamcorper massa porta nulla mi mattis purus, vestibulum gravida
+                                eget facilisis a rutrum dapibus nam. litora eu phasellus scelerisque aenean fusce
+                                dapibus
+                                non eu consequat duis, commodo augue duis torquent libero tortor vulputate maecenas
+                                nunc. mauris taciti quisque imperdiet neque quisque sed lacus pellentesque, porta
+                                aliquet
+                                cras elit donec a malesuada euismod, aliquam ultricies hendrerit auctor quis velit
+                                pellentesque. ut urna ac neque dolor fringilla nam sem tristique mauris, torquent aptent
+                                dapibus eleifend dui mauris dictum laoreet lacinia, pharetra nunc ad interdum sed fames
+                                lorem morbi. dolor tellus curabitur lacus eros, imperdiet per orci, habitant ultricies
+                                metus.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>
-        <div class="containercard">
-            <div class="card">
-                <h3>Cereais</h3>
-                <img src="./img/img1.png" alt="">
+        <div class="container">
+            <h3> Categorias </h3>
+
+            <div class="cardhome">
+                <div class="card">
+                    <h4>Cereais</h4>
+                    <img src="./img/img1.png" alt="">
+                </div>
+                <div class="card">
+                    <h4>Legumes</h4>
+                    <img src="./img/img2.png" alt="">
+                </div>
+                <div class="card">
+                    <h4>Carnes</h4>
+                    <img src="./img/img3.png" alt="">
+                </div>
+                <div class="card">
+                    <h4>Vegetais</h4>
+                    <img src="./img/img7.png" alt="">
+                </div>
             </div>
-            <div class="card">
-                <h3>Legumes</h3>
-                <img src="./img/img2.png" alt="">
-            </div>
-            <div class="card">
-                <h3>Carnes</h3>
-                <img src="./img/img3.png" alt="">
-            </div>
-            <div class="card">
-                <h3>Vegetais</h3>
-                <img src="./img/img6.png" alt="">
+
+            <div class="ver">
+                <p><a href="#">Ver mais</a></p>
             </div>
         </div>
+        <section class="container">
+            <p>RANKING</p>
+            <div class="rank"></div>
+            <div class="branco"><img src="./img/icons/crown.png " alt="" class="coroa"></div>
+            <div class="branco"><img src="./img/icons/crown-1.png" alt="" class="coroa"></div>
+            <div class="branco"><img src="./img/icons/crown-2.png " alt="" class="coroa"></div>
+            </div>
+        </section>
     </main>
     <footer>
         <p>SMART SALE ©2019</p>
