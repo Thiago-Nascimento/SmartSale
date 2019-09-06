@@ -1,0 +1,280 @@
+<<<<<<< HEAD
+/* css cabeçalho e rodapé */
+
+:root {
+    --roxo: #A200CB;
+    --grafite: #707070;
+    --laranja: #FFBD19;
+    --verde: #14CC8A;
+}
+
+* {
+=======
+:root {
+    --roxo: #a200cb;
+    --grafite: #707070;
+    --laranja: #ffbd19;
+    --verde: #14cc8a;
+}
+
+*{
+>>>>>>> 9605f30884407006f70e2449acb989a650329557
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+}
+
+header {
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #A200CB;
+}
+
+.container img {
+    height: 95px;
+    width: 204px;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+.container input {
+    width: 605px;
+    height: 35px;
+    margin-left: 90px;
+}
+
+.menu-centro {
+    display: flex;
+    justify-content: center;
+}
+
+.ca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ca a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao-login {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 60px;
+}
+
+#entrar {
+    width: 30px;
+    height: 35px;
+    margin: 10px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.menu a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+.menu a:hover {
+    border-bottom: 1.5px solid white;
+    transition: 0.3s;
+}
+
+footer {
+    background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+    color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI';
+    text-align: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ------------------------------------------------------------------------------------------------- */
+/* css página do ranking */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+td {
+    padding: 0px 45px;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    border-spacing: 15px;
+}
+
+.div {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.descricao {
+    width: 47%;
+    text-align: justify;
+    border: solid 2px var(--roxo);
+    border-radius: 5px;
+    height: 300px;
+    background-color: white;
+}
+
+.ranking {
+    width: 47%;
+    border: solid 2px var(--roxo);
+    border-radius: 5px;
+    background-color: white;
+}
+
+p {
+    width: 400px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+h3 {
+    text-align: center;
+    padding: 20px;
+    border-bottom: solid 2px var(--roxo);
+    color: var(--roxo);
+    text-transform: uppercase;
+}
+
+main {
+    background-image: url(../img/arrumado.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding-bottom: 40px;
+}
+
+.a-botao {
+    color: var(--roxo);
+    border: solid 2px var(--roxo);
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.a-botao:hover {
+    background-color: var(--roxo);
+    color: white;
+}
+
+.botao {
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+
+/* paginaProduto */
+/* Verificar .container  */
+main {
+    background-color: #ebebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.produto {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.esquerdo {
+    /* background-color: white; */
+    /* height: 800px; */
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerdo .imagem-produto {
+    width: 550px;
+    height: 550px;
+}
+
+.direito {
+    /* background-color: white; */
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.direito .nomeProduto {
+    font-size: 2.0em;
+    font-weight: bold;
+    color: var(--grafite);
+}
+
+.direito .precoProduto {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--verde);    
+}
+
+.botoes {
+    width: 500px;
+}
+
+.botoes a {
+    padding: 5% 15%;
+    margin: 5% 5%;
+    background-color: var(--roxo);
+}
+
+.outrosProdutos {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;    
+    margin-top: 50px;
+}
+
+.outrosProdutos .produtos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cardProduto {
+    margin: 20px 20px;
+}
+
+/* home */
