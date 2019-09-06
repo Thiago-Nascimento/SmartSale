@@ -141,6 +141,7 @@ h3 {
 }
 main {
     background-image: url(../img/arrumado.png);
+    opacity: 0.5;
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
