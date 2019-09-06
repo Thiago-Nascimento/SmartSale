@@ -197,8 +197,7 @@ footer {
     header {
         background-color: var(--verde);
     }
-    .container input {
-        }
+   
     .menu-centro {
         flex-direction: column;
         padding: 15px 0px;
