@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>SMART SALE - PERFIL</title>
 </head>
 
@@ -24,6 +26,9 @@
                     </a>
                 </div>
             </div>
+            <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
+            <a class="btn-close"> <i class="fa fa-times"></i> </a>
+
             <nav>
                 <div class="menu-centro">
                     <ul class="menu">
@@ -40,53 +45,54 @@
         </div>
     </header>
     <main>
-        <h1>Débora Nascimento</h1>
-        <div class="tudo">
-            <div class="conteudo">
-                <section class="cima">
-                    <div class="esquerdo">
-                        <img src="img/Débora.jpg" alt="foto de perfil do usuario">
-                    </div>
-                    <div class="direito">
-                        <div class="t1">
-                            <div class="texto1">
-                                <h2>Dados pessoais</h2>
-                            </div>
-                            <div class="textos1">
-                                <p>Endereço: Rua São Paulo, 500 - SP</p>
-                                <p>Data de nascimento: 25/04/1990</p>
-                                <p>Sexo: Feminino</p>
-                            </div>
-                        </div>
-                        <div class="t2">
-                            <div class="texto2">
-                                <h2>Contato</h2>
-                            </div>
-                            <div class="textos2">
-                                <p>E-mail:debora.nasc@hotmail.com</p>
-                                <p>celular:(11)94444-5678</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <h2>Ranking</h2>
-            <section class="baixo">
-                <div class="posranking">
-                    <div class="numero1">
-                        <p>1 </p>
+        <h2>Débora Nascimento</h2>
+        <div class="cima">
+            <section class="esquerdo">
+                <img src="img/Débora.jpg" alt="foto de perfil do usuario">
+            </section>
 
-                    </div>
-                    <div class="textoxp">
-                        <p> pontos</p>
+            <section class="direito">
+                <div class="textos">
+                    <h3>Dados pessoais</h3>
+                    <p>Endereço: Rua São Paulo, 500 - SP</p>
+                    <p>Data de nascimento: 25/04/1990</p>
+                    <p>Sexo: Feminino</p>
+                </div>
+
+                <div class="textos">
+                    <h3>Contato</h3>
+                    <p>E-mail:debora.nasc@hotmail.com</p>
+                    <p>celular:(11)94444-5678</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="baixo">
+            <section class="centro">
+                <div class="textos">
+                    <h2>Posição ranking</h2>
+                    <div class="posranking">
+                        <p>100 pontos</p>
                     </div>
                 </div>
             </section>
         </div>
     </main>
+
     <footer>
         <p>SMART SALE ©2019</p>
     </footer>
+    <!--Instalação do Jquery-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!--Função dos botões do menu, para entrar e sair do menu-->
+    <script>
+        $(".btn-menu").click(function () {
+            $(".menu").show();
+        });
+        $(".btn-close").click(function () {
+            $(".menu").hide();
+        });
+    </script>
 
 </body>
 
