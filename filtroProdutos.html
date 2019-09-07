@@ -13,225 +13,241 @@
     <header>
         <div class="container">
             <div class="ca">
-                <img src="img/Agrupar 110.png" alt="logo smart sale" id="avatar">
-                <label>
-                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..."
-                        aria-label="Faça uma busca" name="search">
-                </label>
+                <div class="logo">
+                    <a href="home.html"><img src="img/Agrupar 110.png" title="Home Smart Sale" alt="logo smart sale"></a>
+                </div>
+                <input type="search" placeholder="Buscar produtos, marcas e muito mais ..." aria-label="Faça uma busca" name="search">
                 <div class="botao-login">
-                    <a href="#"><img src="img/avatar.png" alt="Link para fazer login" id="entrar">
+                    <a href="login.html"><img src="img/avatar.png" alt="Link para fazer login" title="Faça login" id="entrar">
                         <p>Entrar</p>
                     </a>
                 </div>
             </div>
+            <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
+            <a class="btn-close"><i class="fa fa-times"></i></a>
             <nav>
                 <div class="menu-centro">
                     <ul class="menu">
-                        <li><a href="#" title="Smart sale home">Home</a></li>
-                        <li><a href="#" title="Smart sale quem somos">Quem somos</a></li>
-                        <li><a href="#" title="Smart sale ongs">ONGs</a></li>
-                        <li><a href="#" title="Smart sale ranking">Ranking</a></li>
-                        <li><a href="#" title="Smart sale categorias">Categorias</a></li>
-                        <li><a href="#" title="Smart sale perfil">Perfil</a></li>
-                        <li><a href="#" title="Smart sale faq">FAQ</a></li>
+                        <li><a href="home.html" title="Smart sale home">Home</a></li>
+                        <li><a href="quemsomos.html" title="Smart sale quem somos">Quem somos</a></li>
+                        <li><a href="ongs.html" title="Smart sale ongs">ONGs</a></li>
+                        <li><a href="paginaRankingAGORAVAIJESUS.html" title="Smart sale ranking">Ranking</a></li>
+                        <li><a href="filtroProdutos.html" title="Smart sale categorias">Categorias</a></li>
+                        <li><a href="perfil.html" title="Smart sale perfil">Perfil</a></li>
+                        <li><a href="PerguntasFrequentes.html" title="Smart sale faq">FAQ</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
     <main>
-        <div class="container">
-            <div class="containerProdutos">
-                <h1>Ofertas</h1>
-                <section class="filtros">
-                    <h2>Filtrar</h2>
-                    <div class="innerFiltros">
-                        <div class="divSelects">
-                            <label>Estado:</label>
-                            <select name="estado" id="">
-                                <option value="sp">SP</option>
-                            </select>
-                            <label>Cidade:</label>
-                            <select name="cidade" id="">
-                                <option value="sao-paulo">São Paulo</option>
-                                <option value="suzano">Suzano</option>
-                                <option value="osasco">Osasco</option>
-                            </select>
+        <div class="cont">
+            <div class="container">
+                <div class="containerProdutos">
+                    <h1>Ofertas</h1>
+                    <section class="filtros">
+                        <h2>Filtrar</h2>
+                        <div class="innerFiltros">
+                            <div class="divSelects">
+                                <label>Estado:</label>
+                                <select name="estado" id="">
+                                    <option value="sp">SP</option>
+                                </select>
+                                <label>Cidade:</label>
+                                <select name="cidade" id="">
+                                    <option value="sao-paulo">São Paulo</option>
+                                    <option value="suzano">Suzano</option>
+                                    <option value="osasco">Osasco</option>
+                                </select>
+                            </div>
+                            <button class="btnAplicarFiltros">Aplicar</button>
                         </div>
-                        <button class="btnAplicarFiltros">Aplicar</button>
-                    </div>
-                </section>
-                <section class="ordenar">
-                    <label>Ordenar por: </label>
-                    <select name="ordenarPor" id="">
-                        <option value="proximoVencimento">Mais Próximo ao Vencimento</option>
-                        <option value="longeVencimento">Mais Distante do Vencimento</option>
-                        <option value="menorPreco">Menor Preço</option>
-                        <option value="maiorPreco">Maior Preço</option>
-                    </select>
-                </section>
-                <section class="categorias">
-                    <div class="categoria">
-                        <h2>Categoria A</h2>
-                        <div class="produtos">
-                            <div class="cardGrid1">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
+                    </section>
+                    <section class="ordenar">
+                        <label>Ordenar por: </label>
+                        <select name="ordenarPor" id="">
+                            <option value="proximoVencimento">Mais Próximo ao Vencimento</option>
+                            <option value="longeVencimento">Mais Distante do Vencimento</option>
+                            <option value="menorPreco">Menor Preço</option>
+                            <option value="maiorPreco">Maior Preço</option>
+                        </select>
+                    </section>
+                    <section class="categorias">
+                        <div class="categoria">
+                            <h2>Categoria A</h2>
+                            <div class="produtos">
+                                <div class="cardGrid1">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
                                         </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div> 
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="cardGrid2">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
+                                        </div>
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div> 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>  
-                            <div class="cardGrid2">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
+                                <div class="cardGrid3">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
                                         </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div> 
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div> 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="cardGrid3">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
+                                <div class="cardGrid4">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
                                         </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cardGrid4">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div> 
                                         </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="categoria">
-                        <h2>Categoria B</h2>
-                        <div class="produtos">
-                            <div class="cardGrid1">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
-                                        </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>  
-                            <div class="cardGrid2">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
-                                        </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div>
-                                    </div> 
-                                </div>
-                            </div>
-                            <div class="cardGrid3">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
-                                        </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cardGrid4">
-                                <div class="cardProduto">
-                                    <div class="imgCardProduto">
-                                        <img src="./img/download.jpg" alt="Feijão A">
-                                    </div>
-                                    <div class="englobados">
-                                        <div class="textoCard">
-                                            <p>Feijão Codil</p>
-                                            <p>R$ 10,00</p>
-                                            <p>X Unidades Disponíveis</p>
-                                            <p>Campos Elíseos - São Paulo</p>
-                                        </div>
-                                        <div class="botaoCard">
-                                            <a href="#" class="btn">Reserve</a>
-                                        </div> 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                        <div class="categoria">
+                            <h2>Categoria B</h2>
+                            <div class="produtos">
+                                <div class="cardGrid1">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
+                                        </div>
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="cardGrid2">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
+                                        </div>
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="cardGrid3">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
+                                        </div>
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cardGrid4">
+                                    <div class="cardProduto">
+                                        <div class="imgCardProduto">
+                                            <img src="./img/download.jpg" alt="Feijão A">
+                                        </div>
+                                        <div class="englobados">
+                                            <div class="textoCard">
+                                                <p>Feijão Codil</p>
+                                                <p>R$ 10,00</p>
+                                                <p>X Unidades Disponíveis</p>
+                                                <p>Campos Elíseos - São Paulo</p>
+                                            </div>
+                                            <div class="botaoCard">
+                                                <a href="#" class="btn">Reserve</a>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </main>
     <footer>
         <p>SMART SALE ©2019</p>
     </footer>
+    <!--Instalação do Jquery-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!--Função dos botões do menu, para entrar e sair do menu-->
+    <script>
+        $(".btn-menu").click(function () {
+            $(".menu").show();
+            $(".btn-close").show();
+        });
+        $(".btn-close").click(function () {
+            $(".menu").hide();
+            $(".btn-close").hide();
+        });
+    </script>
 </body>
 
 
