@@ -18,36 +18,42 @@ header {
     align-content: center;
     background-color: #A200CB;
 }
-
-.container img {
-    /* logo */
-    height: 95px;
-    width: 204px;
-}
-
 .container {
     width: 1200px;
     margin: auto;
 }
-
-.container input {
+.container img { /* logo */
+    height: 95px;
+    width: 204px;
+}
+.botao-login { /* Avatar + Entrar - btn login */
+    display: flex;
+    justify-content: flex-start;
+    width: 204px;
+}
+.botao-login p { /* Entrar -  btn login */
+    margin-top: -4px;
+}
+#entrar { /* avatar do usuário - btn login */
+    width: 30px;
+    height: 35px;
+    margin: 10px;
+}
+.container input { /* BARRA DE PESQUISA */
     width: 605px;
     height: 35px;
-    margin-left: 90px;
 }
-
 .menu-centro {
     display: flex;
     justify-content: center;
 }
-
 .ca {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI';
+    padding: 0px 25px;
 }
-
 .ca a {
     text-decoration: none;
     color: white;
@@ -55,23 +61,6 @@ header {
     justify-content: center;
     align-items: center;
 }
-
-.botao-login {
-    display: flex;
-    justify-content: flex-end;
-    margin-left: 60px;
-}
-
-.botao-login p {
-    margin-top: -4px;
-}
-
-#entrar {
-    width: 30px;
-    height: 35px;
-    margin: 10px;
-}
-
 .menu {
     list-style: none;
     display: flex;
@@ -80,19 +69,16 @@ header {
     align-items: center;
     font-size: 12px;
 }
-
 .menu a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
 }
-
 .menu a:hover {
     border-bottom: 1.5px solid white;
     transition: 0.3s;
 }
-
 footer {
     background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     color: white;
@@ -188,7 +174,6 @@ footer {
         cursor: pointer;
         background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     }
-
     /* main */
     /* Fim do main, o footer não precisa */
 }
@@ -196,31 +181,42 @@ footer {
 @media (max-width: 1024px) {
     header {
         background-color: var(--verde);
+        height: 110px;
     }
-   
-    .menu-centro {
-        flex-direction: column;
-        padding: 15px 0px;
-        margin: auto;
-        text-align: center;
+    .menu {
+        width: 406px;
     }
     .menu-centro li {
-        padding-top: 10px;
-        padding: 20px 0px;
+        padding-top: 2px;
     }
     .container img {
         /* logo */
-        height: 75px;
-        width: 164px;
+        height: 55px;
+        width: 124px;
         padding-top: 20px;
     }
+    .container input{
+        width:  406px;
+        height: 25px;
+        margin-top: 30px;
+    }
+    .botao-login p{
+        margin-top: 30px;
+    }
+    .botao-login{
+        width: 124px;
+    }
     .container {
-        width: 80%;
+        width: 100vw;
+        padding: 0px 20px;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-content: center;
         flex-wrap: wrap;
         margin: auto;
+    }
+    .ca{
+        width: 800px;
     }
 }
