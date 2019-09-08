@@ -48,11 +48,12 @@ header {
     justify-content: center;
 }
 .ca {
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI';
-    padding: 0px 25px;
+    padding: 0px 20px;
 }
 .ca a {
     text-decoration: none;
@@ -90,10 +91,10 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
 .btn-menu, .btn-close {
     display: none;
 }
+/* =========================================================================== media querie======================== */
 /* celular */
 @media (max-width: 768px) {
     /* header */
@@ -126,7 +127,6 @@ footer {
         /* logo */
         height: 75px;
         width: 164px;
-        padding-top: 20px;
     }
     .container {
         width: 100%;
@@ -134,22 +134,30 @@ footer {
         justify-content: center;
         flex-direction: column;
         align-content: center;
-        flex-wrap: wrap;
         margin: auto;
     }
     #entrar {
         display: none;
     }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
     .botao-login p {
         display: none;
     }
+
+    /* preciso muito centralizar o logo pra terminar o responsivo
+    ver mais o que tem pra acabar, ou eu vou parir aqui */
     .ca {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         align-content: center;
         font-family: 'Segoe UI';
-        margin: auto;
     }
     /* Botões do menu */
     .btn-close {
@@ -162,16 +170,15 @@ footer {
         right: 10px;
         top: 0px;
     }
-
     .btn-menu {
         display: block;
         width: 56px;
         height: 56px;
         margin: auto;
-        text-align: center;
         color: #FFF;
         border-radius: 56px;
         cursor: pointer;
+        border-color: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
         background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     }
     /* main */
@@ -207,7 +214,7 @@ footer {
         width: 124px;
     }
     .container {
-        width: 100vw;
+        width: 100%;
         padding: 0px 20px;
         display: flex;
         justify-content: center;
@@ -216,7 +223,15 @@ footer {
         flex-wrap: wrap;
         margin: auto;
     }
+    .container img{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
     .ca{
-        width: 800px;
+        width: 100%;
+       
     }
 }
