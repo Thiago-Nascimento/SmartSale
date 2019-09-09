@@ -88,64 +88,83 @@ footer {
     align-items: center;
     justify-content: center;
 }
+/* =========================================botões do menu ============================================================= */
+.btn-close {
+    font-size: 1.5em; 
+	color: #FFF; 
+	float: left; 
+	cursor: pointer; 
+    z-index: 1;
+}
+.btn-menu {
+	width: 56px; 
+	height: 56px; 
+    margin: auto; 
+	text-align: center; 
+	color: #FFF; 
+    border-radius: 56px; 
+    cursor: pointer;
+    background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+}
 /* --------------------------------------------------perfil----------------------------------------------------------- */
 body {
     background-color: #EBEBEB;
-    text-align: center;
 }
 main {
     margin: auto;
-    width: 1200px;
+    width: 100vw;
     background-color: white;
+    padding: 20px 0px;
+}
+h2 {
+    text-align: center;
     padding: 20px;
 }
+h3{
+    text-align: center;
+    padding: 15px;
+
+}
 .cima {
-    width: 1200px;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     border-bottom: solid 3px #A200CB;
+    padding: 20px 0px;
+    /* border-bottom: 2px solid var(--roxo); */
+}
+.esquerdo {
+    width: 47%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 .direito {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 50%;
+    width: 47%;
     height: 286px;
     font-size: 20px;
-    padding-top: 80px;
-    padding-bottom: 20px;
+    padding-top: 20px;
 }
-body h1 {
-    text-align: center;
-    color: #707070;
-    padding: 20px;
-}
-.esquerdo img {
-    width: 250px;
-}
-.texto1 {
+.textos {
     font-size: 20px;
+    margin: auto;
 }
-.baixo h2 {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-}
-.baixo p {
+.baixo {
     display: flex;
     justify-content: center;
     font-size: 30px;
     padding-top: 30px;
 }
-.conteudo {
-    display: flex;
-    justify-content: space-around;
-    width: 1200px;
+.centro{
+    width: 47%;
     margin: auto;
 }
 .baixo {
-    margin: auto;
-    align-items: center;
-    text-align: center;
+    
     display: flex;
     justify-content: center;
 }
@@ -153,102 +172,58 @@ body h1 {
     border: 1px solid black;
     padding: 10px;
     width: 200px;
-    display: flex;
-    justify-content: center;
-}
-.t1 {
-    text-align: justify;
-}
-.t2 {
-    text-align: justify;
-}
-.esquerdo {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-}
-h2 {
-    text-align: center;
-    padding: 30px;
-}
-/* media queries */
-
-@media (max-width: 1169px) {
-    header{
-        background-color: var(--verde);
-    }
-    .container{
-        width: 900px;
-    }
-    .container input {
-        width: 505px;
-        height: 35px;
-        margin-left: 40px;
-    }
-    .menu{
-        width: 500px;
-    }
-    .container img { /* logo */
-        height: 75px;
-        width: 164px;
-    }
-    #entrar {
-        width: 25px;
-        height: 30px;
-        margin: 10px;
-    }
-    .esquerdo img {
-        width: 200px;
-    }
-    .posranking {
-        width: 150px;
-    }
+    margin: auto;
 }
 
+/* ==========================================================media queries======================================================= */
+
+/* Smart device - mobile */
 @media (max-width: 767px) {
+    /* header */
     header{
         background-color: var(--laranja);
-        margin: auto;
+    }
+    .menu {
+        display: none; 
+        width: 100%; 
+        height: 100%; 
+        position: fixed; 
+        background-color: rgba(0,0,0,0.9); 
+        top: 0; 
+        left: 0;
     }
     .container input {
         display: none;
     }
     .menu-centro {
         flex-direction: column;
-        width: 150px;
         padding: 15px 0px;
         margin: auto;
+        text-align: center;
     }
     .menu-centro li {
         padding-top: 10px;
+        padding: 20px 0px;
     }
     .container img { /* logo */
         height: 75px;
         width: 164px;
+        padding-top: 20px;
     }
     .container{
-        width: 700px;
+        width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-content: center;
+        flex-wrap: wrap;
         margin: auto;
     }
     #entrar {
         display: none;
     }
-    main{
-        width: 700px;
-        margin: auto;
-        text-align: center;
-    }
     .botao-login p{
         display: none;
-    }
-    .conteudo {
-        width: 700px;
     }
     .ca {
         display: flex;
@@ -258,6 +233,25 @@ h2 {
         font-family: 'Segoe UI';
         margin: auto;
     }
+    /* main */
+    main{
+        width: 100%;
+        text-align: center;
+    }
+    .cima{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cima img{ /* imagem usuário */
+        width: 50vw;
+    }
+    .esquerdo{
+        width: 100vw;
+    }
+    .direito{
+        width: 100vw;
+    } 
     #avatar{
         margin: auto;  
     }    

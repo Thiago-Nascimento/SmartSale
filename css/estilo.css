@@ -1,0 +1,285 @@
+:root {
+    --roxo: #a200cb;
+    --grafite: #707070;
+    --laranja: #ffbd19;
+    --verde: #14cc8a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #A200CB;
+}
+
+.container img {
+    height: 95px;
+    width: 204px;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+.container input {
+    width: 605px;
+    height: 35px;
+    margin-left: -120px;
+}
+
+.menu-centro {
+    display: flex;
+    justify-content: center;
+}
+
+.ca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ca a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao-login {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#entrar {
+    width: 30px;
+    height: 35px;
+    margin: 10px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.menu a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+footer {
+    background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+    color: white;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* paginaProduto */
+/* Verificar .container  */
+main {
+    background-color: #ebebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.produto {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.esquerdo {
+    /* background-color: white; */
+    /* height: 800px; */
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerdo .imagem-produto {
+    width: 450px;
+    height: 450px;
+    margin: 10% 0;
+}
+
+.direito {
+    /* background-color: white; */
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.direito .nomeProduto {
+    font-size: 2.0em;
+    font-weight: bold;
+    color: var(--grafite);
+}
+
+.direito .precoProduto {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.contQuantBotoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quantidade {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    color: var(--grafite);
+}
+
+.quantidade input {
+    border-radius: 4px;
+    height: 30px;
+    width: 44%;
+    font-size: 0.8em;
+}
+
+.botoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6%;
+}
+
+.botoes a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--roxo);
+    color: white;
+    padding: 2% 15%;
+}
+
+.botoes .botaoReservar {
+    background-color: var(--laranja);
+}
+
+.botoes .botaoComprar {
+    background-color: var(--roxo);
+}
+
+.outrosProdutos {
+    background-color: #fff;
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.relacionados {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--grafite);
+    margin-left: 4%;
+    padding: 3% 0;
+}
+
+.outrosProdutos .produtos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cardProduto {
+    margin: 2%;
+}
+
+.textoCard {
+    padding: 1px;
+    margin-bottom: 10%;
+}
+
+.cardProduto a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--roxo);
+    color: white;
+    padding: 2% 15%;
+}
+
+.botaoCard {
+    margin: 10% 0;
+}
+
+/* home */
+.cnjt {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.cnjt p {
+    width: 570px;
+    height: 250px;
+}
+
+.cnjt h3 {
+    padding: 0px 0px 50px;
+}
+
+.cnjt p {
+    text-align: justify;
+    align-items: center;
+}
+
+.meio-home {
+    position: relative;
+    bottom: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.whitebox {
+    border-radius: 5px;
+    width: 1150px;
+    height: 350px;
+    background-color: white;
+    padding: 20px
+}
+
+.banner-home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imagens/img4.png);
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-1 {
+    width: 570px;
+    border-radius: 5px;
+}
