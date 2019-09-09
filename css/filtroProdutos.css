@@ -19,7 +19,7 @@ header {
     background-color: #A200CB;
 }
 .container {
-    width: 1200px;
+    width: 1170px;
     margin: auto;
 }
 .container img { /* logo */
@@ -95,7 +95,7 @@ footer {
     display: none;
 }
 /* celular */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     /* header */
     header {
         background-color: var(--laranja);
@@ -176,9 +176,67 @@ footer {
     }
     /* main */
     /* Fim do main, o footer não precisa */
+
+     /* pagina filtroProdutos */
+    .containerProdutos {
+        width: 85vw;
+    }
+    .filtros {
+        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
+        background-position: unset;
+    }
+
+    .innerFiltros {
+        flex-direction: column;
+    }
+
+    .divSelects {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4%;
+    }
+
+    .btnAplicarFiltros {
+        width: 25%;
+        padding: 1% 0;
+    }
+
+    .ordenar {
+        color: var(--verde);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .ordenar select {
+        width: 65%;
+    }
+
+    .categoria .produtos .cardProduto {
+        margin: 10%;
+    }
+
+    .imgCardProduto {
+        margin-top: 6%;
+    }
+
+    .englobados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        color: var(--grafite);
+    }
+    .imgCardProduto img {
+        height: 100%;
+        width: 100%;
+        padding-top: 0;
+    }
+
 }
 /* não sei, mas é menor, vai diminuindo e alinhando os elementos */
-@media (max-width: 1024px) {
+@media (max-width: 1169px) {
     header {
         background-color: var(--verde);
         height: 110px;
@@ -207,7 +265,7 @@ footer {
         width: 124px;
     }
     .container {
-        width: 100vw;
+        width: 85vw;
         padding: 0px 20px;
         display: flex;
         justify-content: center;
@@ -218,6 +276,30 @@ footer {
     }
     .ca{
         width: 800px;
+    }
+
+    /* pagina filtroProdutos */
+    .containerProdutos {
+        width: 85vw;
+    }
+    .filtros {
+        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
+        background-position: unset;
+    }
+    .ordenar {
+        color: var(--verde);
+    }
+    .englobados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        color: var(--grafite);
+    }
+    .imgCardProduto img {
+        height: 100%;
+        width: 100%;
+        padding-top: 0;
     }
 }
 
@@ -444,11 +526,61 @@ main {
     display: block;
     padding-left: 2%;
 
-    background-position: top center;
-    background-attachment: fixed;
-    background-image: linear-gradient(rgba(162, 0, 203, 0.6), rgba(162, 0, 203, 0.6)), url(../img/img4.png);
+    
+    background-attachment: fixed;    
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media (min-width: 1170px) {
+    .filtros {
+        background-position: top center;    
+        background-image: linear-gradient(rgba(162, 0, 203, 0.6), rgba(162, 0, 203, 0.6)), url(../img/img4.png);
+    }  
+    .ordenar {
+        color: var(--roxo);    
+    }
+    .englobados {
+        display: none;
+        position: absolute;
+        bottom: 70px;
+        margin-bottom: -70px;
+        background-color: rgba(162, 0, 203, 0.6);
+        color: white;
+    }
+    .imgCardProduto:hover + .englobados{
+        transition: 0.3s;      
+        display: block;
+    }
+    
+    .englobados:hover {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .divSelects {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .btnAplicarFiltros {
+        width: 10%;
+        padding: 0.5% 0;    
+    }
+    .ordenar {
+        display: block;    
+    }
+    .ordenar select {
+        width: 30%;    
+    }
+    .categoria .produtos {
+        display: grid;
+        grid-template-columns: 35% auto 35%;
+        grid-template-rows: 50% 50%;
+        grid-gap: 10px;    
+    }
 }
 
 .filtros h2 {
@@ -463,15 +595,13 @@ main {
 }
 
 .btnAplicarFiltros {
-    width: 10%;
-    padding: 0.5% 0;
     margin-right: 2%;
     border-radius: 4px;
     color: white;
     background-color: var(--laranja);
     border: none;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 600; /* SemiBold */
 }
 
 .btnAplicarFiltros:hover {
@@ -483,29 +613,20 @@ main {
     justify-content: space-between;
 }
 
-.divSelects {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .ordenar {
-    color: var(--roxo);
     padding: 3% 0%;
-    display: block;
     padding-left: 2%; 
 }
 
 .ordenar select {
     border-radius: 4px;
-    width: 30%;
     padding: 0.5% 0;
     margin-right: 2%;
 }
 
 .categorias {
     width: 100%;
+    margin: 3% 0%;
 }
 
 .categoria h2 {
@@ -514,10 +635,6 @@ main {
 }
 
 .categoria .produtos {
-    display: grid;
-    grid-template-columns: 35% auto 35%;
-    grid-template-rows: 50% 50%;
-    grid-gap: 10px;
     background-color: white;
     padding: 10px;
     height: 50%;
@@ -536,23 +653,8 @@ main {
     box-shadow: 4px 4px 15px #cccccc
 }
 
-.englobados {
-    display: none;
-    position: absolute;
-    bottom: 70px;
-    margin-bottom: -70px;
-    background-color: rgba(162, 0, 203, 0.6);
-    color: white;
+.englobados {    
     width: 100%;
-}
-
-.imgCardProduto:hover + .englobados{
-    transition: 0.3s;      
-    display: block;
-}
-
-.englobados:hover {
-    display: block;
 }
 
 .imgCardProduto img {
