@@ -5,38 +5,252 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Perguntas Recentes</title>
+    <title>Perguntas Frequentes</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        :root {
+            --roxo: #a200cb;
+            --grafite: #707070;
+            --laranja: #ffbd19;
+            --verde: #14cc8a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI';
+        }
+
+        body {
+            text-align: center;
+            align-items: center;
+        }
+
+        .container1 {
+            width: 900px;
+            padding-top: 50px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .texto {
+            font-family: 'Segoe UI';
+            font-size: 18px;
+            color: #707070;
+            text-align: start;
+            align-items: flex-start;
+            padding-bottom: 50px;
+        }
+
+        .text {
+            font-family: 'Segoe UI';
+            font-size: 18px;
+            color: #707070;
+            text-align: start;
+            align-items: flex-start;
+        }
+
+        .duvidas {
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            line-height: 3.0em;
+            color: var(--grafite);
+            padding-top: 30px;
+            text-transform: uppercase;
+        }
+
+        input {
+            background-color: white;
+            padding: 3px;
+            border: 1px solid gray;
+            width: 600px;
+            height: 100px;
+        }
+
+        .enviar {
+            width: 650px;
+        }
+
+        button {
+            padding: 8px 60px;
+            background-color: var(--roxo);
+            border-radius: 4px;
+            border: solid 1px var(--roxo);
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        h2 {
+            line-height: 2.0em;
+        }
+
+        /*Header e Footer*/
+        header {
+            height: 130px;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            background-color: #A200CB;
+        }
+
+        .container img {
+            height: 95px;
+            width: 204px;
+
+        }
+
+        .container {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .container input {
+            width: 605px;
+            height: 55px;
+            margin-left: 90px;
+        }
+
+        .menu-centro {
+            display: flex;
+            justify-content: center;
+        }
+
+        .ca {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Segoe UI';
+        }
+
+        .ca a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .botao-login {
+            display: flex;
+            justify-content: flex-end;
+            margin-left: 60px;
+        }
+
+        .botao-login p {
+            margin-top: -4px;
+        }
+
+        #entrar {
+            width: 30px;
+            height: 35px;
+            margin: 10px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .menu a {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .menu a:hover {
+            border-bottom: 1.5px solid white;
+            transition: 0.3s;
+        }
+
+        footer {
+            background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+            color: white;
+            font-size: 18px;
+            font-family: 'Segoe UI';
+            text-align: center;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
-    <main>
+    <header>
         <div class="container">
-            <div><img src="Img/sonhar-com-mercado.jpg" alt="Marcado"></div>
+            <div class="ca">
+                <img src="img/Agrupar 110.png" alt="logo smart sale" id="avatar">
+                <label>
+                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..."
+                        aria-label="Faça uma busca" name="search">
+                </label>
+                <div class="botao-login">
+                    <a href="#"><img src="img/avatar.png" alt="Link para fazer login" id="entrar">
+                        <p>Entrar</p>
+                    </a>
+                </div>
+            </div>
+            <nav>
+                <div class="menu-centro">
+                    <ul class="menu">
+                        <li><a href="#" title="Smart sale home">Home</a></li>
+                        <li><a href="#" title="Smart sale quem somos">Quem somos</a></li>
+                        <li><a href="#" title="Smart sale ongs">ONGs</a></li>
+                        <li><a href="#" title="Smart sale ranking">Ranking</a></li>
+                        <li><a href="#" title="Smart sale categorias">Categorias</a></li>
+                        <li><a href="#" title="Smart sale perfil">Perfil</a></li>
+                        <li><a href="#" title="Smart sale faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container1">
             <div class="texto">
-                <h1>Pergunta 1</h1>
-                <p>Resposta</p>
-                <h1>Pergunta 2</h1>
-                <p>Resposta</p>
-                <h1>Pergunta 3</h1>
-                <p>Resposta</p>
+                <img src="img/sonhar-com-mercado.jpg" alt=" Dúvidas Mercado">
+                <h2>Perguntas 1</h2>
+                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
+                <h2>Perguntas 1</h2>
+                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
+                <h2>Perguntas 1</h2>
+                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
             </div>
-            <div><img src="Img/armario.jpg" alt="Vestuário"></div>
-            <div class="texto2">
-                <h1>Pergunta 1</h1>
-                <p>Resposta 1</p>
-                <h1>Pergunta 2</h1>
-                <p>Resposta 2</p>
-                <h1>Pergunta 3</h1>
-                <p>Resposta 2</p>
+            <div class="text">
+                <img src="img/armario.jpg " alt="Dúvidas Vestuário">
+                <h2>Perguntas 1</h2>
+                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
+                <h2>Perguntas 1</h2>
+                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
+                <h2>Perguntas 1</h2>
+                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
             </div>
-            <p>Não encontrou sua dúvida, escreva para nós!</p>
-            <label>
-                <input type="text" placeholder="Escreva sua dúvida..." aria-label="Digite sua dúvida" name="Dúvida"
-                    required>
-            </label>
-            <button type="submit">Enviar</button>
+            <div class="duvidas">
+                <h4>Não encontrou sua dúvida, escreva pra nós</h4>
+                <label>
+                    <input type="text" placeholder="Escreva sua dúvida..." aria-label="Digite sua dúvida..."
+                        name="Dúvidas" required>
+                </label>
+            </div>
+            <div class="enviar">
+                <button type="submit" id="enviar">ENVIAR</button>
+            </div>
         </div>
     </main>
+    <footer>
+        <p>SMART SALE ©2019</p>
+    </footer>
 </body>
 
 </html>
