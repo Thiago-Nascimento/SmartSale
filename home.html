@@ -16,6 +16,7 @@
         }
 
         header {
+
             height: 130px;
             display: flex;
             justify-content: space-between;
@@ -52,9 +53,9 @@
         .cardhome {
 
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
-            padding: 0 0 5px;
+            padding: 0 0 10px;
         }
 
         .card {
@@ -64,12 +65,12 @@
         }
 
         .card img {
-            border-radius: 3px;
-            width: 270px;
+            border-radius: 7px;
+            width: 250px;
             /* transition: all 2s; */
         }
 
-        /* 
+        /*
         .card img:hover {
             transform: rotate(2000deg);
         } */
@@ -94,6 +95,12 @@
             align-items: center;
         }
 
+        .btn:hover {
+
+            transition: 0.2s;
+            color: white
+        }
+
         .meio-home {
             position: relative;
             bottom: 200px;
@@ -102,9 +109,10 @@
             margin-bottom: -180px;
         }
 
+
+
         .whitebox {
             box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-
             border-radius: 5px;
             width: 1160px;
             height: 350px;
@@ -139,6 +147,11 @@
             text-decoration: none;
             text-transform: uppercase;
             color: white;
+        }
+
+        .menu a:hover {
+            color: black;
+            transition: 0.3s;
         }
 
         .menu-centro {
@@ -189,15 +202,17 @@
         }
 
         .container h3 {
-            padding-botton: 5000px;
+            margin: 40px 0px -10px;
+
         }
 
-        .ver {
+        .ver a {
+            color: black;
+            text-decoration: none;
             display: flex;
             justify-content: flex-end;
-            padding-bottom: 20px;
+            padding-bottom: 40px;
         }
-
 
         footer {
             background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
@@ -285,10 +300,18 @@
             text-transform: uppercase;
             display: flex;
             justify-content: center;
-            margin: 40px 0px 0px;
+            margin: 60px 0px 0px;
         }
 
         .pdts {}
+
+        #white {
+            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            background-color: white;
+            
+
+        }
 
         .cardhome2 {
             margin: 20px 0px 0px;
@@ -301,8 +324,14 @@
         }
 
         .card p {
+            text-align: center;
             padding-bottom: 20px;
             line-height: 19px;
+        }
+
+        .card a:hover {
+            color: #A200CB;
+
         }
 
         .card a {
@@ -317,18 +346,17 @@
         }
 
         .pdt h4 {
+            padding: 40px 0px 0px;
             text-align: center;
             text-transform: uppercase;
         }
+
         .pdts {
             display: flex;
             flex-direction: row;
         }
 
-        .pdts2{
-
-        }
-        
+        .pdts2 {}
     </style>
     <meta charset=" UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -376,7 +404,7 @@
                         <div>
                             <img src="./img/img5.png" alt="Mãe cozinhando com a filha pequena" class="img-1">
                         </div>
-                        <div>
+                        <div class="txthome">
                             <h3>Objetivo</h3>
                             <p>Massa sociosqu etiam ullamcorper massa porta nulla mi mattis purus, vestibulum gravida
                                 eget facilisis a rutrum dapibus nam. litora eu phasellus scelerisque aenean fusce
@@ -388,7 +416,7 @@
                                 pellentesque. ut urna ac neque dolor fringilla nam sem tristique mauris, torquent aptent
                                 dapibus eleifend dui mauris dictum laoreet lacinia, pharetra nunc ad interdum sed fames
                                 lorem morbi. dolor tellus curabitur lacus eros, imperdiet per orci, habitant ultricies
-                                metus.
+                                metus .
                             </p>
                         </div>
                     </div>
@@ -396,30 +424,37 @@
             </div>
         </div>
         </div>
-        <div class="container">
+        <div class="container" id="white">
             <h3> Categorias </h3>
 
             <div class="cardhome">
                 <div class="card">
-                    <h4>Cereais</h4>
-                    <img src="./img/img1.png" alt="">
+                    <a href="#">
+                        <h4>Cereais</h4>
+                        <img src="./img/img1.png" alt="">
+                    </a>
                 </div>
                 <div class="card">
-                    <h4>Legumes</h4>
-                    <img src="./img/img2.png" alt="">
+                    <a href="#">
+                        <h4>Legumes</h4>
+                        <img src="./img/img2.png" alt="">
+                    </a>
                 </div>
                 <div class="card">
-                    <h4>Carnes</h4>
-                    <img src="./img/img3.png" alt="">
+                    <a href="#">
+                        <h4>Carnes</h4>
+                        <img src="./img/img3.png" alt="">
+                    </a>
                 </div>
-                <div class="card">
-                    <h4>Vegetais</h4>
-                    <img src="./img/img7.png" alt="">
+                <div class="card"><a href="#">
+                        <h4>Vegetais</h4>
+                        <img src="./img/img7.png" alt="">
+                    </a>
                 </div>
             </div>
 
             <div class="ver">
-                <p><a href="#">Ver mais</a></p>
+                <p><a href="#" class="btn">Ver mais</a></p>
             </div>
         </div>
         <div class="linha">
@@ -455,79 +490,79 @@
             <section class="container">
                 <div class="pdts2">
                     <div class="cardhome2">
-                       
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a>
-                            </div>
-                        
-                        
-                   
-                
-                
-                        
-                           
-                                <div class="card">
-                                    <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
-                                        <p>Ana Maria
-                                            R$2,00<br>
-                                            Mercado X<br>
-                                            X dias apenas</p>
-                                    </a></div>
-                                <div class="card">
-                                    <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
-                                        <p>Ana Maria
-                                            R$2,00<br>
-                                            Mercado X<br>
-                                            X dias apenas</p>
-                                    </a></div>
-                                <div class="card">
-                                    <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
-                                        <p>Ana Maria
-                                            R$2,00<br>
-                                            Mercado X<br>
-                                            X dias apenas</p>
-                                    </a></div>
-                                <div class="card">
-                                    <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
-                                        <p>Ana Maria
-                                            R$2,00<br>
-                                            Mercado X<br>
-                                            X dias apenas</p>
-                                    </a>
-                                </div>
-                            
-                            </div>
+
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a>
                         </div>
+
+
+
+
+
+
+
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a>
+                        </div>
+
                     </div>
-                    </div>
+                </div>
         </div>
-    </div>
+        </div>
+        </div>
+        </div>
         </div>
         </section>
         </div>
@@ -542,3 +577,8 @@
 </body>
 
 </html>
+
+
+
+
+expandir algumas coisas
