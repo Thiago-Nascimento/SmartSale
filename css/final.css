@@ -167,7 +167,75 @@ header {
 .fotos img {
     width: 80px;
 }
+/*Responsivo Cadastro de Produto Doação e Venda*/
+@media (max-width: 1024px) {
+    body {
+        width: 500px;
+    }
 
+    main {
+        width: 1000px;
+    }
+
+    .card_cadastroproduto h2 {
+        font-size: 20px;
+    }
+
+    form {
+        width: 300px;
+        height: 1200px;
+    }
+
+    .campo_cadastroproduto {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .radios_cadastroproduto {
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        align-items: flex-start;
+    }
+
+    .fotos_cadastroproduto input {
+        width: 100px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .btn_cadastroproduto {
+        width: 300px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    main {
+        width: 730px;
+        margin: auto;
+    }
+
+    .fotos_cadastroproduto input {
+        width: 250px;
+    }
+
+    footer {
+        background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+        color: white;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card_cadastroproduto {
+        height: 1300px;
+    }
+}
 /* Cadastro de vendedor */
 
 .cardscadastrovendedor h3 {
@@ -241,7 +309,66 @@ header {
     margin: auto;
     padding-bottom: 10px;
 }
-
+/*Responsivo cadastro vendedor*/
+@media (max-width: 1024px){
+    *{
+        font-size: 20px;
+    }
+    .cadvend_cadastrovendedor{
+        width: 290px;
+    }
+    .cardscadastrovendedor{
+        width: 800px;
+    }
+    .informacao_cadastrovendedor{
+        width: 300px;
+    }
+    main {
+        width: 1000px;
+        margin: auto;
+    }
+    form {
+        line-height: 1.5em;
+        width: 210px;
+    }
+    .informacao_cadastrovendedor{
+        height: 300px;
+    }
+    button{
+        margin-top:  30px
+    }
+}
+@media (max-width: 767px){
+    main{
+        width: 700px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;    
+    }
+    .cardscadastrovendedor{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        margin: auto;
+    }
+    .cadvend_cadastrovendedor{
+        width: 300px;
+    }
+    .informacao_cadastrovendedor{
+        width: 300px;
+        margin-bottom: 10px;
+    }
+    .cadastro2_cadastrovendedor{
+        width: 200px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    form{
+        margin: auto;
+    }
+}
 /* Cadastro e login */
 
 .cadastroelogin_pag {
@@ -330,6 +457,69 @@ header {
     border-radius: 4px;
     border: solid 1px var(--roxo);
     color: white;
+}
+/*Responsivo cadastro e login*/
+@media (max-width: 1024px) {
+    main {
+        width: 1000px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    .cards_cadlog {
+        font-size: 30px;
+        width: 800px;
+    }
+
+    .card_1_cadlog {
+        width: 300px;
+        height: 400px;
+    }
+
+    .card_2_cadlog {
+
+        width: 350px;
+    }
+
+    input {
+        height: 30px;
+    }
+
+    button{
+        font-size: 20px;
+    }
+}
+@media (max-width: 767px){
+    main {
+        width: 750px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    label{
+        padding-bottom: 5px;
+    }
+    .cards_cadlog {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 30px;
+        width: 600px;
+    }
+    .card_1_cadlog{
+        width: 350px;
+        margin-bottom: 20px;
+    }
+    .card_1_cadlog input{
+        margin: 5px;
+        height: auto;
+    }
+    .card_2_cadlog{
+        height: auto;
+        width: 350px;
+    }
 }
 
 /* Final da Reserva */

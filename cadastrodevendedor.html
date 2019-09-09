@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro de Vendedor</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="css/final.css">
     <!-- <style>
         :root {
@@ -101,11 +100,11 @@
             justify-content: center;
         }
 
-=======
-    <link rel="stylesheet" href="CSS/estilos.css">
-    <style>
->>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
         /*Conteudo*/
+        :root{
+            --roxo: #A200CB;
+            --cinza: grey;
+        }
         main {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -131,23 +130,19 @@
             margin-bottom: 50px;
         }
 
-        .cardscadastrovendedor .informacao {
+        .informacao_cadastrovendedor {
             display: flex;
             flex-direction: column;
             border: solid 1px #707070;
             border-radius: 8px;
             padding: 0px 30px;
-            height: 200px;
+            height: 250px;
             justify-content: flex-start;
             width: 190px;
             background-color: white;
         }
 
-<<<<<<< HEAD
         .cardscadastrovendedor .cadvend {
-=======
-        .cadvend_cadastrovendedor {
->>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
             display: flex;
             flex-direction: column;
             width: 190px;
@@ -160,21 +155,13 @@
             align-items: center;
         }
 
-<<<<<<< HEAD
         .cardscadastrovendedor .cadastro2 {
-=======
-        .cadastro2_cadastrovendedor {
->>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
             display: flex;
             flex-direction: column;
             padding: 9px;
         }
 
-<<<<<<< HEAD
         .cardscadastrovendedor .cadvend form input {
-=======
-        .cadvend_cadastrovendedor form input {
->>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
             width: 160px;
             padding: 5px;
         }
@@ -187,13 +174,72 @@
             color: white;
         }
 
-        .cardscadastrovendedor .btn {
+        .btn_cadastrovendedor {
             display: flex;
             justify-content: center;
             margin: auto;
             padding-bottom: 10px;
         }
-    </style> -->
+        @media (max-width: 1024px){
+            *{
+                font-size: 20px;
+            }
+            .cadvend_cadastrovendedor{
+                width: 290px;
+            }
+            .cardscadastrovendedor{
+                width: 800px;
+            }
+            .informacao_cadastrovendedor{
+                width: 300px;
+            }
+            main {
+                width: 1000px;
+                margin: auto;
+            }
+            form {
+                line-height: 1.5em;
+                width: 210px;
+            }
+            .informacao_cadastrovendedor{
+                height: 300px;
+            }
+            button{
+                margin-top:  30px
+            }
+        }
+        @media (max-width: 767px){
+            main{
+                width: 700px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;    
+            }
+            .cardscadastrovendedor{
+                display: flex;
+                flex-direction: column;
+                width: 350px;
+                margin: auto;
+            }
+            .cadvend_cadastrovendedor{
+                width: 300px;
+            }
+            .informacao_cadastrovendedor{
+                width: 300px;
+                margin-bottom: 10px;
+            }
+            .cadastro2_cadastrovendedor{
+                width: 200px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            form{
+                margin: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -201,7 +247,7 @@
     </header>
     <main>
         <div class="cardscadastrovendedor">
-            <div class="informacao">
+            <div class="informacao_cadastrovendedor">
                 <h3>Informação</h3>
                 <p>
                     Neste campo você vendedor poderá realizar seu cadastro para poder vender seus produtos em nossa
