@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro de Produto</title>
-    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="css/final.css">
     <style>
+/*         
         :root {
             --roxo: #A200CB;
             --cinza: grey;
@@ -25,7 +26,12 @@
             background-size: cover;
             background-position: center;
         }
+<<<<<<< HEAD
+
+        .cardCadastro {
+=======
         .card_cadastroproduto {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
             display: flex;
             flex-direction: column;
             width: 600px;
@@ -40,12 +46,20 @@
             margin-bottom: 40px;
         }
 
+<<<<<<< HEAD
+        .cardCadastro h2 {
+=======
         .card_cadastroproduto h2 {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
             font-size: 40px;
             padding: 20px;
             color: var(--roxo);
         }
+<<<<<<< HEAD
+        
+=======
 
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
         form label {
             font-size: 20px;
             color: var(--roxo);
@@ -76,15 +90,15 @@
         form input {
             display: flex;
             /*Flexibilizar o conteudo do input dentro do formulario*/
-            flex-direction: column;
+            /* flex-direction: column; */
             /* Coloquei em coluna e assim quebra linha*/
-            padding: 10px;
+            /* /* /* padding: 10px;
             width: 230px;
         }
 
         .campo_cadastroproduto {
             /* width: 500px; */
-            display: flex;
+            /* display: flex;
             justify-content: space-between;
             padding: 10px;
         }
@@ -107,9 +121,9 @@
             border-radius: 4px;
             border: solid 1px var(--roxo);
             color: white;
-        }
+        } */
 
-        hr {
+        /* hr {
             margin: 30px;
         }
 
@@ -134,12 +148,23 @@
 
         .fotos_cadastroproduto img {
             width: 80px;
-        }
+        } */
 
+<<<<<<< HEAD
+        /*Footer*/
+        /* header {
+            height: 130px;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            background-color: #A200CB;
+        }
+=======
         @media (max-width: 1024px) {
             body {
                 width: 500px;
             }
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
 
             main {
                 width: 1000px;
@@ -189,10 +214,24 @@
                 width: 250px;
             }
 
+<<<<<<< HEAD
+        footer {
+            background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+            color: white;
+            font-size: 18px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            height: 100px;
+            display: flex;
+            align-items: center; */
+            /* justify-content: center; */
+        /* }  */
+=======
             .card_cadastroproduto {
                 height: 1300px;
             }
         }
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     </style>
 </head>
 
@@ -227,6 +266,72 @@
         </div>
     </header> -->
     <main>
+<<<<<<< HEAD
+        <div class="fundoCadastro">
+            <div class="cardCadastro">
+                <h2>Cadastro de Produto</h2>
+                <form method="POST" id="form_cadastro">
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text" aria-label="Digite seu nome" name="nome" required>
+                    </div>
+                    <div class="campo">
+                        <label>Tamanho</label>
+                        <input type="text" aria-label="Digite o tamanho" name="tamanho" required>
+                    </div>
+                    <div class="campo">
+                        <label>Peso</label>
+                        <input type="text" aria-label="Digite o peso" name="peso" required>
+                    </div>
+                    <div class="campo">
+                        <label>Quantidade</label>
+                        <input type="text" aria-label="Digite a quantidade" name="quantidade" required>
+                    </div>
+                    <div class="campo">
+                        <label>Cor</label>
+                        <input type="text" aria-label="Digite a cor" name="cor" required>
+                    </div>
+                    <div class="campo">
+                        <label>Volume</label>
+                        <input type="text" aria-label="Digite o volume" name="volume" required>
+                    </div>
+                    <div class="campo">
+                        <label>Data de Validade</label>
+                        <input type="text" aria-label="Indique a data de validade" name="dtvalidade" required>
+                    </div>
+                    <div class="campo">
+                        <label>Data limite de Venda</label>
+                        <input type="text" aria-label="Limite para venda" name="dtlimvd" required>
+                    </div>
+                    <div class="campo">
+                        <label>Data limite para doação</label>
+                        <input type="text" aria-label="Limite para doação" name="dtlimdo" required>
+                    </div>
+                    <hr>
+                    <div class="radios">
+                        <div class="radio">
+                            <input type="radio" aria-label="Doação" name="tipo" required>
+                            <label>Doação</label>
+                        </div>
+                        <div class="radio2">
+                            <input type="radio" aria-label="Venda" name="tipo" required>
+                            <label>Venda</label>
+                        </div>
+                    </div>
+                    <hr> <!-- Utilizada para inserir uma linha-->
+                    <label>Fotos</label>
+                    <div class="fotos">
+                        <!-- <img src="img/iconcam.png" alt="Icone camera"> -->
+                        <input type="file" accept="image/png, image/jpeg"
+                            placeholder="Adicionar fotos Você também pode arrasta-lás"
+                            aria-label="Adicionar fotos Você também pode arrasta-lás" name="foto">
+                    </div>
+                    <div class="btnCadastro">
+                        <button type=submit>Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+=======
         <div class="card_cadastroproduto">
             <h2>Cadastro de Produto</h2>
             <form method="POST" id="form_cadastroproduto">
@@ -290,6 +395,7 @@
                     <button type=submit>Cadastrar</button>
                 </div>
             </form>
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
         </div>
     </main>
     <!-- <footer>

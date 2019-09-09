@@ -131,13 +131,24 @@ footer {
 body {
     background-color: #EBEBEB;
 }
+<<<<<<< HEAD
+.perfil_pag {
+=======
 
 main {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     margin: auto;
     width: 100vw;
     background-color: white;
     padding: 20px 0px;
 }
+<<<<<<< HEAD
+.perfil_pag h2 {
+    text-align: center;
+    padding: 20px;
+}
+.perfil_pag h3{
+=======
 
 h2 {
     text-align: center;
@@ -145,11 +156,16 @@ h2 {
 }
 
 h3 {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     text-align: center;
     padding: 15px;
 }
+<<<<<<< HEAD
+.perfil_pag .cima {
+=======
 
 .cima {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -157,16 +173,24 @@ h3 {
     padding: 20px 0px;
     /* border-bottom: 2px solid var(--roxo); */
 }
+<<<<<<< HEAD
+.perfil_pag .esquerdo {
+=======
 
 .esquerdo {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     width: 47%;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
+<<<<<<< HEAD
+.perfil_pag .direito {
+=======
 
 .direito {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -175,6 +199,13 @@ h3 {
     font-size: 20px;
     padding-top: 20px;
 }
+<<<<<<< HEAD
+.perfil_pag .textos {
+    font-size: 20px;
+    margin: auto;
+}
+.perfil_pag .baixo {
+=======
 
 .textos {
     font-size: 20px;
@@ -182,11 +213,24 @@ h3 {
 }
 
 .baixo {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     display: flex;
     justify-content: center;
     font-size: 30px;
     padding-top: 30px;
 }
+<<<<<<< HEAD
+.perfil_pag .centro{
+    width: 47%;
+    margin: auto;
+}
+.perfil_pag .baixo {
+    
+    display: flex;
+    justify-content: center;
+}
+.perfil_pag .posranking {
+=======
 
 .centro {
     width: 47%;
@@ -199,6 +243,7 @@ h3 {
 }
 
 .posranking {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     border: 1px solid black;
     padding: 10px;
     width: 200px;
@@ -266,15 +311,37 @@ h3 {
         margin: auto;
     }
     /* main */
+<<<<<<< HEAD
+    .perfil_pag {
+        width: 100%;
+        text-align: center;
+    }
+    .perfil_pag .cima{
+=======
     main {
         width: 100%;
         text-align: center;
     }
     .cima {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
         margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
+<<<<<<< HEAD
+    .perfil_pag .cima img{ /* imagem usuário */
+        width: 50vw;
+    }
+    .perfil_pag .esquerdo{
+        width: 100vw;
+    }
+    .perfil_pag .direito{
+        width: 100vw;
+    } 
+    .perfil_pag #avatar{
+        margin: auto;  
+    }    
+=======
     .cima img {
         /* imagem usuário */
         width: 50vw;
@@ -288,4 +355,5 @@ h3 {
     #avatar {
         margin: auto;
     }
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
 }
