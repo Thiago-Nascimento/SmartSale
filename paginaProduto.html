@@ -6,455 +6,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Página do Produto - Smart Sale</title>
-    <link rel="stylesheet" href="./css/estilo.css">
-    <style>
-        :root {
-            --roxo: #a200cb;
-            --grafite: #707070;
-            --laranja: #ffbd19;
-            --verde: #14cc8a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            height: 130px;
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
-            background-color: #A200CB;
-        }
-
-        .container img {
-            height: 95px;
-            width: 204px;
-        }
-
-        .container {
-            width: 1200px;
-            margin: auto;
-        }
-
-        .container input {
-            width: 605px;
-            height: 35px;
-            margin-left: -120px;
-        }
-
-        .menu-centro {
-            display: flex;
-            justify-content: center;
-        }
-
-        .ca {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .ca a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .botao-login {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        #entrar {
-            width: 30px;
-            height: 35px;
-            margin: 10px;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            width: 600px;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .menu a {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        footer {
-            background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-            color: white;
-            font-size: 18px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* paginaProduto */
-        /* Verificar .container  */
-        main {
-            background-color: #ebebeb;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .produto {
-            background-color: #fff;
-            width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .esquerdo {
-            /* background-color: white; */
-            /* height: 800px; */
-            width: 30%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .esquerdo .imagem-produto {
-            width: 450px;
-            height: 450px;
-            margin: 10% 0;
-        }
-
-        .direito {
-            /* background-color: white; */
-            width: 45%;
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            flex-direction: column;
-        }
-
-        .direito .nomeProduto {
-            font-size: 2.0em;
-            font-weight: bold;
-            color: var(--grafite);
-        }
-
-        .direito .precoProduto {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: var(--verde);
-        }
-
-        .contQuantBotoes {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .quantidade {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            font-size: 1.2em;
-            color: var(--grafite);
-        }
-
-        .quantidade input {
-            border-radius: 4px;
-            height: 30px;
-            width: 44%;
-            font-size: 0.8em;
-        }
-
-        .botoes {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6%;
-        }
-
-        .botoes a {
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            background-color: var(--roxo);
-            color: white;
-            padding: 2% 15%;
-        }
-
-        .botoes .botaoReservar {
-            background-color: var(--laranja);
-        }
-
-        .botoes .botaoComprar {
-            background-color: var(--roxo);
-        }
-
-        .outrosProdutos {
-            background-color: #fff;
-            width: 1200px;
-            margin: auto;
-            margin-top: 50px;
-        }
-
-        .relacionados {
-            font-size: 1.6em;
-            font-weight: bold;
-            color: var(--grafite);
-            margin-left: 4%;
-            padding: 3% 0;
-        }
-
-        .outrosProdutos .produtos {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .cardProduto {
-            margin: 2%;
-        }
-
-        .textoCard {
-            padding: 1px;
-            margin-bottom: 10%;
-        }
-
-        .cardProduto a {
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            background-color: var(--roxo);
-            color: white;
-            padding: 2% 15%;
-        }
-
-        .botaoCard {
-            margin: 10% 0;
-        }
-
-        /* home */
-        .cnjt {
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        .cnjt p {
-            width: 570px;
-            height: 250px;
-        }
-
-        .cnjt h3 {
-            padding: 0px 0px 50px;
-        }
-
-        .cnjt p {
-            text-align: justify;
-            align-items: center;
-        }
-
-        .meio-home {
-            position: relative;
-            bottom: 200px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .whitebox {
-            border-radius: 5px;
-            width: 1150px;
-            height: 350px;
-            background-color: white;
-            padding: 20px
-        }
-
-        .banner-home {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../imagens/img4.png);
-            height: 300px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .img-1 {
-            width: 570px;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/final.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">    
 </head>
 
 <body>
     <header>
         <div class="container">
             <div class="ca">
-                <img src="img/Agrupar 110.png" alt="logo smart sale" id="avatar">
-                <label>
-                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..."
-                        aria-label="Faça uma busca" name="search">
-                </label>
+                <div class="logo">
+                    <a href="home.html"><img src="img/Agrupar 110.png" title="Home Smart Sale"
+                            alt="logo smart sale"></a>
+                </div>
+                <input type="search" placeholder="Buscar produtos, marcas e muito mais ..." aria-label="Faça uma busca" name="search">
                 <div class="botao-login">
-                    <a href="#"><img src="img/avatar.png" alt="Link para fazer login" id="entrar">
+                    <a href="login.html"><img src="img/avatar.png" alt="Link para fazer login" title="Faça login" id="entrar">
                         <p>Entrar</p>
                     </a>
                 </div>
             </div>
+            <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
+            <a class="btn-close"> <i class="fa fa-times"></i> </a>
             <nav>
                 <div class="menu-centro">
                     <ul class="menu">
-                        <li><a href="#" title="Smart sale home">Home</a></li>
-                        <li><a href="#" title="Smart sale quem somos">Quem somos</a></li>
-                        <li><a href="#" title="Smart sale ongs">ONGs</a></li>
-                        <li><a href="#" title="Smart sale ranking">Ranking</a></li>
-                        <li><a href="#" title="Smart sale categorias">Categorias</a></li>
-                        <li><a href="#" title="Smart sale perfil">Perfil</a></li>
-                        <li><a href="#" title="Smart sale faq">FAQ</a></li>
+                        <li><a href="home.html" title="Smart sale home">Home</a></li>
+                        <li><a href="quemsomos.html" title="Smart sale quem somos">Quem somos</a></li>
+                        <li><a href="ongs.html" title="Smart sale ongs">ONGs</a></li>
+                        <li><a href="paginaRankingAGORAVAIJESUS.html" title="Smart sale ranking">Ranking</a></li>
+                        <li><a href="filtroProdutos.html" title="Smart sale categorias">Categorias</a></li>
+                        <li><a href="perfil.html" title="Smart sale perfil">Perfil</a></li>
+                        <li><a href="PerguntasFrequentes.html" title="Smart sale faq">FAQ</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
     <main>
-        <section class="produto">
-            <div class="esquerdo">
-                <div>
-                    <img src="./img/Agrupar 61.jpg" alt="Imagem do Feijão Carioca Tipo 1" class="imagem-produto">
-                </div>
+        <div class="paginaProduto_pag">
+            <div class="container">
+                <section class="produto">
+                    <div class="esquerdo">
+                        <div>
+                            <img src="./img/Agrupar 61.jpg" alt="Imagem do Feijão Carioca Tipo 1" class="imagem-produto">
+                        </div>
+                    </div>
+                    <div class="direito">
+                        <div>
+                            <p class="nomeProduto">Feijão Carioca Tipo 1 - 1Kg</p>
+                            <p class="precoProduto">R$5,00</p>
+                        </div>
+                        <div class="contQuantBotoes">
+                            <div class="quantidade">
+                                <label>Quantidade</label>
+                                <input type="number" name="quantidade" id="">
+                            </div>
+                            <div class="botoes">
+                                <a class="botaoReservar" href="#">Reservar</a>
+                                <!-- <a class="botaoComprar" href="#">Comprar</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="outrosProdutos">
+                    <p class="relacionados">Produtos Relacionados</p>
+                    <div class="produtos">
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                        <div class="cardProduto">
+                            <img src="./img/download.jpg" alt="Feijão A">
+                            <div class="textoCard">
+                                <p>Feijão Codil</p>
+                                <p>R$ 10,00</p>
+                                <p>X Unidades Disponíveis</p>
+                                <p>Campos Elíseos - São Paulo</p>
+                            </div>
+                            <div class="botaoCard">
+                                <a href="#" class="btn">Reserve</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="direito">
-                <div>
-                    <p class="nomeProduto">Feijão Carioca Tipo 1 - 1Kg</p>
-                    <p class="precoProduto">R$5,00</p>
-                </div>
-                <div class="contQuantBotoes">
-                    <div class="quantidade">
-                        <label>Quantidade</label>
-                        <input type="number" name="quantidade" id="">
-                    </div>
-                    <div class="botoes">
-                        <a class="botaoReservar" href="#">Reservar</a>
-                        <a class="botaoComprar" href="#">Comprar</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="outrosProdutos">
-            <p class="relacionados">Produtos Relacionados</p>
-            <div class="produtos">
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-                <div class="cardProduto">
-                    <img src="./img/download.jpg" alt="Feijão A">
-                    <div class="textoCard">
-                        <p>Feijão Codil</p>
-                        <p>R$ 10,00</p>
-                        <p>X Unidades Disponíveis</p>
-                        <p>Campos Elíseos - São Paulo</p>
-                    </div>
-                    <div class="botaoCard">
-                        <a href="#" class="btn">Reserve</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
     <footer>
         <p>SMART SALE ©2019</p>
     </footer>
+    <!--Instalação do Jquery-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!--Função dos botões do menu, para entrar e sair do menu-->
+    <script>
+        $(".btn-menu").click(function () {
+            $(".menu").show();
+            $(".btn-close").show();
+        });
+        $(".btn-close").click(function () {
+            $(".menu").hide();
+            $(".btn-close").hide();
+        });
+    </script>
 </body>
 
 </html>
