@@ -110,22 +110,22 @@ footer {
 body {
     background-color: #EBEBEB;
 }
-main {
+.perfil_pag {
     margin: auto;
     width: 100vw;
     background-color: white;
     padding: 20px 0px;
 }
-h2 {
+.perfil_pag h2 {
     text-align: center;
     padding: 20px;
 }
-h3{
+.perfil_pag h3{
     text-align: center;
     padding: 15px;
 
 }
-.cima {
+.perfil_pag .cima {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -133,14 +133,14 @@ h3{
     padding: 20px 0px;
     /* border-bottom: 2px solid var(--roxo); */
 }
-.esquerdo {
+.perfil_pag .esquerdo {
     width: 47%;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
-.direito {
+.perfil_pag .direito {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -149,26 +149,26 @@ h3{
     font-size: 20px;
     padding-top: 20px;
 }
-.textos {
+.perfil_pag .textos {
     font-size: 20px;
     margin: auto;
 }
-.baixo {
+.perfil_pag .baixo {
     display: flex;
     justify-content: center;
     font-size: 30px;
     padding-top: 30px;
 }
-.centro{
+.perfil_pag .centro{
     width: 47%;
     margin: auto;
 }
-.baixo {
+.perfil_pag .baixo {
     
     display: flex;
     justify-content: center;
 }
-.posranking {
+.perfil_pag .posranking {
     border: 1px solid black;
     padding: 10px;
     width: 200px;
@@ -234,25 +234,25 @@ h3{
         margin: auto;
     }
     /* main */
-    main{
+    .perfil_pag {
         width: 100%;
         text-align: center;
     }
-    .cima{
+    .perfil_pag .cima{
         margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
-    .cima img{ /* imagem usuário */
+    .perfil_pag .cima img{ /* imagem usuário */
         width: 50vw;
     }
-    .esquerdo{
+    .perfil_pag .esquerdo{
         width: 100vw;
     }
-    .direito{
+    .perfil_pag .direito{
         width: 100vw;
     } 
-    #avatar{
+    .perfil_pag #avatar{
         margin: auto;  
     }    
 }

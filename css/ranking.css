@@ -147,13 +147,9 @@ h3 {
     font-family: 'Luckiest Guy', cursive;
     font-size: 30px;
 }
-main {
-<<<<<<< HEAD:css/teste.css
+.ranking_pag {
     background-image: url(../img/arrumado.png);
     opacity: 0.5;
-=======
-    background-image: url(../img/arrumado1.png);
->>>>>>> 4a435dca5617e1c181a9672219d3a4f9b6c3c5e4:css/ranking.css
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
