@@ -12,94 +12,6 @@
             --roxo: #A200CB;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            height: 130px;
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
-            background-color: #A200CB;
-        }
-
-        .container img {
-            height: 95px;
-            width: 204px;
-        }
-
-        .container {
-            width: 1200px;
-            margin: auto;
-        }
-
-        .container input {
-            width: 605px;
-            height: 35px;
-            margin-left: -120px;
-        }
-
-        .menu-centro {
-            display: flex;
-            justify-content: center;
-        }
-
-        .ca {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .ca a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .botao-login {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        #entrar {
-            width: 30px;
-            height: 35px;
-            margin: 10px;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            width: 600px;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .menu a {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        footer {
-            background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-            color: white;
-            font-size: 18px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         /*Conteúdo*/
         main {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -109,7 +21,7 @@
             background-position: center;
         }
 
-        .cards {
+        .cards_cadlog {
             width: 550px;
             margin: auto;
             display: flex;
@@ -118,7 +30,7 @@
             margin-bottom: 50px;
         }
 
-        .card_1 {
+        .card_1_cadlog {
             display: flex;
             flex-direction: column;
             border: solid 1px #707070;
@@ -130,7 +42,7 @@
             background-color: white;
         }
 
-        .card_2 {
+        .card_2_cadlog {
             display: flex;
             flex-direction: column;
             width: 200px;
@@ -142,12 +54,12 @@
             background-color: white;
         }
 
-        .login {
+        .login_cadlog {
             display: flex;
             flex-direction: column;
         }
 
-        .cadastro {
+        .cadastro_cadlog {
             display: flex;
             flex-direction: column;
             padding: 5px 0px;
@@ -169,17 +81,17 @@
             padding-bottom: 15px;
         }
 
-        .login,
-        .cadastro {
+        .login_cadlog,
+        .cadastro_cadlog {
             padding: 9px;
         }
 
-        .login input,
-        .cadastro input {
+        .login_cadlog input,
+        .cadastro_cadlog input {
             padding: 5px;
         }
 
-        .btn {
+        .btn_cadlog {
             display: flex;
             justify-content: center;
             margin: auto;
@@ -193,6 +105,64 @@
             border: solid 1px var(--roxo);
             color: white;
         }
+
+        @media (max-width: 1024px) {
+            main {
+                width: 1000px;
+            }
+
+            h3 {
+                font-size: 30px;
+            }
+
+            .cards_cadlog {
+                font-size: 30px;
+                width: 800px;
+            }
+
+            .card_1_cadlog {
+                width: 300px;
+                height: 400px;
+            }
+
+            .card_2_cadlog {
+
+                width: 350px;
+            }
+
+            input {
+                height: 30px;
+            }
+
+            button{
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 767px){
+            main {
+                width: 700px;
+            }
+            form{
+
+            }
+            h3 {
+                font-size: 30px;
+            }
+
+            .cards_cadlog {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                font-size: 30px;
+                width: 800px;
+            }
+            .card_1_cadlog{
+
+            }
+            .card_2_cadlog{
+                
+            }
+        }
     </style>
     <style>
 
@@ -201,108 +171,81 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="ca">
-                <img src="img/Agrupar 110.png" alt="logo smart sale" id="avatar">
-                <label>
-                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..."
-                        aria-label="Faça uma busca" name="search">
-                </label>
-                <div class="botao-login">
-                    <a href="#"><img src="img/avatar.png" alt="Link para fazer login" id="entrar">
-                        <p>Entrar</p>
-                    </a>
-                </div>
-            </div>
-            <nav>
-                <div class="menu-centro">
-                    <ul class="menu">
-                        <li><a href="#" title="Smart sale home">Home</a></li>
-                        <li><a href="#" title="Smart sale quem somos">Quem somos</a></li>
-                        <li><a href="#" title="Smart sale ongs">ONGs</a></li>
-                        <li><a href="#" title="Smart sale ranking">Ranking</a></li>
-                        <li><a href="#" title="Smart sale categorias">Categorias</a></li>
-                        <li><a href="#" title="Smart sale perfil">Perfil</a></li>
-                        <li><a href="#" title="Smart sale faq">FAQ</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
     </header>
     <main>
-        <div class="cards">
-            <div class="card_1">
+        <div class="cards_cadlog">
+            <div class="card_1_cadlog">
                 <h3>FAÇA LOGIN</h3>
                 <form method="POST">
-                    <div class="login">
+                    <div class="login_cadlog">
                         <label>Usuário</label>
                         <input type="text" placeholder="Digite seu nome..." aria-label="Digite seu nome..."
                             name="usuario" required>
                     </div>
-                    <div class="login">
+                    <div class="login_cadlog">
                         <label>Senha</label>
                         <input type="password" placeholder="Digite sua senha..." aria-label="Digite sua senha..."
                             name="senha" required>
                     </div>
-                    <div class="btn">
+                    <div class="btn_cadlog">
                         <button type="submit"><b>ACESSAR</b></button>
                     </div>
                 </form>
             </div>
-            <div class="card_2">
+            <div class="card_2_cadlog">
                 <h3>CADASTRAR-SE</h3>
                 <form method="POST">
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>Nome</label>
                         <input type="text" placeholder="Digite o nome completo..."
                             aria-label="Digite o nome completo..." name="nome" required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>CPF</label>
                         <input type="text" placeholder="Digite seu CPF..." aria-label="Digite seu CPF..." name="cpf"
                             required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>Idade</label>
                         <input type="text" placeholder="Digite sua idade" aria-label="Digite sua idade.." name="idade"
                             required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>Telefone</label>
                         <input type="text" placeholder="Digite seu telefone..." aria-label="Digite seu telefone..."
                             name="tel" required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>CEP</label>
                         <input type="text" placeholder="Digite seu CEP..." aria-label="Digite seu CEP..." name="cep"
                             required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>Endereço</label>
                         <input type="text" placeholder="Digite seu endereço..." aria-label="Digite seu endereço..."
                             name="endereco" required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>Número</label>
                         <input type="text" placeholder="Digite o número da casa..."
                             aria-label="Digite o número da casa..." name="numero" required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>Bairro</label>
                         <input type="text" placeholder="Digite seu bairro..." aria-label="Digite seu bairro..."
                             name="bairro" required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>E-mail</label>
                         <input type="email" placeholder="Digite seu e-mail..." aria-label="Digite seu e-mail..."
                             name="email" required>
                     </div>
-                    <div class="cadastro">
+                    <div class="cadastro_cadlog">
                         <label>Senha</label>
                         <input type="password" placeholder="Digite sua senha..." aria-label="Digite sua senha..."
                             name="senha" required>
                     </div>
-                    <div class="btn">
+                    <div class="btn_cadlog">
                         <button type="submit"><b>CADASTRAR</b></button>
                     </div>
                 </form>
@@ -310,7 +253,6 @@
         </div>
     </main>
     <footer>
-        <p>SMART SALE ©2019</p>
     </footer>
 </body>
 

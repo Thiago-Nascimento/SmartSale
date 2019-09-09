@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="CSS/estilos.css">
     <style>
         /*Conteudo*/
+        :root{
+            --roxo: #A200CB;
+            --cinza: grey;
+        }
         main {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -35,13 +39,13 @@
             margin-bottom: 50px;
         }
 
-        .informacao {
+        .informacao_cadastrovendedor {
             display: flex;
             flex-direction: column;
             border: solid 1px #707070;
             border-radius: 8px;
             padding: 0px 30px;
-            height: 200px;
+            height: 250px;
             justify-content: flex-start;
             width: 190px;
             background-color: white;
@@ -79,11 +83,70 @@
             color: white;
         }
 
-        .btn {
+        .btn_cadastrovendedor {
             display: flex;
             justify-content: center;
             margin: auto;
             padding-bottom: 10px;
+        }
+        @media (max-width: 1024px){
+            *{
+                font-size: 20px;
+            }
+            .cadvend_cadastrovendedor{
+                width: 290px;
+            }
+            .cardscadastrovendedor{
+                width: 800px;
+            }
+            .informacao_cadastrovendedor{
+                width: 300px;
+            }
+            main {
+                width: 1000px;
+                margin: auto;
+            }
+            form {
+                line-height: 1.5em;
+                width: 210px;
+            }
+            .informacao_cadastrovendedor{
+                height: 300px;
+            }
+            button{
+                margin-top:  30px
+            }
+        }
+        @media (max-width: 767px){
+            main{
+                width: 700px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;    
+            }
+            .cardscadastrovendedor{
+                display: flex;
+                flex-direction: column;
+                width: 350px;
+                margin: auto;
+            }
+            .cadvend_cadastrovendedor{
+                width: 300px;
+            }
+            .informacao_cadastrovendedor{
+                width: 300px;
+                margin-bottom: 10px;
+            }
+            .cadastro2_cadastrovendedor{
+                width: 200px;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            form{
+                margin: auto;
+            }
         }
     </style>
 </head>
@@ -93,7 +156,7 @@
     </header>
     <main>
         <div class="cardscadastrovendedor">
-            <div class="informacao">
+            <div class="informacao_cadastrovendedor">
                 <h3>Informação</h3>
                 <p>
                     Neste campo você vendedor poderá realizar seu cadastro para poder vender seus produtos em nossa
