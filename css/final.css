@@ -309,6 +309,7 @@ header {
     margin: auto;
     padding-bottom: 10px;
 }
+/*Responsivo cadastro vendedor*/
 @media (max-width: 1024px){
     *{
         font-size: 20px;
@@ -457,6 +458,7 @@ header {
     border: solid 1px var(--roxo);
     color: white;
 }
+/*Responsivo cadastro e login*/
 @media (max-width: 1024px) {
     main {
         width: 1000px;
