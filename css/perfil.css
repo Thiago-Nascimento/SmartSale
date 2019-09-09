@@ -3,12 +3,14 @@
     padding: 0%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 :root {
     --roxo: #a200cb;
     --grafite: #707070;
     --laranja: #ffbd19;
     --verde: #14cc8a;
 }
+
 header {
     height: 130px;
     display: flex;
@@ -16,29 +18,36 @@ header {
     align-content: center;
     background-color: #A200CB;
 }
-.container img { /* logo */
+
+.container img {
+    /* logo */
     height: 95px;
     width: 204px;
 }
+
 .container {
     width: 1200px;
     margin: auto;
 }
+
 .container input {
     width: 605px;
     height: 35px;
     margin-left: 90px;
 }
+
 .menu-centro {
     display: flex;
     justify-content: center;
 }
-.ca{
+
+.ca {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI';
 }
+
 .ca a {
     text-decoration: none;
     color: white;
@@ -46,19 +55,23 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 .botao-login {
     display: flex;
     justify-content: flex-end;
     margin-left: 60px;
 }
-.botao-login p{
+
+.botao-login p {
     margin-top: -4px;
 }
+
 #entrar {
     width: 30px;
     height: 35px;
     margin: 10px;
 }
+
 .menu {
     list-style: none;
     display: flex;
@@ -67,16 +80,19 @@ header {
     align-items: center;
     font-size: 12px;
 }
+
 .menu a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
 }
+
 .menu a:hover {
     border-bottom: 1.5px solid white;
     transition: 0.3s;
 }
+
 footer {
     background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     color: white;
@@ -88,44 +104,68 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
 /* =========================================botões do menu ============================================================= */
+
 .btn-close {
-    font-size: 1.5em; 
-	color: #FFF; 
-	float: left; 
-	cursor: pointer; 
+    font-size: 1.5em;
+    color: #FFF;
+    float: left;
+    cursor: pointer;
     z-index: 1;
 }
+
 .btn-menu {
-	width: 56px; 
-	height: 56px; 
-    margin: auto; 
-	text-align: center; 
-	color: #FFF; 
-    border-radius: 56px; 
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    text-align: center;
+    color: #FFF;
+    border-radius: 56px;
     cursor: pointer;
     background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
 }
+
 /* --------------------------------------------------perfil----------------------------------------------------------- */
+
 body {
     background-color: #EBEBEB;
 }
+<<<<<<< HEAD
 .perfil_pag {
+=======
+
+main {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     margin: auto;
     width: 100vw;
     background-color: white;
     padding: 20px 0px;
 }
+<<<<<<< HEAD
 .perfil_pag h2 {
     text-align: center;
     padding: 20px;
 }
 .perfil_pag h3{
+=======
+
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+h3 {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     text-align: center;
     padding: 15px;
-
 }
+<<<<<<< HEAD
 .perfil_pag .cima {
+=======
+
+.cima {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -133,14 +173,24 @@ body {
     padding: 20px 0px;
     /* border-bottom: 2px solid var(--roxo); */
 }
+<<<<<<< HEAD
 .perfil_pag .esquerdo {
+=======
+
+.esquerdo {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     width: 47%;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
+<<<<<<< HEAD
 .perfil_pag .direito {
+=======
+
+.direito {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -149,16 +199,27 @@ body {
     font-size: 20px;
     padding-top: 20px;
 }
+<<<<<<< HEAD
 .perfil_pag .textos {
     font-size: 20px;
     margin: auto;
 }
 .perfil_pag .baixo {
+=======
+
+.textos {
+    font-size: 20px;
+    margin: auto;
+}
+
+.baixo {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     display: flex;
     justify-content: center;
     font-size: 30px;
     padding-top: 30px;
 }
+<<<<<<< HEAD
 .perfil_pag .centro{
     width: 47%;
     margin: auto;
@@ -169,6 +230,20 @@ body {
     justify-content: center;
 }
 .perfil_pag .posranking {
+=======
+
+.centro {
+    width: 47%;
+    margin: auto;
+}
+
+.baixo {
+    display: flex;
+    justify-content: center;
+}
+
+.posranking {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     border: 1px solid black;
     padding: 10px;
     width: 200px;
@@ -178,18 +253,19 @@ body {
 /* ==========================================================media queries======================================================= */
 
 /* Smart device - mobile */
+
 @media (max-width: 767px) {
     /* header */
-    header{
+    header {
         background-color: var(--laranja);
     }
     .menu {
-        display: none; 
-        width: 100%; 
-        height: 100%; 
-        position: fixed; 
-        background-color: rgba(0,0,0,0.9); 
-        top: 0; 
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 0;
         left: 0;
     }
     .container input {
@@ -205,12 +281,13 @@ body {
         padding-top: 10px;
         padding: 20px 0px;
     }
-    .container img { /* logo */
+    .container img {
+        /* logo */
         height: 75px;
         width: 164px;
         padding-top: 20px;
     }
-    .container{
+    .container {
         width: 100%;
         display: flex;
         justify-content: center;
@@ -222,7 +299,7 @@ body {
     #entrar {
         display: none;
     }
-    .botao-login p{
+    .botao-login p {
         display: none;
     }
     .ca {
@@ -234,15 +311,24 @@ body {
         margin: auto;
     }
     /* main */
+<<<<<<< HEAD
     .perfil_pag {
         width: 100%;
         text-align: center;
     }
     .perfil_pag .cima{
+=======
+    main {
+        width: 100%;
+        text-align: center;
+    }
+    .cima {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
         margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
+<<<<<<< HEAD
     .perfil_pag .cima img{ /* imagem usuário */
         width: 50vw;
     }
@@ -255,4 +341,19 @@ body {
     .perfil_pag #avatar{
         margin: auto;  
     }    
+=======
+    .cima img {
+        /* imagem usuário */
+        width: 50vw;
+    }
+    .esquerdo {
+        width: 100vw;
+    }
+    .direito {
+        width: 100vw;
+    }
+    #avatar {
+        margin: auto;
+    }
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
 }

@@ -13,24 +13,25 @@
             --roxo: #A200CB;
             --cinza: grey;
         }
-
         * {
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         main {
             background-image: url(img/bannerpho.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
         }
+<<<<<<< HEAD
 
         .cardCadastro {
+=======
+        .card_cadastroproduto {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
             display: flex;
             flex-direction: column;
             width: 600px;
@@ -45,24 +46,32 @@
             margin-bottom: 40px;
         }
 
+<<<<<<< HEAD
         .cardCadastro h2 {
+=======
+        .card_cadastroproduto h2 {
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
             font-size: 40px;
             padding: 20px;
             color: var(--roxo);
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
         form label {
             font-size: 20px;
             color: var(--roxo);
         }
 
-        .radios {
+        .radios_cadastroproduto {
             display: flex;
             justify-content: space-around;
             width: 500px;
         }
 
-        .radio {
+        .radio_cadastroproduto {
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -70,10 +79,11 @@
             width: 100px;
         }
 
-        .radio2 {
+        .radio2_cadastroproduto {
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            padding: 30px;
             width: 100px;
         }
 
@@ -86,19 +96,19 @@
             width: 230px;
         }
 
-        .campo {
+        .campo_cadastroproduto {
             /* width: 500px; */
             /* display: flex;
             justify-content: space-between;
             padding: 10px;
         }
 
-        .campo input {
+        .campo_cadastroproduto input {
             border-radius: 10px;
             border: solid 1px var(--cinza);
         }
 
-        .btn {
+        .btn_cadastroproduto {
             display: flex;
             justify-content: center;
             margin: auto;
@@ -117,32 +127,30 @@
             margin: 30px;
         }
 
-        .fotos {
+        .fotos_cadastroproduto {
             display: flex;
             flex-direction: column;
             margin: auto;
         }
 
-        .fotos label {
+        .fotos_cadastroproduto label {
             margin: auto;
-            padding: 15px 0px;
         }
 
-        .fotos input {
+        .fotos_cadastroproduto input {
             border: dotted 1px grey;
             border-radius: 4px;
             height: 60px;
             width: 400px;
             margin: auto;
-            margin-bottom: 30px;
+            margin-bottom: 5px;
         }
 
-        .juntos {}
-
-        .fotos img {
+        .fotos_cadastroproduto img {
             width: 80px;
         } */
 
+<<<<<<< HEAD
         /*Footer*/
         /* header {
             height: 130px;
@@ -151,70 +159,62 @@
             align-content: center;
             background-color: #A200CB;
         }
+=======
+        @media (max-width: 1024px) {
+            body {
+                width: 500px;
+            }
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
 
-        .container img {
-            height: 95px;
-            width: 204px;
+            main {
+                width: 1000px;
+            }
+
+
+            .card_cadastroproduto h2 {
+                font-size: 20px;
+            }
+
+            form {
+                width: 300px;
+                height: 1200px;
+            }
+
+            .campo_cadastroproduto {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .radios_cadastroproduto {
+                display: flex;
+                flex-direction: column;
+                width: 100px;
+                align-items: flex-start;
+            }
+
+            .fotos_cadastroproduto input {
+                width: 100px;
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .btn_cadastroproduto {
+                width: 300px;
+                margin: auto;
+            }
         }
 
-        .container {
-            width: 1200px;
-            margin: auto;
-        }
+        @media (max-width: 767px) {
+            main {
+                width: 730px;
+                margin: auto;
+            }
 
-        .container input {
-            width: 605px;
-            height: 35px;
-            margin-left: -120px;
-        }
+            .fotos_cadastroproduto input {
+                width: 250px;
+            }
 
-        .menu-centro {
-            display: flex;
-            justify-content: center;
-        }
-
-        .ca {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .ca a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .botao-login {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        #entrar {
-            width: 30px;
-            height: 35px;
-            margin: 10px;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            width: 600px;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .menu a {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: white;
-        }
-
+<<<<<<< HEAD
         footer {
             background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
             color: white;
@@ -226,11 +226,17 @@
             align-items: center; */
             /* justify-content: center; */
         /* }  */
+=======
+            .card_cadastroproduto {
+                height: 1300px;
+            }
+        }
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
     </style>
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div class="container">
             <div class="ca">
                 <img src="img/Agrupar 110.png" alt="logo smart sale" id="avatar">
@@ -258,8 +264,9 @@
                 </div>
             </nav>
         </div>
-    </header>
+    </header> -->
     <main>
+<<<<<<< HEAD
         <div class="fundoCadastro">
             <div class="cardCadastro">
                 <h2>Cadastro de Produto</h2>
@@ -324,11 +331,76 @@
                     </div>
                 </form>
             </div>
+=======
+        <div class="card_cadastroproduto">
+            <h2>Cadastro de Produto</h2>
+            <form method="POST" id="form_cadastroproduto">
+                <div class="campo_cadastroproduto">
+                    <label>Nome</label>
+                    <input type="text" aria-label="Digite seu nome" name="nome" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Tamanho</label>
+                    <input type="text" aria-label="Digite o tamanho" name="tamanho" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Peso</label>
+                    <input type="text" aria-label="Digite o peso" name="peso" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Quantidade</label>
+                    <input type="text" aria-label="Digite a quantidade" name="quantidade" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Cor</label>
+                    <input type="text" aria-label="Digite a cor" name="cor" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Volume</label>
+                    <input type="text" aria-label="Digite o volume" name="volume" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Data de Validade</label>
+                    <input type="text" aria-label="Indique a data de validade" name="dtvalidade" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Data limite de Venda</label>
+                    <input type="text" aria-label="Limite para venda" name="dtlimvd" required>
+                </div>
+                <div class="campo_cadastroproduto">
+                    <label>Data limite para doação</label>
+                    <input type="text" aria-label="Limite para doação" name="dtlimdo" required>
+                </div>
+                <hr>
+                <div class="radios_cadastroproduto">
+                    <div class="radio_cadastroproduto">
+                        <input type="radio" aria-label="Doação" name="tipo" required>
+                        <label>Doação</label>
+                    </div>
+                    <div class="radio2_cadastroproduto">
+                        <input type="radio" aria-label="Venda" name="tipo" required>
+                        <label>Venda</label>
+                    </div>
+                </div>
+                <hr> <!-- Utilizada para inserir uma linha-->
+                <div class="fotos_cadastroproduto">
+                    <label>Fotos</label>
+
+                    <!-- <img src="img/iconcam.png" alt="Icone camera"> -->
+                    <input type="file" accept="image/png, image/jpeg"
+                        placeholder="Adicionar fotos Você também pode arrasta-lás"
+                        aria-label="Adicionar fotos Você também pode arrasta-lás" name="foto">
+                </div>
+                <div class="btn_cadastroproduto">
+                    <button type=submit>Cadastrar</button>
+                </div>
+            </form>
+>>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
         </div>
     </main>
-    <footer>
+    <!-- <footer>
         <p>SMART SALE ©2019</p>
-    </footer>
+    </footer> -->
 </body>
 
 </html>
