@@ -29,25 +29,22 @@ header {
     width: 1200px;
     margin: auto;
 }
-
 .container input {
-    width: 605px;
+    /* width: 605px; */
+    width: 45vw;
     height: 35px;
-    margin-left: 90px;
+    margin: auto;
 }
-
 .menu-centro {
     display: flex;
     justify-content: center;
 }
-
 .ca {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI';
 }
-
 .ca a {
     text-decoration: none;
     color: white;
@@ -58,8 +55,9 @@ header {
 
 .botao-login {
     display: flex;
-    justify-content: flex-end;
-    margin-left: 60px;
+    justify-content: space-around;
+    margin-left: 80px;
+    
 }
 
 .botao-login p {
@@ -108,7 +106,11 @@ footer {
 .btn-menu, .btn-close {
     display: none;
 }
+
+/* =========================================================================================================================== */
+
 /* celular */
+
 @media (max-width: 768px) {
     /* header */
     header {
@@ -176,7 +178,6 @@ footer {
         right: 10px;
         top: 0px;
     }
-
     .btn-menu {
         display: block;
         width: 56px;
@@ -188,31 +189,49 @@ footer {
         cursor: pointer;
         background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     }
-
     /* main */
     /* Fim do main, o footer não precisa */
 }
+
 /* não sei, mas é menor, vai diminuindo e alinhando os elementos */
+
+/* ============================================================================================================================= */
+
 @media (max-width: 1024px) {
     header {
         background-color: var(--verde);
     }
-   
+    .ca {
+        width: 80vw;
+    }
+    .container input {
+        width: 50vw;
+        margin-left: 40px;
+    }
+    .botao-login {
+        margin-left: 30px;
+    }
     .menu-centro {
+        display: flex;
+        justify-content: center;
         flex-direction: column;
-        padding: 15px 0px;
-        margin: auto;
         text-align: center;
+    }
+    .menu {
+        width: 50vw;
+        margin: auto;
     }
     .menu-centro li {
         padding-top: 10px;
-        padding: 20px 0px;
+        padding: 5px 0px;
     }
     .container img {
         /* logo */
-        height: 75px;
-        width: 164px;
-        padding-top: 20px;
+        /* height: 75px;
+        width: 164px; */
+        width: 11vw;
+        height: 11.5vh;
+        padding-top: 10px;
     }
     .container {
         width: 80%;
