@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- <style>
+    <style>
         :root {
             --roxo: #a200cb;
             --grafite: #707070;
@@ -22,6 +22,30 @@
             justify-content: space-between;
             align-content: center;
             background-color: #A200CB;
+        }
+
+        .btn-close {
+            font-size: 1.5em;
+            color: #FFF;
+            float: left;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .btn-menu {
+            display: none;
+            width: 56px;
+            height: 56px;
+            margin: auto;
+            text-align: center;
+            color: #FFF;
+            border-radius: 56px;
+            cursor: pointer;
+            background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+        }
+
+        .btn-close {
+            display: none;
         }
 
         .container {
@@ -51,21 +75,22 @@
         }
 
         .cardhome {
+            width: 1200px;
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            justify-content: center;
+
             padding: 0px 0px 10px;
         }
 
         .card {
-            width: 270px;
-            line-height: 2.0;
+            width: 200px;
             margin-top: 30px;
+            padding: 0px 60px 0px;
         }
 
         .card img {
             border-radius: 7px;
-            width: 250px;
+            width: 200px;
             /* transition: all 2s; */
         }
 
@@ -359,10 +384,6 @@
             flex-direction: row;
         }
 
-<<<<<<< HEAD
-        .pdts2 {}
-    </style> -->
-=======
 
         /* ==========================================================media queries======================================================= */
 
@@ -371,17 +392,193 @@
         @media(max-width: 767px) {
 
             /* header */
-        header {
-        
-        }            
+            header {
+                background-color: var(--laranja);
+            }
+
+            .menu {
+                display: none;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                background-color: rgba(0, 0, 0, 0.9);
+                top: 0;
+                left: 0;
+            }
+
+            .container input {
+                display: none;
+            }
+
+            .menu-centro {
+                flex-direction: column;
+                padding: 15px 0px;
+                margin: auto;
+                text-align: center;
+            }
+
+            .menu-centro li {
+                padding-top: 10px;
+                padding: 20px 0px;
+            }
+
+            .container img {
+                /* logo */
+                height: 75px;
+                width: 164px;
+                padding-top: 20px;
+            }
+
+            .container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-content: center;
+                flex-wrap: wrap;
+                margin: auto;
+            }
+
+            #entrar {
+                display: none;
+            }
+
+            .botao-login p {
+                display: none;
+            }
+
+            .ca {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                font-family: 'Segoe UI';
+                margin: auto;
+            }
+
+            /*  main */
+
+            .whitebox {
+
+                height: 100vh;
+                width: 80vw;
+                display: flex;
+                flex-direction: raw;
+            }
+
+            .whitebox img {
+                width: 80vw;
+
+            }
+
+            .banner-home {
+                width: 100vw;
+                height: 35vh;
+            }
+
+            .whitebox h3 {
+                padding: 10px 0px 10px;
+                text-align: center;
+            }
+
+            .whitebox p {
+                padding-bottom: 250px;
+                text-align: center;
+                width: 80vw;
+            }
+
+            .cnjt {
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .cardhome {
+                width: 100vw;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card h4 {
+                text-align: center;
+            }
+            
+            .card {
+                display: flex;
+                justify-content: center;
+                width: 200px;
+                margin-top: 30px;
+
+            }
+
+            #white {
+                width: 90vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+
+            /* .branco {
+                width: 80vw;
+            } */
+
+            /* .branco img {
+                width: 20vw;
+                height: 10vh;
+            } */
+
+            .rank {
+                display: flex;
+                justify-content: center;
+                
+            }
+
+            .cardhome2 {
+
+
+                width: 90vw;
+            }
+
+            .card img {
+                border-radius: 10px;
+
+            }
+            
+            .card {
+                
+                display: flex;
+                justify-content: center;
+                width: 200px;
+                margin-top: 30px;
+                padding: 0px 60px;
+            }
+
+            .ongs {
+                align-items: center;
+                height: 110vh;
+                width: 90vw;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .ongs img {
+                width: 30vw;
+                height: 15vh;
+                margin-top: 0px;
+
+            }
         }
     </style>
->>>>>>> 5d421cdba9190c8daa012f8123fc61f086a43942
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <meta charset=" UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home - Smart Sale</title>
-    <link rel="stylesheet" href="./css/final.css">
 </head>
 
 <body>
@@ -399,6 +596,8 @@
                     </a>
                 </div>
             </div>
+            <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
+            <a class="btn-close"> <i class="fa fa-times"></i> </a>
             <nav>
                 <div class="menu-centro">
                     <ul class="menu">
@@ -415,180 +614,204 @@
         </div>
     </header>
     <main>
-        <div class="home_pag">
-            <div class="banner-home"></div>
-            <div class="container>">
-                <div class="meio-home">
-                    <div class="whitebox">
-                        <div class="cnjt">
-                            <div>
-                                <img src="./img/img5.png" alt="Mãe cozinhando com a filha pequena" class="img-1">
-                            </div>
-                            <div class="txthome">
-                                <h3>Objetivo</h3>
-                                <p>Massa sociosqu etiam ullamcorper massa porta nulla mi mattis purus, vestibulum
-                                    gravida
-                                    eget facilisis a rutrum dapibus nam. litora eu phasellus scelerisque aenean fusce
-                                    dapibus
-                                    non eu consequat duis, commodo augue duis torquent libero tortor vulputate maecenas
-                                    nunc. mauris taciti quisque imperdiet neque quisque sed lacus pellentesque, porta
-                                    aliquet
-                                    cras elit donec a malesuada euismod, aliquam ultricies hendrerit auctor quis velit
-                                    pellentesque. ut urna ac neque dolor fringilla nam sem tristique mauris, torquent
-                                    aptent
-                                    dapibus eleifend dui mauris dictum laoreet lacinia, pharetra nunc ad interdum sed
-                                    fames
-                                    lorem morbi. dolor tellus curabitur lacus eros, imperdiet per orci, habitant
-                                    ultricies
-                                    metus .
-                                </p>
-                            </div>
+
+        <div class="banner-home"></div>
+        <div class="container>">
+            <div class="meio-home">
+                <div class="whitebox">
+                    <div class="cnjt">
+                        <div>
+                            <img src="./img/img5.png" alt="Mãe cozinhando com a filha pequena" class="img-1">
+                        </div>
+                        <div class="txthome">
+                            <h3>Objetivo</h3>
+                            <p>Massa sociosqu etiam ullamcorper massa porta nulla mi mattis purus, vestibulum gravida
+                                eget facilisis a rutrum dapibus nam. litora eu phasellus scelerisque aenean fusce
+                                dapibus
+                                non eu consequat duis, commodo augue duis torquent libero tortor vulputate maecenas
+                                nunc. mauris taciti quisque imperdiet neque quisque sed lacus pellentesque, porta
+                                aliquet
+                                cras elit donec a malesuada euismod, aliquam ultricies hendrerit auctor quis velit
+                                pellentesque. ut urna ac neque dolor fringilla nam sem tristique mauris, torquent aptent
+                                dapibus eleifend dui mauris dictum laoreet lacinia, pharetra nunc ad interdum sed fames
+                                lorem morbi. dolor tellus curabitur lacus eros, imperdiet per orci, habitant ultricies
+                                metus .
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
+        <div class="container" id="white">
+            <h3> Categorias </h3>
 
-            <div class="container" id="white">
-                <h3> Categorias </h3>
-
-                <div class="cardhome">
-                    <div class="card">
-                        <a href="#">
-                            <h4>Cereais</h4>
-                            <img src="./img/img1.png" alt="">
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="#">
-                            <h4>Legumes</h4>
-                            <img src="./img/img2.png" alt="">
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="#">
-                            <h4>Carnes</h4>
-                            <img src="./img/img3.png" alt="">
-                        </a>
-                    </div>
-                    <div class="card"><a href="#">
-                            <h4>Vegetais</h4>
-                            <img src="./img/img7.png" alt="">
-                        </a>
-                    </div>
+            <div class="cardhome">
+                <div class="card">
+                    <a href="#">
+                        <h4>Cereais</h4>
+                        <img src="./img/img1.png" alt="">
+                    </a>
                 </div>
-
-                <div class="ver">
-                    <p><a href="#" class="btn">Ver mais</a></p>
+                <div class="card">
+                    <a href="#">
+                        <h4>Legumes</h4>
+                        <img src="./img/img2.png" alt="">
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <h4>Carnes</h4>
+                        <img src="./img/img3.png" alt="">
+                    </a>
+                </div>
+                <div class="card"><a href="#">
+                        <h4>Vegetais</h4>
+                        <img src="./img/img7.png" alt="">
+                    </a>
                 </div>
             </div>
-            <div class="linha">
-                <hr class="one">
+
+            <div class="ver">
+                <p><a href="#" class="btn">Ver mais</a></p>
             </div>
-            <div class="roxo">
-                <section class="container">
-                    <div class="rank">
-
-                        <p>RANKING</p>
-
-                        <div class="branco"><img src="./img/icons/crown.png " alt="" class="coroa">Arthur Bruno</div>
-                        <div class="branco"><img src="./img/icons/crown-1.png" alt="" class="coroa">Gabriel Silva</div>
-                        <div class="branco"><img src="./img/icons/crown-2.png " alt="" class="coroa">Kaique Santos</div>
-
-                    </div>
-                </section>
-            </div>
+        </div>
+        <div class="linha">
+            <hr class="one">
+        </div>
+        <div class="roxo">
             <section class="container">
-                <section class="tongs">
-                    <h4>Instituições beneficiadas</h4>
-                </section>
-                <div class="ongs">
-                    <a href="#"><img src="./img/ongs/ong1.png" alt=""></a>
-                    <a href="#"><img src="./img/ongs/ong2.png" alt=""></a>
-                    <a href="#"><img src="./img/ongs/ong3.png" alt=""></a>
-                    <a href="#"><img src="./img/ongs/ong4.png" alt=""></a>
+                <div class="rank">
+
+                    <p>RANKING</p>
+
+                    <div class="branco"><img src="./img/icons/crown.png " alt="" class="coroa">Arthur Bruno</div>
+                    <div class="branco"><img src="./img/icons/crown-1.png" alt="" class="coroa">Gabriel Silva</div>
+                    <div class="branco"><img src="./img/icons/crown-2.png " alt="" class="coroa">Kaique Santos</div>
+
                 </div>
             </section>
+        </div>
+        <section class="container">
+            <section class="tongs">
+                <h4>Instituições beneficiadas</h4>
+            </section>
+            <div class="ongs">
+                <a href="#"><img src="./img/ongs/ong1.png" alt=""></a>
+                <a href="#"><img src="./img/ongs/ong2.png" alt=""></a>
+                <a href="#"><img src="./img/ongs/ong3.png" alt=""></a>
+                <a href="#"><img src="./img/ongs/ong4.png" alt=""></a>
+            </div>
+        </section>
 
-            <div class="pdt">
-                <h4>Produtos</h4>
-                <section class="container">
-                    <div class="pdts2">
-                        <div class="cardhome2">
+        <div class="pdt">
+            <h4>Produtos</h4>
+            <section class="container">
+                <div class="pdts2">
+                    <div class="cardhome2">
 
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a>
-                            </div>
-
-
-
-
-
-
-
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a></div>
-                            <div class="card">
-                                <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
-                                    <p>Ana Maria
-                                        R$2,00<br>
-                                        Mercado X<br>
-                                        X dias apenas</p>
-                                </a>
-                            </div>
-
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a>
                         </div>
+
+
+
+
+
+
+
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a></div>
+                        <div class="card">
+                            <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
+                                <p>Ana Maria
+                                    R$2,00<br>
+                                    Mercado X<br>
+                                    X dias apenas</p>
+                            </a>
+                        </div>
+
                     </div>
-            </div>        
-        </div>        
+                </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+        </div>
+
+
+
+        </div>
     </main>
     <footer>
         <p>SMART SALE ©2019</p>
+
     </footer>
+    <!--Instalação do Jquery-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!--Função dos botões do menu, para entrar e sair do menu-->
+    <script>
+        $(".btn-menu").click(function () {
+            $(".menu").show();
+            $(".btn-close").show();
+        });
+        $(".btn-close").click(function () {
+            $(".menu").hide();
+            $(".btn-close").hide();
+        });
+    </script>
 </body>
 
 </html>
+
+
+
+
+expandir algumas coisas
