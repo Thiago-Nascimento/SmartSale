@@ -97,13 +97,9 @@ footer {
 .btn-menu, .btn-close {
     display: none;
 }
-<<<<<<< HEAD
 
 /* =========================================================================================================================== */
 
-=======
-/* =========================================================================== media querie======================== */
->>>>>>> 12c3548a5a77b59914755d6315a4cd8566ce8292
 /* celular */
 
 @media (max-width: 768px) {
@@ -204,7 +200,6 @@ footer {
         background-color: var(--verde);
         height: 110px;
     }
-<<<<<<< HEAD
     .ca {
         width: 80vw;
     }
@@ -220,17 +215,12 @@ footer {
         justify-content: center;
         flex-direction: column;
         text-align: center;
-=======
-    .menu {
-        width: 406px;
->>>>>>> 12c3548a5a77b59914755d6315a4cd8566ce8292
     }
     .menu {
         width: 50vw;
         margin: auto;
     }
     .menu-centro li {
-<<<<<<< HEAD
         padding-top: 10px;
         padding: 5px 0px;
     }
@@ -241,15 +231,6 @@ footer {
         width: 11vw;
         height: 11.5vh;
         padding-top: 10px;
-=======
-        padding-top: 2px;
-    }
-    .container img {
-        /* logo */
-        height: 55px;
-        width: 124px;
-        padding-top: 20px;
->>>>>>> 12c3548a5a77b59914755d6315a4cd8566ce8292
     }
     .container input{
         width:  406px;
@@ -272,20 +253,4 @@ footer {
         flex-wrap: wrap;
         margin: auto;
     }
-<<<<<<< HEAD
 }
-=======
-    .container img{
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    }
-    .ca{
-        width: 100%;
-       
-    }
-}
-/*Incio de conteúdo das páginas*/
->>>>>>> 12c3548a5a77b59914755d6315a4cd8566ce8292
