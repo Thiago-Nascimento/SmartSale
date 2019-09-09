@@ -8,98 +8,6 @@
     <title>Cadastro de Vendedor</title>
     <link rel="stylesheet" href="CSS/estilos.css">
     <style>
-        :root {
-            --roxo: #A200CB;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            height: 130px;
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
-            background-color: #A200CB;
-        }
-
-        .container img {
-            height: 95px;
-            width: 204px;
-        }
-
-        .container {
-            width: 1200px;
-            margin: auto;
-        }
-
-        .container input {
-            width: 605px;
-            height: 35px;
-            margin-left: -120px;
-        }
-
-        .menu-centro {
-            display: flex;
-            justify-content: center;
-        }
-
-        .ca {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .ca a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .botao-login {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        #entrar {
-            width: 30px;
-            height: 35px;
-            margin: 10px;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            width: 600px;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .menu a {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        footer {
-            background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-            color: white;
-            font-size: 18px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         /*Conteudo*/
         main {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -139,7 +47,7 @@
             background-color: white;
         }
 
-        .cadvend {
+        .cadvend_cadastrovendedor {
             display: flex;
             flex-direction: column;
             width: 190px;
@@ -152,13 +60,13 @@
             align-items: center;
         }
 
-        .cadastro2 {
+        .cadastro2_cadastrovendedor {
             display: flex;
             flex-direction: column;
             padding: 9px;
         }
 
-        .cadvend form input {
+        .cadvend_cadastrovendedor form input {
             width: 160px;
             padding: 5px;
         }
@@ -182,33 +90,6 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="ca">
-                <img src="img/Agrupar 110.png" alt="logo smart sale" id="avatar">
-                <label>
-                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..."
-                        aria-label="Faça uma busca" name="search">
-                </label>
-                <div class="botao-login">
-                    <a href="#"><img src="img/avatar.png" alt="Link para fazer login" id="entrar">
-                        <p>Entrar</p>
-                    </a>
-                </div>
-            </div>
-            <nav>
-                <div class="menu-centro">
-                    <ul class="menu">
-                        <li><a href="#" title="Smart sale home">Home</a></li>
-                        <li><a href="#" title="Smart sale quem somos">Quem somos</a></li>
-                        <li><a href="#" title="Smart sale ongs">ONGs</a></li>
-                        <li><a href="#" title="Smart sale ranking">Ranking</a></li>
-                        <li><a href="#" title="Smart sale categorias">Categorias</a></li>
-                        <li><a href="#" title="Smart sale perfil">Perfil</a></li>
-                        <li><a href="#" title="Smart sale faq">FAQ</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
     </header>
     <main>
         <div class="cardscadastrovendedor">
@@ -219,60 +100,60 @@
                     plataforma
                 </p>
             </div>
-            <div class="cadvend">
+            <div class="cadvend_cadastrovendedor">
                 <h3>Cadastre um Vendedor</h3>
                 <form method="POST">
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>Nome da empresa</label>
                         <input type="text" placeholder="Digite o nome da empresa..."
                             aria-label="Digite o nome da empresa..." name="nome" required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>CNPJ</label>
                         <input type="text" placeholder="Digite o CNPJ..." aria-label="Digite o CNPJ..." name="cnpj"
                             required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>Razão Social</label>
                         <input type="text" placeholder="Digite a razão social..." aria-label="Digite a razão social..."
                             name="razsoc" required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>Telefone</label>
                         <input type="text" placeholder="Digite seu telefone..." aria-label="Digite seu telefone..."
                             name="tel" required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>CEP</label>
                         <input type="text" placeholder="Digite seu CEP..." aria-label="Digite seu CEP..." name="cep"
                             required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>Endereço</label>
                         <input type="text" placeholder="Digite seu endereço..." aria-label="Digite seu endereço..."
                             name="endereco" required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>Número</label>
                         <input type="text" placeholder="Digite o número da casa..."
                             aria-label="Digite o número da casa..." name="numero" required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>Bairro</label>
                         <input type="text" placeholder="Digite seu bairro..." aria-label="Digite seu bairro..."
                             name="bairro" required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>E-mail</label>
                         <input type="email" placeholder="Digite seu e-mail..." aria-label="Digite seu e-mail..."
                             name="email" required>
                     </div>
-                    <div class="cadastro2">
+                    <div class="cadastro2_cadastrovendedor">
                         <label>Senha</label>
                         <input type="password" placeholder="Digite sua senha..." aria-label="Digite sua senha..."
                             name="senha" required>
                     </div>
-                    <div class="btn">
+                    <div class="btn_cadastrovendedor">
                         <button type="submit"><b>CONTINUAR</b></button>
                     </div>
                 </form>
@@ -280,7 +161,6 @@
         </div>
     </main>
     <footer>
-        <p>SMART SALE ©2019</p>
     </footer>
 </body>
 
