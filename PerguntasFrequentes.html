@@ -22,7 +22,7 @@
         }
 
 
-        @media screen (max-width 1024px){
+        @media (max-width: 1024px){
             main{
                 width: 1000px;
                 display:flex;
@@ -54,7 +54,7 @@
             width: 900px;
             padding-top: 50px;
             margin: auto;
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
         }
 
         .texto_perguntasfrequentes {
@@ -114,41 +114,41 @@
         }
     </style>
 
-    <main>
-<<<<<<< HEAD
-        <div class="container1_perguntasfrequentes">
-            <div class="texto_perguntasfrequentes">
-                <img src="img/sonhar-com-mercado.png" alt=" Dúvidas Mercado">
-                <h2>Perguntas 1</h2>
-                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
-                <h2>Perguntas 1</h2>
-                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
-                <h2>Perguntas 1</h2>
-                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
+    <body>    
+        <header>
+            <div class="container">
+                <div class="ca">
+                    <div class="logo">
+                        <a href="home.html"><img src="img/Agrupar 110.png" title="Home Smart Sale" alt="logo smart sale"></a>
+                    </div>
+                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..." aria-label="Faça uma busca" name="search">
+                    <div class="botao-login">
+                        <a href="login.html"><img src="img/avatar.png" alt="Link para fazer login" title="Faça login" id="entrar">
+                            <p>Entrar</p>
+                        </a>
+                    </div>
+                </div>
+                <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
+                <a class="btn-close"><i class="fa fa-times"></i></a>
+                <nav>
+                    <div class="menu-centro">
+                        <ul class="menu">
+                            <li><a href="home.html" title="Smart sale home">Home</a></li>
+                            <li><a href="quemsomos.html" title="Smart sale quem somos">Quem somos</a></li>
+                            <li><a href="ONG's.html" title="Smart sale ongs">ONGs</a></li>
+                            <li><a href="paginaRanking.html" title="Smart sale ranking">Ranking</a></li>
+                            <li><a href="filtroProdutos.html" title="Smart sale categorias">Categorias</a></li>
+                            <li><a href="perfil.html" title="Smart sale perfil">Perfil</a></li>
+                            <li><a href="PerguntasFrequentes.html" title="Smart sale faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <div class="text_perguntasfrequentes">
-                <img src="img/armario.png " alt="Dúvidas Vestuário">
-                <h2>Perguntas 1</h2>
-                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
-                <h2>Perguntas 1</h2>
-                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
-                <h2>Perguntas 1</h2>
-                <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
-            </div>
-            <div class="duvidas_perguntasfrequentes">
-                <h4>Não encontrou sua dúvida, escreva pra nós</h4>
-                <label>
-                    <input type="text" placeholder="Escreva sua dúvida..." aria-label="Digite sua dúvida..."
-                        name="Dúvidas" required>
-                </label>
-            </div>
-            <div class="enviar_perguntasfrequentes">
-                <button type="submit" id="enviar">ENVIAR</button>
-=======
-        <div class="faq_pag">
-            <div class="container1">
-                <div class="texto">
-                    <img src="img/sonhar-com-mercado.jpg" alt=" Dúvidas Mercado">
+        </header>
+        <main>
+            <div class="container1_perguntasfrequentes">
+                <div class="texto_perguntasfrequentes">
+                    <img src="img/sonhar-com-mercado.png" alt=" Dúvidas Mercado">
                     <h2>Perguntas 1</h2>
                     <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
                     <h2>Perguntas 1</h2>
@@ -156,8 +156,8 @@
                     <h2>Perguntas 1</h2>
                     <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
                 </div>
-                <div class="text">
-                    <img src="img/armario.jpg " alt="Dúvidas Vestuário">
+                <div class="text_perguntasfrequentes">
+                    <img src="img/armario.png " alt="Dúvidas Vestuário">
                     <h2>Perguntas 1</h2>
                     <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
                     <h2>Perguntas 1</h2>
@@ -165,20 +165,21 @@
                     <h2>Perguntas 1</h2>
                     <p>Resposta 1 Resposta 1 Resposta 1 Resposta 1 Resposta 1</p>
                 </div>
-                <div class="duvidas">
+                <div class="duvidas_perguntasfrequentes">
                     <h4>Não encontrou sua dúvida, escreva pra nós</h4>
                     <label>
                         <input type="text" placeholder="Escreva sua dúvida..." aria-label="Digite sua dúvida..."
                             name="Dúvidas" required>
                     </label>
                 </div>
-                <div class="enviar">
+                <div class="enviar_perguntasfrequentes">
                     <button type="submit" id="enviar">ENVIAR</button>
                 </div>
->>>>>>> c765dda3a2209f40aa4b400ff40efd72233692e9
             </div>
-        </div>
-    </main>
+        </main>
+        <footer>
+            <p>SMART SALE ©2019</p>
+        </footer>
     </body>
 
 </html>
