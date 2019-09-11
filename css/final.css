@@ -168,7 +168,7 @@ header {
     width: 80px;
 }
 /*Responsivo Cadastro de Produto Doação e Venda*/
-@media (max-width: 1024px) {
+/* @media (max-width: 1169px) {
     body {
         width: 500px;
     }
@@ -235,7 +235,7 @@ header {
     .card_cadastroproduto {
         height: 1300px;
     }
-}
+} */
 /* Cadastro de vendedor */
 
 .cardscadastrovendedor h3 {
@@ -310,36 +310,36 @@ header {
     padding-bottom: 10px;
 }
 /*Responsivo cadastro vendedor*/
-@media (max-width: 1024px){
-    *{
+@media (max-width: 1169px){
+    .cardscadastrovendedor *{
         font-size: 20px;
     }
-    .cadvend_cadastrovendedor{
+    .cardscadastrovendedor .cadvend_cadastrovendedor{
         width: 290px;
     }
     .cardscadastrovendedor{
         width: 800px;
     }
-    .informacao_cadastrovendedor{
+    .cardscadastrovendedor .informacao_cadastrovendedor{
         width: 300px;
     }
-    main {
+    .cardscadastrovendedor {
         width: 1000px;
         margin: auto;
     }
-    form {
+    .cardscadastrovendedor form {
         line-height: 1.5em;
         width: 210px;
     }
-    .informacao_cadastrovendedor{
+    .cardscadastrovendedor .informacao_cadastrovendedor{
         height: 300px;
     }
-    button{
+    .cardscadastrovendedor button{
         margin-top:  30px
     }
 }
 @media (max-width: 767px){
-    main{
+    .cardscadastrovendedor {
         width: 700px;
         margin: auto;
         display: flex;
@@ -351,21 +351,21 @@ header {
         width: 350px;
         margin: auto;
     }
-    .cadvend_cadastrovendedor{
+    .cardscadastrovendedor .cadvend_cadastrovendedor{
         width: 300px;
     }
-    .informacao_cadastrovendedor{
+    .cardscadastrovendedor .informacao_cadastrovendedor{
         width: 300px;
         margin-bottom: 10px;
     }
-    .cadastro2_cadastrovendedor{
+    .cardscadastrovendedor .cadastro2_cadastrovendedor{
         width: 200px;
         margin: auto;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
-    form{
+    .cardscadastrovendedor form{
         margin: auto;
     }
 }
@@ -426,7 +426,7 @@ header {
     width: 160px;
 }
 
-.cadastroelogin_pag h3, label, input {
+.cadastroelogin_pag h3, .cadastroelogin_pag label, .cadastroelogin_pag input {
     color: #707070;
 }
 
@@ -436,11 +436,11 @@ header {
     padding-bottom: 15px;
 }
 
-.cadastroelogin_pag .login, .cadastro {
+.cadastroelogin_pag .login, .cadastroelogin_pag .cadastro {
     padding: 9px;
 }
 
-.cadastroelogin_pag .login input, .cadastro input {
+.cadastroelogin_pag .login input, .cadastroelogin_pag .cadastro input {
     padding: 5px;
 }
 
@@ -459,64 +459,64 @@ header {
     color: white;
 }
 /*Responsivo cadastro e login*/
-@media (max-width: 1024px) {
-    main {
+@media (max-width: 1169px) {
+    .cadastroelogin_pag main {
         width: 1000px;
     }
 
-    h3 {
+    .cadastroelogin_pag h3 {
         font-size: 30px;
     }
 
-    .cards_cadlog {
+    .cadastroelogin_pag .cards_cadlog {
         font-size: 30px;
         width: 800px;
     }
 
-    .card_1_cadlog {
+    .cadastroelogin_pag .card_1_cadlog {
         width: 300px;
         height: 400px;
     }
 
-    .card_2_cadlog {
+    .cadastroelogin_pag .card_2_cadlog {
 
         width: 350px;
     }
 
-    input {
+    .cadastroelogin_pag input {
         height: 30px;
     }
 
-    button{
+    .cadastroelogin_pag button{
         font-size: 20px;
     }
 }
 @media (max-width: 767px){
-    main {
+    .cadastroelogin_pag {
         width: 750px;
     }
-    h3 {
+    .cadastroelogin_pag h3 {
         font-size: 30px;
     }
-    label{
+    .cadastroelogin_pag label{
         padding-bottom: 5px;
     }
-    .cards_cadlog {
+    .cadastroelogin_pag .cards_cadlog {
         display: flex;
         align-items: center;
         flex-direction: column;
         font-size: 30px;
         width: 600px;
     }
-    .card_1_cadlog{
+    .cadastroelogin_pag .card_1_cadlog{
         width: 350px;
         margin-bottom: 20px;
     }
-    .card_1_cadlog input{
+    .cadastroelogin_pag .card_1_cadlog input{
         margin: 5px;
         height: auto;
     }
-    .card_2_cadlog{
+    .cadastroelogin_pag .card_2_cadlog{
         height: auto;
         width: 350px;
     }
@@ -524,12 +524,20 @@ header {
 
 /* Final da Reserva */
 .finalreserva_pag {
+    padding: 1px 0px;
+}
+
+.finalreserva_pag .container {
     background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    justify-content: center;
-    align-items: center;
     width: 1200px;
     margin: auto; 
+    display: flex;
+    justify-content: space-around;
+    margin: 39px auto;
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
+    padding: 65px 0px;
 }
 
 .finalreserva_pag h1{
@@ -540,42 +548,29 @@ header {
 }
 
 .finalreserva_pag .esquerdo{
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-position: left;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
-.finalreserva_pag .direito{
-    background-position: right;
+
+.finalreserva_pag .esquerdo .texto {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.finalreserva_pag .esquerdo .textos2 {
+    margin-top: 50px;
+}
+
+.finalreserva_pag .direito img {
+    width: 300px;
+    height: auto;
 }
 .finalreserva_pag .texto h3{
     color: #A200CB
-}
-.finalreserva_pag .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1200px;
-    height: 700px;
-    margin: auto;
-}
-.finalreserva_pag .direito img{
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.finalreserva_pag .texto h3{
-    margin-bottom: 200px;
-}
-.finalreserva_pag .textos2{
-    margin-bottom: 100px;
 }
 
 /* Home */
@@ -616,10 +611,12 @@ header {
 .home_pag .whitebox {
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    width: 1160px;
-    height: 350px;
+    width: 1200px;
     background-color: white;
-    padding: 20px
+}
+
+.home_pag .cnjt {
+    margin: 1%;
 }
 
 .home_pag .banner-home {
@@ -631,7 +628,7 @@ header {
 }
 
 .home_pag .img-1 {
-    width: 570px;
+    width: 97%;
     border-radius: 5px;
 }
 
@@ -704,8 +701,7 @@ header {
 }
 
 .home_pag .container h3 {
-    margin: 40px 0px -10px;
-
+    margin-left: 1.2%;
 }
 
 .home_pag .ver a {
@@ -713,7 +709,12 @@ header {
     text-decoration: none;
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 40px;
+    padding-right: 3%;
+}
+
+.home_pag .ver a:hover {
+    transition: 0.2s;
+    color: var(--roxo);
 }
 
 .home_pag footer {
@@ -729,23 +730,28 @@ header {
 }
 
 .home_pag .branco {
-
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     margin: 10px;
-    width: 750px;
+    width: 70%;
     height: 40px;
     background-color: white;
     border-radius: 50px;
-
+    padding: 0 20px;
 }
 
 .home_pag .branco img {
-    padding-right: 400px;
     width: 30px;
     height: 25px;
+    padding-top: 0;
+}
+
+.home_pag .rank .branco p {
+    font-size: 1em;
+    color: black;
+    padding: 0;
 }
 
 .home_pag .one {
@@ -796,10 +802,12 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: white;
+    width: inherit;
 }
 
 .home_pag .ongs img {
     height: auto;
+    border-radius: 15px;
 }
 
 .home_pag .tongs {
@@ -813,8 +821,8 @@ header {
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background-color: white;
-    
-
+    margin: 2% auto;
+    padding: 2% 0;
 }
 
 .home_pag .cardhome {
@@ -866,7 +874,7 @@ header {
 }
 
 .home_pag .pdt {
-    padding-bottom: 40px;
+    padding-bottom: 60px;
 }
 
 .home_pag .pdt h4 {
@@ -881,6 +889,10 @@ header {
 }
 
 /* Ongs */
+.ongs_pag {
+    padding: 1px 0px;
+}
+
 .ongs_pag .conteudo img {
     width: 150px;
     height: 150px;
@@ -894,10 +906,12 @@ header {
 }
 .ongs_pag .container {
     width: 1200px;
-    padding: auto;
     margin: auto;
     background-color: white;
     color: #707070;
+    margin: 39px auto;
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
 }
 .ongs_pag .conteudo {
     display: flex;
@@ -961,7 +975,7 @@ header {
     justify-content: space-between;
     width: 600px;
     align-items: center;
-    font-size: 12px;
+    font-size: 0.8em;
 }
 .menu a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1207,8 +1221,39 @@ footer {
         flex-wrap: wrap;
         margin: auto;
     }
-    .ca{
-        width: 800px;
+    /* home */
+    .home_pag .whitebox {
+        width: 85vw;
+    }
+
+    .home_pag .cnjt {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home_pag .img-1 {
+        width: 100%;
+    }
+
+    .home_pag .txthome {
+        width: 100%;
+        height: 100%;
+    }
+    .home_pag .cnjt p {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1px;
+    }
+    .home_pag .cnjt h3 {
+        padding: 30px 0px;
+    }
+
+    .home_pag .ongs {
+        flex-wrap: wrap;
+        width: 85vw;
     }
 
     /* pagina filtroProdutos */
@@ -1253,12 +1298,22 @@ main {
     /* padding-bottom: 50px; */
 }
 
+.paginaProduto_pag {
+    padding: 1px 0;
+}
+
+.paginaProduto_pag .container {
+    margin: 40px auto;
+}
+
 .paginaProduto_pag .produto {
     background-color: #fff;
     width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-around;
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
 }
 
 .paginaProduto_pag .esquerdo {
@@ -1349,6 +1404,8 @@ main {
     width: 100%;
     margin: auto;
     margin-top: 50px;
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
 }
 
 .paginaProduto_pag .relacionados {
@@ -1397,7 +1454,11 @@ main {
 
 /* filtroProdutos */
 .cont {
-    padding: 3% 0%;
+    padding: 1px 0px;
+}
+
+.cont .container {
+    margin: 39px auto;
 }
 
 .containerProdutos {
@@ -1419,12 +1480,29 @@ main {
     color: white;
     padding: 3% 0%;
     display: block;
-    padding-left: 2%;
-
-    
+    padding-left: 2%;   
     background-attachment: fixed;    
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.englobados .botaoCard {
+    margin-top: 3%;
+    margin-left: 5%;
+    padding: 4% 0px;
+}
+
+.englobados .textoCard {
+    margin-left: 5%;
+}
+
+.englobados .botaoCard a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--laranja);
+    color: white;
+    padding: 1% 5%;
 }
 
 /* pagina Ranking */
@@ -1511,9 +1589,19 @@ main {
 .perfil_pag {
     margin: auto;
     width: 100vw;
-    background-color: white;
-    padding: 20px 0px;
+    background-color: #ebebeb;
+    padding: 1px 0px;
 }
+
+.perfil_pag .cont {
+    margin: 39px auto;
+    background-color: #fff;
+    width: 1200px;
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
+    padding-bottom: 40px;
+}
+
 .perfil_pag h2 {
     text-align: center;
     padding: 20px;
@@ -1644,26 +1732,31 @@ main {
 
 /* pagina quem somos */
 
+.quemsomos_pag {
+    padding-bottom: 1px;
+}
+
 .quemsomos_pag .bannerquemsomos {
     background-image: url(../img/banner.png);
     width: 100%;
     /*Importante colocar 100% para ele agir sozinho*/
-    height: 443px;
+    height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
 }
 
 .quemsomos_pag .caixao {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    height: 600px;
+    justify-content: flex-start;
     margin-right: 30px;
+    margin-top: 50px;
+    padding-left: 15px;
 }
 
 .quemsomos_pag h2 {
-    padding: 25px;
+    padding: 25px 0px;
 }
 
 .quemsomos_pag .one, .quemsomos_pag .two {
@@ -1672,26 +1765,29 @@ main {
 
 .quemsomos_pag .one {
     width: 400px;
-    font-size: 20px;
+    font-size: 1em;
 }
 
 .quemsomos_pag .two {
     width: 400px;
-    font-size: 20px;
+    font-size: 1em;
 }
 
 .quemsomos_pag .tudo {
-    align-items: center;
     display: flex;
-    width: 900px;
+    justify-content: space-around;
+    width: 1200px;
     margin: auto;
-    margin-top: 30px;
-
+    background-color: white;
+    margin: 40px auto;
+    border-radius: 5px;
+    box-shadow: 4px 4px 15px #cccccc;
 }
 
 .quemsomos_pag .tudo img {
-    width: 547, 12px;
-    height: 571, 46;
+    width: 547px;
+    height: auto;
+    margin: 25px 0px;
 }
 
 
@@ -1727,7 +1823,7 @@ main {
     
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
     .divSelects {
         width: 50%;
         display: flex;
@@ -1801,7 +1897,6 @@ main {
 
 .categorias {
     width: 100%;
-    margin: 3% 0%;
 }
 
 .categoria h2 {
@@ -1860,4 +1955,82 @@ main {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
+}
+
+/* pagina perguntas frequentes */
+.faq_pag {    
+    padding: 1px 0px;
+}
+
+.faq_pag .container1_perguntasfrequentes {
+    width: 1200px;
+    margin: 39px auto;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
+    padding: 30px 0px;
+}
+
+.faq_pag .texto_perguntasfrequentes {
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    color: #707070;
+    text-align: start;
+    align-items: flex-start;
+    padding-bottom: 50px;
+    margin-left: 3%;
+}
+
+.faq_pag .text_perguntasfrequentes {
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    color: #707070;
+    text-align: start;
+    align-items: flex-start;
+    margin-left: 3%;
+}
+
+.faq_pag .duvidas_perguntasfrequentes {
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 3.0em;
+    color: var(--grafite);
+    padding-top: 30px;
+    text-transform: uppercase;
+    margin-left: 3%;
+    margin: auto;    
+    margin-top: 5%;    
+}
+
+.faq_pag input {
+    background-color: white;
+    padding: 3px;
+    border: 1px solid gray;
+    width: 600px;
+    height: 100px;
+}
+
+.faq_pag .enviar_perguntasfrequentes {
+    width: 650px;
+    margin-left: 3%;
+    margin: auto;
+}
+
+.faq_pag button {
+    padding: 8px 60px;
+    background-color: var(--roxo);
+    border-radius: 4px;
+    border: solid 1px var(--roxo);
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.faq_pag h2 {
+    line-height: 2.0em;
 }
