@@ -2,574 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- <style>
-        :root {
-            --roxo: #a200cb;
-            --grafite: #707070;
-            --laranja: #ffbd19;
-            --verde: #14cc8a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-
-            height: 130px;
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
-            background-color: #A200CB;
-        }
-
-        .btn-close {
-            font-size: 1.5em;
-            color: #FFF;
-            float: left;
-            cursor: pointer;
-            z-index: 1;
-        }
-
-        .btn-menu {
-            display: none;
-            width: 56px;
-            height: 56px;
-            margin: auto;
-            text-align: center;
-            color: #FFF;
-            border-radius: 56px;
-            cursor: pointer;
-            background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-        }
-
-        .btn-close {
-            display: none;
-        }
-
-        .container {
-            width: 1200px;
-            margin: auto;
-        }
-
-        #avatar {
-            height: 95px;
-            width: 204px;
-        }
-
-        .container input {
-            width: 605px;
-            height: 35px;
-            margin-left: -120px;
-        }
-
-        .menu-centro {
-            display: flex;
-            justify-content: center;
-        }
-
-        main {
-            background-color: #ebebeb;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .cardhome {
-            width: 1200px;
-            display: flex;
-            justify-content: center;
-
-            padding: 0px 0px 10px;
-        }
-
-        .card {
-            width: 200px;
-            margin-top: 30px;
-            padding: 0px 60px 0px;
-        }
-
-        .card img {
-            border-radius: 7px;
-            width: 200px;
-            /* transition: all 2s; */
-        }
-
-        /*
-        .card img:hover {
-            transform: rotate(2000deg);
-        } */
-
-        .cnjt {
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        .cnjt p {
-            width: 570px;
-            height: 250px;
-        }
-
-        .cnjt h3 {
-            padding: 0px 0px 50px;
-        }
-
-        .cnjt p {
-            text-align: justify;
-            align-items: center;
-        }
-
-        .btn:hover {
-
-            transition: 0.2s;
-            color: white
-        }
-
-        .meio-home {
-            position: relative;
-            bottom: 200px;
-            display: flex;
-            justify-content: center;
-            margin-bottom: -180px;
-        }
-
-
-
-        .whitebox {
-            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            width: 1160px;
-            height: 350px;
-            background-color: white;
-            padding: 20px
-        }
-
-        .banner-home {
-            background-attachment: fixed;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./img/img4.png);
-            height: 300px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .img-1 {
-            width: 570px;
-            border-radius: 5px;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            width: 600px;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .menu a {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        .menu a:hover {
-            color: black;
-            transition: 0.3s;
-        }
-
-        .menu-centro {
-            display: flex;
-            justify-content: center;
-        }
-
-        .ca {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .ca a {
-            text-decoration: none;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .botao-login {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        #entrar {
-            width: 30px;
-            height: 35px;
-            margin: 10px;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            width: 600px;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .menu a {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        .container h3 {
-            padding: 10px 0px 0px;
-            text-align: center;
-            margin: 40px 0px -10px;
-
-        }
-
-        .ver a {
-            color: black;
-            text-decoration: none;
-            display: flex;
-            justify-content: flex-end;
-            margin: 0px 0px 20px;
-            padding: 0px 0px 10px;
-            width: 1165px;
-        }
-
-        footer {
-            background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-            color: white;
-            font-size: 18px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .branco {
-
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            text-align: center;
-            margin: 10px;
-            width: 750px;
-            height: 40px;
-            background-color: white;
-            border-radius: 50px;
-
-        }
-
-        .branco img {
-            padding-right: 400px;
-            width: 30px;
-            height: 25px;
-        }
-
-        .one {
-            width: 1200px;
-            border: none;
-            height: 1.5px;
-            background: #dddddd;
-        }
-
-        .linha {
-            display: flex;
-            justify-content: center;
-        }
-
-        .roxo {
-            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            height: 400px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(162, 0, 203)), url(./img/img5.png);
-            background-size: cover;
-
-        }
-
-        .rank {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .rank p {
-            font-size: 20px;
-            color: white;
-            padding-bottom: 35px;
-            /* display: flex;
-            justify-content: center; */
-
-
-        }
-
-        .ongs {
-            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            margin: 20px 0px 40px;
-            display: flex;
-            justify-content: space-between;
-            background-color: white;
-        }
-
-        .tongs {
-            text-transform: uppercase;
-            display: flex;
-            justify-content: center;
-            margin: 60px 0px 0px;
-        }
-
-        .pdts {}
-
-        #white {
-            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            background-color: white;
-
-
-        }
-
-        .cardhome2 {
-            margin: 20px 0px 0px;
-            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            background-color: white;
-        }
-
-        .card p {
-            text-align: center;
-            padding-bottom: 20px;
-            line-height: 19px;
-        }
-
-        .card a:hover {
-            color: #A200CB;
-
-        }
-
-        .card a {
-            font-size: 15px;
-
-            color: black;
-            text-decoration: none;
-        }
-
-        .pdt {
-            padding-bottom: 40px;
-        }
-
-        .pdt h4 {
-            padding: 40px 0px 0px;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        .pdts {
-            display: flex;
-            flex-direction: row;
-        }
-
-
-        /* ==========================================================media queries======================================================= */
-
-        /* Smart device - mobile */
-
-        @media(max-width: 767px) {
-
-            /* header */
-            header {
-                background-color: var(--laranja);
-            }
-
-            .menu {
-                display: none;
-                width: 100%;
-                height: 100%;
-                position: fixed;
-                background-color: rgba(0, 0, 0, 0.9);
-                top: 0;
-                left: 0;
-            }
-
-            .container input {
-                display: none;
-            }
-
-            .menu-centro {
-                flex-direction: column;
-                padding: 15px 0px;
-                margin: auto;
-                text-align: center;
-            }
-
-            .menu-centro li {
-                padding-top: 10px;
-                padding: 20px 0px;
-            }
-
-            .container img {
-                /* logo */
-                height: 75px;
-                width: 164px;
-                padding-top: 20px;
-            }
-
-            .container {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-content: center;
-                flex-wrap: wrap;
-                margin: auto;
-            }
-
-            #entrar {
-                display: none;
-            }
-
-            .botao-login p {
-                display: none;
-            }
-
-            .ca {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
-                font-family: 'Segoe UI';
-                margin: auto;
-            }
-
-            /*  main */
-
-            .whitebox {
-
-                height: 100vh;
-                width: 80vw;
-                display: flex;
-                flex-direction: raw;
-            }
-
-            .whitebox img {
-                width: 80vw;
-
-            }
-
-            .banner-home {
-                width: 100vw;
-                height: 35vh;
-            }
-
-            .whitebox h3 {
-                padding: 10px 0px 10px;
-                text-align: center;
-            }
-
-            .whitebox p {
-                padding-bottom: 250px;
-                text-align: center;
-                width: 80vw;
-            }
-
-            .cnjt {
-                display: flex;
-                flex-direction: column;
-
-            }
-
-            .cardhome {
-                width: 100vw;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card h4 {
-                text-align: center;
-            }
-            
-            .card {
-                display: flex;
-                justify-content: center;
-                width: 200px;
-                margin-top: 30px;
-
-            }
-
-            #white {
-                width: 90vw;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-
-            /* .branco {
-                width: 80vw;
-            } */
-
-            /* .branco img {
-                width: 20vw;
-                height: 10vh;
-            } */
-
-            .rank {
-                display: flex;
-                justify-content: center;
-                
-            }
-
-            .cardhome2 {
-
-
-                width: 90vw;
-            }
-
-            .card img {
-                border-radius: 10px;
-
-            }
-            
-            .card {
-                
-                display: flex;
-                justify-content: center;
-                width: 200px;
-                margin-top: 30px;
-                padding: 0px 60px;
-            }
-
-            .ongs {
-                align-items: center;
-                height: 110vh;
-                width: 90vw;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .ongs img {
-                width: 30vw;
-                height: 15vh;
-                margin-top: 0px;
-
-            }
-        }
-    </style> -->
     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
     <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
@@ -584,38 +16,37 @@
 
 <body>
     <header>
-            <div class="container">
-                <div class="ca">
-                    <div class="logo">
-                        <a href="home.html"><img src="img/Agrupar 110.png" title="Home Smart Sale" alt="logo smart sale"></a>
-                    </div>
-                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..." aria-label="Faça uma busca" name="search">
-                    <div class="botao-login">
-                        <a href="login.html"><img src="img/avatar.png" alt="Link para fazer login" title="Faça login" id="entrar">
-                            <p>Entrar</p>
-                        </a>
-                    </div>
+        <div class="container">
+            <div class="ca">
+                <div class="logo">
+                    <a href="home.html"><img src="img/Agrupar 110.png" title="Home Smart Sale" alt="logo smart sale"></a>
                 </div>
-                <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
-                <a class="btn-close"><i class="fa fa-times"></i></a>
-                <nav>
-                    <div class="menu-centro">
-                        <ul class="menu">
-                            <li><a href="home.html" title="Smart sale home">Home</a></li>
-                            <li><a href="quemsomos.html" title="Smart sale quem somos">Quem somos</a></li>
-                            <li><a href="ONG's.html" title="Smart sale ongs">ONGs</a></li>
-                            <li><a href="paginaRanking.html" title="Smart sale ranking">Ranking</a></li>
-                            <li><a href="filtroProdutos.html" title="Smart sale categorias">Categorias</a></li>
-                            <li><a href="perfil.html" title="Smart sale perfil">Perfil</a></li>
-                            <li><a href="PerguntasFrequentes.html" title="Smart sale faq">FAQ</a></li>
-                        </ul>
-                    </div>
-                </nav>
+                <input type="search" placeholder="Buscar produtos, marcas e muito mais ..." aria-label="Faça uma busca" name="search">
+                <div class="botao-login">
+                    <a href="cadastroelogin.html"><img src="img/avatar.png" alt="Link para fazer login" title="Faça login" id="entrar">
+                        <p>Entrar</p>
+                    </a>
+                </div>
             </div>
-        </header>
+            <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
+            <a class="btn-close"><i class="fa fa-times"></i></a>
+            <nav>
+                <div class="menu-centro">
+                    <ul class="menu">
+                        <li><a href="home.html" title="Smart sale home">Home</a></li>
+                        <li><a href="quemsomos.html" title="Smart sale quem somos">Quem somos</a></li>
+                        <li><a href="ONG's.html" title="Smart sale ongs">ONGs</a></li>
+                        <li><a href="paginaRanking.html" title="Smart sale ranking">Ranking</a></li>
+                        <li><a href="filtroProdutos.html" title="Smart sale categorias">Categorias</a></li>
+                        <li><a href="perfil.html" title="Smart sale perfil">Perfil</a></li>
+                        <li><a href="PerguntasFrequentes.html" title="Smart sale faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
     <main>
         <div class="home_pag">
-
         <div class="banner-home"></div>
         <div class="container>">
             <div class="meio-home">
@@ -624,7 +55,7 @@
                         <div>
                             <img src="./img/img5.png" alt="Mãe cozinhando com a filha pequena" class="img-1">
                         </div>
-                        <div class="txthome">
+                        <section class="txthome">
                             <h3>Objetivo</h3>
                             <p>Massa sociosqu etiam ullamcorper massa porta nulla mi mattis purus, vestibulum gravida
                                 eget facilisis a rutrum dapibus nam. litora eu phasellus scelerisque aenean fusce
@@ -638,153 +69,143 @@
                                 lorem morbi. dolor tellus curabitur lacus eros, imperdiet per orci, habitant ultricies
                                 metus .
                             </p>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
         <div class="container" id="white">
-            <h3> Categorias </h3>
-
-            <div class="cardhome">
+            <h3>Categorias</h3>
+            <section class="cardhome">
                 <div class="card">
-                    <a href="#">
+                    <a href="./filtroProdutos.html">
                         <h4>Cereais</h4>
                         <img src="./img/img1.png" alt="">
                     </a>
                 </div>
                 <div class="card">
-                    <a href="#">
+                    <a href="./filtroProdutos.html">
                         <h4>Legumes</h4>
                         <img src="./img/img2.png" alt="">
                     </a>
                 </div>
                 <div class="card">
-                    <a href="#">
+                    <a href="./filtroProdutos.html">
                         <h4>Carnes</h4>
                         <img src="./img/img3.png" alt="">
                     </a>
                 </div>
-                <div class="card"><a href="#">
+                <div class="card">
+                    <a href="./filtroProdutos.html">
                         <h4>Vegetais</h4>
                         <img src="./img/img7.png" alt="">
                     </a>
                 </div>
-            </div>
-
+            </section>
             <div class="ver">
-                <p><a href="#" class="btn">Ver mais</a></p>
+                <a href="./filtroProdutos.html">Ver mais</a>
             </div>
         </div>
         <div class="linha">
             <hr class="one">
         </div>
         <div class="roxo">
-            <section class="container">
-                <div class="rank">
-
+            <div class="container">
+                <section class="rank">
                     <p>RANKING</p>
-
-                    <div class="branco"><img src="./img/icons/crown.png " alt="" class="coroa">Arthur Bruno</div>
-                    <div class="branco"><img src="./img/icons/crown-1.png" alt="" class="coroa">Gabriel Silva</div>
-                    <div class="branco"><img src="./img/icons/crown-2.png " alt="" class="coroa">Kaique Santos</div>
-
-                </div>
-            </section>
+                    <div class="branco"><img src="./img/icons/crown.png " alt="Coroa de Ouro" class="coroa">
+                        <p>Arthur Bruno - 100pts</p>
+                    </div>
+                    <div class="branco"><img src="./img/icons/crown-1.png" alt="Coroa de Prata" class="coroa">
+                        <p>Gabriel Silva - 90pts</p>
+                    </div>
+                    <div class="branco"><img src="./img/icons/crown-2.png " alt="Coroa de Bronze" class="coroa">
+                        <p>Kaique Santos - 80pts</p>
+                    </div>
+                </section>
+            </div>
         </div>
         <section class="container">
             <section class="tongs">
                 <h4>Instituições beneficiadas</h4>
             </section>
             <div class="ongs">
-                <a href="#"><img src="./img/ongs/ong1.png" alt=""></a>
-                <a href="#"><img src="./img/ongs/ong2.png" alt=""></a>
-                <a href="#"><img src="./img/ongs/ong3.png" alt=""></a>
-                <a href="#"><img src="./img/ongs/ong4.png" alt=""></a>
+                <a href="ONG's.html"><img src="./img/ongs/ong1.png" alt=""></a>
+                <a href="ONG's.html"><img src="./img/ongs/ong2.png" alt=""></a>
+                <a href="ONG's.html"><img src="./img/ongs/ong3.png" alt=""></a>
+                <a href="ONG's.html"><img src="./img/ongs/ong4.png" alt=""></a>
             </div>
         </section>
-
         <div class="pdt">
             <h4>Produtos</h4>
-            <section class="container">
+            <div class="container">
                 <div class="pdts2">
-                    <div class="cardhome2">
-
+                    <section class="cardhome2">
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/6.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a></div>
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/5.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a></div>
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/1.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a></div>
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/2.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a>
                         </div>
-
-
-
-
-
-
-
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/1.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/1.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a></div>
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/2.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/2.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a></div>
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/5.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/5.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a></div>
                         <div class="card">
-                            <a href="#" class="pdt1"><img src="./img/pdts/6.png" alt="">
+                            <a href="paginaProduto.html" class="pdt1"><img src="./img/pdts/6.png" alt="">
                                 <p>Ana Maria
                                     R$2,00<br>
                                     Mercado X<br>
                                     X dias apenas</p>
                             </a>
                         </div>
-
-                    </div>
+                    </section>
                 </div>
-        </div>
+            </div>
         </div>
     </main>
     <footer>
         <p>SMART SALE ©2019</p>
-
     </footer>
     <!--Instalação do Jquery-->
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -800,10 +221,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-expandir algumas coisas
