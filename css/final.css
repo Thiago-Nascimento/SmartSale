@@ -1667,6 +1667,23 @@ main {
     align-items: center;
 }
 
+.faq_pag .bannerFaq {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(162, 0, 203)), url(../img/img4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq_pag .bannerFaq h1 {
+    color: white;
+    font-weight: normal;
+}
+
 .faq_pag .container1 {
     width: 900px;
     padding-top: 50px;
@@ -1958,9 +1975,6 @@ main {
 }
 
 /* pagina perguntas frequentes */
-.faq_pag {    
-    padding: 1px 0px;
-}
 
 .faq_pag .container1_perguntasfrequentes {
     width: 1200px;
@@ -1972,12 +1986,16 @@ main {
     padding: 30px 0px;
 }
 
+.faq_pag .container1_perguntasfrequentes p {
+    margin-bottom: 3%;
+}
+
 .faq_pag .texto_perguntasfrequentes {
     font-family: 'Segoe UI';
     font-size: 18px;
     color: #707070;
-    text-align: start;
-    align-items: flex-start;
+    text-align: center;
+    align-items: center;
     padding-bottom: 50px;
     margin-left: 3%;
 }
@@ -1986,8 +2004,8 @@ main {
     font-family: 'Segoe UI';
     font-size: 18px;
     color: #707070;
-    text-align: start;
-    align-items: flex-start;
+    text-align: center;
+    align-items: center;
     margin-left: 3%;
 }
 
@@ -2003,7 +2021,6 @@ main {
     text-transform: uppercase;
     margin-left: 3%;
     margin: auto;    
-    margin-top: 5%;    
 }
 
 .faq_pag input {
