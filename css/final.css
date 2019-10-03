@@ -1002,292 +1002,6 @@ footer {
 .btn-menu, .btn-close {
     display: none;
 }
-/* celular */
-@media (max-width: 767px) {
-    /* header */
-    header {
-        background-color: var(--laranja);
-    }
-    .menu {
-        display: none;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        background-color: rgba(0, 0, 0, 0.9);
-        top: 0;
-        left: 0;
-    }
-    .container input {
-        display: none;
-    }
-    .menu-centro {
-        flex-direction: column;
-        padding: 15px 0px;
-        margin: auto;
-        text-align: center;
-    }
-    .menu-centro li {
-        padding-top: 10px;
-        padding: 20px 0px;
-    }
-    .container img {
-        /* logo */
-        height: 75px;
-        width: 164px;
-        padding-top: 20px;
-    }
-    .container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-content: center;
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    #entrar {
-        display: none;
-    }
-    .botao-login p {
-        display: none;
-    }
-    .ca {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        font-family: 'Segoe UI';
-        margin: auto;
-    }
-    /* Botões do menu */
-    .btn-close {
-        font-size: 1.5em;
-        color: #FFF;
-        float: left;
-        cursor: pointer;
-        z-index: 1;
-        position: absolute;
-        right: 10px;
-        top: 0px;
-    }
-
-    .btn-menu {
-        display: block;
-        width: 56px;
-        height: 56px;
-        margin: auto;
-        text-align: center;
-        color: #FFF;
-        border-radius: 56px;
-        cursor: pointer;
-        background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-    }
-
-    /* pagina perfil */
-    .perfil_pag {
-        width: 100%;
-        text-align: center;
-    }
-    .perfil_pag .cima{
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .perfil_pag .cima img{ /* imagem usuário */
-        width: 50vw;
-    }
-    .perfil_pag .esquerdo{
-        width: 100vw;
-    }
-    .perfil_pag .direito{
-        width: 100vw;
-    } 
-    .perfil_pag #avatar{
-        margin: auto;  
-    } 
-
-    /* main */
-    /* Fim do main, o footer não precisa */
-
-     /* pagina filtroProdutos */
-    .containerProdutos {
-        width: 85vw;
-    }
-    .filtros {
-        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
-        background-position: unset;
-    }
-
-    .innerFiltros {
-        flex-direction: column;
-    }
-
-    .divSelects {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 4%;
-    }
-
-    .btnAplicarFiltros {
-        width: 25%;
-        padding: 1% 0;
-    }
-
-    .ordenar {
-        color: var(--verde);
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .ordenar select {
-        width: 65%;
-    }
-
-    .categoria .produtos .cardProduto {
-        margin: 10%;
-    }
-
-    .imgCardProduto {
-        margin-top: 6%;
-    }
-
-    .englobados {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* align-items: center; */
-        color: var(--grafite);
-    }
-    .imgCardProduto img {
-        height: 100%;
-        width: 100%;
-        padding-top: 0;
-    }
-
-    /* paginaProduto */
-    .paginaProduto_pag .produto {
-        flex-direction: column;
-        align-items: center;
-    }
-    .paginaProduto_pag .esquerdo {
-        width: 65%;
-    }
-    .paginaProduto_pag .direito {
-        width: 66%;
-    }
-    .paginaProduto_pag .produto {
-        padding-bottom: 5%;
-    }
-
-}
-/* não sei, mas é menor, vai diminuindo e alinhando os elementos */
-@media (max-width: 1169px) {
-    header {
-        background-color: var(--verde);
-        height: 110px;
-    }
-    .menu {
-        width: 406px;
-    }
-    .menu-centro li {
-        padding-top: 2px;
-    }
-    .container img {
-        /* logo */
-        height: 55px;
-        width: 124px;
-        padding-top: 20px;
-    }
-    .container input{
-        width:  406px;
-        height: 25px;
-        margin-top: 30px;
-    }
-    .botao-login p{
-        margin-top: 30px;
-    }
-    .botao-login{
-        width: 124px;
-    }
-    .container {
-        width: 85vw;
-        padding: 0px 20px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-content: center;
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    /* home */
-    .home_pag .whitebox {
-        width: 85vw;
-    }
-
-    .home_pag .cnjt {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .home_pag .img-1 {
-        width: 100%;
-    }
-
-    .home_pag .txthome {
-        width: 100%;
-        height: 100%;
-    }
-    .home_pag .cnjt p {
-        width: 100%;
-        height: auto;
-        margin-bottom: 1px;
-    }
-    .home_pag .cnjt h3 {
-        padding: 30px 0px;
-    }
-
-    .home_pag .ongs {
-        flex-wrap: wrap;
-        width: 85vw;
-    }
-
-    /* pagina filtroProdutos */
-    .containerProdutos {
-        width: 85vw;
-    }
-    .filtros {
-        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
-        background-position: unset;
-    }
-    .ordenar {
-        color: var(--verde);
-    }
-    .englobados {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* align-items: center; */
-        color: var(--grafite);
-    }
-    .imgCardProduto img {
-        height: 100%;
-        width: 100%;
-        padding-top: 0;
-    }
-
-    /* pagina Produto */
-    .paginaProduto_pag .direito .nomeProduto {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: var(--grafite);
-    }
-}
-
 
 /* paginaProduto */
 /* Verificar .container  */
@@ -1665,6 +1379,7 @@ main {
 .faq_pag {
     text-align: center;
     align-items: center;
+    padding-bottom: 1px;
 }
 
 .faq_pag .bannerFaq {
@@ -1987,14 +1702,16 @@ main {
 }
 
 .faq_pag .container1_perguntasfrequentes p {
+    margin: auto;
     margin-bottom: 3%;
+    padding-right: 5%;
 }
 
 .faq_pag .texto_perguntasfrequentes {
     font-family: 'Segoe UI';
     font-size: 18px;
     color: #707070;
-    text-align: center;
+    text-align: left;
     align-items: center;
     padding-bottom: 50px;
     margin-left: 3%;
@@ -2050,4 +1767,318 @@ main {
 
 .faq_pag h2 {
     line-height: 2.0em;
+}
+
+/* celular */
+@media (max-width: 767px) {
+    /* header */
+    header {
+        background-color: var(--laranja);
+    }
+    .menu {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 0;
+        left: 0;
+    }
+    
+    .menu-centro {
+        flex-direction: column;
+        padding: 15px 0px;
+        margin: auto;
+        text-align: center;
+    }
+    .menu-centro li {
+        padding-top: 10px;
+        padding: 20px 0px;
+    }
+    .container img {
+        /* logo */
+        height: 75px;
+        width: 164px;
+        padding-top: 20px;
+    }
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    #entrar {
+        display: none;
+    }
+    .botao-login p {
+        display: none;
+    }
+    .ca {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        font-family: 'Segoe UI';
+        margin: auto;
+        width: 100%;
+    }
+    /* Botões do menu */
+    .btn-close {
+        font-size: 1.5em;
+        color: #FFF;
+        float: left;
+        cursor: pointer;
+        z-index: 1;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
+
+    .btn-menu {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: auto;
+        text-align: center;
+        color: #FFF;
+        border-radius: 56px;
+        cursor: pointer;
+        background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+    }
+
+    /* pagina perfil */
+    .perfil_pag {
+        width: 100%;
+        text-align: center;
+    }
+    .perfil_pag .cima{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .perfil_pag .cima img{ /* imagem usuário */
+        width: 50vw;
+    }
+    .perfil_pag .esquerdo{
+        width: 100vw;
+    }
+    .perfil_pag .direito{
+        width: 100vw;
+    } 
+    .perfil_pag #avatar{
+        margin: auto;  
+    } 
+
+    /* main */
+    /* Fim do main, o footer não precisa */
+
+     /* pagina filtroProdutos */
+    .containerProdutos {
+        width: 85vw;
+    }
+    .filtros {
+        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
+        background-position: unset;
+    }
+
+    .innerFiltros {
+        flex-direction: column;
+    }
+
+    .divSelects {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4%;
+    }
+
+    .btnAplicarFiltros {
+        width: 25%;
+        padding: 1% 0;
+    }
+
+    .ordenar {
+        color: var(--verde);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .ordenar select {
+        width: 65%;
+    }
+
+    .categoria .produtos .cardProduto {
+        margin: 10%;
+    }
+
+    .imgCardProduto {
+        margin-top: 6%;
+    }
+
+    .englobados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        color: var(--grafite);
+    }
+    .imgCardProduto img {
+        height: 100%;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    /* paginaProduto */
+    .paginaProduto_pag .produto {
+        flex-direction: column;
+        align-items: center;
+    }
+    .paginaProduto_pag .esquerdo {
+        width: 65%;
+    }
+    .paginaProduto_pag .direito {
+        width: 66%;
+    }
+    .paginaProduto_pag .produto {
+        padding-bottom: 5%;
+    }
+
+    /* pagina FAQ */
+    .faq_pag .enviar_perguntasfrequentes {
+        width: auto;
+    }
+
+    
+
+}
+/* não sei, mas é menor, vai diminuindo e alinhando os elementos */
+@media (max-width: 1169px) {
+    header {
+        background-color: var(--verde);
+        height: 110px;
+    }
+    .menu {
+        width: 406px;
+    }
+    .menu-centro li {
+        padding-top: 2px;
+    }
+    .container img {
+        /* logo */
+        height: 55px;
+        width: 124px;
+        padding-top: 20px;
+    }
+    .container input{
+        width:  406px;
+        height: 25px;
+        margin-top: 30px;
+    }
+    .botao-login p{
+        margin-top: 30px;
+    }
+    .botao-login{
+        width: 124px;
+    }
+    .container {
+        width: 85vw;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    /* home */
+    .home_pag .whitebox {
+        width: 85vw;
+    }
+
+    .home_pag .cnjt {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home_pag .img-1 {
+        width: 100%;
+    }
+
+    .home_pag .txthome {
+        width: 100%;
+        height: 100%;
+    }
+    .home_pag .cnjt p {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1px;
+    }
+    .home_pag .cnjt h3 {
+        padding: 30px 0px;
+    }
+
+    .home_pag .ongs {
+        flex-wrap: wrap;
+        width: 85vw;
+    }
+
+    /* pagina filtroProdutos */
+    .containerProdutos {
+        width: 85vw;
+    }
+    .filtros {
+        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
+        background-position: unset;
+    }
+    .ordenar {
+        color: var(--verde);
+    }
+    .englobados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        color: var(--grafite);
+    }
+    .imgCardProduto img {
+        height: 100%;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    /* pagina Produto */
+    .paginaProduto_pag .direito .nomeProduto {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--grafite);
+    }
+
+    /* pagina FAQ */
+    .faq_pag .bannerFaq {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
+    }
+
+    .faq_pag .container1_perguntasfrequentes {
+        width: 100%;
+    }
+
+    .faq_pag .duvidas_perguntasfrequentes {
+        width: auto;
+    }
+
+    .faq_pag .duvidas_perguntasfrequentes label {
+        width: 75%;
+    }
+
+    .duvidas_perguntasfrequentes input {
+        width: 100%;
+        height: 10vh;
+    }
 }
