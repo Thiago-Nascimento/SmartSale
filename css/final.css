@@ -925,15 +925,24 @@ header {
     align-items: center;
 }
 
-
 .container {
     width: 1200px;
     margin: auto;
 }
-.container img { /* logo */
+
+.contHeader {
+    margin: auto;
+}
+
+.contHeader .container {
+    margin: auto;
+}
+.contHeader .container img { /* logo */
     height: 95px;
     width: 204px;
 }
+
+
 .botao-login { /* Avatar + Entrar - btn login */
     display: flex;
     justify-content: flex-start;
@@ -947,7 +956,7 @@ header {
     height: 35px;
     margin: 10px;
 }
-.container input { /* BARRA DE PESQUISA */
+.contHeader .container input { /* BARRA DE PESQUISA */
     width: 605px;
     height: 35px;
 }
@@ -1481,10 +1490,9 @@ main {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    justify-content: flex-start;
-    margin-right: 30px;
-    margin-top: 50px;
-    padding-left: 15px;
+    justify-content: flex-start;   
+    padding-left: 4%;
+    width: 50%;
 }
 
 .quemsomos_pag h2 {
@@ -1496,19 +1504,20 @@ main {
 }
 
 .quemsomos_pag .one {
-    width: 400px;
+    width: 80%;
     font-size: 1em;
 }
 
 .quemsomos_pag .two {
-    width: 400px;
+    width: 80%;
     font-size: 1em;
+    margin-bottom: 10%;
 }
 
 .quemsomos_pag .tudo {
     display: flex;
     justify-content: space-around;
-    width: 1200px;
+    width: 100%;
     margin: auto;
     background-color: white;
     margin: 40px auto;
@@ -1516,10 +1525,15 @@ main {
     box-shadow: 4px 4px 15px #cccccc;
 }
 
-.quemsomos_pag .tudo img {
-    width: 547px;
+.quemsomos_pag .contImagem {
+    width: 45%;
     height: auto;
     margin: 25px 0px;
+    padding-right: 2%;
+}
+
+.quemsomos_pag .contImagem img {
+    width: 100%;
 }
 
 
@@ -1795,12 +1809,17 @@ main {
         padding-top: 10px;
         padding: 20px 0px;
     }
-    .container img {
+    .contHeader .container img {
         /* logo */
         height: 75px;
         width: 164px;
         padding-top: 20px;
     }
+
+    .contHeader .container input {
+        display: none;
+    }
+
     .container {
         width: 100%;
         display: flex;
@@ -1952,6 +1971,27 @@ main {
         width: auto;
     }
 
+    /* pagina Quem Somos */
+    .quemsomos_pag .tudo {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quemsomos_pag .tudo img {
+        width: 75%;
+    }
+
+    .quemsomos_pag .caixao {
+        width: 100%;
+    }
+
+    .quemsomos_pag .contImagem {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
     
 
 }
@@ -1967,13 +2007,13 @@ main {
     .menu-centro li {
         padding-top: 2px;
     }
-    .container img {
+    .contHeader .container img {
         /* logo */
         height: 55px;
         width: 124px;
         padding-top: 20px;
     }
-    .container input{
+    .contHeader .container input{
         width:  406px;
         height: 25px;
         margin-top: 30px;
@@ -2044,7 +2084,6 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
         color: var(--grafite);
     }
     .imgCardProduto img {
@@ -2081,4 +2120,7 @@ main {
         width: 100%;
         height: 10vh;
     }
+
+    
+
 }
