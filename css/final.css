@@ -1277,7 +1277,7 @@ main {
     border-bottom: solid 2px var(--roxo);
     color: var(--roxo);
     text-transform: uppercase;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Segoe Ui';
     font-size: 30px;
 }
 .ranking_pag {
