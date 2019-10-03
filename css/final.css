@@ -259,7 +259,7 @@ header {
     margin-bottom: 50px;
 }
 
-.cardscadastrovendedor .informacao {
+.cardscadastrovendedor .informacao_cadastrovendedor {
     display: flex;
     flex-direction: column;
     border: solid 1px #707070;
@@ -271,7 +271,7 @@ header {
     background-color: white;
 }
 
-.cardscadastrovendedor .cadvend {
+.cardscadastrovendedor .cadvend_cadastrovendedor {
     display: flex;
     flex-direction: column;
     width: 190px;
@@ -290,7 +290,7 @@ header {
     padding: 9px;
 }
 
-.cardscadastrovendedor .cadvend form input {
+.cardscadastrovendedor .cadvend_cadastrovendedor form input {
     width: 160px;
     padding: 5px;
 }
