@@ -904,8 +904,9 @@ header {
     height: 35px;
     margin-left: -120px;
 }
-.ongs_pag .container {
-    width: 1200px;
+
+
+.ongs_pag .containerOngs {
     margin: auto;
     background-color: white;
     color: #707070;
@@ -917,8 +918,7 @@ header {
     display: flex;
     justify-content: space-between;
     height: 150px;
-    margin: 0px 25px;
-    padding: 25px;
+    margin-top: 8%;
     font-family: 'Segoe UI';
     align-items: flex-start;
     font-size: 16px;
