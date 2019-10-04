@@ -21,6 +21,7 @@ header {
 }
 
 /* cadastro produto venda e doacao */
+
 .fundoCadastro {
     background-image: url(../img/bannerpho.png);
     background-repeat: no-repeat;
@@ -167,7 +168,9 @@ header {
 .fotos img {
     width: 80px;
 }
+
 /*Responsivo Cadastro de Produto Doação e Venda*/
+
 /* @media (max-width: 1169px) {
     body {
         width: 500px;
@@ -236,6 +239,7 @@ header {
         height: 1300px;
     }
 } */
+
 /* Cadastro de vendedor */
 
 .cardscadastrovendedor h3 {
@@ -309,18 +313,81 @@ header {
     margin: auto;
     padding-bottom: 10px;
 }
+
+/* Responsivo ranking */
+
+@media(max-width: 1169px) {
+    .ranking_pag .div {
+        /* width: 100vw; */
+        flex-direction: column;
+        align-items: center;
+    }
+    .ranking_pag .ranking {
+        margin-top: 60px;
+        width: 80vw;
+    }
+    .ranking_pag .descricao {
+        width: 80vw;
+    }
+    .ranking_pag {
+        margin: auto;
+        align-items: center;
+    }
+    .ranking_pag .botao {
+        width: 20%;
+        justify-content: center;
+    }
+    .ranking_pag p {
+        width: 200px;
+        margin: auto;
+        padding-top: 20px;
+    }
+}
+
+/* celular ranking */
+
+@media (max-width: 768px) {
+    .ranking_pag {
+        width: 100vw;
+        margin: auto;
+        align-items: center;
+    }
+    .ranking_pag .div {
+        width: 100vw;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .ranking_pag .ranking {
+        margin-top: 60px;
+        width: 40%;
+    }
+    .ranking_pag .descricao {
+        margin-top: 60px;
+    }
+    .ranking_pag td {
+        padding: 0px 5px;
+        margin: auto;
+        text-align: center;
+    }
+    
+}
+
 /*Responsivo cadastro vendedor*/
-@media (max-width: 1169px){
-    .cardscadastrovendedor *{
+
+@media (max-width: 1169px) {
+    .cardscadastrovendedor * {
         font-size: 20px;
     }
-    .cardscadastrovendedor .cadvend_cadastrovendedor{
+    .cardscadastrovendedor .cadvend_cadastrovendedor {
         width: 290px;
     }
-    .cardscadastrovendedor{
+    .cardscadastrovendedor {
         width: 800px;
     }
-    .cardscadastrovendedor .informacao_cadastrovendedor{
+    .cardscadastrovendedor .informacao_cadastrovendedor {
         width: 300px;
     }
     .cardscadastrovendedor {
@@ -331,44 +398,46 @@ header {
         line-height: 1.5em;
         width: 210px;
     }
-    .cardscadastrovendedor .informacao_cadastrovendedor{
+    .cardscadastrovendedor .informacao_cadastrovendedor {
         height: 300px;
     }
-    .cardscadastrovendedor button{
-        margin-top:  30px
+    .cardscadastrovendedor button {
+        margin-top: 30px
     }
 }
-@media (max-width: 767px){
+
+@media (max-width: 767px) {
     .cardscadastrovendedor {
         width: 700px;
         margin: auto;
         display: flex;
-        flex-wrap: wrap;    
+        flex-wrap: wrap;
     }
-    .cardscadastrovendedor{
+    .cardscadastrovendedor {
         display: flex;
         flex-direction: column;
         width: 350px;
         margin: auto;
     }
-    .cardscadastrovendedor .cadvend_cadastrovendedor{
+    .cardscadastrovendedor .cadvend_cadastrovendedor {
         width: 300px;
     }
-    .cardscadastrovendedor .informacao_cadastrovendedor{
+    .cardscadastrovendedor .informacao_cadastrovendedor {
         width: 300px;
         margin-bottom: 10px;
     }
-    .cardscadastrovendedor .cadastro2_cadastrovendedor{
+    .cardscadastrovendedor .cadastro2_cadastrovendedor {
         width: 200px;
         margin: auto;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .cardscadastrovendedor form{
+    .cardscadastrovendedor form {
         margin: auto;
     }
 }
+
 /* Cadastro e login */
 
 .cadastroelogin_pag {
@@ -458,47 +527,43 @@ header {
     border: solid 1px var(--roxo);
     color: white;
 }
+
 /*Responsivo cadastro e login*/
+
 @media (max-width: 1169px) {
     .cadastroelogin_pag main {
         width: 1000px;
     }
-
     .cadastroelogin_pag h3 {
         font-size: 30px;
     }
-
     .cadastroelogin_pag .cards_cadlog {
         font-size: 30px;
         width: 800px;
     }
-
     .cadastroelogin_pag .card_1_cadlog {
         width: 300px;
         height: 400px;
     }
-
     .cadastroelogin_pag .card_2_cadlog {
-
         width: 350px;
     }
-
     .cadastroelogin_pag input {
         height: 30px;
     }
-
-    .cadastroelogin_pag button{
+    .cadastroelogin_pag button {
         font-size: 20px;
     }
 }
-@media (max-width: 767px){
+
+@media (max-width: 767px) {
     .cadastroelogin_pag {
         width: 750px;
     }
     .cadastroelogin_pag h3 {
         font-size: 30px;
     }
-    .cadastroelogin_pag label{
+    .cadastroelogin_pag label {
         padding-bottom: 5px;
     }
     .cadastroelogin_pag .cards_cadlog {
@@ -508,21 +573,22 @@ header {
         font-size: 30px;
         width: 600px;
     }
-    .cadastroelogin_pag .card_1_cadlog{
+    .cadastroelogin_pag .card_1_cadlog {
         width: 350px;
         margin-bottom: 20px;
     }
-    .cadastroelogin_pag .card_1_cadlog input{
+    .cadastroelogin_pag .card_1_cadlog input {
         margin: 5px;
         height: auto;
     }
-    .cadastroelogin_pag .card_2_cadlog{
+    .cadastroelogin_pag .card_2_cadlog {
         height: auto;
         width: 350px;
     }
 }
 
 /* Final da Reserva */
+
 .finalreserva_pag {
     padding: 1px 0px;
 }
@@ -531,7 +597,7 @@ header {
     background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 1200px;
-    margin: auto; 
+    margin: auto;
     display: flex;
     justify-content: space-around;
     margin: 39px auto;
@@ -540,14 +606,14 @@ header {
     padding: 65px 0px;
 }
 
-.finalreserva_pag h1{
+.finalreserva_pag h1 {
     color: #707070;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.finalreserva_pag .esquerdo{
+.finalreserva_pag .esquerdo {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -569,15 +635,16 @@ header {
     width: 300px;
     height: auto;
 }
-.finalreserva_pag .texto h3{
+
+.finalreserva_pag .texto h3 {
     color: #A200CB
 }
 
 /* Home */
+
 .home_pag .cnjt {
     display: flex;
     justify-content: space-between;
-
 }
 
 .home_pag .cnjt p {
@@ -595,7 +662,6 @@ header {
 }
 
 .home_pag .btn:hover {
-
     transition: 0.2s;
     color: white
 }
@@ -776,7 +842,6 @@ header {
     background-attachment: fixed;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(162, 0, 203)), url(../img/img5.png);
     background-size: cover;
-
 }
 
 .home_pag .rank {
@@ -791,8 +856,6 @@ header {
     padding-bottom: 35px;
     /* display: flex;
     justify-content: center; */
-
-
 }
 
 .home_pag .ongs {
@@ -863,12 +926,10 @@ header {
 
 .home_pag .card a:hover {
     color: #A200CB;
-
 }
 
 .home_pag .card a {
     font-size: 15px;
-
     color: black;
     text-decoration: none;
 }
@@ -889,6 +950,7 @@ header {
 }
 
 /* Ongs */
+
 .ongs_pag {
     padding: 1px 0px;
 }
@@ -904,7 +966,6 @@ header {
     margin-left: -120px;
 }
 
-
 .ongs_pag .containerOngs {
     margin: auto;
     background-color: white;
@@ -913,6 +974,7 @@ header {
     box-shadow: 4px 4px 15px #cccccc;
     border-radius: 5px;
 }
+
 .ongs_pag .conteudo {
     display: flex;
     justify-content: space-between;
@@ -934,33 +996,43 @@ header {
 .contHeader .container {
     margin: auto;
 }
-.contHeader .container img { /* logo */
+
+.contHeader .container img {
+    /* logo */
     height: 95px;
     width: 204px;
 }
 
-
-.botao-login { /* Avatar + Entrar - btn login */
+.botao-login {
+    /* Avatar + Entrar - btn login */
     display: flex;
     justify-content: flex-start;
     width: 204px;
 }
-.botao-login p { /* Entrar -  btn login */
+
+.botao-login p {
+    /* Entrar -  btn login */
     margin-top: -4px;
 }
-#entrar { /* avatar do usuário - btn login */
+
+#entrar {
+    /* avatar do usuário - btn login */
     width: 30px;
     height: 35px;
     margin: 10px;
 }
-.contHeader .container input { /* BARRA DE PESQUISA */
+
+.contHeader .container input {
+    /* BARRA DE PESQUISA */
     width: 605px;
     height: 35px;
 }
+
 .menu-centro {
     display: flex;
     justify-content: center;
 }
+
 .ca {
     display: flex;
     justify-content: space-between;
@@ -968,6 +1040,7 @@ header {
     font-family: 'Segoe UI';
     padding: 0px 25px;
 }
+
 .ca a {
     text-decoration: none;
     color: white;
@@ -975,6 +1048,7 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 .menu {
     list-style: none;
     display: flex;
@@ -983,16 +1057,19 @@ header {
     align-items: center;
     font-size: 0.8em;
 }
+
 .menu a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
 }
+
 .menu a:hover {
     border-bottom: 1.5px solid white;
     transition: 0.3s;
 }
+
 footer {
     background-image: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     color: white;
@@ -1010,7 +1087,9 @@ footer {
 }
 
 /* paginaProduto */
+
 /* Verificar .container  */
+
 main {
     background-color: #ebebeb;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1173,6 +1252,7 @@ main {
 }
 
 /* filtroProdutos */
+
 .cont {
     padding: 1px 0px;
 }
@@ -1200,8 +1280,8 @@ main {
     color: white;
     padding: 3% 0%;
     display: block;
-    padding-left: 2%;   
-    background-attachment: fixed;    
+    padding-left: 2%;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -1226,24 +1306,28 @@ main {
 }
 
 /* pagina Ranking */
+
 .ranking_pag td {
     padding: 0px 45px;
     margin: auto;
     text-align: center;
 }
+
 .ranking_pag table {
     margin: auto;
     border-spacing: 15px;
 }
+
 .ranking_pag .div {
-    width: 1200px;
+    width: 90vw;
     display: flex;
     justify-content: space-between;
     margin: auto;
     padding-top: 40px;
 }
+
 .ranking_pag .descricao {
-    width: 40%;
+    width: 45%;
     text-align: justify;
     border: solid 0px var(--roxo);
     border-radius: 5px;
@@ -1252,10 +1336,10 @@ main {
     -webkit-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     -moz-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
-    
 }
+
 .ranking_pag .ranking {
-    width: 47%;
+    width: 45%;
     border: solid 0px var(--roxo);
     border-radius: 5px;
     background-color: white;
@@ -1263,11 +1347,13 @@ main {
     -moz-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
 }
+
 .ranking_pag p {
     width: 400px;
     margin: auto;
     padding-top: 20px;
 }
+
 .ranking_pag h3 {
     text-align: center;
     padding: 20px;
@@ -1277,6 +1363,7 @@ main {
     font-family: 'Segoe Ui';
     font-size: 30px;
 }
+
 .ranking_pag {
     background-image: url(../img/arrumado.png);
     /* opacity: 0.5; */
@@ -1285,6 +1372,7 @@ main {
     background-size: cover;
     padding-bottom: 40px;
 }
+
 .ranking_pag .a-botao {
     color: var(--roxo);
     border: solid 2px var(--roxo);
@@ -1294,18 +1382,21 @@ main {
     text-decoration: none;
     text-transform: uppercase;
 }
+
 .ranking_pag .a-botao:hover {
     background-color: var(--roxo);
     color: white;
 }
+
 .ranking_pag .botao {
-    width: 1000px;
+    width: 80%;
     margin: auto;
     display: flex;
     justify-content: flex-end;
 }
 
 /* pagina perfil */
+
 .perfil_pag {
     margin: auto;
     width: 100vw;
@@ -1326,11 +1417,12 @@ main {
     text-align: center;
     padding: 20px;
 }
-.perfil_pag h3{
+
+.perfil_pag h3 {
     text-align: center;
     padding: 15px;
-
 }
+
 .perfil_pag .cima {
     width: 100%;
     display: flex;
@@ -1339,6 +1431,7 @@ main {
     padding: 20px 0px;
     /* border-bottom: 2px solid var(--roxo); */
 }
+
 .perfil_pag .esquerdo {
     width: 47%;
     display: flex;
@@ -1346,6 +1439,7 @@ main {
     align-content: center;
     align-items: center;
 }
+
 .perfil_pag .direito {
     display: flex;
     justify-content: space-between;
@@ -1355,25 +1449,29 @@ main {
     font-size: 20px;
     padding-top: 20px;
 }
+
 .perfil_pag .textos {
     font-size: 20px;
     margin: auto;
 }
+
 .perfil_pag .baixo {
     display: flex;
     justify-content: center;
     font-size: 30px;
     padding-top: 30px;
 }
-.perfil_pag .centro{
+
+.perfil_pag .centro {
     width: 47%;
     margin: auto;
 }
+
 .perfil_pag .baixo {
-    
     display: flex;
     justify-content: center;
 }
+
 .perfil_pag .posranking {
     border: 1px solid black;
     padding: 10px;
@@ -1382,6 +1480,7 @@ main {
 }
 
 /* pagina faq */
+
 .faq_pag {
     text-align: center;
     align-items: center;
@@ -1493,7 +1592,7 @@ main {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    justify-content: flex-start;   
+    justify-content: flex-start;
     padding-left: 4%;
     width: 50%;
 }
@@ -1539,17 +1638,13 @@ main {
     width: 100%;
 }
 
-
-
-
-
 @media (min-width: 1170px) {
     .filtros {
-        background-position: top center;    
+        background-position: top center;
         background-image: linear-gradient(rgba(162, 0, 203, 0.6), rgba(162, 0, 203, 0.6)), url(../img/img4.png);
-    }  
+    }
     .ordenar {
-        color: var(--roxo);    
+        color: var(--roxo);
     }
     .englobados {
         display: none;
@@ -1559,17 +1654,14 @@ main {
         background-color: rgba(162, 0, 203, 0.6);
         color: white;
     }
-    .imgCardProduto:hover + .englobados{
-        transition: 0.3s;      
+    .imgCardProduto:hover+.englobados {
+        transition: 0.3s;
         display: block;
     }
-    
     .englobados:hover {
         display: block;
     }
-
     /* pagina Produto */
-    
 }
 
 @media (min-width: 768px) {
@@ -1581,22 +1673,22 @@ main {
     }
     .btnAplicarFiltros {
         width: 10%;
-        padding: 0.5% 0;    
+        padding: 0.5% 0;
     }
     .ordenar {
-        display: block;    
+        display: block;
     }
     .ordenar select {
-        width: 30%;    
+        width: 30%;
     }
     .categoria .produtos {
         display: grid;
         grid-template-columns: 35% auto 35%;
         grid-template-rows: 50% 50%;
-        grid-gap: 10px;    
+        grid-gap: 10px;
     }
     .paginaProduto_pag .esquerdo {
-        width: 35%;    
+        width: 35%;
     }
     .paginaProduto_pag .direito {
         width: 35%;
@@ -1621,7 +1713,8 @@ main {
     background-color: var(--laranja);
     border: none;
     text-transform: uppercase;
-    font-weight: 600; /* SemiBold */
+    font-weight: 600;
+    /* SemiBold */
 }
 
 .btnAplicarFiltros:hover {
@@ -1635,7 +1728,7 @@ main {
 
 .ordenar {
     padding: 3% 0%;
-    padding-left: 2%; 
+    padding-left: 2%;
 }
 
 .ordenar select {
@@ -1672,7 +1765,7 @@ main {
     box-shadow: 4px 4px 15px #cccccc
 }
 
-.englobados {    
+.englobados {
     width: 100%;
 }
 
@@ -1687,14 +1780,14 @@ main {
 
 .cardGrid2 {
     grid-column-start: 2;
-    grid-column-end: 3; 
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
 }
 
 .cardGrid3 {
     grid-column-start: 2;
-    grid-column-end: 3; 
+    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
 }
@@ -1754,7 +1847,7 @@ main {
     padding-top: 30px;
     text-transform: uppercase;
     margin-left: 3%;
-    margin: auto;    
+    margin: auto;
 }
 
 .faq_pag input {
@@ -1787,6 +1880,7 @@ main {
 }
 
 /* não sei, mas é menor, vai diminuindo e alinhando os elementos */
+
 @media (max-width: 1169px) {
     header {
         background-color: var(--verde);
@@ -1804,15 +1898,15 @@ main {
         width: 124px;
         padding-top: 20px;
     }
-    .contHeader .container input{
-        width:  406px;
+    .contHeader .container input {
+        width: 406px;
         height: 25px;
         margin-top: 30px;
     }
-    .botao-login p{
+    .botao-login p {
         margin-top: 30px;
     }
-    .botao-login{
+    .botao-login {
         width: 124px;
     }
     .container {
@@ -1829,7 +1923,6 @@ main {
     .home_pag .whitebox {
         width: 85vw;
     }
-
     .home_pag .cnjt {
         display: flex;
         flex-direction: column;
@@ -1837,11 +1930,9 @@ main {
         justify-content: center;
         align-items: center;
     }
-
     .home_pag .img-1 {
         width: 100%;
     }
-
     .home_pag .txthome {
         width: 100%;
         height: 100%;
@@ -1854,12 +1945,10 @@ main {
     .home_pag .cnjt h3 {
         padding: 30px 0px;
     }
-
     .home_pag .ongs {
         flex-wrap: wrap;
         width: 85vw;
     }
-
     /* pagina filtroProdutos */
     .containerProdutos {
         width: 85vw;
@@ -1882,44 +1971,54 @@ main {
         width: 100%;
         padding-top: 0;
     }
-
     /* pagina Produto */
     .paginaProduto_pag .direito .nomeProduto {
         font-size: 1.5em;
         font-weight: bold;
         color: var(--grafite);
     }
-
     /* pagina FAQ */
     .faq_pag .bannerFaq {
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
     }
-
     .faq_pag .container1_perguntasfrequentes {
         width: 100%;
     }
-
     /* .faq_pag .duvidas_perguntasfrequentes {
         width: auto;
     } */
-
     .faq_pag .duvidas_perguntasfrequentes label {
         width: 75%;
     }
-
     .duvidas_perguntasfrequentes input {
         width: 100%;
         height: 10vh;
     }
-
     /* pagina ONGS */
     .ongs_pag .conteudo img {
         width: 100%;
     }
-
+    /* pagina ranking */
+    .ranking_pag .descricao {
+        width: 80%;
+        height: auto;
+        padding-bottom: 7%;
+    }
+    .ranking_pag p {
+        width: 80%;
+    }
+    .ranking_pag .ranking {
+        width: 80%;
+        height: auto;
+        padding-bottom: 7%;
+    }
+    .ranking_pag .botao {
+        justify-content: center;
+    }
 }
 
 /* celular */
+
 @media (max-width: 767px) {
     /* header */
     header {
@@ -1934,7 +2033,6 @@ main {
         top: 0;
         left: 0;
     }
-    
     .menu-centro {
         flex-direction: column;
         padding: 15px 0px;
@@ -1951,11 +2049,9 @@ main {
         width: 164px;
         padding-top: 20px;
     }
-
     .contHeader .container input {
         display: none;
     }
-
     .container {
         /* width: 100%; */
         display: flex;
@@ -1992,7 +2088,6 @@ main {
         right: 10px;
         top: 0px;
     }
-
     .btn-menu {
         display: block;
         width: 56px;
@@ -2004,34 +2099,32 @@ main {
         cursor: pointer;
         background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     }
-
     /* pagina perfil */
     .perfil_pag {
         width: 100%;
         text-align: center;
     }
-    .perfil_pag .cima{
+    .perfil_pag .cima {
         margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
-    .perfil_pag .cima img{ /* imagem usuário */
+    .perfil_pag .cima img {
+        /* imagem usuário */
         width: 50vw;
     }
-    .perfil_pag .esquerdo{
+    .perfil_pag .esquerdo {
         width: 100vw;
     }
-    .perfil_pag .direito{
+    .perfil_pag .direito {
         width: 100vw;
-    } 
-    .perfil_pag #avatar{
-        margin: auto;  
-    } 
-
+    }
+    .perfil_pag #avatar {
+        margin: auto;
+    }
     /* main */
     /* Fim do main, o footer não precisa */
-
-     /* pagina filtroProdutos */
+    /* pagina filtroProdutos */
     .containerProdutos {
         width: 85vw;
     }
@@ -2039,42 +2132,34 @@ main {
         background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
         background-position: unset;
     }
-
     .innerFiltros {
         flex-direction: column;
     }
-
     .divSelects {
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 4%;
     }
-
     .btnAplicarFiltros {
         width: 25%;
         padding: 1% 0;
     }
-
     .ordenar {
         color: var(--verde);
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-
     .ordenar select {
         width: 65%;
     }
-
     .categoria .produtos .cardProduto {
         margin: 10%;
     }
-
     .imgCardProduto {
         margin-top: 6%;
     }
-
     .englobados {
         display: flex;
         flex-direction: column;
@@ -2087,7 +2172,6 @@ main {
         width: 100%;
         padding-top: 0;
     }
-
     /* paginaProduto */
     .paginaProduto_pag .produto {
         flex-direction: column;
@@ -2102,42 +2186,32 @@ main {
     .paginaProduto_pag .produto {
         padding-bottom: 5%;
     }
-
     /* pagina FAQ */
     .faq_pag .enviar_perguntasfrequentes {
         width: auto;
     }
-
     /* pagina Quem Somos */
     .quemsomos_pag .tudo {
         display: block;
         justify-content: center;
         align-items: center;
     }
-
     .quemsomos_pag .tudo img {
         width: 75%;
     }
-
     .quemsomos_pag .caixao {
         width: 100%;
     }
-
     .quemsomos_pag .contImagem {
         width: 100%;
         display: flex;
         justify-content: center;
     }
-
     /* pagina ONGS */
     .ongs_pag .conteudo {
         flex-direction: column;
     }
-
     .ongs_pag .containerOngs {
         margin: 8% auto;
     }
-
-    
-
 }
