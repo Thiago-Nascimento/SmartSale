@@ -1840,7 +1840,7 @@ main {
 }
 
 .faq_pag .duvidas_perguntasfrequentes {
-    width: 850px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
