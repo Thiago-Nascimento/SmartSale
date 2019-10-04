@@ -894,8 +894,7 @@ header {
 }
 
 .ongs_pag .conteudo img {
-    width: 150px;
-    height: 150px;
+    width: 50%;
     background-color: white;
 }
 
@@ -910,19 +909,17 @@ header {
     margin: auto;
     background-color: white;
     color: #707070;
-    margin: 39px auto;
+    margin: 5% auto;
     box-shadow: 4px 4px 15px #cccccc;
     border-radius: 5px;
 }
 .ongs_pag .conteudo {
     display: flex;
     justify-content: space-between;
-    height: 150px;
-    margin-top: 8%;
     font-family: 'Segoe UI';
     align-items: flex-start;
-    font-size: 16px;
     align-items: center;
+    padding: 2%;
 }
 
 .container {
@@ -1783,6 +1780,139 @@ main {
     line-height: 2.0em;
 }
 
+/* não sei, mas é menor, vai diminuindo e alinhando os elementos */
+@media (max-width: 1169px) {
+    header {
+        background-color: var(--verde);
+        height: 110px;
+    }
+    .menu {
+        width: 406px;
+    }
+    .menu-centro li {
+        padding-top: 2px;
+    }
+    .contHeader .container img {
+        /* logo */
+        height: 55px;
+        width: 124px;
+        padding-top: 20px;
+    }
+    .contHeader .container input{
+        width:  406px;
+        height: 25px;
+        margin-top: 30px;
+    }
+    .botao-login p{
+        margin-top: 30px;
+    }
+    .botao-login{
+        width: 124px;
+    }
+    .container {
+        width: 85vw;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    /* home */
+    .home_pag .whitebox {
+        width: 85vw;
+    }
+
+    .home_pag .cnjt {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home_pag .img-1 {
+        width: 100%;
+    }
+
+    .home_pag .txthome {
+        width: 100%;
+        height: 100%;
+    }
+    .home_pag .cnjt p {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1px;
+    }
+    .home_pag .cnjt h3 {
+        padding: 30px 0px;
+    }
+
+    .home_pag .ongs {
+        flex-wrap: wrap;
+        width: 85vw;
+    }
+
+    /* pagina filtroProdutos */
+    .containerProdutos {
+        width: 85vw;
+    }
+    .filtros {
+        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
+        background-position: unset;
+    }
+    .ordenar {
+        color: var(--verde);
+    }
+    .englobados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--grafite);
+    }
+    .imgCardProduto img {
+        height: 100%;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    /* pagina Produto */
+    .paginaProduto_pag .direito .nomeProduto {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--grafite);
+    }
+
+    /* pagina FAQ */
+    .faq_pag .bannerFaq {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
+    }
+
+    .faq_pag .container1_perguntasfrequentes {
+        width: 100%;
+    }
+
+    .faq_pag .duvidas_perguntasfrequentes {
+        width: auto;
+    }
+
+    .faq_pag .duvidas_perguntasfrequentes label {
+        width: 75%;
+    }
+
+    .duvidas_perguntasfrequentes input {
+        width: 100%;
+        height: 10vh;
+    }
+
+    /* pagina ONGS */
+    .ongs_pag .conteudo img {
+        width: 100%;
+    }
+
+}
+
 /* celular */
 @media (max-width: 767px) {
     /* header */
@@ -1821,13 +1951,14 @@ main {
     }
 
     .container {
-        width: 100%;
+        /* width: 100%; */
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-content: center;
         flex-wrap: wrap;
         margin: auto;
+        padding: 0 0;
     }
     #entrar {
         display: none;
@@ -1992,133 +2123,13 @@ main {
         justify-content: center;
     }
 
-    
-
-}
-/* não sei, mas é menor, vai diminuindo e alinhando os elementos */
-@media (max-width: 1169px) {
-    header {
-        background-color: var(--verde);
-        height: 110px;
-    }
-    .menu {
-        width: 406px;
-    }
-    .menu-centro li {
-        padding-top: 2px;
-    }
-    .contHeader .container img {
-        /* logo */
-        height: 55px;
-        width: 124px;
-        padding-top: 20px;
-    }
-    .contHeader .container input{
-        width:  406px;
-        height: 25px;
-        margin-top: 30px;
-    }
-    .botao-login p{
-        margin-top: 30px;
-    }
-    .botao-login{
-        width: 124px;
-    }
-    .container {
-        width: 85vw;
-        padding: 0px 20px;
-        display: flex;
-        justify-content: center;
+    /* pagina ONGS */
+    .ongs_pag .conteudo {
         flex-direction: column;
-        align-content: center;
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    /* home */
-    .home_pag .whitebox {
-        width: 85vw;
     }
 
-    .home_pag .cnjt {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .home_pag .img-1 {
-        width: 100%;
-    }
-
-    .home_pag .txthome {
-        width: 100%;
-        height: 100%;
-    }
-    .home_pag .cnjt p {
-        width: 100%;
-        height: auto;
-        margin-bottom: 1px;
-    }
-    .home_pag .cnjt h3 {
-        padding: 30px 0px;
-    }
-
-    .home_pag .ongs {
-        flex-wrap: wrap;
-        width: 85vw;
-    }
-
-    /* pagina filtroProdutos */
-    .containerProdutos {
-        width: 85vw;
-    }
-    .filtros {
-        background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
-        background-position: unset;
-    }
-    .ordenar {
-        color: var(--verde);
-    }
-    .englobados {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: var(--grafite);
-    }
-    .imgCardProduto img {
-        height: 100%;
-        width: 100%;
-        padding-top: 0;
-    }
-
-    /* pagina Produto */
-    .paginaProduto_pag .direito .nomeProduto {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: var(--grafite);
-    }
-
-    /* pagina FAQ */
-    .faq_pag .bannerFaq {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
-    }
-
-    .faq_pag .container1_perguntasfrequentes {
-        width: 100%;
-    }
-
-    .faq_pag .duvidas_perguntasfrequentes {
-        width: auto;
-    }
-
-    .faq_pag .duvidas_perguntasfrequentes label {
-        width: 75%;
-    }
-
-    .duvidas_perguntasfrequentes input {
-        width: 100%;
-        height: 10vh;
+    .ongs_pag .containerOngs {
+        margin: 8% auto;
     }
 
     
