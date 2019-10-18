@@ -68,14 +68,6 @@ create table Ong
 	Id_Regiao int foreign key references Regiao(Id_Regiao) not null
 );
 
-create table Doacao
-(
-	Id_Doacao int identity not null primary key,
-	Id_Ong int FOREIGN KEY REFERENCES Ong(Id_Ong) not null,
-	Id_Usuario int foreign key references Usuario(Id_Usuario) not null,
-	Id_Produto int foreign key references Produto(Id_Produto) not null
-);
-
 create table Oferta
 (
 	Id_Oferta int identity not null primary key,
@@ -85,6 +77,15 @@ create table Oferta
 	Preco float not null,
 	Descricao text not null,
 	Data_Validade DATE not null,
+    -- colocar idprouto
 	Id_Usuario int not null FOREIGN key REFERENCES Usuario(Id_Usuario),
 	Id_TipoUsuario int not null foreign key references Tipo_Usuario(Id_TipoUsuario)
+);
+
+
+create table Doacao
+(
+	Id_Doacao int identity not null primary key,
+	Id_Ong int FOREIGN KEY REFERENCES Ong(Id_Ong) not null,
+	Id_Oferta int foreign key references Oferta(Id_Oferta) not null,
 );
