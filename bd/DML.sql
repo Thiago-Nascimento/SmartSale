@@ -98,7 +98,7 @@ VALUES('Instituto viver saudavel','11111111111111','ongpontocom.com','cuidamos d
 insert into Ong(Razao_Social,Cnpj,Site_Ong,Sobre,Telefone,Email,Endereco,Id_Regiao)
 VALUES('Instituto viver legal','11111111111111','ongpontocom.com','cuidamos de velhos','222233343','EmailOng@com.com','Virando a esquina, 19',3);
 insert into Ong(Razao_Social,Cnpj,Site_Ong,Sobre,Telefone,Email,Endereco,Id_Regiao)
-VALUES('Instituto viver trilegal','11111111111111','ongpontocom.com','cuidamos de velhos','222233343','EmailOng@com.com','Virando a esquina, 19',5;
+VALUES('Instituto viver trilegal','11111111111111','ongpontocom.com','cuidamos de velhos','222233343','EmailOng@com.com','Virando a esquina, 19',5);
 insert into Ong(Razao_Social,Cnpj,Site_Ong,Sobre,Telefone,Email,Endereco,Id_Regiao)
 VALUES('Instituto viver feliz','11111111111111','ongpontocom.com','cuidamos de velhos','222233343','EmailOng@com.com','Virando a esquina, 19',4);
 
