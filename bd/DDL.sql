@@ -1,32 +1,33 @@
-create database BD_SmartSale;
+CREATE database BD_SmartSale;
 
 use BD_SmartSale;
 
-create table Tipo_Usuario
+CREATE table Tipo_Usuario
 (
 	Id_TipoUsuario int not null primary key identity,
 	Tipo varchar(255) not null
 );
 
-create table Categoria
+CREATE table Categoria
 (
 	Id_Categoria int not null primary key identity,
 	Nome_Categoria varchar(255) not null
 );
 
-create table Regiao
+CREATE table Regiao
 (
 	Id_Regiao int not null primary key identity,
 	Bairro varchar(255) not null,
 	Cidade varchar(255) not null,
 );
 
-create table Usuario
+CREATE table Usuario
 (
 	Id_Usuario int not null primary key identity,
 	Nome_Usuario varchar(255) not null,
 	Idade int not null,
 	Documento VARCHAR(255) not null,
+	Razao_Social VARCHAR(255),
 	Email varchar(255) not null,
 	Senha varchar(255) not null,
 	Telefone VARCHAR(255) not null,
@@ -38,7 +39,7 @@ create table Usuario
 	Id_Regiao int foreign key references Regiao(Id_Regiao) not null
 );
 
-create table Produto
+CREATE table Produto
 (
 	Id_Produto int identity not null primary key,
 	Nome_Produto varchar(255) not null,
@@ -46,39 +47,37 @@ create table Produto
 	Id_Categoria int foreign key references Categoria(Id_Categoria) not null,
 );
 
-create table Reserva
+CREATE table Reserva
 (
 	Id_Reserva int identity not null primary key,
 	Quantidade_Comprada int not null,
+	Valor_Final float not null,
 	Data_Limite_Retirada DATE not null,
 	Id_Usuario int foreign key references Usuario(Id_Usuario) not null,
 	Id_Oferta int foreign key references Oferta(Id_Oferta) not null
 );
 
-create table Ong
+CREATE table Ong
 (
 	Id_Ong int not null primary key identity,
 	Razao_Social varchar(255) not null,
 	Cnpj VARCHAR(255) not null,
 	Site_Ong VARCHAR(255),
-	Sobre text,
-	Telefone VARCHAR(255),
-	Email varchar(255),
-	Endereco varchar(255),
+	Sobre_Ong text,
+	Telefone_Ong VARCHAR(255) not null,
+	Email_Ong varchar(255),
+	Endereco_Ong varchar(255) not null,
 	Id_Regiao int foreign key references Regiao(Id_Regiao) not null
 );
 
-<<<<<<< HEAD
-=======
-create table Doacao
+CREATE table Doacao
 (
 	Id_Doacao int identity not null primary key,
 	Id_Ong int FOREIGN KEY REFERENCES Ong(Id_Ong) not null,
 	Id_Oferta int foreign key references Oferta(Id_Oferta) not null
 );
 
->>>>>>> a4b56f346fc372848a007eb7fe2fc9ef51c41010
-create table Oferta
+CREATE table Oferta
 (
 	Id_Oferta int identity not null primary key,
 	Quantidade int not null,
@@ -87,19 +86,5 @@ create table Oferta
 	Preco float not null,
 	Descricao text not null,
 	Data_Validade DATE not null,
-<<<<<<< HEAD
-    -- colocar idprouto
-	Id_Usuario int not null FOREIGN key REFERENCES Usuario(Id_Usuario),
-	Id_TipoUsuario int not null foreign key references Tipo_Usuario(Id_TipoUsuario)
-);
-
-
-create table Doacao
-(
-	Id_Doacao int identity not null primary key,
-	Id_Ong int FOREIGN KEY REFERENCES Ong(Id_Ong) not null,
-	Id_Oferta int foreign key references Oferta(Id_Oferta) not null,
-=======
 	Id_Produto int foreign key references Produto(Id_Produto) not null
->>>>>>> a4b56f346fc372848a007eb7fe2fc9ef51c41010
 );
