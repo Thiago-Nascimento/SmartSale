@@ -47,6 +47,19 @@ CREATE table Produto
 	Id_Categoria int foreign key references Categoria(Id_Categoria) not null,
 );
 
+CREATE table Oferta
+(
+	Id_Oferta int identity not null primary key,
+	Quantidade int not null,
+	Foto varchar(255) not null,
+	Cor VARCHAR(255),
+	Preco float not null,
+	Descricao text not null,
+	Data_Validade DATE not null,
+	Id_Produto int foreign key references Produto(Id_Produto) not null,
+	Id_Usuario int foreign key references Usuario(Id_Usuario) not null
+);
+
 CREATE table Reserva
 (
 	Id_Reserva int identity not null primary key,
@@ -75,17 +88,4 @@ CREATE table Doacao
 	Id_Doacao int identity not null primary key,
 	Id_Ong int FOREIGN KEY REFERENCES Ong(Id_Ong) not null,
 	Id_Oferta int foreign key references Oferta(Id_Oferta) not null
-);
-
-CREATE table Oferta
-(
-	Id_Oferta int identity not null primary key,
-	Quantidade int not null,
-	Foto varchar(255) not null,
-	Cor VARCHAR(255),
-	Preco float not null,
-	Descricao text not null,
-	Data_Validade DATE not null,
-	Id_Produto int foreign key references Produto(Id_Produto) not null,
-	Id_Usuario int foreign key references Usuario(Id_Usuario) not null
 );
