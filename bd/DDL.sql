@@ -86,5 +86,6 @@ CREATE table Oferta
 	Preco float not null,
 	Descricao text not null,
 	Data_Validade DATE not null,
-	Id_Produto int foreign key references Produto(Id_Produto) not null
+	Id_Produto int foreign key references Produto(Id_Produto) not null,
+	Id_Usuario int foreign key references Usuario(Id_Usuario) not null
 );
