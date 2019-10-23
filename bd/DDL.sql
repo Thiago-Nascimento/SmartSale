@@ -76,7 +76,7 @@ CREATE table Ong
 	Razao_Social varchar(255) not null,
 	Cnpj VARCHAR(255) not null,
 	Site_Ong VARCHAR(255),
-	Sobre_Ong text,
+	Sobre_Ong varchar(255),
 	Telefone_Ong VARCHAR(255) not null,
 	Email_Ong varchar(255),
 	Endereco_Ong varchar(255) not null,
