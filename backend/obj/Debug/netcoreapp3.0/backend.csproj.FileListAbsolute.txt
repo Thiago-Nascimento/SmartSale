@@ -35,3 +35,7 @@ C:\Users\fic\Documents\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.RazorTa
 C:\Users\fic\Documents\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.csproj.CopyComplete
 C:\Users\fic\Documents\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.dll
 C:\Users\fic\Documents\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.pdb
+C:\Users\fic\Documents\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\fic\Documents\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\fic\Documents\SmartSale\backend\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\fic\Documents\SmartSale\backend\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll

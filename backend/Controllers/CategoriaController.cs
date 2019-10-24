@@ -11,9 +11,9 @@ namespace backend.Controllers {
         BD_SmartSaleContext _context = new BD_SmartSaleContext ();
 
         /// <summary>
-        /// Lista as Categorias
+        /// Lista as categorias
         /// </summary>
-        /// <returns>Lista contendo as Categorias</returns>
+        /// <returns>Lista contendo as categorias</returns>
         [HttpGet]
         public async Task<ActionResult<List<Categoria>>> Get () {
             var categorias = await _context.Categoria.ToListAsync ();
@@ -24,10 +24,10 @@ namespace backend.Controllers {
         }
 
         /// <summary>
-        /// Exibe uma Categoria Especifica
+        /// Exibe uma categoria especifica
         /// </summary>
         /// <param name="id">int Id da categoria desejada</param>
-        /// <returns>Categoria Requisitada</returns>
+        /// <returns>Categoria requisitada</returns>
         [HttpGet ("{id}")]
         public async Task<ActionResult<Categoria>> Get (int id) {
             var categoria = await _context.Categoria.FindAsync (id);
@@ -38,7 +38,7 @@ namespace backend.Controllers {
         }
 
         /// <summary>
-        /// Adiciona uma Categoria
+        /// Adiciona uma categoria
         /// </summary>
         /// <param name="categoria">string nome da categoria</param>
         /// <returns>Categoria cadastrada</returns>
@@ -59,7 +59,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id"> int id da categoria</param>
         /// <param name="categoria">string nome da categoria</param>
-        /// <returns>Categoria Modificada</returns>
+        /// <returns>Categoria modificada</returns>
         [HttpPut ("{id}")]
         public async Task<ActionResult<Categoria>> Put (int id, Categoria categoria) {
             if (id != categoria.IdCategoria) {
