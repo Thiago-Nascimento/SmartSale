@@ -109,6 +109,41 @@
             <param name="id">int id da oferta</param>
             <returns>Oferta deletada</returns>
         </member>
+        <member name="M:backend.Controllers.OngController.Get">
+            <summary>
+            Lista as Ongs
+            </summary>
+            <returns>Lista contendo as Ongs</returns>
+        </member>
+        <member name="M:backend.Controllers.OngController.Get(System.Int32)">
+            <summary>
+            Exibe uma Ong Especifica
+            </summary>
+            <param name="id">int Id da ong desejada</param>
+            <returns>Ong Requisitada</returns>
+        </member>
+        <member name="M:backend.Controllers.OngController.Post(backend.Models.Ong)">
+            <summary>
+            Adiciona uma Ong
+            </summary>
+            <param name="ong">string nome da ong</param>
+            <returns>Ong cadastrada</returns>
+        </member>
+        <member name="M:backend.Controllers.OngController.Put(System.Int32,backend.Models.Ong)">
+            <summary>
+            Faz a modificação de derterminada ong
+            </summary>
+            <param name="id"> int id da ong</param>
+            <param name="ong">string nome da ong</param>
+            <returns>Ong Modificada</returns>
+        </member>
+        <member name="M:backend.Controllers.OngController.Delete(System.Int32)">
+            <summary>
+            Delete a ong especificada
+            </summary>
+            <param name="id">int id da ong</param>
+            <returns>Ong deletada</returns>
+        </member>
         <member name="M:backend.Controllers.ReservaController.Get">
             <summary>
             Lista as reservas cadastradas
@@ -143,6 +178,41 @@
             </summary>
             <param name="id">int id da reserva</param>
             <returns>Reserva deletada</returns>
+        </member>
+        <member name="M:backend.Controllers.TipoUsuarioController.Get">
+            <summary>
+            Lista os Tipos de Usuario
+            </summary>
+            <returns>Lista contendo os Tipos de Usuario</returns>
+        </member>
+        <member name="M:backend.Controllers.TipoUsuarioController.Get(System.Int32)">
+            <summary>
+            Exibe um Tipo de Usuario Especifica
+            </summary>
+            <param name="id">int Id do Tipo de Usuario desejado</param>
+            <returns>Tipo de Usuario Requisitado</returns>
+        </member>
+        <member name="M:backend.Controllers.TipoUsuarioController.Post(backend.Models.TipoUsuario)">
+            <summary>
+            Adiciona um Tipo de Usuario
+            </summary>
+            <param name="tipo_usuario">string tipo de usuario</param>
+            <returns>Tipo de Usuario Cadastrado</returns>
+        </member>
+        <member name="M:backend.Controllers.TipoUsuarioController.Put(System.Int32,backend.Models.TipoUsuario)">
+            <summary>
+            Faz a modificação de derterminado Tipo de Usuario
+            </summary>
+            <param name="id"> int id do Tipo de Usuario</param>
+            <param name="tipo_usuario">string nome tipo do usuario</param>
+            <returns>Tipo de Usuario Modificado</returns>
+        </member>
+        <member name="M:backend.Controllers.TipoUsuarioController.Delete(System.Int32)">
+            <summary>
+            Delete o Tipo de Usuario Especificado
+            </summary>
+            <param name="id">int id do Tipo de Usuario</param>
+            <returns>Tipo de Usuario deletado</returns>
         </member>
     </members>
 </doc>
