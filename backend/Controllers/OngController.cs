@@ -16,7 +16,7 @@ namespace backend.Controllers {
         /// <returns>Lista contendo as Ongs</returns>
         [HttpGet]
         public async Task<ActionResult<List<Ong>>> Get () {
-            var ongs = await _context.Ong.ToListAsync ();
+            var ongs = await _context.Ong.Include("IdRegiaoNavigation").ToListAsync ();
             if (ongs == null) {
                 return NotFound ();
             }
