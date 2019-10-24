@@ -29,7 +29,11 @@ namespace backend.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+<<<<<<< HEAD
                 optionsBuilder.UseSqlServer("Server=N-1S-DEV-09\\SQLEXPRESS;  Database=BD_SmartSale; User Id=sa; Password=132 ");
+=======
+                optionsBuilder.UseSqlServer("Server=DESKTOP-RPPJ3RD\\SQLEXPRESS;  Database=BD_SmartSale; User Id=sa; Password=132 ");
+>>>>>>> 4c5cbc474a0015b40f13408e12531c513ba65513
             }
         }
 
