@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Documents\\SmartSale\\backend\\backend.csproj": {}
+    "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Documents\\SmartSale\\backend\\backend.csproj": {
+    "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Documents\\SmartSale\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\fic\\Documents\\SmartSale\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Documents\\SmartSale\\backend\\obj\\",
+        "outputPath": "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -39,6 +39,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
