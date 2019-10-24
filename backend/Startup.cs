@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace backend
 {
@@ -23,9 +24,15 @@ namespace backend
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
+        // Importante colocar esse configuração para que não de o loop
+        // Exemplo: ErroNull
+        // dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllersWithViews().AddNewtonsoftJson(
+                opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
