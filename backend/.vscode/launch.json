@@ -1,23 +1,40 @@
 {
+<<<<<<< HEAD
    // Use IntelliSense to find out which attributes exist for C# debugging
    // Use hover for the description of the existing attributes
    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
    "version": "0.2.0",
    "configurations": [
+=======
+    // Use o IntelliSense para aprender sobre possíveis atributos.
+    // Passe o mouse para ver as descrições dos atributos existentes.
+    // Para obter mais informações, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+>>>>>>> 705b9207efb984317a48248bcd3d736eee4f64c7
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
+<<<<<<< HEAD
             // If you have changed target frameworks, make sure to update the program path.
+=======
+>>>>>>> 705b9207efb984317a48248bcd3d736eee4f64c7
             "program": "${workspaceFolder}/bin/Debug/netcoreapp3.0/backend.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
+<<<<<<< HEAD
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"                
+=======
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+>>>>>>> 705b9207efb984317a48248bcd3d736eee4f64c7
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
