@@ -76,3 +76,12 @@ C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.AspNetC
 C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
 C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\backend.xml
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.OpenApi.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\fic\Desktop\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\fic\Desktop\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.xml
