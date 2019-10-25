@@ -144,6 +144,76 @@
             <param name="id">int id da ong</param>
             <returns>Ong deletada</returns>
         </member>
+        <member name="M:backend.Controllers.ProdutoController.Get">
+            <summary>
+            Lista as produto
+            </summary>
+            <returns>Lista contendo os produtos</returns>
+        </member>
+        <member name="M:backend.Controllers.ProdutoController.Get(System.Int32)">
+            <summary>
+            Exibe um produto especifico
+            </summary>
+            <param name="id">int Id do produto desejado</param>
+            <returns>Produto requisitado</returns>
+        </member>
+        <member name="M:backend.Controllers.ProdutoController.Post(backend.Models.Produto)">
+            <summary>
+            Adiciona um produto 
+            </summary>
+            <param name="produto">string Nome do produto</param>
+            <returns>Produto cadastrado</returns>
+        </member>
+        <member name="M:backend.Controllers.ProdutoController.Put(System.Int32,backend.Models.Produto)">
+            <summary>
+            Faz a modificação do produto especificado
+            </summary>
+            <param name="id">int Id do produto</param>
+            <param name="produto">string Nome do produto</param>
+            <returns>Produto modificado</returns>
+        </member>
+        <member name="M:backend.Controllers.ProdutoController.Delete(System.Int32)">
+            <summary>
+            Deleta o produto especificado
+            </summary>
+            <param name="id">int Id do produto</param>
+            <returns>Produto deletado</returns>
+        </member>
+        <member name="M:backend.Controllers.RegiaoController.Get">
+            <summary>
+            Lista as Regiões
+            </summary>
+            <returns>Lista contendo as Regiões</returns>
+        </member>
+        <member name="M:backend.Controllers.RegiaoController.Get(System.Int32)">
+            <summary>
+            Exibe uma Regiao Especifica
+            </summary>
+            <param name="id">int Id da regiao desejada</param>
+            <returns>Regiao Requisitada</returns>
+        </member>
+        <member name="M:backend.Controllers.RegiaoController.Post(backend.Models.Regiao)">
+            <summary>
+            Adiciona uma Regiao
+            </summary>
+            <param name="regiao">string nome da regiao</param>
+            <returns>Regiao cadastrada</returns>
+        </member>
+        <member name="M:backend.Controllers.RegiaoController.Put(System.Int32,backend.Models.Regiao)">
+            <summary>
+            Faz a modificação de derterminada regiao
+            </summary>
+            <param name="id"> int id da regiao</param>
+            <param name="regiao">string nome da regiao</param>
+            <returns>Regiao Modificada</returns>
+        </member>
+        <member name="M:backend.Controllers.RegiaoController.Delete(System.Int32)">
+            <summary>
+            Deleta a regiao especificada
+            </summary>
+            <param name="id">int id da regiao</param>
+            <returns>Regiao deletada</returns>
+        </member>
         <member name="M:backend.Controllers.ReservaController.Get">
             <summary>
             Lista as reservas cadastradas
@@ -161,7 +231,7 @@
             <summary>
             Adiciona uma reserva
             </summary>
-            <param name="Reserva">string nome da reserva</param>
+            <param name="reserva">string nome da reserva</param>
             <returns>Reserva cadastrada</returns>
         </member>
         <member name="M:backend.Controllers.ReservaController.Put(System.Int32,backend.Models.Reserva)">
@@ -169,7 +239,7 @@
             Faz a modificação de derterminada reserva
             </summary>
             <param name="id"> int id da reserva</param>
-            <param name="Reserva">string nome da reserva</param>
+            <param name="reserva">string nome da reserva</param>
             <returns>reserva Modificada</returns>
         </member>
         <member name="M:backend.Controllers.ReservaController.Delete(System.Int32)">
@@ -213,6 +283,41 @@
             </summary>
             <param name="id">int id do Tipo de Usuario</param>
             <returns>Tipo de Usuario deletado</returns>
+        </member>
+        <member name="M:backend.Controllers.UsuarioController.Get">
+            <summary>
+            Lista os usuarios
+            </summary>
+            <returns>Lista contendo os usuarios</returns>
+        </member>
+        <member name="M:backend.Controllers.UsuarioController.Get(System.Int32)">
+            <summary>
+            Exibe um usuario especifico
+            </summary>
+            <param name="id">int id do usuario desejavel</param>
+            <returns>Usuario requisitado</returns>
+        </member>
+        <member name="M:backend.Controllers.UsuarioController.Post(backend.Models.Usuario)">
+            <summary>
+            Adiciona um usuario
+            </summary>
+            <param name="usuario">string nome do usuario</param>
+            <returns>Usuario cadastrado</returns>
+        </member>
+        <member name="M:backend.Controllers.UsuarioController.Put(System.Int32,backend.Models.Usuario)">
+            <summary>
+            Faz modificações em determinados usuarios
+            </summary>
+            <param name="id">int id do usuario</param>
+            <param name="usuario">string nome do usuario</param>
+            <returns>Usuario modificado</returns>
+        </member>
+        <member name="M:backend.Controllers.UsuarioController.Delete(System.Int32)">
+            <summary>
+            Deleta o usuario especificado
+            </summary>
+            <param name="id">int id do usuario</param>
+            <returns>Usuario deletado</returns>
         </member>
     </members>
 </doc>
