@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
@@ -35,6 +38,21 @@ namespace backend {
                 var xmlPath = Path.Combine (AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments (xmlPath);
             });
+
+            // JWT
+            services.AddAuthentication (JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer (options => {
+                    options.TokenValidationParameters = new TokenValidationParameters {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience = Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey (Encoding.UTF8.GetBytes (Configuration["Jwt:Key"]))
+                    };
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +60,17 @@ namespace backend {
             if (env.IsDevelopment ()) {
                 app.UseDeveloperExceptionPage ();
             }
+
+            //Habilitamos efetivamente o Swagger em nossa aplicação
+            app.UseSwagger ();
+
+            //Especifique o endpoint da documentação
+            app.UseSwaggerUI (c => {
+                c.SwaggerEndpoint("swagger/v1/swagger.json", "API V1");
+            });
+
+            //Habilitamos efetivamente o JWT em nossa aplicação
+            app.UseAuthentication();
 
             app.UseHttpsRedirection ();
 
@@ -59,7 +88,6 @@ namespace backend {
                 c.SwaggerEndpoint ("/swagger/v1/swagger.json", "API V1");
 
             });
-
         }
     }
 }

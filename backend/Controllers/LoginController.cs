@@ -1,14 +1,15 @@
 
-
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using backend.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components;
+// using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace backend.Controllers
 {
@@ -39,7 +40,7 @@ namespace backend.Controllers
             var credentials = new SigningCredentials (securityKey, SecurityAlgorithms.HmacSha256);
             //Definimos nossas claims (dados da seção) para poderem ser capturadas a qualquer momento enquanto o token for ativo
             var claims = new [] {
-                new Claim (JwtRegisteredClaimNames.NameId, UserInfo.Nome),
+                new Claim (JwtRegisteredClaimNames.NameId, UserInfo.NomeUsuario),
                 new Claim (JwtRegisteredClaimNames.Email, UserInfo.Email),
                 new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid ().ToString ())
             };
