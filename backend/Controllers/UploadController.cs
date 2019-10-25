@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace upload_dotnet.Controllers {
@@ -13,6 +14,7 @@ namespace upload_dotnet.Controllers {
     [ApiController]
     public class UploadController : ControllerBase {
 
+        [Authorize]
         [HttpPost, DisableRequestSizeLimit]
         public IActionResult Upload () {
 

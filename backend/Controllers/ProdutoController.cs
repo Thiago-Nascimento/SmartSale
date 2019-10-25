@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ namespace backend.Controllers {
         /// Lista as produto
         /// </summary>
         /// <returns>Lista contendo os produtos</returns>
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Produto>>> Get () { //Include puxa a chave estrangeira
             var produtos = await _context.Produto.Include("IdCategoriaNavigation").ToListAsync ();
@@ -29,6 +31,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id do produto desejado</param>
         /// <returns>Produto requisitado</returns>
+        [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Produto>> Get (int id) {
             var produtos = await _context.Produto.FindAsync (id);
@@ -43,6 +46,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto cadastrado</returns>
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Produto>> Post (Produto produto) {
             try {
@@ -64,6 +68,7 @@ namespace backend.Controllers {
         /// <param name="id">int Id do produto</param>
         /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto modificado</returns>
+        [Authorize]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Produto>> Put (int id, Produto produto) {
             if (id != produto.IdProduto) {
@@ -91,6 +96,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id do produto</param>
         /// <returns>Produto deletado</returns>
+        [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Produto>> Delete (int id) {
             var produto = await _context.Produto.FindAsync (id);
@@ -101,6 +107,5 @@ namespace backend.Controllers {
             await _context.SaveChangesAsync ();
             return produto;
         }
-
     }
 }
