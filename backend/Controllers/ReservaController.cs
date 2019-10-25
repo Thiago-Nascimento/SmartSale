@@ -40,7 +40,7 @@ namespace backend.Controllers {
         /// <summary>
         /// Adiciona uma reserva
         /// </summary>
-        /// <param name="Reserva">string nome da reserva</param>
+        /// <param name="reserva">string nome da reserva</param>
         /// <returns>Reserva cadastrada</returns>
         [HttpPost]
         public async Task<ActionResult<Reserva>> Post (Reserva reserva) {
@@ -57,7 +57,7 @@ namespace backend.Controllers {
         /// Faz a modificação de derterminada reserva
         /// </summary>
         /// <param name="id"> int id da reserva</param>
-        /// <param name="Reserva">string nome da reserva</param>
+        /// <param name="reserva">string nome da reserva</param>
         /// <returns>reserva Modificada</returns>
         [HttpPut ("{id}")]
         public async Task<ActionResult<Reserva>> Put (int id, Reserva reserva) {

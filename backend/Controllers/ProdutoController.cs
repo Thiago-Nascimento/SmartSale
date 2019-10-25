@@ -41,7 +41,7 @@ namespace backend.Controllers {
         /// <summary>
         /// Adiciona um produto 
         /// </summary>
-        /// <param name="categoria">string Nome do produto</param>
+        /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto cadastrado</returns>
         [HttpPost]
         public async Task<ActionResult<Produto>> Post (Produto produto) {
@@ -62,7 +62,7 @@ namespace backend.Controllers {
         /// Faz a modificação do produto especificado
         /// </summary>
         /// <param name="id">int Id do produto</param>
-        /// <param name="categoria">string Nome do produto</param>
+        /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto modificado</returns>
         [HttpPut ("{id}")]
         public async Task<ActionResult<Produto>> Put (int id, Produto produto) {
