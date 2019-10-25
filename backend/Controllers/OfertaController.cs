@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,6 +43,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="Oferta">string nome da oferta</param>
         /// <returns>Oferta cadastrada</returns>
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Oferta>> Post (Oferta Oferta) {
             try {
@@ -59,6 +61,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da oferta</param>
         /// <param name="Oferta">string nome da oferta</param>
         /// <returns>Oferta Modificada</returns>
+        [Authorize]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Oferta>> Put (int id, Oferta Oferta) {
             if (id != Oferta.IdOferta) {
@@ -84,6 +87,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da oferta</param>
         /// <returns>Oferta deletada</returns>
+        [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Oferta>> Delete (int id) {
             var Oferta = await _context.Oferta.FindAsync (id);
