@@ -1683,10 +1683,12 @@ main {
         width: 30%;
     }
     .categoria .produtos {
-        display: grid;
+        /* display: grid;
         grid-template-columns: 35% auto 35%;
         grid-template-rows: 50% 50%;
-        grid-gap: 10px;
+        grid-gap: 10px; */
+        display: flex;
+        justify-content: space-between;
     }
     .paginaProduto_pag .esquerdo {
         width: 35%;
@@ -1739,7 +1741,8 @@ main {
 }
 
 .categorias {
-    width: 100%;
+    width: 95%;
+    margin: auto;
 }
 
 .categoria h2 {
@@ -2020,9 +2023,15 @@ main {
         width: 85vw;
     }
     /* pagina filtroProdutos */
+    
     .containerProdutos {
         width: 85vw;
     }
+
+    .containerProdutos .categorias {
+        width: 100%;
+    }
+
     .filtros {
         background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
         background-position: unset;
