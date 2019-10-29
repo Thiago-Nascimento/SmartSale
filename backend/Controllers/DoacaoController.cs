@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,6 +43,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="Doacao">string nome da Doacao</param>
         /// <returns>Doacao cadastrada</returns>
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Doacao>> Post (Doacao Doacao) {
             try {
@@ -59,6 +61,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da doação</param>
         /// <param name="Doacao">string nome da doação</param>
         /// <returns>Doação modificada</returns>
+        [Authorize]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Doacao>> Put (int id, Doacao Doacao) {
             if (id != Doacao.IdDoacao) {
@@ -84,6 +87,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da doação</param>
         /// <returns>Doação deletada</returns>
+        [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Doacao>> Delete (int id) {
             var Doacao = await _context.Doacao.FindAsync (id);

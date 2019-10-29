@@ -4,6 +4,7 @@ using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Microsoft.AspNetCore.Authorization;
 
 namespace backend.Controllers {
 
@@ -17,6 +18,7 @@ namespace backend.Controllers {
         /// Lista os usuarios
         /// </summary>
         /// <returns>Lista contendo os usuarios</returns>
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get () {
             var usuario = await _context.Usuario.Include("IdRegiaoNavigation").Include("IdTipoUsuarioNavigation").ToListAsync ();
@@ -31,6 +33,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id do usuario desejavel</param>
         /// <returns>Usuario requisitado</returns>
+        [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Usuario>> Get (int id) {
             var usuario = await _context.Usuario.Include("IdRegiaoNavigation").Include("IdTipoUsuarioNavigation").FirstOrDefaultAsync(e => e.IdUsuario == id); 
@@ -45,6 +48,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="usuario">string nome do usuario</param>
         /// <returns>Usuario cadastrado</returns>
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Usuario>> Post (Usuario usuario) {
             try {
@@ -63,6 +67,7 @@ namespace backend.Controllers {
         /// <param name="id">int id do usuario</param>
         /// <param name="usuario">string nome do usuario</param>
         /// <returns>Usuario modificado</returns>
+        [Authorize]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Usuario>> Put (int id, Usuario usuario) {
             if (id != usuario.IdUsuario) {
@@ -89,6 +94,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id do usuario</param>
         /// <returns>Usuario deletado</returns>
+        [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Usuario>> Delete (int id) {
             var usuario = await _context.Usuario.FindAsync (id);

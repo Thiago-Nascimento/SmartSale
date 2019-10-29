@@ -263,7 +263,7 @@ header {
     margin-bottom: 50px;
 }
 
-.cardscadastrovendedor .informacao {
+.cardscadastrovendedor .informacao_cadastrovendedor {
     display: flex;
     flex-direction: column;
     border: solid 1px #707070;
@@ -275,7 +275,7 @@ header {
     background-color: white;
 }
 
-.cardscadastrovendedor .cadvend {
+.cardscadastrovendedor .cadvend_cadastrovendedor {
     display: flex;
     flex-direction: column;
     width: 190px;
@@ -341,6 +341,9 @@ header {
         width: 200px;
         margin: auto;
         padding-top: 20px;
+    }
+    .cardscadastrovendedor{
+        width: 50%;
     }
 }
 
@@ -645,6 +648,10 @@ header {
 
 /* Home */
 
+.home_pag {
+    padding-bottom: 1px;
+}
+
 .home_pag .cnjt {
     display: flex;
     justify-content: space-between;
@@ -887,7 +894,7 @@ header {
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background-color: white;
-    margin: 2% auto;
+    margin: 4% auto;
     padding: 2% 0;
 }
 
@@ -911,14 +918,19 @@ header {
     /* transition: all 2s; */
 }
 
-.home_pag .cardhome2 {
-    margin: 20px 0px 0px;
+.home_pag .pdts2 {
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    background-color: white;
+    padding: 2% 0;
+    margin: 4% auto;
+}
+
+.home_pag .cardhome2 {
+    margin: 20px 0px 0px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: white;
 }
 
 .home_pag .card p {
@@ -935,10 +947,6 @@ header {
     font-size: 15px;
     color: black;
     text-decoration: none;
-}
-
-.home_pag .pdt {
-    padding-bottom: 60px;
 }
 
 .home_pag .pdt h4 {
@@ -1100,6 +1108,13 @@ main {
     /* padding-bottom: 50px; */
 }
 
+#regiao{
+    margin-top: 10px;
+    font-size: 23px;
+    font-style: bold;
+    color: var(--grafite);
+}
+
 .paginaProduto_pag {
     padding: 1px 0;
 }
@@ -1124,7 +1139,6 @@ main {
     align-items: center;
     margin: 2% 0%;
 }
-
 .paginaProduto_pag .esquerdo .imagem-produto {
     width: 100%;
     height: 100%;
@@ -1577,68 +1591,61 @@ main {
 }
 
 /* pagina quem somos */
-
-.quemsomos_pag {
-    padding-bottom: 1px;
+.imagem_quemsomos{
+    background-image: linear-gradient(rgba(35, 35, 35, 0.5),rgba(35,35,35,0.5)), url(../img/armario_2.jpg);
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.quemsomos_pag .bannerquemsomos {
-    background-image: url(../img/banner.png);
-    width: 100%;
-    /*Importante colocar 100% para ele agir sozinho*/
-    height: 300px;
-    background-repeat: no-repeat;
-    background-size: cover;
+.quemsomos_pag{
+    padding-bottom: 30px;
 }
-
-.quemsomos_pag .caixao {
+.quemsomos_texto_one{
+    justify-content: center;
+    color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: justify;
-    justify-content: flex-start;
-    padding-left: 4%;
-    width: 50%;
+}
+.quemsomos_texto_one p{
+    font-size: 20px;
+    margin-top: 25px;
+    width: 800px;    
+}
+.quemsomos_texto_one h1{
+    font-size: 30px;
 }
 
-.quemsomos_pag h2 {
-    padding: 25px 0px;
+.quemsomos_partetwo{
+    background-color: white;
+    width: 900px;
+    margin: auto;
+    margin-bottom: 30px;
 }
-
-.quemsomos_pag .one, .quemsomos_pag .two {
+.quemsomos_texto_two{
+    border-radius: 10px;
+    box-shadow: 10px 5px 19px 0px rgba(0,0,0,0.29);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 450px;
+    
+}
+.quemsomos_texto_two .quemsomos_esquerdo{
+    text-align: justify;
+    padding: 10px 10px;
+    width: 350px;
+    padding-right: 40px;
+}
+.quemsomos_esquerdo{
     color: #707070;
 }
 
-.quemsomos_pag .one {
-    width: 80%;
-    font-size: 1em;
-}
-
-.quemsomos_pag .two {
-    width: 80%;
-    font-size: 1em;
-    margin-bottom: 10%;
-}
-
-.quemsomos_pag .tudo {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin: auto;
-    background-color: white;
-    margin: 40px auto;
-    border-radius: 5px;
-    box-shadow: 4px 4px 15px #cccccc;
-}
-
-.quemsomos_pag .contImagem {
-    width: 45%;
-    height: auto;
-    margin: 25px 0px;
-    padding-right: 2%;
-}
-
-.quemsomos_pag .contImagem img {
-    width: 100%;
+.quemsomos_direito img{
+    width: 380px;
+    height: 400px;
 }
 
 @media (min-width: 1170px) {
@@ -1685,10 +1692,12 @@ main {
         width: 30%;
     }
     .categoria .produtos {
-        display: grid;
+        /* display: grid;
         grid-template-columns: 35% auto 35%;
         grid-template-rows: 50% 50%;
-        grid-gap: 10px;
+        grid-gap: 10px; */
+        display: flex;
+        justify-content: space-between;
     }
     .paginaProduto_pag .esquerdo {
         width: 35%;
@@ -1741,7 +1750,8 @@ main {
 }
 
 .categorias {
-    width: 100%;
+    width: 95%;
+    margin: auto;
 }
 
 .categoria h2 {
@@ -1884,12 +1894,12 @@ main {
 
 /* pagina login */
 
-.cadastroelogin_pag .cards_cadlog {
+.login_pag .cards_cadlog {
     display: flex;
     justify-content: space-between;
 }
 
-.cadastroelogin_pag .cards_cadlog .imgLoginCad {
+.login_pag .cards_cadlog .imgLoginCad {
     background-image: linear-gradient(rgba(183, 39, 255, 0.5), rgba(183, 39, 255, 0.5)), url(../img/img4.png);
     background-size: cover;
     background-position: center;
@@ -1898,11 +1908,11 @@ main {
     height: 100vh;
 }
 
-.cadastroelogin_pag .contCard_1_cadlog {
+.login_pag .contCard_1_cadlog {
     width: 50%;
 }
 
-.cadastroelogin_pag .card_1_cadlog {
+.login_pag .card_1_cadlog {
     width: 80%;
     height: 80%;
     margin: 12% auto;
@@ -1915,39 +1925,47 @@ main {
     justify-content: center; 
 }
 
-.cadastroelogin_pag .card_1_cadlog #loginForm {
+.login_pag .card_1_cadlog #loginForm {
     width: 50%;
     height: 60%;
 }
 
-.cadastroelogin_pag .card_1_cadlog #loginForm input {
+.login_pag .card_1_cadlog #loginForm input {
     width: 100%;
     height: 37px;
     border-radius: 5px;
     border: solid 1px #cccccc;
 }
 
-.cadastroelogin_pag .card_1_cadlog #loginForm label {
+.login_pag .card_1_cadlog #loginForm label {
     width: 100%;
     margin-bottom: 3%; 
 }
 
-.cadastroelogin_pag .card_1_cadlog .login_cadlog {
+.login_pag .card_1_cadlog .login_cadlog {
     display: flex;
     flex-direction: column;
     margin: 5% 0;
 
 }
 
-.cadastroelogin_pag .card_1_cadlog .btn_cadlog {
+.login_pag .card_1_cadlog button {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: var(--roxo);
+    border-radius: 4px;
+    border: solid 1px var(--roxo);
+    color: white;
+    width: 100%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+.login_pag .card_1_cadlog .btn_cadastrarse {
     text-align: center;
 }
 
-.cadastroelogin_pag .card_1_cadlog .btn_cadastrarse {
-    text-align: center;
-}
-
-.cadastroelogin_pag .card_1_cadlog .btn_cadastrarse a {
+.login_pag .card_1_cadlog .btn_cadastrarse a {
     color: var(--roxo);
 }
 
@@ -2022,9 +2040,15 @@ main {
         width: 85vw;
     }
     /* pagina filtroProdutos */
+    
     .containerProdutos {
         width: 85vw;
     }
+
+    .containerProdutos .categorias {
+        width: 100%;
+    }
+
     .filtros {
         background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
         background-position: unset;
@@ -2043,6 +2067,7 @@ main {
         width: 100%;
         padding-top: 0;
     }
+}    
     /* pagina Produto */
     .paginaProduto_pag .direito .nomeProduto {
         font-size: 1.5em;
@@ -2261,23 +2286,6 @@ main {
     /* pagina FAQ */
     .faq_pag .enviar_perguntasfrequentes {
         width: auto;
-    }
-    /* pagina Quem Somos */
-    .quemsomos_pag .tudo {
-        display: block;
-        justify-content: center;
-        align-items: center;
-    }
-    .quemsomos_pag .tudo img {
-        width: 75%;
-    }
-    .quemsomos_pag .caixao {
-        width: 100%;
-    }
-    .quemsomos_pag .contImagem {
-        width: 100%;
-        display: flex;
-        justify-content: center;
     }
     /* pagina ONGS */
     .ongs_pag .conteudo {
