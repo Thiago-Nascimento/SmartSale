@@ -1940,7 +1940,7 @@ main {
 
 }
 
-.login_pag .card_1_cadlog buttons {
+.login_pag .card_1_cadlog button {
     text-align: center;
     padding: 10px 20px;
     background-color: var(--roxo);
