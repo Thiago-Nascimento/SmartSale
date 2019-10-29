@@ -5,7 +5,6 @@ using System.Security.Claims;
 using System.Text;
 using backend.Models;
 using Microsoft.AspNetCore.Authorization;
-// using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;

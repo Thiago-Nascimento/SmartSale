@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Models;
@@ -16,7 +17,7 @@ namespace backend.Controllers {
         /// <returns>Lista contendo os produtos</returns>
         [HttpGet]
         public async Task<ActionResult<List<Produto>>> Get () { //Include puxa a chave estrangeira
-            var produtos = await _context.Produto.Include("IdCategoriaNavigation").ToListAsync ();
+            var produtos = await _context.Produto.Include ("IdCategoriaNavigation").ToListAsync ();
             if (produtos == null) {
                 return NotFound ();
             }
@@ -101,6 +102,28 @@ namespace backend.Controllers {
             await _context.SaveChangesAsync ();
             return produto;
         }
+
+        // public ActionResult Index (string sortOrder) {
+        //     NameSortParm = String.IsNullOrEmpty (sortOrder) ? "NomeProduto" : "";
+        //     DateSortParm = sortOrder == "Date" ? "date" : "Date";
+        //     var produtos = from p in BD_SmartSaleContext.Produto
+        //     select p;
+        //     switch (sortOrder) {
+        //         case "NomeProduto":
+        //             produtos = produtos.OrderByDescending (p => p.NomeProduto);
+        //             break;
+        //         case "Date":
+        //             produtos = produtos.OrderBy (p => p.EnrollmentDate);
+        //             break;
+        //         case "date_desc":
+        //             produtos = produtos.OrderByDescending (p => p.EnrollmentDate);
+        //             break;
+        //         default:
+        //             produtos = produtos.OrderBy (p => p.LastName);
+        //             break;
+        //     }
+        //     return produtos.ToList ();
+        // }
 
     }
 }
