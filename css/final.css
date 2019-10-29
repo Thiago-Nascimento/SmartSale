@@ -594,6 +594,9 @@ header {
 }
 
 /* Final da Reserva */
+#footer_finaldareserva{
+    margin-top: 20px;
+}
 
 .finalreserva_pag {
     padding: 1px 0px;
