@@ -1108,6 +1108,13 @@ main {
     /* padding-bottom: 50px; */
 }
 
+#regiao{
+    margin-top: 10px;
+    font-size: 23px;
+    font-style: bold;
+    color: var(--grafite);
+}
+
 .paginaProduto_pag {
     padding: 1px 0;
 }
@@ -1132,7 +1139,6 @@ main {
     align-items: center;
     margin: 2% 0%;
 }
-
 .paginaProduto_pag .esquerdo .imagem-produto {
     width: 100%;
     height: 100%;
