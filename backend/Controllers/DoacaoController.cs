@@ -4,12 +4,15 @@ using backend.Domains;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using backend.Repositories;
+
 
 namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class DoacaoController : ControllerBase {
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        //BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        DoacaoRepository _repositorio = new DoacaoRepository();
 
         /// <summary>
         /// Lista as doações cadastradas

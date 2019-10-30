@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
 using backend.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Repositories
 {
@@ -9,27 +10,43 @@ namespace backend.Repositories
     {
         public async Task<Produto> Alterar(Produto produto)
         {
-            throw new System.NotImplementedException();
+            using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
+                _contexto.Entry(produto).State = EntityState.Modified;
+                await _contexto.SaveChangesAsync();
+                return produto;
+            }
         }
 
-        public Task<Produto> BuscarPorID(int id)
+        public async Task<Produto> BuscarPorID(int id)
         {
-            throw new System.NotImplementedException();
+            using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
+                return await _contexto.Produto.FindAsync(id);
+            }
         }
 
-        public Task<Produto> Excluir(Produto produto)
+        public async Task<Produto> Excluir(Produto produto)
         {
-            throw new System.NotImplementedException();
+            using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
+                _contexto.Produto.Remove(produto);
+                await _contexto.SaveChangesAsync();
+                return produto;
+            }
         }
 
-        public Task<List<Produto>> Listar()
+        public async Task<List<Produto>> Listar()
         {
-            throw new System.NotImplementedException();
+            using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
+                return await _contexto.Produto.ToListAsync();
+            }
         }
 
-        public Task<Produto> Salvar(Produto produto)
+        public async Task<Produto> Salvar(Produto produto)
         {
-            throw new System.NotImplementedException();
+            using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
+                await _contexto.AddAsync(produto);
+                await _contexto.SaveChangesAsync();
+                return produto;
+            }
         }
     }
 }
