@@ -88,3 +88,10 @@ C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Swashbuckle.AspNe
 C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\fic\Desktop\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\fic\Desktop\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.xml
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
