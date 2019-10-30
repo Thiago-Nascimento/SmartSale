@@ -23,7 +23,8 @@ namespace backend {
         public Startup (IConfiguration configuration) {
             Configuration = configuration;
         }
-
+        //para habilitar o cors
+        readonly string PermissaoEntreOrigens = "_PermissaoEntreOrigens";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -53,6 +54,11 @@ namespace backend {
                     };
                 });
 
+            //habilitação do cors
+            services.AddCors (options => {
+                options.AddPolicy (PermissaoEntreOrigens,
+                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,11 +72,11 @@ namespace backend {
 
             //Especifique o endpoint da documentação
             app.UseSwaggerUI (c => {
-                c.SwaggerEndpoint("swagger/v1/swagger.json", "API V1");
+                c.SwaggerEndpoint ("swagger/v1/swagger.json", "API V1");
             });
 
             //Habilitamos efetivamente o JWT em nossa aplicação
-            app.UseAuthentication();
+            app.UseAuthentication ();
 
             app.UseHttpsRedirection ();
 
@@ -81,6 +87,9 @@ namespace backend {
             app.UseEndpoints (endpoints => {
                 endpoints.MapControllers ();
             });
+
+            //cors
+            app.UseCors (builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseSwagger ();
 
