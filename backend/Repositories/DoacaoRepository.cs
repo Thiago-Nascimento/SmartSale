@@ -37,7 +37,7 @@ namespace backend.Repositories
         public async Task<List<Doacao>> Listar()
         {
             using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
-                return await _contexto.Doacao.ToListAsync();
+                return await _contexto.Doacao.Include("IdOfertaNavigation").Include("IdOngNavigation").ToListAsync();
             }
         }
 

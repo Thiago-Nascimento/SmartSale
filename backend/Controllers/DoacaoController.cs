@@ -20,7 +20,7 @@ namespace backend.Controllers {
         /// <returns>Lista de doações</returns>
         [HttpGet]
         public async Task<ActionResult<List<Doacao>>> Get () {
-            var doacoes = await _context.Doacao.Include("IdOfertaNavigation").Include("IdOngNavigation").ToListAsync ();
+            var doacoes = await _repositorio.Listar ();
             if (doacoes == null) {
                 return NotFound ();
             }
@@ -34,7 +34,7 @@ namespace backend.Controllers {
         /// <returns>Doacao Requisitada</returns>
         [HttpGet ("{id}")]
         public async Task<ActionResult<Doacao>> Get (int id) {
-            var Doacao = await _context.Doacao.FindAsync (id);
+            var Doacao = await _repositorio.BuscarPorID(id);
             if (Doacao == null) {
                 return NotFound ();
             }
@@ -70,12 +70,11 @@ namespace backend.Controllers {
             if (id != Doacao.IdDoacao) {
                 return BadRequest ();
             }
-            _context.Entry (Doacao).State = EntityState.Modified;
 
             try {
-                await _context.SaveChangesAsync ();
+                await _repositorio.Alterar (doacao);
             } catch (DbUpdateConcurrencyException) {
-                var Doacao_valida = await _context.Doacao.FindAsync (id);
+                var Doacao_valida = await _repositorio.BuscarPorID (id);
                 if (Doacao_valida == null) {
                     return NotFound ();
                 } else {
@@ -93,12 +92,11 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Doacao>> Delete (int id) {
-            var Doacao = await _context.Doacao.FindAsync (id);
+            var Doacao = await _repositorio.BuscarPorID (id);
             if (Doacao == null) {
                 return NotFound ();
             }
-            _context.Doacao.Remove (Doacao);
-            await _context.SaveChangesAsync ();
+            await _repositorio.Excluir (Doacao);
             return Doacao;
         }
     }
