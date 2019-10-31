@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
+using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,8 @@ namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class CategoriaController : ControllerBase {
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        //BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        CategoriaRepository _repositorio = new CategoriaRepository ();
 
         /// <summary>
         /// Lista as Categorias
@@ -17,7 +19,7 @@ namespace backend.Controllers {
         /// <returns>Lista contendo as Categorias</returns>
         [HttpGet]
         public async Task<ActionResult<List<Categoria>>> Get () {
-            var categorias = await _context.Categoria.ToListAsync ();
+            var categorias = await _repositorio.Listar ();
             if (categorias == null) {
                 return NotFound ();
             }
@@ -31,7 +33,7 @@ namespace backend.Controllers {
         /// <returns>Categoria Requisitada</returns>
         [HttpGet ("{id}")]
         public async Task<ActionResult<Categoria>> Get (int id) {
-            var categoria = await _context.Categoria.FindAsync (id);
+            var categoria = await _repositorio.BuscarPorID (id);
             if (categoria == null) {
                 return NotFound ();
             }
@@ -47,8 +49,7 @@ namespace backend.Controllers {
         [HttpPost]
         public async Task<ActionResult<Categoria>> Post (Categoria categoria) {
             try {
-                await _context.AddAsync (categoria);
-                await _context.SaveChangesAsync ();
+                await _repositorio.Salvar (categoria);
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
@@ -68,12 +69,12 @@ namespace backend.Controllers {
             if (id != categoria.IdCategoria) {
                 return BadRequest ();
             }
-            _context.Entry (categoria).State = EntityState.Modified;
 
             try {
-                await _context.SaveChangesAsync ();
+                await _repositorio.Alterar (categoria);
             } catch (DbUpdateConcurrencyException) {
-                var categoria_valida = await _context.Categoria.FindAsync (id);
+
+                var categoria_valida = await _repositorio.BuscarPorID (id);
                 if (categoria_valida == null) {
                     return NotFound ();
                 } else {
@@ -92,12 +93,11 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Categoria>> Delete (int id) {
-            var categoria = await _context.Categoria.FindAsync (id);
+            var categoria = await _repositorio.BuscarPorID (id);
             if (categoria == null) {
                 return NotFound ();
             }
-            _context.Categoria.Remove (categoria);
-            await _context.SaveChangesAsync ();
+            await _repositorio.Excluir(categoria);
             return categoria;
         }
     }

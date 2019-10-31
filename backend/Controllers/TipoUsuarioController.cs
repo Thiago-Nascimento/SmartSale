@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
+using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,9 @@ namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class TipoUsuarioController : ControllerBase {
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        // BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+
+        TipoUsuarioRepository _repository = new TipoUsuarioRepository ();
 
         /// <summary>
         /// Lista os Tipos de Usuario
@@ -18,7 +21,7 @@ namespace backend.Controllers {
         [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<TipoUsuario>>> Get () {
-            var tipo_usuario = await _context.TipoUsuario.ToListAsync ();
+            var tipo_usuario = await _repository.Listar ();
             if (tipo_usuario == null) {
                 return NotFound ();
             }
@@ -33,7 +36,8 @@ namespace backend.Controllers {
         [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<TipoUsuario>> Get (int id) {
-            var tipo_usuario = await _context.TipoUsuario.FindAsync (id);
+            var tipo_usuario = await _repository.BuscarPorID (id);
+
             if (tipo_usuario == null) {
                 return NotFound ();
             }
@@ -49,8 +53,7 @@ namespace backend.Controllers {
         [HttpPost]
         public async Task<ActionResult<TipoUsuario>> Post (TipoUsuario tipo_usuario) {
             try {
-                await _context.AddAsync (tipo_usuario);
-                await _context.SaveChangesAsync ();
+                await _repository.Salvar (tipo_usuario);
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
@@ -70,20 +73,20 @@ namespace backend.Controllers {
             if (id != tipo_usuario.IdTipoUsuario) {
                 return BadRequest ();
             }
-            _context.Entry (tipo_usuario).State = EntityState.Modified;
 
             try {
-                await _context.SaveChangesAsync ();
+                await _repository.Alterar (tipo_usuario);
             } catch (DbUpdateConcurrencyException) {
-                var tipo_de_usuario_valida = await _context.TipoUsuario.FindAsync (id);
+                var tipo_de_usuario_valida = await _repository.BuscarPorID (id);
+
                 if (tipo_de_usuario_valida == null) {
                     return NotFound ();
                 } else {
                     throw;
                 }
-
             }
-            return tipo_usuario;
+
+            return NoContent ();
         }
 
         /// <summary>
@@ -94,12 +97,11 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<TipoUsuario>> Delete (int id) {
-            var tipo_usuario = await _context.TipoUsuario.FindAsync (id);
+            var tipo_usuario = await _repository.BuscarPorID(id);
             if (tipo_usuario == null) {
                 return NotFound ();
             }
-            _context.TipoUsuario.Remove (tipo_usuario);
-            await _context.SaveChangesAsync ();
+
             return tipo_usuario;
         }
     }
