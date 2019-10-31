@@ -12,7 +12,7 @@ namespace backend.Interfaces
 
         Task<TipoUsuario> Salvar(TipoUsuario tipoUsuario);
 
-        Task<TipoUsuario> Alterar(TipoUsuario tipoUsuario);
+        Task<TipoUsuario> Alterar(TipoUsuario tipo_Usuario);
 
         Task<TipoUsuario> Excluir(TipoUsuario tipoUsuario);
     }
