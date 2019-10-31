@@ -57,7 +57,7 @@ namespace backend {
             //habilitação do cors
             services.AddCors (options => {
                 options.AddPolicy (PermissaoEntreOrigens,
-                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
         }
 

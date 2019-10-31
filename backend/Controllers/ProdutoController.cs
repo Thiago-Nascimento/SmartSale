@@ -5,28 +5,28 @@ using backend.Domains;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using backend.Repositories;
 
 namespace backend.Controllers {
     [Route ("api/[Controller]")]
     [ApiController]
     public class ProdutoController : ControllerBase {
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
-        //listar produto
+        ProdutoRepository _repositorio = new ProdutoRepository();
+
         /// <summary>
         /// Lista as produto
         /// </summary>
         /// <returns>Lista contendo os produtos</returns>
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<List<Produto>>> Get () { //Include puxa a chave estrangeira
-            var produtos = await _context.Produto.Include ("IdCategoriaNavigation").ToListAsync ();
+        public async Task<ActionResult<List<Produto>>> Get () {
+            var produtos = await _repositorio.Listar ();
             if (produtos == null) {
                 return NotFound ();
             }
             return produtos;
         }
 
-        //pegar produto especifica por id 
         /// <summary>
         /// Exibe um produto especifico
         /// </summary>
@@ -35,7 +35,7 @@ namespace backend.Controllers {
         [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Produto>> Get (int id) {
-            var produtos = await _context.Produto.FindAsync (id);
+            var produtos = await _repositorio.BuscarPorID (id);
             if (produtos == null) {
                 return NotFound ();
             }
@@ -51,10 +51,7 @@ namespace backend.Controllers {
         [HttpPost]
         public async Task<ActionResult<Produto>> Post (Produto produto) {
             try {
-                //adiciona uma nova "categoria" no "Categoria"
-                await _context.AddAsync (produto);
-                //salva as mudanças feitas no banco
-                await _context.SaveChangesAsync ();
+                await _repositorio.Salvar(produto);
             } catch (DbUpdateConcurrencyException) {
 
                 throw;
@@ -75,12 +72,11 @@ namespace backend.Controllers {
             if (id != produto.IdProduto) {
                 return BadRequest ();
             }
-            _context.Entry (produto).State = EntityState.Modified;
 
             try {
-                await _context.SaveChangesAsync ();
+                await _repositorio.Alterar (produto);
             } catch (DbUpdateConcurrencyException) {
-                var categoria_valida = await _context.Produto.FindAsync (id);
+                var categoria_valida = await _repositorio.BuscarPorID (id);
                 if (produto == null) {
                     return NotFound ();
                 } else {
@@ -100,12 +96,11 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Produto>> Delete (int id) {
-            var produto = await _context.Produto.FindAsync (id);
+            var produto = await _repositorio.BuscarPorID (id);
             if (produto == null) {
                 return NotFound ();
             }
-            _context.Produto.Remove (produto);
-            await _context.SaveChangesAsync ();
+            await _repositorio.Excluir (produto);
             return produto;
         }
 
