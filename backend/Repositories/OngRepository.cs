@@ -30,7 +30,7 @@ namespace backend.Repositories {
 
         public async Task<List<Ong>> Listar () {
             using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
-                return await  _contexto.Ong.ToListAsync();
+                return await  _contexto.Ong.Include("IdRegiaoNavigation").ToListAsync();
             }    
         }
 
