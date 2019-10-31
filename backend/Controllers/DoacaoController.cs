@@ -50,8 +50,7 @@ namespace backend.Controllers {
         [HttpPost]
         public async Task<ActionResult<Doacao>> Post (Doacao Doacao) {
             try {
-                await _context.AddAsync (Doacao);
-                await _context.SaveChangesAsync ();
+                await _repositorio.Salvar (Doacao);
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
@@ -72,7 +71,7 @@ namespace backend.Controllers {
             }
 
             try {
-                await _repositorio.Alterar (doacao);
+                await _repositorio.Alterar (Doacao);
             } catch (DbUpdateConcurrencyException) {
                 var Doacao_valida = await _repositorio.BuscarPorID (id);
                 if (Doacao_valida == null) {
