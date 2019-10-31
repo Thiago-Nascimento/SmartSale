@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
+using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,9 @@ namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class ReservaController : ControllerBase {
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        // BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+
+    ReservaRepository _repositorio = new ReservaRepository();
 
         /// <summary>
         /// Lista as reservas cadastradas
@@ -18,7 +21,7 @@ namespace backend.Controllers {
         [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Reserva>>> Get () {
-            var reservas = await _context.Reserva.Include("IdOfertaNavigation").Include("IdUsuarioNavigation").ToListAsync ();
+            var reservas = await _repositorio.Listar();
             if (reservas == null) {
                 return NotFound ();
             }
@@ -33,7 +36,7 @@ namespace backend.Controllers {
         [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Reserva>> Get (int id) {
-            var reserva = await _context.Reserva.FindAsync (id);
+            var reserva = await _repositorio.BuscarPorID (id);
             if (reserva == null) {
                 return NotFound ();
             }
@@ -49,8 +52,7 @@ namespace backend.Controllers {
         [HttpPost]
         public async Task<ActionResult<Reserva>> Post (Reserva reserva) {
             try {
-                await _context.AddAsync (reserva);
-                await _context.SaveChangesAsync ();
+               await _repositorio.Salvar(reserva);
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
@@ -69,19 +71,22 @@ namespace backend.Controllers {
             if (id != reserva.IdReserva) {
                 return BadRequest ();
             }
-            _context.Entry (reserva).State = EntityState.Modified;
-
+           
             try {
-                await _context.SaveChangesAsync ();
+                await _repositorio.Alterar(reserva);
+               
             } catch (DbUpdateConcurrencyException) {
-                var reserva_valida = await _context.Reserva.FindAsync (id);
-                if (reserva_valida == null) {
+               var reserva_valida = await _repositorio.BuscarPorID(id);
+                
+                if(reserva_valida == null){
                     return NotFound ();
                 } else {
                     throw;
                 }
             }
+
             return reserva;
+            
         }
 
         /// <summary>
@@ -92,12 +97,11 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Reserva>> Delete (int id) {
-            var reserva = await _context.Reserva.FindAsync (id);
+            var reserva = await _repositorio.BuscarPorID (id);
             if (reserva == null) {
                 return NotFound ();
             }
-            _context.Reserva.Remove (reserva);
-            await _context.SaveChangesAsync ();
+           
             return reserva;
         }
     }
