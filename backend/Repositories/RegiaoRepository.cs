@@ -40,7 +40,8 @@ namespace backend.Repositories {
                 await _contexto.SaveChangesAsync();
             }
 
-            return regiao;
+            return regiao
+            ;
         }
     }
 }
