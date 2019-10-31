@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
+using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class RegiaoController : ControllerBase {
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        RegiaoRepository _repositorio = new RegiaoRepository ();
 
         /// <summary>
         /// Lista as Regiões
@@ -17,7 +18,7 @@ namespace backend.Controllers {
         /// <returns>Lista contendo as Regiões</returns>
         [HttpGet]
         public async Task<ActionResult<List<Regiao>>> Get () {
-            var regioes = await _context.Regiao.ToListAsync ();
+            var regioes = await _repositorio.Listar();
             if (regioes == null) {
                 return NotFound ();
             }
@@ -31,7 +32,7 @@ namespace backend.Controllers {
         /// <returns>Regiao Requisitada</returns>
         [HttpGet ("{id}")]
         public async Task<ActionResult<Regiao>> Get (int id) {
-            var regiao = await _context.Regiao.FindAsync (id);
+            var regiao = await _repositorio.BuscarPorID(id);
             if (regiao == null) {
                 return NotFound ();
             }
@@ -47,8 +48,8 @@ namespace backend.Controllers {
         [HttpPost]
         public async Task<ActionResult<Regiao>> Post (Regiao regiao) {
             try {
-                await _context.AddAsync (regiao);
-                await _context.SaveChangesAsync ();
+                await _repositorio.Salvar(regiao);
+                
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
@@ -67,13 +68,10 @@ namespace backend.Controllers {
         public async Task<ActionResult<Regiao>> Put (int id, Regiao regiao) {
             if (id != regiao.IdRegiao) {
                 return BadRequest ();
-            }
-            _context.Entry (regiao).State = EntityState.Modified;
-
-            try {
-                await _context.SaveChangesAsync ();
+            }try {
+                await _repositorio.Salvar(regiao);
             } catch (DbUpdateConcurrencyException) {
-                var regiao_valida = await _context.Regiao.FindAsync (id);
+                var regiao_valida = await _repositorio.BuscarPorID (id);
                 if (regiao_valida == null) {
                     return NotFound ();
                 } else {
@@ -92,12 +90,11 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Regiao>> Delete (int id) {
-            var regiao = await _context.Regiao.FindAsync (id);
+            var regiao = await _repositorio.BuscarPorID (id);
             if (regiao == null) {
                 return NotFound ();
             }
-            _context.Regiao.Remove (regiao);
-            await _context.SaveChangesAsync ();
+           await _repositorio.Excluir(regiao);
             return regiao;
         }
     }

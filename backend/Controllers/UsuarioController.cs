@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers {
 
@@ -12,7 +13,10 @@ namespace backend.Controllers {
     [ApiController]
     public class UsuarioController : ControllerBase {
 
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+
+       // BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+
+    UsuarioRepository _repositorio = new UsuarioRepository();
 
         /// <summary>
         /// Lista os usuarios
@@ -21,7 +25,7 @@ namespace backend.Controllers {
         [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get () {
-            var usuario = await _context.Usuario.Include("IdRegiaoNavigation").Include("IdTipoUsuarioNavigation").ToListAsync ();
+            var usuario = await _repositorio.Listar();
             if (usuario == null) {
                 return NotFound ();
             }
@@ -36,7 +40,7 @@ namespace backend.Controllers {
         [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Usuario>> Get (int id) {
-            var usuario = await _context.Usuario.Include("IdRegiaoNavigation").Include("IdTipoUsuarioNavigation").FirstOrDefaultAsync(e => e.IdUsuario == id); 
+            var usuario = await _repositorio.BuscarPorID(id);
             if (usuario == null) {
                 return NotFound ();
             }
@@ -51,9 +55,8 @@ namespace backend.Controllers {
         [Authorize]
         [HttpPost]
         public async Task<ActionResult<Usuario>> Post (Usuario usuario) {
-            try {
-                await _context.AddAsync (usuario);
-                await _context.SaveChangesAsync ();
+            try { 
+               await _repositorio.Salvar(usuario);
             } catch (DbUpdateConcurrencyException) {
 
                 throw;
@@ -73,11 +76,12 @@ namespace backend.Controllers {
             if (id != usuario.IdUsuario) {
                 return BadRequest ();
             }
-            _context.Entry (usuario).State = EntityState.Modified;
+            
             try {
-                await _context.SaveChangesAsync ();
+                await _repositorio.Alterar(usuario);
+                
             } catch (DbUpdateConcurrencyException) {
-                var usuario_valida = await _context.Usuario.FindAsync (id);
+                var usuario_valida = await _repositorio.BuscarPorID(id);
                 if (usuario_valida == null) {
                     return NotFound ();
                 } else {
@@ -86,7 +90,7 @@ namespace backend.Controllers {
 
             }
 
-            return usuario;
+            return NoContent();
         }
 
         /// <summary>
@@ -97,12 +101,11 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Usuario>> Delete (int id) {
-            var usuario = await _context.Usuario.FindAsync (id);
+            var usuario = await _repositorio.BuscarPorID(id);
             if (usuario == null) {
                 return NotFound ();
             }
-            _context.Usuario.Remove (usuario);
-            await _context.SaveChangesAsync ();
+            
             return usuario;
         }
     }
