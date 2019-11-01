@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
+using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +11,8 @@ namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class OfertaController : ControllerBase {
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        OfertaRepository _repositorio = new OfertaRepository();
+        UploadRepository _uploadRepo = new UploadRepository();
 
         /// <summary>
         /// Lista as ofertas cadastradas
@@ -17,11 +20,11 @@ namespace backend.Controllers {
         /// <returns>Lista de ofertas</returns>
         [HttpGet]
         public async Task<ActionResult<List<Oferta>>> Get () {
-            var Ofertas = await _context.Oferta.Include("IdProdutoNavigation").Include("IdUsuarioNavigation").ToListAsync ();
-            if (Ofertas == null) {
+            var ofertas = await _repositorio.Listar();
+            if (ofertas == null) {
                 return NotFound ();
             }
-            return Ofertas;
+            return ofertas;
         }
 
         /// <summary>
@@ -31,55 +34,74 @@ namespace backend.Controllers {
         /// <returns>Oferta requisitada</returns>
         [HttpGet ("{id}")]
         public async Task<ActionResult<Oferta>> Get (int id) {
-            var Oferta = await _context.Oferta.FindAsync (id);
-            if (Oferta == null) {
+            var oferta = await _repositorio.BuscarPorID(id);
+            if (oferta == null) {
                 return NotFound ();
             }
-            return Oferta;
+            return oferta;
         }
 
         /// <summary>
         /// Adiciona uma oferta
         /// </summary>
-        /// <param name="Oferta">string nome da oferta</param>
+        /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta cadastrada</returns>
-        [Authorize]
+        // [Authorize]
         [HttpPost]
-        public async Task<ActionResult<Oferta>> Post (Oferta Oferta) {
+        public async Task<ActionResult<Oferta>> Post ([FromForm]Oferta oferta) {
             try {
-                await _context.AddAsync (Oferta);
-                await _context.SaveChangesAsync ();
+                var arquivo = Request.Form.Files[0];
+
+                oferta.Quantidade = int.Parse(Request.Form["quantidade"]);
+                oferta.Foto = _uploadRepo.Upload(arquivo, "imgOferta");
+                oferta.Cor = Request.Form["cor"].ToString();
+                oferta.Preco = double.Parse(Request.Form["preco"]);
+                oferta.Descricao = Request.Form["descricao"].ToString();
+                oferta.DataValidade = DateTime.Parse(Request.Form["dataValidade"]);
+                oferta.IdProduto = int.Parse(Request.Form["idProduto"]);
+                oferta.IdUsuario = int.Parse(Request.Form["idUsuario"]);
+                                
+                await _repositorio.Salvar(oferta);
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
-            return Oferta;
+            return oferta;
         }
 
         /// <summary>
         /// Faz a modificação de derterminada oferta
         /// </summary>
         /// <param name="id"> int id da oferta</param>
-        /// <param name="Oferta">string nome da oferta</param>
+        /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta Modificada</returns>
         [Authorize]
         [HttpPut ("{id}")]
-        public async Task<ActionResult<Oferta>> Put (int id, Oferta Oferta) {
-            if (id != Oferta.IdOferta) {
+        public async Task<ActionResult<Oferta>> Put (int id, Oferta oferta) {
+            if (id != oferta.IdOferta) {
                 return BadRequest ();
             }
-            _context.Entry (Oferta).State = EntityState.Modified;
-
             try {
-                await _context.SaveChangesAsync ();
+                var arquivo = Request.Form.Files[0];
+
+                oferta.Quantidade = int.Parse(Request.Form["quantidade"]);
+                oferta.Foto = _uploadRepo.Upload(arquivo, "imgOferta");
+                oferta.Cor = Request.Form["cor"].ToString();
+                oferta.Preco = double.Parse(Request.Form["preco"]);
+                oferta.Descricao = Request.Form["descricao"].ToString();
+                oferta.DataValidade = DateTime.Parse(Request.Form["dataValidade"]);
+                oferta.IdProduto = int.Parse(Request.Form["idProduto"]);
+                oferta.IdUsuario = int.Parse(Request.Form["idUsuario"]);
+                
+                await _repositorio.Alterar(oferta);
             } catch (DbUpdateConcurrencyException) {
-                var Oferta_valida = await _context.Oferta.FindAsync (id);
-                if (Oferta_valida == null) {
+                var oferta_valida = await _repositorio.BuscarPorID(id);
+                if (oferta_valida == null) {
                     return NotFound ();
                 } else {
                     throw;
                 }
             }
-            return Oferta;
+            return oferta;
         }
 
         /// <summary>
@@ -90,13 +112,12 @@ namespace backend.Controllers {
         [Authorize]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Oferta>> Delete (int id) {
-            var Oferta = await _context.Oferta.FindAsync (id);
-            if (Oferta == null) {
+            var oferta = await _repositorio.BuscarPorID(id);
+            if (oferta == null) {
                 return NotFound ();
             }
-            _context.Oferta.Remove (Oferta);
-            await _context.SaveChangesAsync ();
-            return Oferta;
+            await _repositorio.Excluir(oferta);
+            return oferta;
         }
 
         // public ActionResult Index (string sortOrder) {
