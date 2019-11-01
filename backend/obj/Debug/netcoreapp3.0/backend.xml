@@ -39,6 +39,13 @@
             <param name="id">int id da categoria</param>
             <returns>Categoria deletada</returns>
         </member>
+        <member name="M:backend.Controllers.CategoriaController.GetFiltro(backend.Domains.FiltroViewModel)">
+            <summary>
+            filtra as categorias por nome
+            </summary>
+            <param name="FiltroPorNome"></param>
+            <returns>Categoria Requisitada</returns>
+        </member>
         <member name="M:backend.Controllers.DoacaoController.Get">
             <summary>
             Lista as doações cadastradas
