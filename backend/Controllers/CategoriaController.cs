@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using backend.Domains;
 using backend.Repositories;
@@ -10,7 +11,6 @@ namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class CategoriaController : ControllerBase {
-        //BD_SmartSaleContext _context = new BD_SmartSaleContext ();
         CategoriaRepository _repositorio = new CategoriaRepository ();
 
         /// <summary>
@@ -26,6 +26,7 @@ namespace backend.Controllers {
             return categorias;
         }
 
+    
         /// <summary>
         /// Exibe uma Categoria Especifica
         /// </summary>
@@ -97,8 +98,36 @@ namespace backend.Controllers {
             if (categoria == null) {
                 return NotFound ();
             }
-            await _repositorio.Excluir(categoria);
+            await _repositorio.Excluir (categoria);
             return categoria;
+        }
+
+        //api/Categoria/FiltroPorNome
+        /// <summary>
+        /// filtra as categorias por nome
+        /// </summary>
+        /// <param name="FiltroPorNome"></param>
+        /// <returns>Categoria Requisitada</returns>
+        [HttpGet ("FiltroPorNome")]
+        public ActionResult<List<Categoria>> GetFiltro (FiltroViewModel FiltroPorNome) {
+            using (BD_SmartSaleContext _contexto = new BD_SmartSaleContext ()) {
+                List<Categoria> categorias = _contexto.Categoria.Where (cat => cat.NomeCategoria.StartsWith(FiltroPorNome.filtro)).ToList();
+
+                return categorias;
+            }
+        }
+
+
+        //api/Categoria/FiltroPorNome
+        //
+        [HttpGet ("Ordenar")]
+        public ActionResult<List<Categoria>> GetOrdenar () {
+
+            using (BD_SmartSaleContext _contexto = new BD_SmartSaleContext ()) {
+                List<Categoria> categorias = _contexto.Categoria.OrderByDescending (cat => cat.NomeCategoria).ToList();
+
+                return categorias;
+            }
         }
     }
 }
