@@ -16,7 +16,8 @@ namespace backend.Controllers {
 
        // BD_SmartSaleContext _context = new BD_SmartSaleContext ();
 
-    UsuarioRepository _repositorio = new UsuarioRepository();
+        UsuarioRepository _repositorio = new UsuarioRepository();
+        UploadRepository _uploadRepo = new UploadRepository();
 
         /// <summary>
         /// Lista os usuarios
@@ -54,9 +55,24 @@ namespace backend.Controllers {
         /// <returns>Usuario cadastrado</returns>
         [Authorize]
         [HttpPost]
-        public async Task<ActionResult<Usuario>> Post (Usuario usuario) {
+        public async Task<ActionResult<Usuario>> Post ([FromForm]Usuario usuario) {
             try { 
-               await _repositorio.Salvar(usuario);
+                var arquivo = Request.Form.Files[0];
+
+                usuario.NomeUsuario = Request.Form["nomeUsuario"].ToString();
+                usuario.Documento = Request.Form["documento"].ToString();
+                usuario.RazaoSocial = Request.Form["razaoSocial"].ToString();
+                usuario.Email = Request.Form["email"].ToString();
+                usuario.Senha = Request.Form["senha"].ToString();
+                usuario.Telefone = Request.Form["telefone"].ToString();
+                usuario.Telefone2 = Request.Form["telefone2"].ToString();
+                usuario.Endereco = Request.Form["endereco"].ToString();
+                usuario.Cep = Request.Form["cep"].ToString();
+                usuario.Pontuacao = int.Parse(Request.Form["pontuacao"]);
+                usuario.IdTipoUsuario = int.Parse(Request.Form["idTipoUsuario"]);
+                usuario.IdRegiao = int.Parse(Request.Form["idRegiao"]);
+               
+                await _repositorio.Salvar(usuario);
             } catch (DbUpdateConcurrencyException) {
 
                 throw;
@@ -72,12 +88,26 @@ namespace backend.Controllers {
         /// <returns>Usuario modificado</returns>
         [Authorize]
         [HttpPut ("{id}")]
-        public async Task<ActionResult<Usuario>> Put (int id, Usuario usuario) {
+        public async Task<ActionResult<Usuario>> Put (int id, [FromForm]Usuario usuario) {
             if (id != usuario.IdUsuario) {
                 return BadRequest ();
-            }
-            
+            }            
             try {
+                var arquivo = Request.Form.Files[0];
+
+                usuario.NomeUsuario = Request.Form["nomeUsuario"].ToString();
+                usuario.Documento = Request.Form["documento"].ToString();
+                usuario.RazaoSocial = Request.Form["razaoSocial"].ToString();
+                usuario.Email = Request.Form["email"].ToString();
+                usuario.Senha = Request.Form["senha"].ToString();
+                usuario.Telefone = Request.Form["telefone"].ToString();
+                usuario.Telefone2 = Request.Form["telefone2"].ToString();
+                usuario.Endereco = Request.Form["endereco"].ToString();
+                usuario.Cep = Request.Form["cep"].ToString();
+                usuario.Pontuacao = int.Parse(Request.Form["pontuacao"]);
+                usuario.IdTipoUsuario = int.Parse(Request.Form["idTipoUsuario"]);
+                usuario.IdRegiao = int.Parse(Request.Form["idRegiao"]);
+                
                 await _repositorio.Alterar(usuario);
                 
             } catch (DbUpdateConcurrencyException) {

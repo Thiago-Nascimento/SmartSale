@@ -76,7 +76,7 @@ namespace backend.Controllers {
         /// <returns>Oferta Modificada</returns>
         [Authorize]
         [HttpPut ("{id}")]
-        public async Task<ActionResult<Oferta>> Put (int id, Oferta oferta) {
+        public async Task<ActionResult<Oferta>> Put (int id, [FromForm]Oferta oferta) {
             if (id != oferta.IdOferta) {
                 return BadRequest ();
             }

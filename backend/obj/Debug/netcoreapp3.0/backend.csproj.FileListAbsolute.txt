@@ -95,3 +95,13 @@ C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.Identit
 C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\fic\Desktop\SmartSale\backend\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.csprojAssemblyReference.cache
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\staticwebassets\backend.StaticWebAssets.Manifest.cache
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\staticwebassets\backend.StaticWebAssets.xml
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.AssemblyInfoInputs.cache
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.AssemblyInfo.cs
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.dll
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.xml
+C:\Users\thiag\Documents\Dev\SmartSale\backend\obj\Debug\netcoreapp3.0\backend.pdb
