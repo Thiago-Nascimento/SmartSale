@@ -17,7 +17,6 @@ namespace backend.Controllers {
         /// Lista as produto
         /// </summary>
         /// <returns>Lista contendo os produtos</returns>
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Produto>>> Get () {
             var produtos = await _repositorio.Listar ();
@@ -47,7 +46,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto cadastrado</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPost]
         public async Task<ActionResult<Produto>> Post (Produto produto) {
             try {
@@ -66,7 +65,7 @@ namespace backend.Controllers {
         /// <param name="id">int Id do produto</param>
         /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto modificado</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Produto>> Put (int id, Produto produto) {
             if (id != produto.IdProduto) {
@@ -93,7 +92,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id do produto</param>
         /// <returns>Produto deletado</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Produto>> Delete (int id) {
             var produto = await _repositorio.BuscarPorID (id);

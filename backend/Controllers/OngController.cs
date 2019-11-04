@@ -46,7 +46,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="ong">string nome da ong</param>
         /// <returns>Ong cadastrada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPost]
         public async Task<ActionResult<Ong>> Post (Ong ong) {
             try {
@@ -65,7 +65,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da ong</param>
         /// <param name="ong">string nome da ong</param>
         /// <returns>Ong Modificada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Ong>> Put (int id, Ong ong) {
             if (id != ong.IdOng) {
@@ -89,7 +89,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da ong</param>
         /// <returns>Ong deletada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Ong>> Delete (int id) {
             var ongs = await _repositorio.BuscarPorID (id);
