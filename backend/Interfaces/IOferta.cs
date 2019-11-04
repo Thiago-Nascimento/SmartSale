@@ -15,5 +15,10 @@ namespace backend.Interfaces
         Task<Oferta> Alterar(Oferta oferta);
 
         Task<Oferta> Excluir(Oferta oferta);
+
+        List<Oferta> FiltrarPorNome (FiltroViewModel filtro);
+
+        List<Oferta> Ordenar ();
+
     }
 }
