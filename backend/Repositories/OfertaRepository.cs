@@ -47,8 +47,9 @@ namespace backend.Repositories {
 
         public List<Oferta> FiltrarPorNome (FiltroViewModel filtro) {
             using (BD_SmartSaleContext _contexto = new BD_SmartSaleContext ()) {
-                List<Oferta> oferta = _contexto.Oferta.Where (c => c.IdUsuarioNavigation.IdRegiaoNavigation.Bairro.Contains (filtro.filtro)).ToList();
-            
+
+                List<Oferta> oferta = _contexto.Oferta.Where (c => c.Titulo.StartsWith(filtro.filtro) || c.IdProdutoNavigation.IdCategoriaNavigation.NomeCategoria.StartsWith(filtro.filtro)).Include("IdProdutoNavigation").Include("IdUsuarioNavigation").ToList();
+
                 return oferta;
             }
         }
@@ -61,6 +62,5 @@ namespace backend.Repositories {
             }
         }
 
-        
     }
 }

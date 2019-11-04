@@ -69,7 +69,7 @@ namespace backend.Controllers {
                 usuario.IdTipoUsuario = int.Parse(Request.Form["idTipoUsuario"]);
                 usuario.IdRegiao = int.Parse(Request.Form["idRegiao"]);
 
-                usuario.Foto = _uploadRepo.Upload(arquivo, "imgPerfil");
+                usuario.FotoUsuario = _uploadRepo.Upload(arquivo, "imgPerfil");
                
                 await _repositorio.Salvar(usuario);
             } catch (DbUpdateConcurrencyException) {
@@ -107,7 +107,7 @@ namespace backend.Controllers {
                 usuario.IdTipoUsuario = int.Parse(Request.Form["idTipoUsuario"]);
                 usuario.IdRegiao = int.Parse(Request.Form["idRegiao"]);
 
-                usuario.Foto = _uploadRepo.Upload(arquivo, "imgPerfil");
+                usuario.FotoUsuario = _uploadRepo.Upload(arquivo, "imgPerfil");
                 
                 await _repositorio.Alterar(usuario);
                 
