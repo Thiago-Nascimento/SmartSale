@@ -23,7 +23,7 @@ namespace backend.Controllers {
         /// Lista os usuarios
         /// </summary>
         /// <returns>Lista contendo os usuarios</returns>
-        [Authorize]
+        // [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get () {
             var usuario = await _repositorio.Listar();
@@ -53,7 +53,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="usuario">string nome do usuario</param>
         /// <returns>Usuario cadastrado</returns>
-        [Authorize]
+        // [Authorize]
         [HttpPost]
         public async Task<ActionResult<Usuario>> Post ([FromForm]Usuario usuario) {
             try { 
@@ -71,6 +71,8 @@ namespace backend.Controllers {
                 usuario.Pontuacao = int.Parse(Request.Form["pontuacao"]);
                 usuario.IdTipoUsuario = int.Parse(Request.Form["idTipoUsuario"]);
                 usuario.IdRegiao = int.Parse(Request.Form["idRegiao"]);
+
+                usuario.Foto = _uploadRepo.Upload(arquivo, "imgPerfil");
                
                 await _repositorio.Salvar(usuario);
             } catch (DbUpdateConcurrencyException) {
@@ -107,6 +109,8 @@ namespace backend.Controllers {
                 usuario.Pontuacao = int.Parse(Request.Form["pontuacao"]);
                 usuario.IdTipoUsuario = int.Parse(Request.Form["idTipoUsuario"]);
                 usuario.IdRegiao = int.Parse(Request.Form["idRegiao"]);
+
+                usuario.Foto = _uploadRepo.Upload(arquivo, "imgPerfil");
                 
                 await _repositorio.Alterar(usuario);
                 

@@ -8,8 +8,7 @@ namespace backend.Repositories
     public class UploadRepository : ControllerBase
     {
         public string Upload (IFormFile arquivo, string savingFolder) {
-            // IFormFile file = Request.Form.Files[0];
-                
+               
             if(savingFolder == null) {
                 savingFolder = Path.Combine ("imgUpdated");                
             }
@@ -19,13 +18,12 @@ namespace backend.Repositories
             if (arquivo.Length > 0) {
                 var fileName = ContentDispositionHeaderValue.Parse (arquivo.ContentDisposition).FileName.Trim ('"');
                 var fullPath = Path.Combine (pathToSave, fileName);
-                var dbPath = Path.Combine (savingFolder, fileName);
 
                 using (var stream = new FileStream (fullPath, FileMode.Create)) {
                     arquivo.CopyTo (stream);
                 }                    
 
-                return dbPath;
+                return fullPath;
             } else {
                 return null;
             }           

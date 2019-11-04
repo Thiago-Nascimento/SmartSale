@@ -3270,7 +3270,7 @@
       ]
     },
     "System.Collections.NonGeneric/4.3.0": {
-      "sha512": "LE/oChpRvkSi3U25u0KnJcI44JeDZ1QJCyN4qFDx2uusEypdqR24w7lKYw21eYe5esuCBuc862wRmpF63Yy1KQ==",
+      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
       "type": "package",
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
@@ -3493,7 +3493,7 @@
       ]
     },
     "System.ComponentModel.Primitives/4.3.0": {
-      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "sha512": "KMVuoQ+8bMQ/Z59M3s64num5AD74X5YSqVc7ibwGkPTfmmkl2W8VuSxLRJtpw4KzQrSKUgR0BLbF0adPfcTSGQ==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
@@ -6440,7 +6440,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -6520,23 +6520,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thiag\\.nuget\\packages\\": {},
+    "C:\\Users\\FIC\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thiag\\Documents\\Dev\\SmartSale\\backend\\backend.csproj",
+      "projectUniqueName": "C:\\Users\\FIC\\Desktop\\SmartSale\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\thiag\\Documents\\Dev\\SmartSale\\backend\\backend.csproj",
-      "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thiag\\Documents\\Dev\\SmartSale\\backend\\obj\\",
+      "projectPath": "C:\\Users\\FIC\\Desktop\\SmartSale\\backend\\backend.csproj",
+      "packagesPath": "C:\\Users\\FIC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FIC\\Desktop\\SmartSale\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\FIC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"

@@ -30,6 +30,10 @@ namespace backend.Domains
         [Required]
         [StringLength(255)]
         public string Email { get; set; }
+        
+        [StringLength(255)]
+        public string Foto { get ; set; }
+        
         [Required]
         [StringLength(255)]
         public string Senha { get; set; }

@@ -11,8 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace upload_dotnet.Controllers {
     
-    // [Route ("api/[controller]")]
-    // [ApiController]
     public class UploadController : ControllerBase {
 
         public string Upload (IFormFile arquivo, string savingFolder) {
@@ -36,16 +34,7 @@ namespace upload_dotnet.Controllers {
                 return dbPath;
             } else {
                 return null;
-            }
-                
-            
+            }        
         }
     }
-
-    //  atribuição
-    // produto.ImagemProduto = UploadController.Upload(file, "img");
-    //  await _contexto.AddAsync(produto);
-    // Salvamos efetivamente o nosso objeto no banco de dados
-    // await _contexto.SaveChangesAsync();
-
 }
