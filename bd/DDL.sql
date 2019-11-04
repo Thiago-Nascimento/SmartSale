@@ -52,6 +52,7 @@ CREATE table Oferta
 (
 	Id_Oferta int identity not null primary key,
 	Quantidade int not null,
+	Titulo varchar(255),
 	Foto varchar(255) not null,
 	Cor VARCHAR(255),
 	Preco float not null,
