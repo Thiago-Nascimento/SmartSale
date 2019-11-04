@@ -44,7 +44,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="regiao">string nome da regiao</param>
         /// <returns>Regiao cadastrada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPost]
         public async Task<ActionResult<Regiao>> Post (Regiao regiao) {
             try {
@@ -63,7 +63,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da regiao</param>
         /// <param name="regiao">string nome da regiao</param>
         /// <returns>Regiao Modificada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Regiao>> Put (int id, Regiao regiao) {
             if (id != regiao.IdRegiao) {
@@ -87,7 +87,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da regiao</param>
         /// <returns>Regiao deletada</returns>
-        [Authorize]
+        [Authorize(Roles="Administrador")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Regiao>> Delete (int id) {
             var regiao = await _repositorio.BuscarPorID (id);

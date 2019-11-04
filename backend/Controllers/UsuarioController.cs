@@ -23,7 +23,6 @@ namespace backend.Controllers {
         /// Lista os usuarios
         /// </summary>
         /// <returns>Lista contendo os usuarios</returns>
-        // [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get () {
             var usuario = await _repositorio.Listar();
@@ -38,7 +37,6 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id do usuario desejavel</param>
         /// <returns>Usuario requisitado</returns>
-        [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Usuario>> Get (int id) {
             var usuario = await _repositorio.BuscarPorID(id);
@@ -53,7 +51,6 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="usuario">string nome do usuario</param>
         /// <returns>Usuario cadastrado</returns>
-        // [Authorize]
         [HttpPost]
         public async Task<ActionResult<Usuario>> Post ([FromForm]Usuario usuario) {
             try { 
@@ -132,7 +129,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id do usuario</param>
         /// <returns>Usuario deletado</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Usuario>> Delete (int id) {
             var usuario = await _repositorio.BuscarPorID(id);

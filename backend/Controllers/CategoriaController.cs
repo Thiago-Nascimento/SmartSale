@@ -46,7 +46,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="categoria">string nome da categoria</param>
         /// <returns>Categoria cadastrada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPost]
         public async Task<ActionResult<Categoria>> Post (Categoria categoria) {
             try {
@@ -64,7 +64,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da categoria</param>
         /// <param name="categoria">string nome da categoria</param>
         /// <returns>Categoria Modificada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Categoria>> Put (int id, Categoria categoria) {
             if (id != categoria.IdCategoria) {
@@ -91,7 +91,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da categoria</param>
         /// <returns>Categoria deletada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Categoria>> Delete (int id) {
             var categoria = await _repositorio.BuscarPorID (id);

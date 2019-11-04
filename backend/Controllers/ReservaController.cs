@@ -18,7 +18,7 @@ namespace backend.Controllers {
         /// Lista as reservas cadastradas
         /// </summary>
         /// <returns>Lista de reservas</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpGet]
         public async Task<ActionResult<List<Reserva>>> Get () {
             var reservas = await _repositorio.Listar();
@@ -33,7 +33,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id da reserva desejada</param>
         /// <returns>Reserva requisitada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Reserva>> Get (int id) {
             var reserva = await _repositorio.BuscarPorID (id);
@@ -48,7 +48,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="reserva">string nome da reserva</param>
         /// <returns>Reserva cadastrada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPost]
         public async Task<ActionResult<Reserva>> Post (Reserva reserva) {
             try {
@@ -65,7 +65,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da reserva</param>
         /// <param name="reserva">string nome da reserva</param>
         /// <returns>reserva Modificada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Reserva>> Put (int id, Reserva reserva) {
             if (id != reserva.IdReserva) {
@@ -94,7 +94,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da reserva</param>
         /// <returns>Reserva deletada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Reserva>> Delete (int id) {
             var reserva = await _repositorio.BuscarPorID (id);

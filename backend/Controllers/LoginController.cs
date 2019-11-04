@@ -38,7 +38,7 @@ namespace backend.Controllers
             var claims = new [] {
                 new Claim (JwtRegisteredClaimNames.NameId, userInfo.NomeUsuario),
                 new Claim (JwtRegisteredClaimNames.Email, userInfo.Email),
-                new Claim (ClaimTypes.Role, userInfo.IdTipoUsuarioNavigation.Tipo),
+                new Claim (ClaimTypes.Role, userInfo.IdTipoUsuario.ToString()),
                 new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid ().ToString ())
             };
             //configuramos nosso token e o nosso tempo de vida
