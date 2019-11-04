@@ -11,8 +11,8 @@ namespace backend.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class OfertaController : ControllerBase {
-        OfertaRepository _repositorio = new OfertaRepository();
-        UploadRepository _uploadRepo = new UploadRepository();
+        OfertaRepository _repositorio = new OfertaRepository ();
+        UploadRepository _uploadRepo = new UploadRepository ();
 
         /// <summary>
         /// Lista as ofertas cadastradas
@@ -20,7 +20,7 @@ namespace backend.Controllers {
         /// <returns>Lista de ofertas</returns>
         [HttpGet]
         public async Task<ActionResult<List<Oferta>>> Get () {
-            var ofertas = await _repositorio.Listar();
+            var ofertas = await _repositorio.Listar ();
             if (ofertas == null) {
                 return NotFound ();
             }
@@ -34,7 +34,7 @@ namespace backend.Controllers {
         /// <returns>Oferta requisitada</returns>
         [HttpGet ("{id}")]
         public async Task<ActionResult<Oferta>> Get (int id) {
-            var oferta = await _repositorio.BuscarPorID(id);
+            var oferta = await _repositorio.BuscarPorID (id);
             if (oferta == null) {
                 return NotFound ();
             }
@@ -46,23 +46,23 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta cadastrada</returns>
-        [Authorize(Roles ="Vendedor")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize (Roles = "Vendedor")]
+        [Authorize (Roles = "Administrador")]
         [HttpPost]
-        public async Task<ActionResult<Oferta>> Post ([FromForm]Oferta oferta) {
+        public async Task<ActionResult<Oferta>> Post ([FromForm] Oferta oferta) {
             try {
                 var arquivo = Request.Form.Files[0];
 
-                oferta.Quantidade = int.Parse(Request.Form["quantidade"]);
-                oferta.Foto = _uploadRepo.Upload(arquivo, "imgOferta");
-                oferta.Cor = Request.Form["cor"].ToString();
-                oferta.Preco = double.Parse(Request.Form["preco"]);
-                oferta.Descricao = Request.Form["descricao"].ToString();
-                oferta.DataValidade = DateTime.Parse(Request.Form["dataValidade"]);
-                oferta.IdProduto = int.Parse(Request.Form["idProduto"]);
-                oferta.IdUsuario = int.Parse(Request.Form["idUsuario"]);
-                                
-                await _repositorio.Salvar(oferta);
+                oferta.Quantidade = int.Parse (Request.Form["quantidade"]);
+                oferta.Foto = _uploadRepo.Upload (arquivo, "imgOferta");
+                oferta.Cor = Request.Form["cor"].ToString ();
+                oferta.Preco = double.Parse (Request.Form["preco"]);
+                oferta.Descricao = Request.Form["descricao"].ToString ();
+                oferta.DataValidade = DateTime.Parse (Request.Form["dataValidade"]);
+                oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
+                oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
+
+                await _repositorio.Salvar (oferta);
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
@@ -75,28 +75,28 @@ namespace backend.Controllers {
         /// <param name="id"> int id da oferta</param>
         /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta Modificada</returns>
-        [Authorize(Roles ="Vendedor")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize (Roles = "Vendedor")]
+        [Authorize (Roles = "Administrador")]
         [HttpPut ("{id}")]
-        public async Task<ActionResult<Oferta>> Put (int id, [FromForm]Oferta oferta) {
+        public async Task<ActionResult<Oferta>> Put (int id, [FromForm] Oferta oferta) {
             if (id != oferta.IdOferta) {
                 return BadRequest ();
             }
             try {
                 var arquivo = Request.Form.Files[0];
 
-                oferta.Quantidade = int.Parse(Request.Form["quantidade"]);
-                oferta.Foto = _uploadRepo.Upload(arquivo, "imgOferta");
-                oferta.Cor = Request.Form["cor"].ToString();
-                oferta.Preco = double.Parse(Request.Form["preco"]);
-                oferta.Descricao = Request.Form["descricao"].ToString();
-                oferta.DataValidade = DateTime.Parse(Request.Form["dataValidade"]);
-                oferta.IdProduto = int.Parse(Request.Form["idProduto"]);
-                oferta.IdUsuario = int.Parse(Request.Form["idUsuario"]);
-                
-                await _repositorio.Alterar(oferta);
+                oferta.Quantidade = int.Parse (Request.Form["quantidade"]);
+                oferta.Foto = _uploadRepo.Upload (arquivo, "imgOferta");
+                oferta.Cor = Request.Form["cor"].ToString ();
+                oferta.Preco = double.Parse (Request.Form["preco"]);
+                oferta.Descricao = Request.Form["descricao"].ToString ();
+                oferta.DataValidade = DateTime.Parse (Request.Form["dataValidade"]);
+                oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
+                oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
+
+                await _repositorio.Alterar (oferta);
             } catch (DbUpdateConcurrencyException) {
-                var oferta_valida = await _repositorio.BuscarPorID(id);
+                var oferta_valida = await _repositorio.BuscarPorID (id);
                 if (oferta_valida == null) {
                     return NotFound ();
                 } else {
@@ -111,38 +111,32 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da oferta</param>
         /// <returns>Oferta deletada</returns>
-        [Authorize(Roles ="Vendedor")]
-        [Authorize(Roles ="Administrador")]
+        [Authorize (Roles = "Vendedor")]
+        [Authorize (Roles = "Administrador")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Oferta>> Delete (int id) {
-            var oferta = await _repositorio.BuscarPorID(id);
+            var oferta = await _repositorio.BuscarPorID (id);
             if (oferta == null) {
                 return NotFound ();
             }
-            await _repositorio.Excluir(oferta);
+            await _repositorio.Excluir (oferta);
             return oferta;
         }
 
-        // public ActionResult Index (string sortOrder) {
-        //     NameSortParm = String.IsNullOrEmpty (sortOrder) ? "NomeProduto" : "";
-        //     DateSortParm = sortOrder == "Date" ? "date" : "Date";
-        //     var produtos = from p in BD_SmartSaleContext.Produto
-        //     select p;
-        //     switch (sortOrder) {
-        //         case "NomeProduto":
-        //             produtos = produtos.OrderByDescending (p => p.NomeProduto);
-        //             break;
-        //         case "Date":
-        //             produtos = produtos.OrderBy (p => p.EnrollmentDate);
-        //             break;
-        //         case "date_desc":
-        //             produtos = produtos.OrderByDescending (p => p.EnrollmentDate);
-        //             break;
-        //         default:
-        //             produtos = produtos.OrderBy (p => p.LastName);
-        //             break;
-        //     }
-        //     return produtos.ToList ();
-        // }
+        [HttpGet("FiltrarPorNome")]
+        public ActionResult<List<Oferta>> GetFiltrar (FiltroViewModel filtro){
+
+            List<Oferta> oferta_filtrar = _repositorio.FiltrarPorNome(filtro);
+            
+            return oferta_filtrar;
+        }
+
+        [HttpGet("Ordenar")]
+        public ActionResult<List<Oferta>> GetOrdenar (){
+             
+            List<Oferta> oferta_ordenar = _repositorio.Ordenar();
+
+            return oferta_ordenar;
+        }
     }
 }
