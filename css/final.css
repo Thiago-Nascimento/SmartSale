@@ -28,6 +28,8 @@ header {
     background-size: cover;
     background-position: center;
     padding: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .cardCadastro {
@@ -41,6 +43,8 @@ header {
     -webkit-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     -moz-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
+    padding-bottom: 30px;
+
 }
 
 .cardCadastro h2 {
@@ -2140,7 +2144,7 @@ main {
     .ranking_pag .botao {
         justify-content: center;
     }
-}
+
 
 /* celular */
 
