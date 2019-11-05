@@ -4,7 +4,6 @@ using backend.Domains;
 using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers {
@@ -25,11 +24,11 @@ namespace backend.Controllers {
         /// <returns>Lista contendo os usuarios</returns>
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get () {
-            var usuario = await _repositorio.Listar();
-            if (usuario == null) {
+            var usuarios = await _repositorio.Listar();
+            if (usuarios == null) {
                 return NotFound ();
             }
-            return usuario;
+            return usuarios;
         }
 
         /// <summary>
