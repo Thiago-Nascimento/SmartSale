@@ -133,7 +133,7 @@ namespace backend.Controllers {
 
         [HttpGet("Ordenar")]
         public ActionResult<List<Oferta>> GetOrdenar (){
-             
+            
             List<Oferta> oferta_ordenar = _repositorio.Ordenar();
 
             return oferta_ordenar;

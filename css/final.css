@@ -27,6 +27,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 40px;
 }
 
 .cardCadastro {
@@ -40,14 +41,13 @@ header {
     -webkit-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     -moz-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
-    margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 .cardCadastro h2 {
-    font-size: 40px;
+    font-size: 35px;
     padding: 20px;
     color: var(--roxo);
+    text-transform: uppercase;
 }
 
 #form_cadastro label {
@@ -60,24 +60,17 @@ header {
     color: var(--roxo);
 }
 
-.radios {
+.checks {
     display: flex;
     justify-content: space-around;
-    width: 500px;
+    width: 440px;
 }
 
-.radio {
+.check {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 30px;
-    width: 100px;
-}
-
-.radio2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    /* padding: 10px; */
     width: 100px;
 }
 
@@ -96,18 +89,18 @@ header {
     flex-direction: column;
     /* Coloquei em coluna e assim quebra linha*/
     padding: 10px;
-    width: 230px;
+    width: 355px;
 }
 
 .campo {
     /* width: 500px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
 }
 
 .campo input {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: solid 1px var(--cinza);
 }
 
@@ -117,6 +110,11 @@ header {
     margin: auto;
     padding-bottom: 10px;
 }
+.descricao{
+    font-size: 15px;
+    padding: 10px;
+    width: 450px;
+}
 
 .btnCadastro button {
     padding: 10px 20px;
@@ -124,6 +122,9 @@ header {
     border-radius: 4px;
     border: solid 1px var(--roxo);
     color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 355px;
 }
 
 #form_cadastro_venda hr {
@@ -134,8 +135,9 @@ header {
     width: 380px;
     margin: auto;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: flex-end; */
     line-height: 3 .0em;
 }
 
@@ -153,13 +155,13 @@ header {
 
 .fotos label {
     margin: auto;
-    padding: 15px 0px;
+    padding-bottom: 30px;
 }
 
 .fotos input {
     border: dotted 1px grey;
     border-radius: 4px;
-    height: 60px;
+    height: 20px;
     width: 400px;
     margin: auto;
     margin-bottom: 30px;
@@ -241,6 +243,7 @@ header {
 } */
 
 /* Cadastro de vendedor */
+
 
 .btn_cadastrovendedor{
     padding-top: 20px;
