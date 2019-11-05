@@ -14,73 +14,224 @@
 <body>
     <header>
         <div class="contHeader">
-        <div class="container">
-            <div class="ca">
-                <div class="logo">
-                    <a href="home.html"><img src="img/Agrupar 110.png" title="Home Smart Sale" alt="logo smart sale"></a>
+            <div class="container">
+                <div class="ca">
+                    <div class="logo">
+                        <a href="home.html"><img src="img/Agrupar 110.png" title="Home Smart Sale"
+                                alt="logo smart sale"></a>
+                    </div>
+                    <input type="search" placeholder="Buscar produtos, marcas e muito mais ..."
+                        aria-label="Faça uma busca" name="search">
+                    <div class="botao-login">
+                        <a href="loginCadastro.html"><img src="img/avatar.png" alt="Link para fazer login"
+                                title="Faça login" id="entrar">
+                            <p>Entrar</p>
+                        </a>
+                    </div>
                 </div>
-                <input type="search" placeholder="Buscar produtos, marcas e muito mais ..." aria-label="Faça uma busca" name="search">
-                <div class="botao-login">
-                    <a href="loginCadastro.html"><img src="img/avatar.png" alt="Link para fazer login" title="Faça login" id="entrar">
-                        <p>Entrar</p>
-                    </a>
-                </div>
+                <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
+                <a class="btn-close"><i class="fa fa-times"></i></a>
+                <nav>
+                    <div class="menu-centro">
+                        <ul class="menu">
+                            <li><a href="home.html" title="Smart sale home">Home</a></li>
+                            <li><a href="quemsomos.html" title="Smart sale quem somos">Quem somos</a></li>
+                            <li><a href="ONG's.html" title="Smart sale ongs">ONGs</a></li>
+                            <li><a href="paginaRanking.html" title="Smart sale ranking">Ranking</a></li>
+                            <li><a href="filtroProdutos.html" title="Smart sale categorias">Ofertas</a></li>
+                            <li><a href="perfil.html" title="Smart sale perfil">Perfil</a></li>
+                            <li><a href="PerguntasFrequentes.html" title="Smart sale faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-            <button class="btn-menu"><i class="fa fa-bars fa-lg"></i></button>
-            <a class="btn-close"><i class="fa fa-times"></i></a>
-            <nav>
-                <div class="menu-centro">
-                    <ul class="menu">
-                        <li><a href="home.html" title="Smart sale home">Home</a></li>
-                        <li><a href="quemsomos.html" title="Smart sale quem somos">Quem somos</a></li>
-                        <li><a href="ONG's.html" title="Smart sale ongs">ONGs</a></li>
-                        <li><a href="paginaRanking.html" title="Smart sale ranking">Ranking</a></li>
-                        <li><a href="filtroProdutos.html" title="Smart sale categorias">Ofertas</a></li>
-                        <li><a href="perfil.html" title="Smart sale perfil">Perfil</a></li>
-                        <li><a href="PerguntasFrequentes.html" title="Smart sale faq">FAQ</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
         </div>
     </header>
     <main>
+
         <div class="perfil_pag">
-            <div class="cont">
-            <h2>Débora Nascimento</h2>
-            <div class="cima">
-                <section class="esquerdo">
-                    <img src="img/Débora.jpg" alt="Foto de perfil do usuario">
-                </section>
 
-                <section class="direito">
-                    <div class="textos">
-                        <h3>Dados pessoais</h3>
-                        <p>Endereço: Rua São Paulo, 500 - SP</p>
-                        <p>Data de nascimento: 25/04/1990</p>
-                        <p>Sexo: Feminino</p>
-                    </div>
-
-                    <div class="textos">
-                        <h3>Contato</h3>
-                        <p>E-mail:debora.nasc@hotmail.com</p>
-                        <p>celular:(11)94444-5678</p>
-                    </div>
-                </section>
+            <div class="perfil_banner">
+                <img src="../SmartSale/img/icons/picture.png" alt="Trocar papel de parede" class="perfil_troca">
+                <h2>Débora Nascimento</h2>
             </div>
 
-            <div class="baixo">
-                <section class="centro">
-                    <div class="textos">
-                        <h2>Posição ranking</h2>
-                        <div class="posranking">
-                            <p>100 pontos</p>
+            <div class="cont">
+                <div class="cima">
+
+                    <section class="esquerdo">
+
+                        <img src="img/perfil.png" alt="foto de perfil do usuario" class="perfil_foto">
+                        <div class="textos">
+
+                            <h4>Dados pessoais</h4>
+                            <p>Endereço: Rua São Paulo, 500 - SP</p>
+                            <p>Data de nascimento: 25/04/1990</p>
+                            <p>Sexo: Feminino</p>
+                        </div>
+                        <div class="textos">
+                            <h4>Contato</h4>
+                            <p>E-mail:debora.nasc@hotmail.com</p>
+                            <p>celular:(11)94444-5678</p>
+                        </div>
+                        <div class="perfil_placar_rank">
+                            <h4>Posição ranking</h4>
+                            <div class="perfil_rank">
+                                <p>100 pontos</p>
+                            </div>
+                        </div>
+
+                        <div class="perfil_button_padding">
+                            <div class="perfil_btn_produto">
+                                <p><a href="#" class="perfil_btn-medium">Cadastrar um produto</a></p>
+                            </div>
+                        </div>
+
+
+
+                    </section>
+
+                    <section class="direito">
+
+
+
+                        <div class="direito-cards-h3">
+                            <h3>Seus Produtos</h3>
+                        </div>
+                        <div class="card-cursos-home">
+
+                            <div class="card">
+                                <div class="html-card-cursos-home"></div>
+                                <div class="curso-info-home">
+                                    <h4>Pão Caseiro</h4>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="html-card-cursos-home"></div>
+                                <div class="curso-info-home">
+                                    <h4>Pão Caseiro</h4>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="html-card-cursos-home"></div>
+                                <div class="curso-info-home">
+                                    <h4>Pão Caseiro</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="perfil_button_padding">
+                            <div class="perfil_btn_produto">
+                                <p><a href="#" class="perfil_btn-medium">Ver mais</a></p>
+                            </div>
+                        </div>
+
+
+                        <div class="direito-cards-h3">
+                            <h3>Seus Produtos</h3>
+                        </div>
+
+                        <div class="card-cursos-home">
+
+                            <div class="card">
+                                <div class="html-card-cursos-home"></div>
+                                <div class="curso-info-home">
+                                    <h4>Pão Caseiro</h4>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="html-card-cursos-home"></div>
+                                <div class="curso-info-home">
+                                    <h4>Pão Caseiro</h4>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="html-card-cursos-home"></div>
+                                <div class="curso-info-home">
+                                    <h4>Pão Caseiro</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="perfil_button_padding">
+                            <div class="perfil_btn_produto">
+                                <p><a href="#" class="perfil_btn-medium">Ver mais</a></p>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <!-- <h3>Seus Produtos</h3>
+                       <div class="perfil_padding_produtos1">
+                            <h4>
+                                Produtos Reservados
+                            </h4>
+
+                            <div class="perfil_produtos_reservados">
+                            <div class="perfil_texto_reservados">
+                                <a href="#">
+                                <img src="./img/perfil-cadastro.jpg" alt="" class="perfil_pao">
+                                <p>Pão Italiano</p>
+                            </div>
+                        </a>
+                            <div class="perfil_texto_reservados">
+                                    <a href="#">
+                                    <img src="./img/perfil-cadastro.jpg" alt="" class="perfil_pao">
+                                    <p>Pão Italiano</p>
+                                </div>
+                            </a>
+                                <div class="perfil_texto_reservados">
+                                        <a href="#">
+                                        <img src="./img/perfil-cadastro.jpg" alt="" class="perfil_pao">
+                                        <p>Pão Italiano</p>
+                                    </div>
+                                </a>
+                                    
+                        </div>
+                        <div class="perfil_ver">
+                        <a href="#" class="perfil_btn-medium">Ver mais</a>
+                    </div>
+                    </div>
+                    <div class="perfil_padding_produtos2">
+                        <h4>
+                                Produtos a Venda
+                            </h4>
+                            <div class="perfil_produtos_reservados">
+                            <div class="perfil_texto_reservados">
+                                <img src="./img/perfil-cadastro.jpg" alt="" class="perfil_pao">
+                                <p>Pão Italiano</p>
+                            </div>
+                            <div class="perfil_texto_reservados">
+                                    <img src="./img/perfil-cadastro.jpg" alt="" class="perfil_pao">
+                                    <p>Pão Italiano</p>
+                                </div>
+                                <div class="perfil_texto_reservados">
+                                        <img src="./img/perfil-cadastro.jpg" alt="" class="perfil_pao">
+                                        <p>Pão Italiano</p>
+                                    </div>
                         </div>
                     </div>
-                </section>
+
+ -->
+
+                    </section>
+                </div>
+
+                <div class="baixo">
+                    <section class="centro">
+
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
+
     </main>
 
     <footer>
