@@ -10,9 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace backend.Controllers
-{
-    [Route("api/[controller]")]
+namespace backend.Controllers {
+    [Route ("api/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase {
         //chamamos nosso contexto do banco
@@ -33,13 +32,15 @@ namespace backend.Controllers
         private string GenerateJSONWebToken (Usuario userInfo) {
             var securityKey = new SymmetricSecurityKey (Encoding.UTF8.GetBytes (_config["Jwt:Key"]));
             var credentials = new SigningCredentials (securityKey, SecurityAlgorithms.HmacSha256);
-            
+
             //Definimos nossas claims (dados da seção) para poderem ser capturadas a qualquer momento enquanto o token for ativo
             var claims = new [] {
                 new Claim (JwtRegisteredClaimNames.NameId, userInfo.NomeUsuario),
                 new Claim (JwtRegisteredClaimNames.Email, userInfo.Email),
-                new Claim (ClaimTypes.Role, userInfo.IdTipoUsuario.ToString()),
+                new Claim (ClaimTypes.Role, userInfo.IdTipoUsuario.ToString ()),
+                new Claim ("Role", userInfo.IdTipoUsuario.ToString ()),
                 new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid ().ToString ())
+
             };
             //configuramos nosso token e o nosso tempo de vida
             var token = new JwtSecurityToken (_config["Jwt:Issuer"],
