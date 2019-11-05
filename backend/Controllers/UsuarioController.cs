@@ -36,6 +36,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id do usuario desejavel</param>
         /// <returns>Usuario requisitado</returns>
+        [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Usuario>> Get (int id) {
             var usuario = await _repositorio.BuscarPorID(id);
@@ -85,7 +86,7 @@ namespace backend.Controllers {
         /// <param name="usuario">string nome do usuario</param>
         /// <returns>Usuario modificado</returns>
         [Authorize]
-        [HttpPut ("{id}")]
+        [HttpPut("{id}")]
         public async Task<ActionResult<Usuario>> Put (int id, [FromForm]Usuario usuario) {
             if (id != usuario.IdUsuario) {
                 return BadRequest ();
