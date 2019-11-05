@@ -29,7 +29,7 @@ namespace backend.Domains
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-RPPJ3RD\\SQLEXPRESS; Database=BD_SmartSale; User Id=sa; Password=132;");
+                optionsBuilder.UseSqlServer("Server=N-1S-DEV-09\\SQLEXPRESS; Database=BD_SmartSale; User Id=sa; Password=132;");
             }
         }
 

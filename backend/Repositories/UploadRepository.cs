@@ -1,11 +1,10 @@
 using System.IO;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Repositories
 {
-    public class UploadRepository : ControllerBase
+    public class UploadRepository
     {
         public string Upload (IFormFile arquivo, string savingFolder) {
                
