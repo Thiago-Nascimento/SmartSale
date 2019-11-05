@@ -1448,66 +1448,277 @@ main {
 
 .perfil_pag {
     margin: auto;
-    width: 100vw;
+    /* width: 100vw; */
     background-color: #ebebeb;
     padding: 1px 0px;
 }
 
+.perfil_troca {
+
+    position: relative;
+    left: 650px;
+    top: -300px;
+    color: red;
+    width: 30px;
+}
+
+.perfil_banner:hover{
+   
+    transition: background-image 0.2s ease-in-out;
+    
+}
+
+.perfil_banner {
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(162, 0, 203, 0.1)), url(../img/banner2red.png); */
+
+    
+    margin-bottom: -900px;
+    background-repeat: no-repeat;
+    margin: -1px 0px 0px;
+    /* background-image:  url(../img/banner2red.png); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(162, 0, 203, 0.4)), url("https://picsum.photos/id/1037/1200/350");
+    height: 350px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.perfil_banner h2 {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    position: relative;
+    left: -136px;
+    top: -15px;
+    color: white;
+}
+
 .perfil_pag .cont {
-    margin: 39px auto;
+    margin: auto;
+    margin-bottom: 39px;
     background-color: #fff;
     width: 1200px;
     box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 110px;
+}
+
+.perfil_btn_produto {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+
+}
+
+.perfil_btn-medium{
+    color: white;
+    margin: 70px 0px 10px;
+    text-decoration: none; 
+}
+
+.perfil_btn-medium {
+    margin: 90px 0px 0px;
+    background-color: #A200CB;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 50px;
     border-radius: 5px;
-    padding-bottom: 40px;
+    font-weight: lighter;
+    opacity: 0.6;
+    width: 200px;
+  }
+  /* --------------teste---------------- */
+
+  .direito {
+      display: flex;
+  }
+
+.cursos-home h2 {
+    color: white;
+    font-size: 40px;
+    padding: 60px 0px 0px;
+}
+
+.display-card-home {
+    display: flex;
+    justify-content: space-between;
+}
+
+.html-card-cursos-home p {
+    font-size: 18px;
+    position: relative;
+    color: white;
+    top: 149px;
+    left: 224px;
+}
+
+.html-card-cursos-home {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.01);
+    padding: ;
+    border-radius: 5px 5px 0px 0px;
+    /* border: solid 1px black; */
+    background-image: linear-gradient(-225deg, rgba(30, 30, 30, 0.6) 30%, rgba(46, 46, 46, 0.5) 80%), url("http://unsplash.it/350/200/?=fruit");
+    height: 115px;
+    width: 212PX;
+    /* background-image: url("http://placehold.it/200x350"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card-cursos-home p {
+    text-align: center;
+    padding: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 300PX;
+    font-size: 18px;
+}
+.card-cursos-home {
+    display: flex   ;
+    justify-content: space-around;
+}
+
+.curso-info-home h4 {
+    text-align: center;
+    padding: 0px 0px 20px;
+}
+
+.curso-info-home {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.01);
+    border-radius: 0px 0px 5px 5px;
+    background-color: white;
+    color: black;
+    width: 211px;
+}
+
+.curso-info-home p {
+    font-size: 16px ;
+}
+
+.direito-cards-h3 {
+    left: 32px;
+    position: relative;
+    padding: 33px 0px 10px;
+}
+
+    /* --------------??teste---------------- */
+  .perfil_btn-medium:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #999999;
+  }
+  
+.perfil_ver {
+    padding: 38px 49px 0px; 
+    text-align: end;
+}
+
+.perfil_flexcard {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+}
+
+.perfil_pag .cont h2 {
+    width: 230px;
+    color: white;
+    position: relative;
+    top: -50px;
+    left: 400px;
 }
 
 .perfil_pag h2 {
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    align-content: center;
 }
 
-.perfil_pag h3 {
+.perfil_pag h4 {
     text-align: center;
-    padding: 15px;
+    padding: 30px 0px 10px;
 }
 
 .perfil_pag .cima {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 3px #A200CB;
-    padding: 20px 0px;
+    
+    padding: 0px 0px;
     /* border-bottom: 2px solid var(--roxo); */
 }
 
+.perfil_button_padding {
+    padding: 44px 0px 0px;
+}
+
 .perfil_pag .esquerdo {
-    width: 47%;
+    
+    padding-top: 90px;
+    width: 33%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
 
-.perfil_pag .direito {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 47%;
-    height: 286px;
-    font-size: 20px;
-    padding-top: 20px;
+
+.direito a {
+    text-decoration: none;
+    color:
 }
 
+.perfil_padding_produtos2 {
+    padding: 10px 0px 0px;
+}
+
+.perfil_produtos_reservados {
+    text-align: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+.perfil_pao {
+    border: white 5px solid;
+    width: 200px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+}
+
+.perfil_foto {
+    
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border: white 5px solid ;
+    width: 280px;
+    margin: -132px;
+    position: relative;
+    border-radius: 180px;
+    top: -132px;
+}
+/* .esquerdo img {
+    border: solid 5px white;
+    height: 280px;
+    border-radius: 180px;
+    position: relative;
+    left: -60px;
+    top: -200px;
+} */
+
+.perfil_pag .direito {
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+        width: 75%;
+        height: 286px;
+        /* font-size: 20px; */
+            }
+
 .perfil_pag .textos {
-    font-size: 20px;
+    /* font-size: 20px; */
     margin: auto;
 }
 
 .perfil_pag .baixo {
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    /* font-size: 30px; */
     padding-top: 30px;
 }
 
@@ -1521,7 +1732,12 @@ main {
     justify-content: center;
 }
 
-.perfil_pag .posranking {
+.perfil_placar_rank  h4{
+    
+}
+
+.perfil_rank {
+    text-align: center;
     border: 1px solid black;
     padding: 10px;
     width: 200px;

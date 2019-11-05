@@ -4,7 +4,6 @@ using backend.Domains;
 using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers {
@@ -25,11 +24,11 @@ namespace backend.Controllers {
         /// <returns>Lista contendo os usuarios</returns>
         [HttpGet]
         public async Task<ActionResult<List<Usuario>>> Get () {
-            var usuario = await _repositorio.Listar();
-            if (usuario == null) {
+            var usuarios = await _repositorio.Listar();
+            if (usuarios == null) {
                 return NotFound ();
             }
-            return usuario;
+            return usuarios;
         }
 
         /// <summary>
@@ -37,6 +36,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id do usuario desejavel</param>
         /// <returns>Usuario requisitado</returns>
+        [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Usuario>> Get (int id) {
             var usuario = await _repositorio.BuscarPorID(id);
@@ -86,7 +86,7 @@ namespace backend.Controllers {
         /// <param name="usuario">string nome do usuario</param>
         /// <returns>Usuario modificado</returns>
         [Authorize]
-        [HttpPut ("{id}")]
+        [HttpPut("{id}")]
         public async Task<ActionResult<Usuario>> Put (int id, [FromForm]Usuario usuario) {
             if (id != usuario.IdUsuario) {
                 return BadRequest ();

@@ -31,7 +31,6 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id do produto desejado</param>
         /// <returns>Produto requisitado</returns>
-        [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Produto>> Get (int id) {
             var produtos = await _repositorio.BuscarPorID (id);
