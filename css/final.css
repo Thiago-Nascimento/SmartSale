@@ -622,9 +622,9 @@ header {
     }
 }
 
-/* Final da Reserva */
+/* Reserva */
 #footer_finaldareserva{
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .finalreserva_pag {
@@ -644,7 +644,7 @@ header {
     padding: 65px 0px;
 }
 
-.finalreserva_pag h1 {
+.finalreserva_pag h2 {
     color: #707070;
     display: flex;
     justify-content: center;
@@ -670,13 +670,16 @@ header {
 }
 
 .finalreserva_pag .direito img {
-    width: 300px;
+    width: 400px;
     height: auto;
 }
 
 .finalreserva_pag .texto h3 {
     color: #A200CB
 }
+
+
+
 
 /* Home */
 
@@ -1136,8 +1139,6 @@ footer {
 main {
     background-color: #ebebeb;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* padding-top: 50px; */
-    /* padding-bottom: 50px; */
 }
 
 #regiao{
@@ -1178,13 +1179,22 @@ main {
     padding-top: 0;
 }
 
+.prodnome{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.prodnome p{
+    padding-top: 20px;
+}
+
 .paginaProduto_pag .direito {
     /* background-color: white; */
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
-    margin: 2% 0%;
 }
 
 .paginaProduto_pag .direito .nomeProduto {
