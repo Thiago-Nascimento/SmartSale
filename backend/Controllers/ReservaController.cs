@@ -12,13 +12,14 @@ namespace backend.Controllers {
     public class ReservaController : ControllerBase {
         // BD_SmartSaleContext _context = new BD_SmartSaleContext ();
 
-    ReservaRepository _repositorio = new ReservaRepository();
+        ReservaRepository _repositorio = new ReservaRepository();
 
         /// <summary>
         /// Lista as reservas cadastradas
         /// </summary>
         /// <returns>Lista de reservas</returns>
         [Authorize(Roles="1")]
+        [Authorize(Roles="3")]
         [HttpGet]
         public async Task<ActionResult<List<Reserva>>> Get () {
             var reservas = await _repositorio.Listar();
@@ -33,7 +34,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id da reserva desejada</param>
         /// <returns>Reserva requisitada</returns>
-        [Authorize(Roles="1")]
+        [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Reserva>> Get (int id) {
             var reserva = await _repositorio.BuscarPorID (id);
@@ -49,6 +50,7 @@ namespace backend.Controllers {
         /// <param name="reserva">string nome da reserva</param>
         /// <returns>Reserva cadastrada</returns>
         [Authorize(Roles="1")]
+        [Authorize(Roles="3")]
         [HttpPost]
         public async Task<ActionResult<Reserva>> Post (Reserva reserva) {
             try {
@@ -66,6 +68,7 @@ namespace backend.Controllers {
         /// <param name="reserva">string nome da reserva</param>
         /// <returns>reserva Modificada</returns>
         [Authorize(Roles="1")]
+        [Authorize(Roles="3")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Reserva>> Put (int id, Reserva reserva) {
             if (id != reserva.IdReserva) {
@@ -95,6 +98,7 @@ namespace backend.Controllers {
         /// <param name="id">int id da reserva</param>
         /// <returns>Reserva deletada</returns>
         [Authorize(Roles="1")]
+        [Authorize(Roles="3")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Reserva>> Delete (int id) {
             var reserva = await _repositorio.BuscarPorID (id);

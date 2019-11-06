@@ -1,9 +1,9 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using backend.Domains;
+using backend.Repositories;
 using backend.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +15,7 @@ namespace backend.Controllers {
     [ApiController]
     public class LoginController : ControllerBase {
         //chamamos nosso contexto do banco
-        BD_SmartSaleContext _context = new BD_SmartSaleContext ();
+        LoginRepository _repositorio = new LoginRepository();
         //Definimos uma variavel para percorrer nossos metodos com a configuraçoes obtidas no appsettings.json
         private IConfiguration _config;
 
@@ -24,11 +24,7 @@ namespace backend.Controllers {
         public LoginController (IConfiguration config) {
             _config = config;
         }
-        //Chamamos nosso metodo para validar o usuario da aplicação 
-        private Usuario AuthenticateUser (LoginViewModel login) {
-            var usuario = _context.Usuario.FirstOrDefault (u => u.Email == login.Email && u.Senha == login.Senha);
-            return usuario;
-        }
+        
         //Criamos nosso meotodo para gerar nosso token
         private string GenerateJSONWebToken (Usuario userInfo) {
             var securityKey = new SymmetricSecurityKey (Encoding.UTF8.GetBytes (_config["Jwt:Key"]));
@@ -39,9 +35,7 @@ namespace backend.Controllers {
                 new Claim (JwtRegisteredClaimNames.NameId, userInfo.NomeUsuario),
                 new Claim (JwtRegisteredClaimNames.Email, userInfo.Email),
                 new Claim (ClaimTypes.Role, userInfo.IdTipoUsuario.ToString ()),
-                new Claim ("Role", userInfo.IdTipoUsuario.ToString ()),
                 new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid ().ToString ())
-
             };
             //configuramos nosso token e o nosso tempo de vida
             var token = new JwtSecurityToken (_config["Jwt:Issuer"],
@@ -50,7 +44,6 @@ namespace backend.Controllers {
                 expires : DateTime.Now.AddMinutes (120),
                 signingCredentials : credentials);
             return new JwtSecurityTokenHandler ().WriteToken (token);
-
         }
 
         //usamos essa anotação para a ignorar a autenticação neste metodo já que ele é quem fara isso
@@ -58,7 +51,7 @@ namespace backend.Controllers {
         [HttpPost]
         public IActionResult Login ([FromBody] LoginViewModel login) {
             IActionResult response = Unauthorized ();
-            var user = AuthenticateUser (login);
+            var user = _repositorio.AuthenticateUser(login);
             if (user != null) {
                 var TokenString = GenerateJSONWebToken (user);
                 response = Ok (new { token = TokenString });

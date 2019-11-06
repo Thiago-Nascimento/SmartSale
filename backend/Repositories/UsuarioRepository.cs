@@ -8,15 +8,21 @@ namespace backend.Repositories {
     public class UsuarioRepository : IUsuario {
         public async Task<Usuario> Alterar (Usuario usuario) {
             using (BD_SmartSaleContext _context = new BD_SmartSaleContext ()) {
-                _context.Entry (usuario).State = EntityState.Modified;
+                _context.Entry(usuario).State = EntityState.Modified;
                 await _context.SaveChangesAsync ();
             }
             return usuario;
         }
 
         public async Task<Usuario> BuscarPorID (int id) {
-            using (BD_SmartSaleContext _context = new BD_SmartSaleContext ())
-            return await _context.Usuario.FindAsync (id);
+            Usuario usuario = new Usuario();
+            using (BD_SmartSaleContext _context = new BD_SmartSaleContext ()) {
+                usuario = await _context.Usuario.FindAsync (id);
+                usuario.Email = null;
+                usuario.Senha = null;
+
+                return usuario;
+            }
         }
 
         public async Task<Usuario> Excluir (Usuario usuario) {
@@ -28,9 +34,16 @@ namespace backend.Repositories {
         }
 
         public async Task<List<Usuario>> Listar () {
+            List<Usuario> lista = new List<Usuario>();
             using (BD_SmartSaleContext _context = new BD_SmartSaleContext ()) {
-                return await _context.Usuario.Include ("IdRegiaoNavigation").Include ("IdTipoUsuarioNavigation").ToListAsync ();
+                lista = await _context.Usuario.Include ("IdRegiaoNavigation").Include ("IdTipoUsuarioNavigation").ToListAsync();
 
+                for (int i = 0; i < lista.Count; i++) {
+                    lista[i].Email = null;
+                    lista[i].Senha = null;
+                }
+
+                return lista;
             }
         }
 

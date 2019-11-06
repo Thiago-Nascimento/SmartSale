@@ -87,7 +87,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da regiao</param>
         /// <returns>Regiao deletada</returns>
-        [Authorize(Roles="Administrador")]
+        [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Regiao>> Delete (int id) {
             var regiao = await _repositorio.BuscarPorID (id);

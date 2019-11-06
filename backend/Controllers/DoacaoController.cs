@@ -46,7 +46,8 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="Doacao">string nome da Doacao</param>
         /// <returns>Doacao cadastrada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
+        [Authorize(Roles="2")]
         [HttpPost]
         public async Task<ActionResult<Doacao>> Post (Doacao Doacao) {
             try {
@@ -63,7 +64,8 @@ namespace backend.Controllers {
         /// <param name="id"> int id da doação</param>
         /// <param name="Doacao">string nome da doação</param>
         /// <returns>Doação modificada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
+        [Authorize(Roles="2")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Doacao>> Put (int id, Doacao Doacao) {
             if (id != Doacao.IdDoacao) {
@@ -88,7 +90,8 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da doação</param>
         /// <returns>Doação deletada</returns>
-        [Authorize]
+        [Authorize(Roles="1")]
+        [Authorize(Roles="2")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Doacao>> Delete (int id) {
             var Doacao = await _repositorio.BuscarPorID (id);
