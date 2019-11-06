@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers {
+    
     [Route ("api/[controller]")]
     [ApiController]
     public class OfertaController : ControllerBase {
@@ -123,6 +124,11 @@ namespace backend.Controllers {
             return oferta;
         }
 
+        /// <summary>
+        /// Lista as ofertas com o Filtro
+        /// </summary>
+        /// <param name="filtro"></param>
+        /// <returns>Lista contendo as Ofertas</returns>
         [HttpGet("FiltrarPorNome")]
         public ActionResult<List<Oferta>> GetFiltrar (FiltroViewModel filtro){
 
@@ -131,6 +137,10 @@ namespace backend.Controllers {
             return oferta_filtrar;
         }
 
+        /// <summary>
+        /// Lista as ofertas ordenadas
+        /// </summary>
+        /// <returns>Listas as ofertas</returns>
         [HttpGet("Ordenar")]
         public ActionResult<List<Oferta>> GetOrdenar (){
             

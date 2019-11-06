@@ -19,6 +19,7 @@ namespace backend.Controllers {
         //Definimos uma variavel para percorrer nossos metodos com a configuraçoes obtidas no appsettings.json
         private IConfiguration _config;
 
+        
         // definimos um metodos construtor para poder passar essas configs
         public LoginController (IConfiguration config) {
             _config = config;
