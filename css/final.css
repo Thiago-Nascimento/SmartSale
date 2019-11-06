@@ -44,7 +44,6 @@ header {
     -moz-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     padding-bottom: 30px;
-
 }
 
 .cardCadastro h2 {
@@ -114,7 +113,8 @@ header {
     margin: auto;
     padding-bottom: 10px;
 }
-.descricao{
+
+.descricao {
     font-size: 15px;
     padding: 10px;
     width: 450px;
@@ -248,8 +248,7 @@ header {
 
 /* Cadastro de vendedor */
 
-
-.btn_cadastrovendedor{
+.btn_cadastrovendedor {
     padding-top: 20px;
     width: 130px;
     margin: auto;
@@ -263,7 +262,7 @@ header {
     text-align: center;
 }
 
-.cardscadastrovendedor  input {
+.cardscadastrovendedor input {
     color: #707070;
     border-radius: 4px;
     border: solid 1px var(--cinza);
@@ -332,8 +331,6 @@ header {
     padding-bottom: 10px;
 }
 
-
-
 /* Responsivo ranking */
 
 @media(max-width: 1169px) {
@@ -392,7 +389,6 @@ header {
         margin: auto;
         text-align: center;
     }
-    
 }
 
 /*Responsivo cadastro vendedor*/
@@ -428,10 +424,10 @@ header {
     .cardscadastrovendedor button {
         margin-top: 30px
     }
-    .cardscadastrovendedor input{
+    .cardscadastrovendedor input {
         width: 200px;
     }
-    .btn_cadastrovendedor{
+    .btn_cadastrovendedor {
         width: 150px;
     }
 }
@@ -623,9 +619,38 @@ header {
 }
 
 /* Reserva */
-#footer_finaldareserva{
-    /* margin-top: 20px; */
+
+.desc {
+    background-color: var(--roxo);
+    color: white;
+    position: relative;
+    top: -64px;
+    margin-bottom: -100px;
+    opacity: 0.5;
+    text-transform: uppercase;
+    font-weight: bold;
 }
+
+.desc p{
+    padding: 5px;
+}
+
+.btncompras button{
+    font-weight: bold;
+    color: white;
+    margin: 160px 0px 0px;
+    text-decoration: none;
+    background-color: #A200CB;
+    text-align: center;
+    border: 1px solid white;
+    padding: 10px 50px;
+    border-radius: 5px;
+    opacity: 0.6;
+    width: 450px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 
 .finalreserva_pag {
     padding: 1px 0px;
@@ -1141,7 +1166,7 @@ main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#regiao{
+#regiao {
     margin-top: 10px;
     font-size: 23px;
     font-style: bold;
@@ -1172,6 +1197,7 @@ main {
     align-items: center;
     margin: 2% 0%;
 }
+
 .paginaProduto_pag .esquerdo .imagem-produto {
     width: 100%;
     height: 100%;
@@ -1179,14 +1205,10 @@ main {
     padding-top: 0;
 }
 
-.prodnome{
+.prodnome {
     display: flex;
     flex-direction: column;
     text-align: center;
-}
-
-.prodnome p{
-    padding-top: 20px;
 }
 
 .paginaProduto_pag .direito {
@@ -1464,7 +1486,6 @@ main {
 }
 
 .perfil_troca {
-
     position: relative;
     left: 650px;
     top: -300px;
@@ -1472,16 +1493,12 @@ main {
     width: 30px;
 }
 
-.perfil_banner:hover{
-   
+.perfil_banner:hover {
     transition: background-image 0.2s ease-in-out;
-    
 }
 
 .perfil_banner {
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(162, 0, 203, 0.1)), url(../img/banner2red.png); */
-
-    
     margin-bottom: -900px;
     background-repeat: no-repeat;
     margin: -1px 0px 0px;
@@ -1495,7 +1512,7 @@ main {
 }
 
 .perfil_banner h2 {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     position: relative;
     left: -136px;
     top: -15px;
@@ -1516,13 +1533,12 @@ main {
     display: flex;
     justify-content: center;
     font-weight: bold;
-
 }
 
-.perfil_btn-medium{
+.perfil_btn-medium {
     color: white;
     margin: 70px 0px 10px;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .perfil_btn-medium {
@@ -1536,12 +1552,13 @@ main {
     font-weight: lighter;
     opacity: 0.6;
     width: 200px;
-  }
-  /* --------------teste---------------- */
+}
 
-  .direito {
-      display: flex;
-  }
+/* --------------teste---------------- */
+
+.direito {
+    display: flex;
+}
 
 .cursos-home h2 {
     color: white;
@@ -1574,6 +1591,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .card-cursos-home p {
     text-align: center;
     padding: 25px;
@@ -1582,8 +1600,9 @@ main {
     width: 300PX;
     font-size: 18px;
 }
+
 .card-cursos-home {
-    display: flex   ;
+    display: flex;
     justify-content: space-around;
 }
 
@@ -1601,7 +1620,7 @@ main {
 }
 
 .curso-info-home p {
-    font-size: 16px ;
+    font-size: 16px;
 }
 
 .direito-cards-h3 {
@@ -1610,15 +1629,16 @@ main {
     padding: 33px 0px 10px;
 }
 
-    /* --------------??teste---------------- */
-  .perfil_btn-medium:hover {
+/* --------------??teste---------------- */
+
+.perfil_btn-medium:hover {
     opacity: 1;
     text-decoration: none;
     color: #999999;
-  }
-  
+}
+
 .perfil_ver {
-    padding: 38px 49px 0px; 
+    padding: 38px 49px 0px;
     text-align: end;
 }
 
@@ -1650,7 +1670,6 @@ main {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
     padding: 0px 0px;
     /* border-bottom: 2px solid var(--roxo); */
 }
@@ -1660,7 +1679,6 @@ main {
 }
 
 .perfil_pag .esquerdo {
-    
     padding-top: 90px;
     width: 33%;
     display: flex;
@@ -1669,7 +1687,6 @@ main {
     align-content: center;
     align-items: center;
 }
-
 
 .direito a {
     text-decoration: none;
@@ -1689,19 +1706,19 @@ main {
 .perfil_pao {
     border: white 5px solid;
     width: 200px;
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .perfil_foto {
-    
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    border: white 5px solid ;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: white 5px solid;
     width: 280px;
     margin: -132px;
     position: relative;
     border-radius: 180px;
     top: -132px;
 }
+
 /* .esquerdo img {
     border: solid 5px white;
     height: 280px;
@@ -1712,13 +1729,13 @@ main {
 } */
 
 .perfil_pag .direito {
-        display: flex;
-        /* justify-content: space-between; */
-        flex-direction: column;
-        width: 75%;
-        height: 286px;
-        /* font-size: 20px; */
-            }
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    width: 75%;
+    height: 286px;
+    /* font-size: 20px; */
+}
 
 .perfil_pag .textos {
     /* font-size: 20px; */
@@ -1742,9 +1759,7 @@ main {
     justify-content: center;
 }
 
-.perfil_placar_rank  h4{
-    
-}
+.perfil_placar_rank h4 {}
 
 .perfil_rank {
     text-align: center;
@@ -1849,17 +1864,20 @@ main {
 }
 
 /* pagina quem somos */
-.imagem_quemsomos{
-    background-image: linear-gradient(rgba(35, 35, 35, 0.5),rgba(35,35,35,0.5)), url(../img/armario_2.jpg);
+
+.imagem_quemsomos {
+    background-image: linear-gradient(rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 0.5)), url(../img/armario_2.jpg);
     height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.quemsomos_pag{
+
+.quemsomos_pag {
     padding-bottom: 30px;
 }
-.quemsomos_texto_one{
+
+.quemsomos_texto_one {
     justify-content: center;
     color: white;
     display: flex;
@@ -1867,41 +1885,45 @@ main {
     align-items: center;
     text-align: justify;
 }
-.quemsomos_texto_one p{
+
+.quemsomos_texto_one p {
     font-size: 20px;
     margin-top: 25px;
-    width: 800px;    
+    width: 800px;
 }
-.quemsomos_texto_one h1{
+
+.quemsomos_texto_one h1 {
     font-size: 30px;
 }
 
-.quemsomos_partetwo{
+.quemsomos_partetwo {
     background-color: white;
     width: 900px;
     margin: auto;
     margin-bottom: 30px;
 }
-.quemsomos_texto_two{
+
+.quemsomos_texto_two {
     border-radius: 10px;
-    box-shadow: 10px 5px 19px 0px rgba(0,0,0,0.29);
+    box-shadow: 10px 5px 19px 0px rgba(0, 0, 0, 0.29);
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     height: 450px;
-    
 }
-.quemsomos_texto_two .quemsomos_esquerdo{
+
+.quemsomos_texto_two .quemsomos_esquerdo {
     text-align: justify;
     padding: 10px 10px;
     width: 350px;
     padding-right: 40px;
 }
-.quemsomos_esquerdo{
+
+.quemsomos_esquerdo {
     color: #707070;
 }
 
-.quemsomos_direito img{
+.quemsomos_direito img {
     width: 380px;
     height: 400px;
 }
@@ -2180,7 +2202,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .login_pag .card_1_cadlog #loginForm {
@@ -2197,14 +2219,13 @@ main {
 
 .login_pag .card_1_cadlog #loginForm label {
     width: 100%;
-    margin-bottom: 3%; 
+    margin-bottom: 3%;
 }
 
 .login_pag .card_1_cadlog .login_cadlog {
     display: flex;
     flex-direction: column;
     margin: 5% 0;
-
 }
 
 .login_pag .card_1_cadlog button {
@@ -2298,15 +2319,12 @@ main {
         width: 85vw;
     }
     /* pagina filtroProdutos */
-    
     .containerProdutos {
         width: 85vw;
     }
-
     .containerProdutos .categorias {
         width: 100%;
     }
-
     .filtros {
         background-image: linear-gradient(rgba(20, 204, 138, 0.6), rgba(20, 204, 138, 0.6)), url(../img/img4.png);
         background-position: unset;
@@ -2325,52 +2343,66 @@ main {
         width: 100%;
         padding-top: 0;
     }
-}    
-    /* pagina Produto */
-    .paginaProduto_pag .direito .nomeProduto {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: var(--grafite);
-    }
-    /* pagina FAQ */
-    .faq_pag .bannerFaq {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
-    }
-    .faq_pag .container1_perguntasfrequentes {
-        width: 100%;
-    }
-    /* .faq_pag .duvidas_perguntasfrequentes {
+}
+
+/* pagina Produto */
+
+.paginaProduto_pag .direito .nomeProduto {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--grafite);
+}
+
+/* pagina FAQ */
+
+.faq_pag .bannerFaq {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
+}
+
+.faq_pag .container1_perguntasfrequentes {
+    width: 100%;
+}
+
+/* .faq_pag .duvidas_perguntasfrequentes {
         width: auto;
     } */
-    .faq_pag .duvidas_perguntasfrequentes label {
-        width: 75%;
-    }
-    .duvidas_perguntasfrequentes input {
-        width: 100%;
-        height: 10vh;
-    }
-    /* pagina ONGS */
-    .ongs_pag .conteudo img {
-        width: 100%;
-    }
-    /* pagina ranking */
-    .ranking_pag .descricao {
-        width: 80%;
-        height: auto;
-        padding-bottom: 7%;
-    }
-    .ranking_pag p {
-        width: 80%;
-    }
-    .ranking_pag .ranking {
-        width: 80%;
-        height: auto;
-        padding-bottom: 7%;
-    }
-    .ranking_pag .botao {
-        justify-content: center;
-    }
 
+.faq_pag .duvidas_perguntasfrequentes label {
+    width: 75%;
+}
+
+.duvidas_perguntasfrequentes input {
+    width: 100%;
+    height: 10vh;
+}
+
+/* pagina ONGS */
+
+.ongs_pag .conteudo img {
+    width: 100%;
+}
+
+/* pagina ranking */
+
+.ranking_pag .descricao {
+    width: 80%;
+    height: auto;
+    padding-bottom: 7%;
+}
+
+.ranking_pag p {
+    width: 80%;
+}
+
+.ranking_pag .ranking {
+    width: 80%;
+    height: auto;
+    padding-bottom: 7%;
+}
+
+.ranking_pag .botao {
+    justify-content: center;
+}
 
 /* celular */
 
