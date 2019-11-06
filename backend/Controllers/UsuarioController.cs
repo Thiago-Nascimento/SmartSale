@@ -70,11 +70,22 @@ namespace backend.Controllers {
 
                 usuario.FotoUsuario = _uploadRepo.Upload (arquivo, "imgPerfil");
 
-                if (_repositorio.ValidaCPF (usuario)) {
-                    await _repositorio.Salvar (usuario);
+                if(usuario.IdTipoUsuario == 2) {
+                    if (_repositorio.ValidaCNPJ(usuario)) {
+                        await _repositorio.Salvar (usuario);
+                    } else {
+                        return BadRequest("O CNPJ digitado está incorreto");
+                    }
                 }
 
-                await _repositorio.Salvar (usuario);
+                if(usuario.IdTipoUsuario == 3) {
+                    if (_repositorio.ValidaCPF (usuario)) {
+                        await _repositorio.Salvar (usuario);
+                    } else {
+                        return BadRequest("O CPF digitado está incorreto");
+                    }
+                }
+                
             } catch (DbUpdateConcurrencyException) {
 
                 throw;
