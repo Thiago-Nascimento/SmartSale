@@ -1895,7 +1895,7 @@
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator",
         "AssemblyName": "Microsoft.AspNetCore.Components.Forms",
-        "Documentation": "\n            <summary>\n            Adds Data Annotations validation support to an <see cref=\"T:Microsoft.AspNetCore.Components.Forms.EditContext\" />.\n            </summary>\n        ",
+        "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
@@ -1919,7 +1919,7 @@
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator",
         "AssemblyName": "Microsoft.AspNetCore.Components.Forms",
-        "Documentation": "\n            <summary>\n            Adds Data Annotations validation support to an <see cref=\"T:Microsoft.AspNetCore.Components.Forms.EditContext\" />.\n            </summary>\n        ",
+        "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [

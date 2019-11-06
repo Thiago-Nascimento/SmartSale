@@ -7,7 +7,8 @@ using Microsoft.EntityFrameworkCore;
 namespace backend.Repositories
 {
     public class CategoriaRepository : ICategoria
-    {
+    {   
+        
         public async Task<Categoria> Alterar(Categoria categoria)
         {
             using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
