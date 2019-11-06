@@ -15,5 +15,7 @@ namespace backend.Interfaces
         Task<Usuario> Alterar(Usuario usuario);
 
         Task<Usuario> Excluir(Usuario usuario);
+
+        bool ValidaCPF (Usuario usuario);
     }
 }
