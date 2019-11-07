@@ -20,7 +20,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<Regiao>>> Get () {
             var regioes = await _repositorio.Listar();
             if (regioes == null) {
-                return NotFound ();
+                return NotFound ("Regiões não encontradas");
             }
             return regioes;
         }
@@ -34,7 +34,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Regiao>> Get (int id) {
             var regiao = await _repositorio.BuscarPorID(id);
             if (regiao == null) {
-                return NotFound ();
+                return NotFound ("Região não encontrada");
             }
             return regiao;
         }
@@ -67,13 +67,13 @@ namespace backend.Controllers {
         [HttpPut ("{id}")]
         public async Task<ActionResult<Regiao>> Put (int id, Regiao regiao) {
             if (id != regiao.IdRegiao) {
-                return BadRequest ();
+                return BadRequest ("Região não encontrada");
             }try {
                 await _repositorio.Salvar(regiao);
             } catch (DbUpdateConcurrencyException) {
                 var regiao_valida = await _repositorio.BuscarPorID (id);
                 if (regiao_valida == null) {
-                    return NotFound ();
+                    return NotFound ("Região não encontrada");
                 } else {
                     throw;
                 }
@@ -92,7 +92,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Regiao>> Delete (int id) {
             var regiao = await _repositorio.BuscarPorID (id);
             if (regiao == null) {
-                return NotFound ();
+                return NotFound ("Região não encontrada");
             }
            await _repositorio.Excluir(regiao);
             return regiao;

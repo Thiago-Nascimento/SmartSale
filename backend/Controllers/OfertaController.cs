@@ -23,7 +23,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<Oferta>>> Get () {
             var ofertas = await _repositorio.Listar ();
             if (ofertas == null) {
-                return NotFound ();
+                return NotFound ("Ofertas não encontradas");
             }
             return ofertas;
         }
@@ -37,7 +37,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Oferta>> Get (int id) {
             var oferta = await _repositorio.BuscarPorID (id);
             if (oferta == null) {
-                return NotFound ();
+                return NotFound ("Oferta não encontrada");
             }
             return oferta;
         }
@@ -81,7 +81,7 @@ namespace backend.Controllers {
         [HttpPut ("{id}")]
         public async Task<ActionResult<Oferta>> Put (int id, [FromForm] Oferta oferta) {
             if (id != oferta.IdOferta) {
-                return BadRequest ();
+                return BadRequest ("Oferta não encontrada");
             }
             try {
                 var arquivo = Request.Form.Files[0];
@@ -99,7 +99,7 @@ namespace backend.Controllers {
             } catch (DbUpdateConcurrencyException) {
                 var oferta_valida = await _repositorio.BuscarPorID (id);
                 if (oferta_valida == null) {
-                    return NotFound ();
+                    return NotFound ("Oferta não encontrada");
                 } else {
                     throw;
                 }
@@ -118,7 +118,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Oferta>> Delete (int id) {
             var oferta = await _repositorio.BuscarPorID (id);
             if (oferta == null) {
-                return NotFound ();
+                return NotFound ("Oferta não encontrada");
             }
             await _repositorio.Excluir (oferta);
             return oferta;

@@ -25,7 +25,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<Usuario>>> Get () {
             var usuarios = await _repositorio.Listar ();
             if (usuarios == null) {
-                return NotFound ();
+                return NotFound ("Usuarios não encontrados");
             }
             return usuarios;
         }
@@ -40,7 +40,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Usuario>> Get (int id) {
             var usuario = await _repositorio.BuscarPorID (id);
             if (usuario == null) {
-                return NotFound ();
+                return NotFound ("Usuario não encontrado");
             }
             return usuario;
         }
@@ -104,7 +104,7 @@ namespace backend.Controllers {
         [HttpPut ("{id}")]
         public async Task<ActionResult<Usuario>> Put (int id, [FromForm] Usuario usuario) {
             if (id != usuario.IdUsuario) {
-                return BadRequest ();
+                return BadRequest ("Usuario não encontrado");
             }
             try {
                 var arquivo = Request.Form.Files[0];
@@ -129,7 +129,7 @@ namespace backend.Controllers {
             } catch (DbUpdateConcurrencyException) {
                 var usuario_valida = await _repositorio.BuscarPorID (id);
                 if (usuario_valida == null) {
-                    return NotFound ();
+                    return NotFound ("Usuario não encontrado");
                 } else {
                     throw;
                 }
@@ -149,7 +149,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Usuario>> Delete (int id) {
             var usuario = await _repositorio.BuscarPorID (id);
             if (usuario == null) {
-                return NotFound ();
+                return NotFound ("Usuario não encontrado");
             }
 
             return usuario;

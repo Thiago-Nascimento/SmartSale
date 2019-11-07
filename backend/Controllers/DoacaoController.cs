@@ -22,7 +22,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<Doacao>>> Get () {
             var doacoes = await _repositorio.Listar ();
             if (doacoes == null) {
-                return NotFound ();
+                return NotFound ("Doações não encontradas");
             }
             return doacoes;
         }
@@ -36,7 +36,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Doacao>> Get (int id) {
             var Doacao = await _repositorio.BuscarPorID(id);
             if (Doacao == null) {
-                return NotFound ();
+                return NotFound ("Doação não encontrada");
             }
             return Doacao;
         }
@@ -69,7 +69,7 @@ namespace backend.Controllers {
         [HttpPut ("{id}")]
         public async Task<ActionResult<Doacao>> Put (int id, Doacao Doacao) {
             if (id != Doacao.IdDoacao) {
-                return BadRequest ();
+                return BadRequest ("Doação não encontrada");
             }
 
             try {
@@ -77,7 +77,7 @@ namespace backend.Controllers {
             } catch (DbUpdateConcurrencyException) {
                 var Doacao_valida = await _repositorio.BuscarPorID (id);
                 if (Doacao_valida == null) {
-                    return NotFound ();
+                    return NotFound ("Doação não encontrada");
                 } else {
                     throw;
                 }
@@ -96,7 +96,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Doacao>> Delete (int id) {
             var Doacao = await _repositorio.BuscarPorID (id);
             if (Doacao == null) {
-                return NotFound ();
+                return NotFound ("Doação não encontrada");
             }
             await _repositorio.Excluir (Doacao);
             return Doacao;

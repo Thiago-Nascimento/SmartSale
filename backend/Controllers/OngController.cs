@@ -22,7 +22,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<Ong>>> Get () {
             var ongs = await _repositorio.Listar();
             if (ongs == null) {
-                return NotFound ();
+                return NotFound ("Ongs não encontradas");
             }
             return ongs;
         }
@@ -36,7 +36,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Ong>> Get (int id) {
             var ongs = await _repositorio.BuscarPorID(id);
             if (ongs == null) {
-                return NotFound ();
+                return NotFound ("Ong não encontrada");
             }
             return ongs;
         }
@@ -75,7 +75,7 @@ namespace backend.Controllers {
             } catch (DbUpdateConcurrencyException) {
                 var ong_valida = await _repositorio.BuscarPorID (id);
                 if (ong_valida == null) {
-                    return NotFound ();
+                    return NotFound ("Ong não encontrada");
                 } else {
                     throw;
                 }
@@ -94,7 +94,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Ong>> Delete (int id) {
             var ongs = await _repositorio.BuscarPorID (id);
             if (ongs == null) {
-                return NotFound ();
+                return NotFound ("Ong não encontrada");
             }
             await _repositorio.Excluir (ongs);
             return ongs;

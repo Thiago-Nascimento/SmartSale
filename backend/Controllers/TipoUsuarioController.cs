@@ -23,7 +23,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<TipoUsuario>>> Get () {
             var tipo_usuario = await _repository.Listar ();
             if (tipo_usuario == null) {
-                return NotFound ();
+                return NotFound ("Tipos de Usuario não encontrados");
             }
             return tipo_usuario;
         }
@@ -39,7 +39,7 @@ namespace backend.Controllers {
             var tipo_usuario = await _repository.BuscarPorID (id);
 
             if (tipo_usuario == null) {
-                return NotFound ();
+                return NotFound ("Tipo de Usuario não encontrado");
             }
             return tipo_usuario;
         }
@@ -71,7 +71,7 @@ namespace backend.Controllers {
         [HttpPut ("{id}")]
         public async Task<ActionResult<TipoUsuario>> Put (int id, TipoUsuario tipo_usuario) {
             if (id != tipo_usuario.IdTipoUsuario) {
-                return BadRequest ();
+                return BadRequest ("Tipo de Usuario não encontrado");
             }
 
             try {
@@ -80,7 +80,7 @@ namespace backend.Controllers {
                 var tipo_de_usuario_valida = await _repository.BuscarPorID (id);
 
                 if (tipo_de_usuario_valida == null) {
-                    return NotFound ();
+                    return NotFound ("Tipo de Usuario não encontrado");
                 } else {
                     throw;
                 }
@@ -99,7 +99,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<TipoUsuario>> Delete (int id) {
             var tipo_usuario = await _repository.BuscarPorID(id);
             if (tipo_usuario == null) {
-                return NotFound ();
+                return NotFound ("Tipo de Usuario não encontrado");
             }
 
             return tipo_usuario;

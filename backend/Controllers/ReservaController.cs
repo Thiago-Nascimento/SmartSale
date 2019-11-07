@@ -24,7 +24,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<Reserva>>> Get () {
             var reservas = await _repositorio.Listar();
             if (reservas == null) {
-                return NotFound ();
+                return NotFound ("Reservas não encontradas");
             }
             return reservas;
         }
@@ -39,7 +39,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Reserva>> Get (int id) {
             var reserva = await _repositorio.BuscarPorID (id);
             if (reserva == null) {
-                return NotFound ();
+                return NotFound ("Reserva não encontrada");
             }
             return reserva;
         }
@@ -72,7 +72,7 @@ namespace backend.Controllers {
         [HttpPut ("{id}")]
         public async Task<ActionResult<Reserva>> Put (int id, Reserva reserva) {
             if (id != reserva.IdReserva) {
-                return BadRequest ();
+                return BadRequest ("Reserva não encontrada");
             }
            
             try {
@@ -82,7 +82,7 @@ namespace backend.Controllers {
                var reserva_valida = await _repositorio.BuscarPorID(id);
                 
                 if(reserva_valida == null){
-                    return NotFound ();
+                    return NotFound ("Reserva não encontrada");
                 } else {
                     throw;
                 }
@@ -103,7 +103,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Reserva>> Delete (int id) {
             var reserva = await _repositorio.BuscarPorID (id);
             if (reserva == null) {
-                return NotFound ();
+                return NotFound ("Reserva não encontrada");
             }
            
             return reserva;

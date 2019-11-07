@@ -21,7 +21,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<List<Produto>>> Get () {
             var produtos = await _repositorio.Listar ();
             if (produtos == null) {
-                return NotFound ();
+                return NotFound ("Produtos não encontrados");
             }
             return produtos;
         }
@@ -35,7 +35,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Produto>> Get (int id) {
             var produtos = await _repositorio.BuscarPorID (id);
             if (produtos == null) {
-                return NotFound ();
+                return NotFound ("Produto não encontrado");
             }
             return produtos;
 
@@ -76,7 +76,7 @@ namespace backend.Controllers {
             } catch (DbUpdateConcurrencyException) {
                 var categoria_valida = await _repositorio.BuscarPorID (id);
                 if (produto == null) {
-                    return NotFound ();
+                    return NotFound ("Produto não encontrado");
                 } else {
                     throw;
                 }
@@ -96,7 +96,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Produto>> Delete (int id) {
             var produto = await _repositorio.BuscarPorID (id);
             if (produto == null) {
-                return NotFound ();
+                return NotFound ("Produto não encontrado");
             }
             await _repositorio.Excluir (produto);
             return produto;

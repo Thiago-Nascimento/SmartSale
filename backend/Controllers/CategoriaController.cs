@@ -25,7 +25,7 @@ namespace backend.Controllers {
 
             // Fazemos uma verificação que se não existir determinada Categoria retorna NotFound(404)
             if (categorias == null) {
-                return NotFound ();
+                return NotFound ("Categorias não encontradas");
             }
             return categorias;
         }
@@ -44,7 +44,7 @@ namespace backend.Controllers {
             
             // Fazemos a verificação que se a busca retornar null aparecerá o erro NotFound(404)
             if (categoria == null) {
-                return NotFound ();
+                return NotFound ("Categorias não encontradas");
             }
             return categoria;
         }
@@ -94,7 +94,7 @@ namespace backend.Controllers {
 
                 // Novamente, se o 'categoria_valida' for igual a null, retornará o erro NotFound(404)
                 if (categoria_valida == null) {
-                    return NotFound ();
+                    return NotFound ("Categoria não encontrada");
                 } else {
                     throw;
                 }
@@ -113,7 +113,7 @@ namespace backend.Controllers {
         public async Task<ActionResult<Categoria>> Delete (int id) {
             var categoria = await _repositorio.BuscarPorID (id);
             if (categoria == null) {
-                return NotFound ();
+                return NotFound ("Categoria não encontrada");
             }
 
             // Aqui nos chamamos 'CategoriaRepository' para Excluir a Categoria desejada
