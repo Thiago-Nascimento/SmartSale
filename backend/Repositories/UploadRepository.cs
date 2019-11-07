@@ -18,9 +18,9 @@ namespace backend.Repositories
                     arquivo.CopyTo (stream);
                 }                    
 
-                return fullPath;
+                return savingFolder + "/" +fileName;
             } else {
-                return null;
+                return null;    
             }           
         }
     }

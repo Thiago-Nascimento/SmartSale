@@ -116,6 +116,19 @@
             <param name="id">int id da oferta</param>
             <returns>Oferta deletada</returns>
         </member>
+        <member name="M:backend.Controllers.OfertaController.GetFiltrar(backend.Domains.FiltroViewModel)">
+            <summary>
+            Lista as ofertas com o Filtro
+            </summary>
+            <param name="filtro"></param>
+            <returns>Lista contendo as Ofertas</returns>
+        </member>
+        <member name="M:backend.Controllers.OfertaController.GetOrdenar">
+            <summary>
+            Lista as ofertas ordenadas
+            </summary>
+            <returns>Listas as ofertas</returns>
+        </member>
         <member name="M:backend.Controllers.OngController.Get">
             <summary>
             Lista as Ongs

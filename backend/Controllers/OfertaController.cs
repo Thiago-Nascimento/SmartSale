@@ -63,6 +63,10 @@ namespace backend.Controllers {
                 oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
                 oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
 
+                if(oferta.DataValidade >= DateTime.Now.Date){
+                    return BadRequest("Data de Validade Incorreta");
+                }
+
                 await _repositorio.Salvar (oferta);
             } catch (DbUpdateConcurrencyException) {
                 throw;

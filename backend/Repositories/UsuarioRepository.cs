@@ -74,7 +74,7 @@ namespace backend.Repositories {
                 usuario.Documento = usuario.Documento.Replace (".", "");
 
                 //Filtro para contar os 9 digitos
-                cpfCalculo = usuario.Documento.Substring (0, 9);
+                cpfCalculo = usuario.Documento.Substring(0, 9);
 
                 //'Soma'
                 for (int i = 0; i <= 8; i++) {
