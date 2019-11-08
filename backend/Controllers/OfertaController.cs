@@ -47,9 +47,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta cadastrada</returns>
-        [Authorize (Roles = "2")]
-        [Authorize (Roles = "1")]
-        [Authorize (Roles="3")]
+        [Authorize (Roles = "2,1")]
         [HttpPost]
         public async Task<ActionResult<Oferta>> Post ([FromForm] Oferta oferta) {
             try {
@@ -83,8 +81,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da oferta</param>
         /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta Modificada</returns>
-        [Authorize (Roles = "2")]
-        [Authorize (Roles = "1")]
+        [Authorize (Roles = "2,1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Oferta>> Put (int id, [FromForm] Oferta oferta) {
             if (id != oferta.IdOferta) {
@@ -120,8 +117,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da oferta</param>
         /// <returns>Oferta deletada</returns>
-        [Authorize (Roles = "2")]
-        [Authorize (Roles = "1")]
+        [Authorize (Roles = "2,1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Oferta>> Delete (int id) {
             var oferta = await _repositorio.BuscarPorID (id);
