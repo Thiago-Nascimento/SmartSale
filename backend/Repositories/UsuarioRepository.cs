@@ -93,9 +93,6 @@ namespace backend.Repositories {
                     digito_v1 = calculo.ToString ();
                 }
 
-                if (digito_v1 == usuario.Documento[9].ToString ()) {
-                    resultado = true;
-                }
 
                 int[] v2 = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
                 resto = 0;
@@ -115,11 +112,11 @@ namespace backend.Repositories {
                 } else {
                     digito_v2 = calculo.ToString ();
                 }
-
-                if (digito_v2 == usuario.Documento[10].ToString ()) {
+                
+                if(digito_v1 == usuario.Documento[9].ToString() && digito_v2 == usuario.Documento[10].ToString ()) {
                     resultado = true;
-                }
-
+                } 
+                
                 return resultado;
             }
         }
@@ -158,10 +155,6 @@ namespace backend.Repositories {
                     digitoVerificador1 = calculo.ToString();
                 }
 
-                if(digitoVerificador1 == usuario.Documento[12].ToString()) {
-                    resultado = true;
-                }
-
                 cnpjCalculo = cnpjCalculo + digitoVerificador1;
 
                 resto = 0;
@@ -179,11 +172,9 @@ namespace backend.Repositories {
                 } else {
                     digitoVerificador2 = calculo.ToString();
                 }
-
-                if(digitoVerificador2 == usuario.Documento[13].ToString()) {
+                
+                if(digitoVerificador1 == usuario.Documento[12].ToString() && digitoVerificador2 == usuario.Documento[13].ToString()) {
                     resultado = true;
-                } else {
-                    resultado = false;
                 }
 
                 return resultado;
