@@ -49,6 +49,7 @@ namespace backend.Controllers {
         /// <returns>Oferta cadastrada</returns>
         [Authorize (Roles = "2")]
         [Authorize (Roles = "1")]
+        [Authorize (Roles="3")]
         [HttpPost]
         public async Task<ActionResult<Oferta>> Post ([FromForm] Oferta oferta) {
             try {
@@ -62,12 +63,14 @@ namespace backend.Controllers {
                 oferta.DataValidade = DateTime.Parse (Request.Form["dataValidade"]);
                 oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
                 oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
+                oferta.Titulo = Request.Form["titulo"].ToString();
 
-                if(oferta.DataValidade >= DateTime.Now.Date){
+                if(DateTime.Compare(oferta.DataValidade, DateTime.Now.Date) < 0) {
+                    await _repositorio.Salvar (oferta);
+                } else {
                     return BadRequest("Data de Validade Incorreta");
                 }
 
-                await _repositorio.Salvar (oferta);
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
@@ -98,6 +101,7 @@ namespace backend.Controllers {
                 oferta.DataValidade = DateTime.Parse (Request.Form["dataValidade"]);
                 oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
                 oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
+                oferta.Titulo = Request.Form["titulo"].ToString();
 
                 await _repositorio.Alterar (oferta);
             } catch (DbUpdateConcurrencyException) {
