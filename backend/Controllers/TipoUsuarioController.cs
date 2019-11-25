@@ -102,6 +102,14 @@ namespace backend.Controllers {
                 return NotFound ("Tipo de Usuario não encontrado");
             }
 
+            try {
+                await _repository.Excluir (tipo_usuario);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
+
             return tipo_usuario;
         }
     }

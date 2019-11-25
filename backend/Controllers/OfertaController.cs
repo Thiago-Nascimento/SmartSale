@@ -124,7 +124,13 @@ namespace backend.Controllers {
             if (oferta == null) {
                 return NotFound ("Oferta não encontrada");
             }
-            await _repositorio.Excluir (oferta);
+            try {
+                await _repositorio.Excluir (oferta);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
             return oferta;
         }
 

@@ -92,12 +92,18 @@ namespace backend.Controllers {
         [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Ong>> Delete (int id) {
-            var ongs = await _repositorio.BuscarPorID (id);
-            if (ongs == null) {
+            var ong = await _repositorio.BuscarPorID (id);
+            if (ong == null) {
                 return NotFound ("Ong não encontrada");
             }
-            await _repositorio.Excluir (ongs);
-            return ongs;
+            try {
+                await _repositorio.Excluir (ong);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
+            return ong;
         }
     }
 }

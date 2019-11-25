@@ -117,7 +117,13 @@ namespace backend.Controllers {
             }
 
             // Aqui nos chamamos 'CategoriaRepository' para Excluir a Categoria desejada
-            await _repositorio.Excluir (categoria);
+            try {
+                await _repositorio.Excluir (categoria);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
             return categoria;
         }
 

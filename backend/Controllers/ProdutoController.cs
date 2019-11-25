@@ -98,7 +98,13 @@ namespace backend.Controllers {
             if (produto == null) {
                 return NotFound ("Produto não encontrado");
             }
-            await _repositorio.Excluir (produto);
+            try {
+                await _repositorio.Excluir (produto);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
             return produto;
         }
 

@@ -91,12 +91,18 @@ namespace backend.Controllers {
         [Authorize(Roles="1,2")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Doacao>> Delete (int id) {
-            var Doacao = await _repositorio.BuscarPorID (id);
-            if (Doacao == null) {
+            var doacao = await _repositorio.BuscarPorID (id);
+            if (doacao == null) {
                 return NotFound ("Doação não encontrada");
             }
-            await _repositorio.Excluir (Doacao);
-            return Doacao;
+            try {
+                await _repositorio.Excluir (doacao);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
+            return doacao;
         }
     }
 }

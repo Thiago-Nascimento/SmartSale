@@ -70,22 +70,22 @@ namespace backend.Controllers {
 
                 usuario.FotoUsuario = _uploadRepo.Upload (arquivo, "imgPerfil");
 
-                if(usuario.IdTipoUsuario == 2) {
-                    if (_repositorio.ValidaCNPJ(usuario)) {
+                if (usuario.IdTipoUsuario == 2) {
+                    if (_repositorio.ValidaCNPJ (usuario)) {
                         await _repositorio.Salvar (usuario);
                     } else {
-                        return BadRequest("O CNPJ digitado está incorreto");
+                        return BadRequest ("O CNPJ digitado está incorreto");
                     }
                 }
 
-                if(usuario.IdTipoUsuario == 3) {
+                if (usuario.IdTipoUsuario == 3) {
                     if (_repositorio.ValidaCPF (usuario)) {
                         await _repositorio.Salvar (usuario);
                     } else {
-                        return BadRequest("O CPF digitado está incorreto");
+                        return BadRequest ("O CPF digitado está incorreto");
                     }
                 }
-                
+
             } catch (DbUpdateConcurrencyException) {
 
                 throw;
@@ -150,6 +150,14 @@ namespace backend.Controllers {
             var usuario = await _repositorio.BuscarPorID (id);
             if (usuario == null) {
                 return NotFound ("Usuario não encontrado");
+            }
+
+            try {
+                await _repositorio.Excluir (usuario);
+            } catch (Microsoft.EntityFrameworkCore.DbUpdateException ex) {
+                return BadRequest(new {
+                    mensagem="Erro! O usuário provavelmente está atrelado a algumas ofertas, não é possível excluí-lo. Raw: " + ex
+                });
             }
 
             return usuario;

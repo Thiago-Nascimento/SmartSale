@@ -94,7 +94,14 @@ namespace backend.Controllers {
             if (regiao == null) {
                 return NotFound ("Região não encontrada");
             }
-           await _repositorio.Excluir(regiao);
+
+            try {
+                await _repositorio.Excluir (regiao);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
             return regiao;
         }
     }

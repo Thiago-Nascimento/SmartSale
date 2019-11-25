@@ -101,6 +101,14 @@ namespace backend.Controllers {
             if (reserva == null) {
                 return NotFound ("Reserva não encontrada");
             }
+
+            try {
+                await _repositorio.Excluir (reserva);
+            } catch (System.Exception ex) {
+                return BadRequest(new {
+                    mensagem="Não foi possível excluir. Raw: " + ex
+                });
+            }
            
             return reserva;
         }
