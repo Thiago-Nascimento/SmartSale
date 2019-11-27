@@ -39,6 +39,11 @@ namespace backend.Domains
         [Column("Endereco_Ong")]
         [StringLength(255)]
         public string EnderecoOng { get; set; }
+        
+        [Column("Foto_Ong")]
+        [StringLength(255)]
+        public string FotoOng { get; set; }
+        
         [Column("Id_Regiao")]
         public int IdRegiao { get; set; }
 
