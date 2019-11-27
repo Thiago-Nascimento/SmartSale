@@ -77,6 +77,7 @@ CREATE table Ong
 	Id_Ong int not null primary key identity,
 	Razao_Social varchar(255) not null,
 	Cnpj VARCHAR(255) not null,
+	Foto_Ong varchar(255) not null,
 	Site_Ong VARCHAR(255),
 	Sobre_Ong varchar(255),
 	Telefone_Ong VARCHAR(255) not null,
