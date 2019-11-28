@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+import './assets/css/final.css'
+
 import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 
 //#region 
