@@ -1,73 +1,216 @@
 import React, {Component} from 'react';
+import { MDBContainer, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBInput, MDBBtn } from 'mdbreact';
 
 class Cad_categoria extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            modal: false,
+            
+            listaCategorias : [],            
+            
+            categoriaCadastrando: {
+                nomeCategoria : ""
+            },
+
+            categoriaAlterando: {
+                idCategoria: "",
+                nomeCategoria : ""
+            }
+
+
+        }
+
+        this.cadastrarCategoria = this.cadastrarCategoria.bind(this);
+        this.deletarCategoria = this.deletarCategoria.bind(this);
+        this.salvarAlteracoes = this.salvarAlteracoes.bind(this);
+        
+    }
+    
+    UNSAFE_componentWillMount(){
+        // document.title = this.props.titulo_pagina;
+        console.log("Carregando...");
+    }
+
+    componentDidMount(){
+        console.log("Carregado");
+        this.listarCategorias();
+    }
+
+    componentDidUpdate(){
+        console.log("Atualizando");
+    }
+
+    componentWillUnmount(){
+        console.log("Saindo");
+    }
+    
+    listarCategorias = () => {
+        fetch("http://localhost:5000/api/categoria")
+        .then(response => response.json())
+        .then(data => {
+            console.log("Mostrando a lista: ", data);
+            this.setState({listaCategorias : data})
+        });
+    }
+
+    atualizaEstadoCadastro = (input) => {
+        let nomePropriedade = input.target.name;
+        
+        this.setState({
+            categoriaCadastrando: {
+                ...this.state.categoriaCadastrando,
+                [input.target.name]: input.target.value
+            }
+        }, () => console.log(this.state.categoriaCadastrando[nomePropriedade]))        
+    }
+    
+    atualizaEstadoAlterar = (input) => {
+        console.log("atualizaEstadoAlterar chamada")
+        let nomePropriedade = input.target.name;
+        
+        this.setState({
+            categoriaAlterando: {
+                ...this.state.categoriaAlterando,
+                [input.target.name]: input.target.value
+            }
+        }, () => console.log(this.state.categoriaAlterando[nomePropriedade]))        
+    }
+
+    cadastrarCategoria(event) {
+        event.preventDefault();
+        console.log("Cadastrando");
+        console.log(this.state.categoriaCadastrando.nomeCategoria);
+        fetch("http://localhost:5000/api/Categoria", {
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify({ nomeCategoria : this.state.categoriaCadastrando.nomeCategoria})
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            this.listarCategorias();
+        })
+        .catch(error => console.log(error))
+    }
+
+    deletarCategoria(id) {
+        console.log("Excluindo")
+        fetch("http://localhost:5000/api/categoria/" + id, {
+            method: "DELETE",
+            headers: {
+                "Content-Type" : "application/json"
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            this.listarCategorias();
+            this.setState(() => ({listaCategorias: this.state.listaCategorias}))
+        })
+        .catch(error => {
+            console.log(error);
+            // this.setState({erroMsg: "Não foi possível excluir este evento"})
+        })
+    }
+
+    toggle = () => {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+
+    alterarCategoria = (categoria) => {
+        this.setState({ categoriaAlterando : categoria })
+        this.toggle();
+    }
+
+    salvarAlteracoes(event) {
+        event.preventDefault();
+
+        let categoria_id = this.state.categoriaAlterando.idCategoria;
+        let categoria_put = this.state.categoriaAlterando;
+
+        fetch("http://localhost:5000/api/categoria/" + categoria_id, {
+            method: "PUT",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(categoria_put)
+        })
+        .then(response => response.json())
+        .catch(error => console.log(error))
+
+        setTimeout(() => {
+            this.listarCategorias();
+        }, 500)
+
+        this.toggle();
+    }
+
     render() {
         return (
             <div className="fundoCadastro">
                 <div className="cardCadastro">
-                    <h2>Cadastro de Oferta</h2>
+                    <h2>Categorias Cadastradas</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome Categoria</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                // Percorre a lista de categorias
+                                this.state.listaCategorias.map( function(categoria) {
+                                    return (
+                                        // Atribui uma chave unica "id" para cada linha
+                                        <tr key={categoria.idCategoria}>
+                                            <td>{categoria.idCategoria}</td>
+                                            <td>{categoria.nomeCategoria}</td>
+                                            <td>
+                                                <button onClick= { () => this.alterarCategoria(categoria) }>Alterar</button>
+                                                <button onClick= { () => this.deletarCategoria(categoria.idCategoria) }>Excluir</button>
+                                            </td>
+                                        </tr>
+                                    )
+                                }.bind(this))  // Usado para vincular todo o contexto do map
+                            }
+                        </tbody>
+                    </table>
+                    
+                    <h2>Cadastro de Categoria</h2>
                     <div className="descricao">
-                        <p>Preencha os campos abaixo para efetuar o cadastro da sua oferta.</p>
-                        <p>Marque a opção de doação se quiser que seu produto seja doado.</p>
+                        <p>Preencha os campos abaixo para efetuar o cadastro da categoria.</p>
                     </div>
-                    <form method="POST" id="form_cadastro_venda">
+                    <form onSubmit={this.cadastrarCategoria}>
                         <div className="campo">
-                            {/* <!-- <label>Nome</label> --> */}
-                            <input type="text" placeholder="Nome do produto" aria-label="Digite seu nome" name="nome" required/>
-                        </div>
-                        <div className="campo">
-                            {/* <!-- <label>Tamanho</label> --> */}
-                            <input type="text" placeholder="Tamanho do produto" aria-label="Digite o tamanho" name="tamanho" required/>
-                        </div>
-                        <div className="campo">
-                            {/* <!-- <label>Peso</label> --> */}
-                            <input type="text" placeholder="Peso do produto" aria-label="Digite o peso" name="peso" required/>
-                        </div>
-                        <div className="campo">
-                            {/* <!-- <label>Quantidade</label> --> */}
-                            <input type="text" placeholder="Quantidade" aria-label="Digite a quantidade" name="quantidade" required/>
-                        </div>
-                        <div className="campo">
-                            {/* <!-- <label>Cor</label> --> */}
-                            <input type="text" placeholder="Cor" aria-label="Digite a cor" name="cor" required/>
-                        </div>                        
-                        <div className="campo">
-                            {/* <!-- <label>Data de Validade</label> --> */}
-                            <input type="text" placeholder="Data de validade" aria-label="Indique a data de validade" name="dtvalidade" required/>
-                        </div>
-                        <div className="campo">
-                            {/* <!-- <label>Data limite de Venda</label> --> */}
-                            <input type="date" placeholder="Titulo da oferta" aria-label="Limite para venda" name="dtlimvd" required/>
-                        </div>
-                        <div className="campo">
-                            {/* <!-- <label>Data limite para doação</label> --> */}
-                            <input type="text" placeholder="Descrição do produto" aria-label="Descrição" name="descricao" required/>
-                        </div>
-                        <div className="campo">
-                            {/* <!-- <label>Valor unitário</label> --> */}
-                            <input type="number" placeholder="Valor unitário da oferta" aria-label="Digite o valor unitário"/>
-                        </div>
-                        <hr/>
-                        <div className="checks">
-                            <div className="check">
-                                <input type="checkbox" aria-label="Doação" name="tipo" required/>
-                                <label>Doação</label>
-                            </div>
-                            <div className="check">
-                                <input type="checkbox" aria-label="Venda" name="tipo" required/>
-                                <label>Venda</label>                           
-                            </div>
-                        </div>
-                        <hr/> 
-                        {/* <!-- Utilizada para inserir uma linha--> */}
-                        <div className="fotos">
-                            <label>Foto</label>
-                            <input type="file" accept="image/png, image/jpeg" placeholder="Adicionar fotos Você também pode arrasta-lás" aria-label="Adicionar fotos Você também pode arrasta-lás" name="foto"/>
+                            <input onChange={this.atualizaEstadoCadastro} type="text" placeholder="Nome da categoria" aria-label="Digite o nome da categoria" name="nomeCategoria" required/>
                         </div>
                         <div className="btnCadastro">
                             <button type="submit">Cadastrar</button>
                         </div>
                     </form>
+
+                    <MDBContainer>
+                        <form onSubmit={this.salvarAlteracoes}>
+                            <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+                                <MDBModalHeader toggle={this.toggle}>Editar {this.state.categoriaAlterando.nomeCategoria}</MDBModalHeader>
+                                <MDBModalBody>
+                                    <MDBInput label="Categoria" name="nomeCategoria" value={this.state.categoriaAlterando.nomeCategoria} size="lg" onChange={this.atualizaEstadoAlterar}/>
+                                </MDBModalBody>
+                                <MDBModalFooter>
+                                    <MDBBtn color="secondary" onClick={this.toggle}>Fechar</MDBBtn>
+                                    <MDBBtn color="primary" type="submit">Salvar</MDBBtn>
+                                </MDBModalFooter>
+                            </MDBModal>
+                        </form>
+                    </MDBContainer>
                 </div>
             </div>
         );
