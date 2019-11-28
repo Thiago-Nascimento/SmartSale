@@ -31,7 +31,17 @@ const Rotas = (
                 <Route exact path = "/" component={Home}/>                
                 <Route path = "/login" component={Login}/>
                 <Route path = "/cadastrocategoria" component={Cad_categoria}/>
-                <Route path = "" component={}/>
+                <Route path = "/cadastrooferta" component={Cad_oferta}/>
+                <Route path = "/cadastroproduto" component={Cad_produto}/>
+                <Route path = "/cadastrousuario" component={Cad_usuario}/>
+                <Route path = "/faq" component={Faq}/>
+                <Route path = "/finalreserva" component={Final_reserva}/>
+                <Route path = "/ofertas" component={Ofertas}/>
+                <Route path = "/ongs" component={Ongs}/>
+                <Route path = "/perfil" component={Perfil}/>
+                <Route path = "/produto" component={Produto}/>
+                <Route path = "/quemsomos" component={QuemSomos}/>
+                <Route path = "/ranking" component={Ranking}/>
                 <Route component={NotFound}/>
             </Switch>
         </div>
