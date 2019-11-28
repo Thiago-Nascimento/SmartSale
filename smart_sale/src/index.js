@@ -10,9 +10,9 @@ import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom
 //#region 
 import Cad_categoria from "./assets/pages/cad_categoria/cad_categoria";
 // import Cad_oferta from "./assets/pages/cad_oferta/cad_oferta"
-// import Cad_produto from "./assets/pages/cad_produto/cad_produto"
+import Cad_produto from "./assets/pages/cad_produto/cad_produto"
 // import Cad_usuario from "./assets/pages/cad_usuario/cad_usuario"
-// import Faq from "./assets/pages/faq/faq"
+import Faq from "./assets/pages/faq/faq"
 // import Final_reserva from "./assets/pages/final_reserva/final_reserva"
 // import Home from "./assets/pages/home/home"
 // import Login from "./assets/pages/login/login"
@@ -32,10 +32,10 @@ const Rotas = (
                 {/* <Route exact path = "/" component={Home}/>                 */}
                 {/* <Route path = "/login" component={Login}/> */}
                 <Route path = "/cadastrocategoria" component={Cad_categoria}/>
-                {/* <Route path = "/cadastrooferta" component={Cad_oferta}/>
                 <Route path = "/cadastroproduto" component={Cad_produto}/>
-                <Route path = "/cadastrousuario" component={Cad_usuario}/>
                 <Route path = "/faq" component={Faq}/>
+                {/* <Route path = "/cadastrooferta" component={Cad_oferta}/>
+                <Route path = "/cadastrousuario" component={Cad_usuario}/>
                 <Route path = "/finalreserva" component={Final_reserva}/>
                 <Route path = "/ofertas" component={Ofertas}/>
                 <Route path = "/ongs" component={Ongs}/>
