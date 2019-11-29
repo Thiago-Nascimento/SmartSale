@@ -24,7 +24,11 @@ class Cad_usuario extends Component {
                 telefone2: "",
                 endereco: "",
                 cep: "",
+                pontuacao: "0",
+                idTipoUsuario: ""
             },
+
+            fileInput: React.createRef()
 
         }
     }
@@ -64,26 +68,46 @@ class Cad_usuario extends Component {
     postUsuario = (e) => {
         e.preventDefault();
 
+        // Declara um objeto do tipo FormData, já que o Backend recebe este tipo.
         let usuario = new FormData();
+
+        // Setamos o idTipoUsuario e atribuimos 2 ou 3
+
+        // Se o documento for = a 14 o usuario é vendedor
+        if (this.state.postUsuario.documento.length === 14) {
+            usuario.set("idTipoUsuario", "2")
+
+        // Se o documento for = a 11 ele é cliente
+        } else if (this.state.postUsuario.documento.length === 11) {
+            usuario.set("idTipoUsuario", "3")
+        }
+
+        alert(
+            `Selected file - ${
+            this.state.fileInput.current.files[0].name
+            }`
+        );
+
+        usuario.set('idRegiao', "1");
 
         usuario.set("nomeUsuario", this.state.postUsuario.nomeUsuario);
         usuario.set('idade', this.state.postUsuario.idade);
         usuario.set('documento', this.state.postUsuario.documento);
         usuario.set('razaoSocial', this.state.postUsuario.razaoSocial);
         usuario.set('email', this.state.postUsuario.email);
-        // usuario.set('fotoUsuario', this.state.postUsuario.fotoUsuario);
+        usuario.set('fotoUsuario', this.state.fileInput.current.files[0]);
         usuario.set('senha', this.state.postUsuario.senha);
         usuario.set('telefone', this.state.postUsuario.telefone);
         usuario.set('telefone2', this.state.postUsuario.telefone2);
         usuario.set('endereco', this.state.postUsuario.endereco);
         usuario.set('cep', this.state.postUsuario.cep);
+        usuario.set('pontuacao', this.state.postUsuario.pontuacao);
+
+
 
         fetch('http://localhost:5000/api/Usuario', {
             method: "POST",
             body: usuario,
-            headers: {
-                // "Content-Type": "multipart/form-data",
-            }
         })
             .then(response => response.json())
             .then(response => {
@@ -93,13 +117,14 @@ class Cad_usuario extends Component {
             .catch(error => console.log('Não foi possível cadastrar:' + error))
     }
 
-    imgSetState = (e) => {
 
-        const files = Array.from(e.target.files)
 
-        
+    handleImageChange = (e) => {
+        this.setState({
+            fileInput: e.target.files[0]
+        })
+    };
 
-    }
 
     //#endregion
 
@@ -136,6 +161,7 @@ class Cad_usuario extends Component {
                                         value={this.state.postUsuario.idade}
                                         onChange={this.postSetState}
                                     />
+                                    </div>
                                     <div className="campo_cadastrousuario">
                                         <input
                                             type="text"
@@ -180,7 +206,6 @@ class Cad_usuario extends Component {
                                             onChange={this.postSetState}
                                         />
                                     </div>
-                                </div>
                                 <div className="campo_cadastrousuario">
                                     <input
                                         type="text"
@@ -229,8 +254,10 @@ class Cad_usuario extends Component {
                                         placeholder="Coloque uma foto sua"
                                         aria-label="Coloque uma foto sua"
                                         name="fotoUsuario"
-                                        value={this.state.postUsuario.fotoUsuario}
-                                        onChange={this.imgSetState}
+                                        // value={this.state.postUsuario.fotoUsuario}
+                                        // onChange={this.imgSetState}
+                                        ref={this.state.fileInput}
+
                                     />
                                 </div>
                                 <div className="btn_cadlog">
