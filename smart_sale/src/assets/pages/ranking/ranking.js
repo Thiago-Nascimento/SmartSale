@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
+import Footer from '../../components/footer/footer';
+
 class Ranking extends Component {
 
     constructor() {
         super()
         this.state = {
 
-            dadosUsu: []
+            dadosUsu: [],
 
         }
     }
@@ -15,11 +17,31 @@ class Ranking extends Component {
         this.mostrarDados();
     }
 
-    mostrarDados = () => {
 
+    // let nota = [{ pontos: 6.7 }, { pontos: 7.4 }, { pontos: 1.0 }]
+
+    // console.log(nota)
+
+    // nota.sort(function (v1, v2) {
+
+    //     return v1.pontos - v2.pontos
+
+    // });
+
+    // console.log(nota)
+
+    // GET
+    mostrarDados = () => {
         fetch('http://localhost:5000/api/Usuario')
             .then(response => response.json())
-            .then(data => { this.setState({ dadosUsu: data }) })
+            .then(data => {
+                var order = data.sort(
+                    function (a, b) {
+                        return b.pontuacao - a.pontuacao
+                    }
+                )
+                this.setState({ dadosUsu: order })
+            })
             .catch(
                 error => {
                     console.log(error)
@@ -27,18 +49,15 @@ class Ranking extends Component {
             )
     }
 
-    filtrar = () => {
-        console.log()
-    }
 
     render() {
         return (
             <div className="Ranking">
                 <main>
-                    <div class="ranking_pag">
-                        <div class="div">
+                    <div className="ranking_pag">
+                        <div className="div">
 
-                            <section class="descricao">
+                            <section className="descricao">
                                 <h3>Sobre o ranking</h3>
                                 <br />
                                 <p>
@@ -62,13 +81,13 @@ class Ranking extends Component {
                             </p>
                             </section>
 
-                            <section class="ranking">
+                            <section className="ranking">
                                 <h3>Ranking</h3>
                                 <table>
                                     <thead>
                                         <tr>
                                             <th>Nome</th>
-                                            <th>Pontos</th>
+                                            <th id="ranking_pontos_table">Pontos</th>
                                         </tr>
                                     </thead>
 
@@ -76,98 +95,29 @@ class Ranking extends Component {
                                         {
                                             this.state.dadosUsu.map(function (dados) {
                                                 return (
-                                                    <tr key={dados.nomeUsuario}>
+                                                    <tr key={dados.idUsuario}>
                                                         <td>{dados.nomeUsuario}</td>
-                                                        <td>{dados.pontuacao}.</td>
+                                                        <td id="pontuacao">{dados.pontuacao}</td>
                                                     </tr>
                                                 );
-                                            }.bind(this))
+                                            }
+                                            )
                                         }
                                     </tbody>
                                 </table>
                             </section>
                         </div>
-                        <div class="botao">
-                            <a href="perfil.html" class="a-botao" title="Ir para o perfil">Descubra a sua pontuação em seu
+                        <div className="botao">
+                            <a href="perfil.html" className="a-botao" title="Ir para o perfil">Descubra a sua pontuação em seu
                             perfil!</a>
                         </div>
                     </div>
                 </main>
+                <Footer />
+
             </div>
         );
     }
 }
 
 export default Ranking;
-
-
-{/* <tr>
-                                        <td>2</td>
-                                        <td>Vitor Martins</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Larissa Azevedo</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Leonardo Araujo</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Marcela Alicia</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>Carlos Morette</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>11</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>12</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>13</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15</td>
-                                        <td>Claudio</td>
-                                        <td>100</td>
-                                    </tr> */}
