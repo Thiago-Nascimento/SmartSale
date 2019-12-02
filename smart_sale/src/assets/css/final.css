@@ -4,6 +4,7 @@
     --laranja: #ffbd19;
     --verde: #14cc8a;
     --cinza: grey;
+    --cinza_claro: #EBEBEB;
 }
 
 * {
@@ -1015,8 +1016,8 @@ header {
 
 /* Ongs */
 
-.ongs_pag {
-    padding: 1px 0px;
+.ongs_pag{
+    background-color: var(--cinza_claro);
 }
 
 .ongs_pag .conteudo img {
@@ -1154,8 +1155,8 @@ footer {
 
 /* Verificar .container  */
 
-main {
-    background-color: #ebebeb;
+main .paginaProduto_pag {
+    background-color: var(--cinza_claro);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -1507,7 +1508,7 @@ main {
 .perfil_pag {
     margin: auto;
     /* width: 100vw; */
-    background-color: #ebebeb;
+    background-color: var(--cinza_claro);
     padding: 1px 0px;
 }
 
@@ -2438,6 +2439,7 @@ main {
 .ongs_pag .conteudo img {
     width: 100%;
 }
+
 
 
 /* celular */
