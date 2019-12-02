@@ -19,7 +19,7 @@ import Faq from "./assets/pages/faq/faq"
 import Login from "./assets/pages/login/login"
 // import NotFound from "./assets/pages/not_found/not_found"
 // import Ofertas from "./assets/pages/ofertas/ofertas"
-// import Ongs from "./assets/pages/ongs/ongs"
+import Ongs from "./assets/pages/ongs/ongs"
 import Perfil from "./assets/pages/perfil/perfil"
 // import Produto from "./assets/pages/produto/produto"
 // import QuemSomos from "./assets/pages/quem_somos/quem_somos"
@@ -39,7 +39,7 @@ const Rotas = (
                 <Route path = "/faq" component={Faq}/>
                 {/* <Route path = "/finalreserva" component={Final_reserva}/> */}
                 {/* <Route path = "/ofertas" component={Ofertas}/> */}
-                {/* <Route path = "/ongs" component={Ongs}/> */}
+                <Route path = "/ongs" component={Ongs}/>
                 <Route path = "/perfil" component={Perfil}/>
                 {/* <Route path = "/produto" component={Produto}/> */}
                 {/* <Route path = "/quemsomos" component={QuemSomos}/> */}
