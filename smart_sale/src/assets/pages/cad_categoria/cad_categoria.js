@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { MDBContainer, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBInput, MDBBtn } from 'mdbreact';
+import Footer from '../../components/footer/footer';
 
 class Cad_categoria extends Component {
     constructor() {
@@ -153,65 +154,68 @@ class Cad_categoria extends Component {
 
     render() {
         return (
-            <div className="fundoCadastro">
-                <div className="cardCadastro">
-                    <h2>Categorias Cadastradas</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nome Categoria</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                // Percorre a lista de categorias
-                                this.state.listaCategorias.map( function(categoria) {
-                                    return (
-                                        // Atribui uma chave unica "id" para cada linha
-                                        <tr key={categoria.idCategoria}>
-                                            <td>{categoria.idCategoria}</td>
-                                            <td>{categoria.nomeCategoria}</td>
-                                            <td>
-                                                <button onClick= { () => this.alterarCategoria(categoria) }>Alterar</button>
-                                                <button onClick= { () => this.deletarCategoria(categoria.idCategoria) }>Excluir</button>
-                                            </td>
-                                        </tr>
-                                    )
-                                }.bind(this))  // Usado para vincular todo o contexto do map
-                            }
-                        </tbody>
-                    </table>
-                    
-                    <h2>Cadastro de Categoria</h2>
-                    <div className="descricao">
-                        <p>Preencha os campos abaixo para efetuar o cadastro da categoria.</p>
-                    </div>
-                    <form onSubmit={this.cadastrarCategoria}>
-                        <div className="campo">
-                            <input onChange={this.atualizaEstadoCadastro} type="text" placeholder="Nome da categoria" aria-label="Digite o nome da categoria" name="nomeCategoria" required/>
+            <div>
+                <div className="fundoCadastro">
+                    <div className="cardCadastro">
+                        <h2>Categorias Cadastradas</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nome Categoria</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    // Percorre a lista de categorias
+                                    this.state.listaCategorias.map( function(categoria) {
+                                        return (
+                                            // Atribui uma chave unica "id" para cada linha
+                                            <tr key={categoria.idCategoria}>
+                                                <td>{categoria.idCategoria}</td>
+                                                <td>{categoria.nomeCategoria}</td>
+                                                <td>
+                                                    <button onClick= { () => this.alterarCategoria(categoria) }>Alterar</button>
+                                                    <button onClick= { () => this.deletarCategoria(categoria.idCategoria) }>Excluir</button>
+                                                </td>
+                                            </tr>
+                                        )
+                                    }.bind(this))  // Usado para vincular todo o contexto do map
+                                }
+                            </tbody>
+                        </table>
+                        
+                        <h2>Cadastro de Categoria</h2>
+                        <div className="descricao">
+                            <p>Preencha os campos abaixo para efetuar o cadastro da categoria.</p>
                         </div>
-                        <div className="btnCadastro">
-                            <button type="submit">Cadastrar</button>
-                        </div>
-                    </form>
-
-                    <MDBContainer>
-                        <form onSubmit={this.salvarAlteracoes}>
-                            <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-                                <MDBModalHeader toggle={this.toggle}>Editar {this.state.categoriaAlterando.nomeCategoria}</MDBModalHeader>
-                                <MDBModalBody>
-                                    <MDBInput label="Categoria" name="nomeCategoria" value={this.state.categoriaAlterando.nomeCategoria} size="lg" onChange={this.atualizaEstadoAlterar}/>
-                                </MDBModalBody>
-                                <MDBModalFooter>
-                                    <MDBBtn color="secondary" onClick={this.toggle}>Fechar</MDBBtn>
-                                    <MDBBtn color="primary" type="submit">Salvar</MDBBtn>
-                                </MDBModalFooter>
-                            </MDBModal>
+                        <form onSubmit={this.cadastrarCategoria}>
+                            <div className="campo">
+                                <input onChange={this.atualizaEstadoCadastro} type="text" placeholder="Nome da categoria" aria-label="Digite o nome da categoria" name="nomeCategoria" required/>
+                            </div>
+                            <div className="btnCadastro">
+                                <button type="submit">Cadastrar</button>
+                            </div>
                         </form>
-                    </MDBContainer>
+
+                        <MDBContainer>
+                            <form onSubmit={this.salvarAlteracoes}>
+                                <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+                                    <MDBModalHeader toggle={this.toggle}>Editar {this.state.categoriaAlterando.nomeCategoria}</MDBModalHeader>
+                                    <MDBModalBody>
+                                        <MDBInput label="Categoria" name="nomeCategoria" value={this.state.categoriaAlterando.nomeCategoria} size="lg" onChange={this.atualizaEstadoAlterar}/>
+                                    </MDBModalBody>
+                                    <MDBModalFooter>
+                                        <MDBBtn color="secondary" onClick={this.toggle}>Fechar</MDBBtn>
+                                        <MDBBtn color="primary" type="submit">Salvar</MDBBtn>
+                                    </MDBModalFooter>
+                                </MDBModal>
+                            </form>
+                        </MDBContainer>
+                    </div>
                 </div>
+                <Footer/>
             </div>
         );
     }
