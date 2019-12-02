@@ -320,6 +320,9 @@ header {
     #pontuacao{
         padding-bottom: 13px;
     }
+    .ranking_pag .descricao p{
+        width: 30vw;
+    }
 }
 
 /* celular ranking */
@@ -338,7 +341,7 @@ header {
         align-items: center;
         justify-content: center;
     }
-    .ranking_pag .ranking {
+    .ranking_pag .ranking { 
         margin-top: 60px;
         width: 40vw;
         line-height: 2.1em;
@@ -364,6 +367,18 @@ header {
     }
     #pontuacao{
         padding-bottom: 13px;
+    }
+    .ranking_pag .botao{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ranking_pag .a-botao{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 530px;
     }
 }
 
@@ -1431,6 +1446,7 @@ main {
     background-position: top center;
     background-size: cover;
     padding-bottom: 40px;
+    width: 100%;
 }
 
 .ranking_pag .a-botao {
@@ -2422,8 +2438,6 @@ main {
 .ongs_pag .conteudo img {
     width: 100%;
 }
-
-/* pagina ranking */
 
 
 /* celular */
