@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // Espaço para Header
-// Espaço para Rodape
+import Footer from '../../components/footer/footer';
 
 class Cad_usuario extends Component {
 
@@ -18,7 +18,7 @@ class Cad_usuario extends Component {
                 documento: "",
                 razaoSocial: "",
                 email: "",
-                fotoUsuario: "",
+                fotoUsuario: React.createRef(),
                 senha: "",
                 telefone: "",
                 telefone2: "",
@@ -27,9 +27,6 @@ class Cad_usuario extends Component {
                 pontuacao: "0",
                 idTipoUsuario: ""
             },
-
-            fileInput: React.createRef()
-
         }
     }
     //#region Ciclo de Vida
@@ -82,12 +79,6 @@ class Cad_usuario extends Component {
             usuario.set("idTipoUsuario", "3")
         }
 
-        alert(
-            `Selected file - ${
-            this.state.fileInput.current.files[0].name
-            }`
-        );
-
         usuario.set('idRegiao', "1");
 
         usuario.set("nomeUsuario", this.state.postUsuario.nomeUsuario);
@@ -95,7 +86,7 @@ class Cad_usuario extends Component {
         usuario.set('documento', this.state.postUsuario.documento);
         usuario.set('razaoSocial', this.state.postUsuario.razaoSocial);
         usuario.set('email', this.state.postUsuario.email);
-        usuario.set('fotoUsuario', this.state.fileInput.current.files[0]);
+        usuario.set('fotoUsuario', this.state.postUsuario.fotoUsuario.current.files[0]);
         usuario.set('senha', this.state.postUsuario.senha);
         usuario.set('telefone', this.state.postUsuario.telefone);
         usuario.set('telefone2', this.state.postUsuario.telefone2);
@@ -121,7 +112,7 @@ class Cad_usuario extends Component {
 
     handleImageChange = (e) => {
         this.setState({
-            fileInput: e.target.files[0]
+            fotoUsuario: e.target.files[0]
         })
     };
 
@@ -256,7 +247,7 @@ class Cad_usuario extends Component {
                                         name="fotoUsuario"
                                         // value={this.state.postUsuario.fotoUsuario}
                                         // onChange={this.imgSetState}
-                                        ref={this.state.fileInput}
+                                        ref={this.state.postUsuario.fotoUsuario}
 
                                     />
                                 </div>
@@ -271,6 +262,7 @@ class Cad_usuario extends Component {
                     </div>
 
                 </main>
+                <Footer/>
             </div >
         );
     }

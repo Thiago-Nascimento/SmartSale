@@ -306,6 +306,23 @@ header {
         margin: auto;
         padding-top: 20px;
     }
+    table tbody tr{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    table tbody tr{
+        display: flex;
+        flex-direction: column;
+    }
+    #ranking_pontos_table{
+        display: none;
+    }
+    #pontuacao{
+        padding-bottom: 13px;
+    }
+    .ranking_pag .descricao p{
+        width: 30vw;
+    }
 }
 
 /* celular ranking */
@@ -324,10 +341,15 @@ header {
         align-items: center;
         justify-content: center;
     }
-    .ranking_pag .ranking {
+    .ranking_pag .ranking { 
         margin-top: 60px;
-        width: 40%;
+        width: 40vw;
+        line-height: 2.1em;
     }
+    .ranking_pag .descricao p {
+        width: 170px;
+    }
+
     .ranking_pag .descricao {
         margin-top: 60px;
     }
@@ -335,6 +357,28 @@ header {
         padding: 0px 5px;
         margin: auto;
         text-align: center;
+    }
+    table tbody tr{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #ranking_pontos_table{
+        display: none;
+    }
+    #pontuacao{
+        padding-bottom: 13px;
+    }
+    .ranking_pag .botao{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ranking_pag .a-botao{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 530px;
     }
 }
 
@@ -1338,7 +1382,7 @@ main {
 /* pagina Ranking */
 
 .ranking_pag td {
-    padding: 0px 45px;
+    padding: 0px 55px;
     margin: auto;
     text-align: center;
 }
@@ -1356,20 +1400,21 @@ main {
     padding-top: 40px;
 }
 
-.ranking_pag .descricao {
-    width: 45%;
+.ranking_pag .div .descricao {
+    width: 40%;
     text-align: justify;
     border: solid 0px var(--roxo);
     border-radius: 5px;
-    height: 800px;
     background-color: white;
+    padding-bottom: 45px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     -moz-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
 }
 
 .ranking_pag .ranking {
-    width: 45%;
+    width: 40%;
+    padding-bottom: 3%;
     border: solid 0px var(--roxo);
     border-radius: 5px;
     background-color: white;
@@ -1390,7 +1435,7 @@ main {
     border-bottom: solid 2px var(--roxo);
     color: var(--roxo);
     text-transform: uppercase;
-    font-family: 'Segoe Ui';
+    font-family: 'Luckiest' , cursive;
     font-size: 30px;
 }
 
@@ -1401,6 +1446,7 @@ main {
     background-position: top center;
     background-size: cover;
     padding-bottom: 40px;
+    width: 100%;
 }
 
 .ranking_pag .a-botao {
@@ -1411,6 +1457,7 @@ main {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    margin-top: 20px;
 }
 
 .ranking_pag .a-botao:hover {
@@ -1424,6 +1471,36 @@ main {
     display: flex;
     justify-content: flex-end;
 }
+
+.ranking_pag .ranking table tbody tr td{
+    font-family: 'Luckiest' , cursive;
+}
+
+#pontuacao{
+    color: var(--roxo);
+    font-size: 20px;
+}
+
+/* .ranking_pag .descricao {
+    width: 80%;
+    height: auto;
+    padding-bottom: 7%;
+}
+
+.ranking_pag p {
+    width: 80%;
+}
+
+.ranking_pag .ranking {
+    width: 80%;
+    height: auto;
+    padding-bottom: 7%;
+}
+
+.ranking_pag .botao {
+    justify-content: center;
+} */
+
 
 /* pagina perfil */
 
@@ -2362,27 +2439,6 @@ main {
     width: 100%;
 }
 
-/* pagina ranking */
-
-.ranking_pag .descricao {
-    width: 80%;
-    height: auto;
-    padding-bottom: 7%;
-}
-
-.ranking_pag p {
-    width: 80%;
-}
-
-.ranking_pag .ranking {
-    width: 80%;
-    height: auto;
-    padding-bottom: 7%;
-}
-
-.ranking_pag .botao {
-    justify-content: center;
-}
 
 /* celular */
 

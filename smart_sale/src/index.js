@@ -23,7 +23,7 @@ import Login from "./assets/pages/login/login"
 import Perfil from "./assets/pages/perfil/perfil"
 // import Produto from "./assets/pages/produto/produto"
 // import QuemSomos from "./assets/pages/quem_somos/quem_somos"
-// import Ranking from "./assets/pages/ranking/ranking"
+import Ranking from "./assets/pages/ranking/ranking"
 //#endregion
 
 const Rotas = (
@@ -43,7 +43,7 @@ const Rotas = (
                 <Route path = "/perfil" component={Perfil}/>
                 {/* <Route path = "/produto" component={Produto}/> */}
                 {/* <Route path = "/quemsomos" component={QuemSomos}/> */}
-                {/* <Route path = "/ranking" component={Ranking}/> */}
+                <Route path = "/ranking" component={Ranking}/>
                 {/* <Route component={NotFound}/> */}
             </Switch>
         </div>
