@@ -44,7 +44,6 @@ class Ongs extends Component {
                                                         <div className="ongs_division">
                                                             <img src={"http://localhost:5000/" + mostrar.fotoOng} className="imagem_ong" alt="Foto da Ong" />
                                                             <p>{mostrar.sobreOng}</p>
-
                                                         </div>
                                                     </div>
                                                 );

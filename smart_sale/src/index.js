@@ -18,7 +18,7 @@ import Faq from "./pages/faq/faq"
 // import Home from "./pages/home/home"
 import Login from "./pages/login/login"
 // import NotFound from "./pages/not_found/not_found"
-// import Ofertas from "./pages/ofertas/ofertas"
+import Ofertas from "./pages/ofertas/ofertas"
 import Ongs from "./pages/ongs/ongs"
 import Perfil from "./pages/perfil/perfil"
 // import Produto from "./pages/produto/produto"
@@ -38,7 +38,7 @@ const Rotas = (
                 <Route path = "/cadastrousuario" component={Cad_usuario}/>
                 <Route path = "/faq" component={Faq}/>
                 {/* <Route path = "/finalreserva" component={Final_reserva}/> */}
-                {/* <Route path = "/ofertas" component={Ofertas}/> */}
+                <Route path = "/ofertas" component={Ofertas}/>
                 <Route path = "/ongs" component={Ongs}/>
                 <Route path = "/perfil" component={Perfil}/>
                 {/* <Route path = "/produto" component={Produto}/> */}
