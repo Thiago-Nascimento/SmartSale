@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Footer from '../../components/footer/footer';
-import {parseJwt} from '../../../services/auth'
+import {parseJwt} from '../../services/auth'
 
 class Login extends Component {
     constructor() {
@@ -74,7 +74,7 @@ class Login extends Component {
                             <div className="imgLoginCad"></div>
                             <div className="contCard_1_cadlog">                            
                                 <div className="card_1_cadlog">                                
-                                    <h3>FAÇA LOGIN</h3>
+                                    <h2>FAÇA LOGIN</h2>
                                     <div className="fomrLogin">
                                         <form method="POST" onSubmit={this.realizarLogin}>
                                             <div className="login_cadlog">                                            
