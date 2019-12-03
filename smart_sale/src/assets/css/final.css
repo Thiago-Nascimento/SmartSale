@@ -1014,44 +1014,53 @@ header {
     flex-direction: row;
 }
 
-/* Ongs */
-
+/* Página Ongs */
+.containerOngs{
+    margin: auto;
+    width: 1200px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+}
 .ongs_pag{
     background-color: var(--cinza_claro);
+    box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
 }
 
-.ongs_pag .conteudo img {
-    width: 50%;
-    background-color: white;
+.imagem_ong{
+    width: 180px;
+    height: 170px;
 }
-
-.ongs_pag .container input {
-    width: 605px;
-    height: 35px;
-    margin-left: -120px;
-}
-
-.ongs_pag .containerOngs {
-    margin: auto;
-    background-color: white;
-    color: #707070;
-    margin: 5% auto;
-    box-shadow: 4px 4px 15px #cccccc;
-    border-radius: 5px;
-}
-
-.ongs_pag .conteudo {
+.Ongs .ongs_division{
     display: flex;
-    justify-content: space-between;
-    font-family: 'Segoe UI';
-    align-items: flex-start;
+    width: 900px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.Ongs h1{
+    text-align: center;
+    padding-top: 25px;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.Ongs .ongs_division{
+    display: flex;
     align-items: center;
-    padding: 2%;
+    padding: 0px 40px;
+}
+.Ongs .ongs_division p{
+    padding-left: 30px;
+    width: 550px;
+    font-size: 25px;
+    text-align: justify;
+}
+.Ongs{
+    padding-bottom: 20px ;
 }
 
 .container {
     width: 1200px;
     margin: auto;
+    padding: 40px 0px;
 }
 
 .contHeader {
@@ -2213,10 +2222,6 @@ main .paginaProduto_pag {
 
 }
 
-.login_pag .cards_cadlog .imgLoginCad {
-
-}
-
 .contCard_1_cadlog {
     /* caixa  */
     width: 700px;
@@ -2306,6 +2311,37 @@ main .paginaProduto_pag {
 
 .login_pag .card_1_cadlog .btn_cadastrarse a {
     color: var(--roxo);
+}
+
+/* pagina Produto */
+
+.paginaProduto_pag .direito .nomeProduto {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--grafite);
+}
+
+/* pagina FAQ */
+
+.faq_pag .bannerFaq {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
+}
+
+.faq_pag .container1_perguntasfrequentes {
+    width: 100%;
+}
+
+/* .faq_pag .duvidas_perguntasfrequentes {
+        width: auto;
+    } */
+
+.faq_pag .duvidas_perguntasfrequentes label {
+    width: 75%;
+}
+
+.duvidas_perguntasfrequentes input {
+    width: 100%;
+    height: 10vh;
 }
 
 /* não sei, mas é menor, vai diminuindo e alinhando os elementos */
@@ -2403,46 +2439,11 @@ main .paginaProduto_pag {
         width: 100%;
         padding-top: 0;
     }
+    /* Página de Login */
+    .login_pag .card_1_cadlog{
+        width: 60vw;
+    }
 }
-
-/* pagina Produto */
-
-.paginaProduto_pag .direito .nomeProduto {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: var(--grafite);
-}
-
-/* pagina FAQ */
-
-.faq_pag .bannerFaq {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgb(20, 204, 138)), url(../img/img4.png);
-}
-
-.faq_pag .container1_perguntasfrequentes {
-    width: 100%;
-}
-
-/* .faq_pag .duvidas_perguntasfrequentes {
-        width: auto;
-    } */
-
-.faq_pag .duvidas_perguntasfrequentes label {
-    width: 75%;
-}
-
-.duvidas_perguntasfrequentes input {
-    width: 100%;
-    height: 10vh;
-}
-
-/* pagina ONGS */
-
-.ongs_pag .conteudo img {
-    width: 100%;
-}
-
-
 
 /* celular */
 
@@ -2617,26 +2618,37 @@ main .paginaProduto_pag {
     .faq_pag .enviar_perguntasfrequentes {
         width: auto;
     }
-    /* pagina ONGS */
-    .ongs_pag .conteudo {
-        flex-direction: column;
-    }
-    .ongs_pag .containerOngs {
-        margin: 8% auto;
-    }
-}
-
-/* Responsivo Tablet Login */
-@media (max-width: 1169px){
-    .login_pag .card_1_cadlog{
-        width: 60vw;
-    }
-}
-@media (max-width: 768px){
+    /* Página de Login */
     .login_pag .card_1_cadlog{
         width: 75vw;
     }
-    .login_pag .card_1_cadlog{
-        
+}
+
+/* Responsivo Ongs */
+@media (max-width: 1169px){
+    .Ongs{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .container .containerOngs .Ongs .ongs_division{
+        display: flex;
+        flex-direction: column;
+    }
+    .Ongs .ongs_division{
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px){
+    .Ongs .ongs_division{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+    .Ongs .ongs_division p{
+        width: 100%;
     }
 }

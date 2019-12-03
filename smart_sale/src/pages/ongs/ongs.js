@@ -1,69 +1,64 @@
-import React, { Components } from 'react';
+import React, { Components, Component } from 'react';
 import Footer from '../../components/footer/footer';
 
-function Ongs() {
-    return (
-        <div className="ongs_pag">
-            <main>
-                <div className="container">
-                    <div className="containerOngs">
-                        <section className="conteudo">
-                            <img src="img/mais.png" alt="ONG mais" />
-                            <div className="texto">
-                                <h1>Nome da Instituição</h1>
-                                <p>
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                </p>
-                            </div>
-                        </section>
-                        <section className="conteudo">
-                            <img src="img/AMAI.png" alt="ONG AMAI" />
-                            <div className="texto">
-                                <h1>Nome da Instituição</h1>
-                                <p>
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                </p>
-                            </div>
-                        </section>
-                        <section className="conteudo">
-                            <img src="img/happy-people-and-warm-community.png" alt="ONG Pessoas Felizes" />
-                            <div className="texto">
-                                <h1>Nome da Instituição</h1>
-                                <p>
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                </p>
-                            </div>
-                        </section>
-                        <section className="conteudo">
-                            <img src="img/colorful-hand-and-warm-community.png" alt="ONG Colorida" />
-                            <div className="texto">
-                                <h1>Nome da Instituição</h1>
-                                <p>
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                    informações sobre a ong informações sobre a ong informações sobre a ong informações sobre a ong
-                                </p>
-                            </div>
-                        </section>
+class Ongs extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            ong: [],
+        }
+    }
+
+    componentDidMount() {
+        this.mostrarOngs();
+    }
+
+    mostrarOngs = () => {
+
+        fetch('http://localhost:5000/api/Ong/')
+            .then(response => response.json())
+            .then(data =>
+                this.setState({ ong: data }))
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+
+    render() {
+        return (
+            <div className="ongs_pag">
+                <main>
+                    <div className="container">
+                        <div className="containerOngs">
+                            <section className="conteudo">
+                                <div className="texto">
+                                    {
+                                        this.state.ong.map(
+                                            function (mostrar) {
+                                                return (
+                                                    <div key={mostrar.idOng}
+                                                        className="Ongs">
+                                                        <h1>{mostrar.razaoSocial}</h1>
+                                                        <div className="ongs_division">
+                                                            <img src={"http://localhost:5000/" + mostrar.fotoOng} className="imagem_ong" alt="Foto da Ong" />
+                                                            <p>{mostrar.sobreOng}</p>
+
+                                                        </div>
+                                                    </div>
+                                                );
+                                            }
+                                        )
+                                    }
+                                </div>
+                            </section>
+                        </div>
                     </div>
-                </div>
-            </main>
-            <Footer />
-        </div>
-    )
+                </main>
+                <Footer />
+            </div>
+        )
+    }
 }
 export default Ongs;

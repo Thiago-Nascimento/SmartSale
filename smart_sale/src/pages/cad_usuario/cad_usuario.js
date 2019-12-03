@@ -108,13 +108,11 @@ class Cad_usuario extends Component {
             .catch(error => console.log('Não foi possível cadastrar:' + error))
     }
 
-
-
-    handleImageChange = (e) => {
-        this.setState({
-            fotoUsuario: e.target.files[0]
-        })
-    };
+    // handleImageChange = (e) => {
+    //     this.setState({
+    //         fotoUsuario: e.target.files[0]
+    //     })
+    // };
 
 
     //#endregion
