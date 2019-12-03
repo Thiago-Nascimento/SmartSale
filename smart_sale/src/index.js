@@ -10,19 +10,19 @@ import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom
 
 //#region 
 import Cad_categoria from "./pages/cad_categoria/cad_categoria";
-// import Cad_oferta from "./assets/pages/cad_oferta/cad_oferta"
-// import Cad_produto from "./assets/pages/cad_produto/cad_produto"
+// import Cad_oferta from "./pages/cad_oferta/cad_oferta"
+// import Cad_produto from "./pages/cad_produto/cad_produto"
 import Cad_usuario from "./pages/cad_usuario/cad_usuario"
 import Faq from "./pages/faq/faq"
-// import Final_reserva from "./assets/pages/final_reserva/final_reserva"
-// import Home from "./assets/pages/home/home"
+// import Final_reserva from "./pages/final_reserva/final_reserva"
+// import Home from "./pages/home/home"
 import Login from "./pages/login/login"
-// import NotFound from "./assets/pages/not_found/not_found"
-// import Ofertas from "./assets/pages/ofertas/ofertas"
+// import NotFound from "./pages/not_found/not_found"
+// import Ofertas from "./pages/ofertas/ofertas"
 import Ongs from "./pages/ongs/ongs"
 import Perfil from "./pages/perfil/perfil"
-// import Produto from "./assets/pages/produto/produto"
-// import QuemSomos from "./assets/pages/quem_somos/quem_somos"
+// import Produto from "./pages/produto/produto"
+// import QuemSomos from "./pages/quem_somos/quem_somos"
 import Ranking from "./pages/ranking/ranking"
 //#endregion
 
