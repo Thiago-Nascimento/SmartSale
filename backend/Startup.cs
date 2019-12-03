@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -57,17 +58,35 @@ namespace backend {
             //habilitação do cors
             services.AddCors (options => {
                 options.AddPolicy (PermissaoEntreOrigens,
-                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                    builder => builder.AllowAnyOrigin ().AllowAnyMethod ().AllowAnyHeader ());
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure (IApplicationBuilder app, IWebHostEnvironment env) {
+            app.UseStaticFiles (); // For the wwwroot folder
+
+            // GET de Imagem
+            app.UseStaticFiles (new StaticFileOptions {
+                FileProvider = new PhysicalFileProvider (
+                    //Nome da pasta que existe
+                        Path.Combine (Directory.GetCurrentDirectory (), "imgOng")),
+                    RequestPath = "/imgOng"
+            });
+
+            app.UseStaticFiles (new StaticFileOptions {
+                FileProvider = new PhysicalFileProvider (
+                    //Nome da pasta que existe
+                        Path.Combine (Directory.GetCurrentDirectory (), "imgOferta")),
+                    RequestPath = "/imgOferta"
+            });
+
+
             if (env.IsDevelopment ()) {
                 app.UseDeveloperExceptionPage ();
             }
 
-            app.UseCors (builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors (builder => builder.AllowAnyOrigin ().AllowAnyMethod ().AllowAnyHeader ());
 
             //Habilitamos efetivamente o Swagger em nossa aplicação
             app.UseSwagger ();
@@ -80,7 +99,7 @@ namespace backend {
             //Habilitamos efetivamente o JWT em nossa aplicação
             app.UseAuthentication ();
 
-            app.UseHttpsRedirection ();
+            // app.UseHttpsRedirection ();
 
             app.UseRouting ();
 
