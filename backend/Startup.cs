@@ -67,6 +67,8 @@ namespace backend {
                 app.UseDeveloperExceptionPage ();
             }
 
+            app.UseCors (builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             //Habilitamos efetivamente o Swagger em nossa aplicação
             app.UseSwagger ();
 
@@ -87,9 +89,6 @@ namespace backend {
             app.UseEndpoints (endpoints => {
                 endpoints.MapControllers ();
             });
-
-            //cors
-            app.UseCors (builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseSwagger ();
 
