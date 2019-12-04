@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 // Chamado CSS
 import './assets/css/final.css'
 
-import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 
 //#region 
 import Cad_categoria from "./pages/cad_categoria/cad_categoria";

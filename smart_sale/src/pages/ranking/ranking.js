@@ -18,18 +18,6 @@ class Ranking extends Component {
     }
 
 
-    // let nota = [{ pontos: 6.7 }, { pontos: 7.4 }, { pontos: 1.0 }]
-
-    // console.log(nota)
-
-    // nota.sort(function (v1, v2) {
-
-    //     return v1.pontos - v2.pontos
-
-    // });
-
-    // console.log(nota)
-
     // GET
     mostrarDados = () => {
         fetch('http://localhost:5000/api/Usuario')

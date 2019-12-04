@@ -1,4 +1,4 @@
-import React, { Components, Component } from 'react';
+import React, { Component } from 'react';
 import Footer from '../../components/footer/footer';
 
 class Ongs extends Component {
