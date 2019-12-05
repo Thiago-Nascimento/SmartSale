@@ -326,7 +326,6 @@ header {
     }
     .ranking_pag .botao {
         width: 20%;
-        justify-content: center;
     }
     .ranking_pag p {
         width: 200px;
@@ -350,6 +349,69 @@ header {
     .ranking_pag .descricao p{
         width: 30vw;
     }
+}
+
+/* Card Oferta */
+#titulo_card{
+    font-size: 20px;
+}
+.Card_Oferta img{
+    width: 90%;
+    height: 243px;
+}
+
+.img_card_oferta:hover + .informacoes_card_oferta{
+    transition: 0.3s;
+    display: block;
+}
+.informacoes_card_oferta{
+    display: block;
+    width: 100%;
+}
+.informacoes_card_oferta{
+    display: none;
+    position: absolute;
+    bottom: 70px;
+    margin-bottom: -70px;
+    background-color: rgba(162, 0, 203, 0.6);
+    color: white;
+}
+.informacoes_card_oferta p{
+    margin-left: 5%;
+}
+.botao_card_oferta a{
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--laranja);
+    color: white;
+    padding: 1% 5%;
+    display: flex;
+    justify-content: center;
+}
+.botao_card_oferta{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 4% 0px;
+}
+
+.Card_Oferta{
+    width: 240px;
+    height: 245px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    border: none;
+    box-shadow: 4px 4px 15px #cccccc;
+}
+
+.Card_ofertas{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* celular ranking */
