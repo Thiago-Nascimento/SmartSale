@@ -21,6 +21,32 @@ header {
     background-color: #A200CB;
 }
 
+.ca form {
+    display: flex;
+    justify-content: space-between;
+    width: 630px;
+    height: 35px;
+    align-items: center;
+}
+
+.ca form .search-btn {
+    width: 10%;
+    background-color: white; 
+    border: none;
+    color: var(--cinza);
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* font-size: 16px; */
+    height: 33px;
+}
+
+.ca form .search-bar {
+    width: 90%;
+    height: 100%;
+}   
+
 /* cadastro produto venda e doacao */
 
 .fundoCadastro {
@@ -1096,11 +1122,10 @@ header {
     margin: 10px;
 }
 
-.contHeader .container input {
-    /* BARRA DE PESQUISA */
+/* .contHeader .container input {
     width: 605px;
     height: 35px;
-}
+} */
 
 .menu-centro {
     display: flex;

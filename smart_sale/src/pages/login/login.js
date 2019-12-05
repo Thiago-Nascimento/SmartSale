@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Footer from '../../components/footer/footer';
 import {parseJwt} from '../../services/auth'
+import Header from '../../components/header/header';
 
 class Login extends Component {
     constructor() {
@@ -12,6 +13,8 @@ class Login extends Component {
 
             isLoading : false
         }
+
+        this.props = {}
 
     }
 
@@ -41,6 +44,9 @@ class Login extends Component {
         .then(response => response.json())
         .then(response => {
             console.log("Retorno do login - JSON: ", );
+
+            // console.log("Minhas props: ", this.props);
+
             console.log("Nha: ", response.status)
             
             // if(response.status === 200){
@@ -68,6 +74,7 @@ class Login extends Component {
     render() {
         return (
             <div>
+                <Header {...this.props}/>
                 <main>
                     <div className="login_pag">                    
                         <div className="cards_cadlog">

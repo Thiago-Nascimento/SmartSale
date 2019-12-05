@@ -94,7 +94,7 @@ class Cad_usuario extends Component {
         usuario.set('cep', this.state.postUsuario.cep);
         usuario.set('pontuacao', this.state.postUsuario.pontuacao);
 
-
+        console.log(usuario);
 
         fetch('http://localhost:5000/api/Usuario', {
             method: "POST",
