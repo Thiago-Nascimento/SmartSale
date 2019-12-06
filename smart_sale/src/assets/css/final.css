@@ -19,6 +19,7 @@ header {
     justify-content: space-between;
     align-content: center;
     background-color: #A200CB;
+    padding-top: 1%;
 }
 
 .ca form {
@@ -46,6 +47,12 @@ header {
     width: 90%;
     height: 100%;
 }   
+
+.separador-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 /* cadastro produto venda e doacao */
 
@@ -1148,7 +1155,7 @@ header {
 .container {
     width: 1200px;
     margin: auto;
-    padding: 40px 0px;
+    padding: 10px 0px;
 }
 
 .contHeader {
@@ -1195,7 +1202,7 @@ header {
 }
 
 .ca {
-    display: flex;
+    display: block;
     justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI';
