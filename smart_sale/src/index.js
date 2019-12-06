@@ -15,7 +15,7 @@ import Cad_categoria from "./pages/cad_categoria/cad_categoria";
 import Cad_usuario from "./pages/cad_usuario/cad_usuario"
 import Faq from "./pages/faq/faq"
 // import Final_reserva from "./pages/final_reserva/final_reserva"
-// import Home from "./pages/home/home"
+import Home from "./pages/home/home"
 import Login from "./pages/login/login"
 // import NotFound from "./pages/not_found/not_found"
 import Ofertas from "./pages/ofertas/ofertas"
@@ -30,7 +30,7 @@ const Rotas = (
     <Router>
         <div>
             <Switch>
-                {/* <Route exact path = "/" component={Home}/>                 */}
+                <Route exact path = "/" component={Home}/>                
                 <Route path = "/login" component={Login}/>
                 <Route path = "/cadastrocategoria" component={Cad_categoria}/>
                 {/* <Route path = "/cadastrooferta" component={Cad_oferta}/> */}

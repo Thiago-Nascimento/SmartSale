@@ -13,7 +13,6 @@ class Ofertas extends Component {
     
     render(){
         return( 
-            
             <Card/>
         );
     }

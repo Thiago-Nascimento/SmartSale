@@ -356,8 +356,8 @@ header {
     font-size: 20px;
 }
 .Card_Oferta img{
-    width: 90%;
-    height: 243px;
+    width: 150px;
+    height: 150px;
 }
 
 .img_card_oferta:hover + .informacoes_card_oferta{
@@ -948,7 +948,7 @@ header {
     justify-content: center;
 }
 
-.home_pag .branco {
+/* .home_pag .branco {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -959,6 +959,15 @@ header {
     background-color: white;
     border-radius: 50px;
     padding: 0 20px;
+} */
+.home_pag .branco{
+    background-color: var(--cinza_claro);
+    width: 75%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2.0em;
 }
 
 .home_pag .branco img {
@@ -1060,12 +1069,13 @@ header {
     height: auto;
 }
 
-.home_pag .pdts2 {
+.home_pag .pdts2 , .pdt {
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: white;
     padding: 2% 0;
     margin: 4% auto;
+    width: 1200px;
 }
 
 .home_pag .cardhome2 {
@@ -1100,6 +1110,47 @@ header {
 .home_pag .pdts {
     display: flex;
     flex-direction: row;
+}
+.categorias_home{
+    padding-top: 15px;
+   width: 1150px;
+}
+.Categorias_home{
+    /* width: 900px; */
+    display: flex;
+    justify-content: space-between;
+}
+#fotos_ongs_home{
+    padding: 20px 20px;
+    width: 180px;
+    height: 180px;
+}
+.Home{
+    background-color: var(--cinza_claro);
+}
+.Produtos_home img{
+    width: 250px;
+    height: 260px;
+}
+.Produtos_home{
+    width: 1200px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.produtos_home{
+    line-height: 2.0;
+    margin:  20px 10px;
+    text-align: center;
+}
+#produtos_titulo{
+    margin-left: 1.2%;
+}
+.agora_vai{
+    width: 1340px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Página Ongs */
