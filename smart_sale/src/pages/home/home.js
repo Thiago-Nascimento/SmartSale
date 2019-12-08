@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Footer from './../../components/footer/footer';
 import img5 from './../../assets/img/img5.png';
 import produto from './../../assets/img/pdts/6.png';
+import Header from '../../components/header/header';
 
 
 class Home extends Component {
@@ -76,6 +77,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
+                <Header {...this.props}/>
                 <main>
                     <div className="home_pag">
                         <div className="banner-home"></div>

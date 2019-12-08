@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 
 class Ranking extends Component {
 
@@ -41,6 +42,7 @@ class Ranking extends Component {
     render() {
         return (
             <div className="Ranking">
+                <Header {...this.props}/>
                 <main>
                     <div className="ranking_pag">
                         <div className="div">

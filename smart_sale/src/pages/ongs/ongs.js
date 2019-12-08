@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 
 class Ongs extends Component {
 
@@ -29,6 +30,7 @@ class Ongs extends Component {
     render() {
         return (
             <div className="ongs_pag">
+                <Header {...this.props}/>
                 <main>
                     <div className="container">
                         <div className="containerOngs">

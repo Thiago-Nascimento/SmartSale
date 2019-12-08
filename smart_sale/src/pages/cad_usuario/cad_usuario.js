@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // Espaço para Header
 import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 
 class Cad_usuario extends Component {
 
@@ -120,6 +121,7 @@ class Cad_usuario extends Component {
     render() {
         return (
             <div className="Cad_usuario">
+                <Header {...this.props}/>
                 <main>
                     <div className="fundoCadastro">
                         <section className="card_cadastro">

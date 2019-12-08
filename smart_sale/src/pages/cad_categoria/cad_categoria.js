@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { MDBContainer, MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader, MDBInput, MDBBtn } from 'mdbreact';
 import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 
 class Cad_categoria extends Component {
     constructor() {
@@ -155,6 +156,7 @@ class Cad_categoria extends Component {
     render() {
         return (
             <div>
+                <Header {...this.props}/>
                 <div className="fundoCadastro">
                     <div className="cardCadastro">
                         <h2>Categorias Cadastradas</h2>
