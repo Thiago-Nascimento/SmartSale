@@ -1,50 +1,51 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/img/Agrupar 110.png';
 import Avatar from '../../assets/img/avatar.png';
+import icon_search from '../../assets/img/search_icon.png';
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            filtro : "",
-            lista : []
+            filtro: "",
+            lista: []
         }
     }
-    
+
     filtrar = (e) => {
         e.preventDefault();
         fetch("http://localhost:5000/api/Oferta/FiltrarPorNome", {
             method: "POST",
-            headers : {
-                "Content-Type" : "application/json"
+            headers: {
+                "Content-Type": "application/json"
             },
-            body : JSON.stringify({filtro : this.state.filtro})
+            body: JSON.stringify({ filtro: this.state.filtro })
         })
-        .then(response => response.json())
-        .then(response => {
-            this.setState({lista : response});
-            
-            this.props.history.push({
-                pathname:"/ofertas",
-                state : {
-                    listaFiltrada: this.state.lista
-                }
-            })   
-            
-        })
-        .catch(erro => {
-            console.log("Erro: ", erro);
-        })
+            .then(response => response.json())
+            .then(response => {
+                this.setState({ lista: response });
+
+                this.props.history.push({
+                    pathname: "/ofertas",
+                    state: {
+                        listaFiltrada: this.state.lista
+                    }
+                })
+
+            })
+            .catch(erro => {
+                console.log("Erro: ", erro);
+            })
     }
-    
+
     atualizaEstado = (event) => {
-        this.setState({[event.target.name] : event.target.value});
+        this.setState({ [event.target.name]: event.target.value });
     }
 
     render() {
-        return(
+        return (
             <header>
                 <div className="contHeader">
                     <div className="container">
@@ -52,22 +53,25 @@ class Header extends Component {
                             <div className="separador-header">
                                 <div className="logo">
                                     <Link to="/">
-                                        <img src={Logo} title="Home Smart Sale" alt="logo smart sale"/>
+                                        <img src={Logo} title="Home Smart Sale" alt="logo smart sale" />
                                     </Link>
                                 </div>
-                                <form onSubmit={this.filtrar}>
-                                    <input type="search" 
-                                    placeholder="Buscar produtos, marcas e muito mais ..." 
-                                    aria-label="Faça uma busca" 
-                                    name="filtro"
-                                    onChange={this.atualizaEstado}
-                                    className="search-bar"
-                                    />
-                                    <input className="search-btn" type="submit"></input>    
-                                </form>                        
+                                    <form 
+                                        onSubmit={this.filtrar}
+                                    >
+                                        <input type="search"
+                                            placeholder="Buscar produtos, marcas e muito mais ..."
+                                            aria-label="Faça uma busca"
+                                            name="filtro"
+                                            onChange={this.atualizaEstado}
+                                            id="search-bar"
+                                        />
+                                        <input className="search-btn" type="submit"/>
+                                            <i className="fas fa-search"></i>
+                                    </form>
                                 <div className="botao-login">
                                     <Link to="/login">
-                                        <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar"/>
+                                        <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar" />
                                         <p>Entrar</p>
                                     </Link>
                                 </div>

@@ -22,7 +22,7 @@ import Ofertas from "./pages/ofertas/ofertas"
 import Ongs from "./pages/ongs/ongs"
 import Perfil from "./pages/perfil/perfil"
 // import Produto from "./pages/produto/produto"
-// import QuemSomos from "./pages/quem_somos/quem_somos"
+import QuemSomos from "./pages/quem_somos/quem_somos"
 import Ranking from "./pages/ranking/ranking"
 //#endregion
 
@@ -42,7 +42,7 @@ const Rotas = (
                 <Route path = "/ongs" component={Ongs}/>
                 <Route path = "/perfil" component={Perfil}/>
                 {/* <Route path = "/produto" component={Produto}/> */}
-                {/* <Route path = "/quemsomos" component={QuemSomos}/> */}
+                <Route path = "/quemsomos" component={QuemSomos}/>
                 <Route path = "/ranking" component={Ranking}/>
                 {/* <Route component={NotFound}/> */}
             </Switch>

@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 
-//Header
+import Header from '../../components/header/header';
 import Footer from './../../components/footer/footer';
 
 // Importada imagem da mãe com a criança
-import img5 from './../../assets/img/img5.png';
+import img5 from './../../assets/img/img5.png'
+
 // Importada imagem de um produtp
-import produto from './../../assets/img/pdts/6.png';
-//Importadas coroas do ranking
+import produto from './../../assets/img/pdts/6.png'
+
+// Importadas coroas do ranking
 import coroa_ouro from '../../assets/img/icons/crown.png'
 import coroa_prata from '../../assets/img/icons/crown-1.png'
 import coroa_bronze from '../../assets/img/icons/crown-2.png'
-import Header from '../../components/header/header';
+
+// Importadas imagens das categorias
+import verdura from '../../assets/img/verduras.jpeg'
+import fruta from '../../assets/img/frutas.jpg'
+import legume from '../../assets/img/legume.jpg'
+import cereais from '../../assets/img/cereais.jpg'
 
 
 class Home extends Component {
@@ -44,7 +51,12 @@ class Home extends Component {
     getCategorias = () => {
         fetch('http://localhost:5000/api/Categoria')
             .then(response => response.json())
-            .then(response => this.setState({ titulo_categorias: response }))
+            .then(response => {
+                var redux = response.slice(0, 4)
+
+                this.setState({ titulo_categorias: redux })
+            })
+
     }
 
     getUsuario_1 = () => {
@@ -116,18 +128,14 @@ class Home extends Component {
 
     calculodata = () => {
 
-        var agora = new Date();
-        console.log(agora.getDay() + 1);
 
-        var validade = this.state.oferta.map(oferta => oferta.dataValidade)
-        console.log(validade)
 
     }
 
     render() {
         return (
             <div className="Home">
-                <Header {...this.props}/>
+                <Header {...this.props} />
                 <main>
                     <div className="home_pag">
                         <div className="banner-home"></div>
@@ -149,25 +157,11 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="pdt">
-                            <h3 id="produtos_titulo">Produtos </h3>
+                            <h3 id="produtos_titulo">Ofertas</h3>
                             <div className="container">
                                 <div className="produtos_home">
                                     <div className="Produtos_home">
-                                        {
-                                            this.state.oferta.map(
-                                                function (mostrar) {
-                                                    return (
-                                                        <div className="produtos_home">
-                                                            <div className="imagem_produtos_home">
-                                                                <img src={'http://localhost:5000/' + mostrar.foto} />
-                                                            </div>
-                                                            <p>{mostrar.titulo} - R${mostrar.preco}</p>
-                                                            <p>{mostrar.idUsuarioNavigation.nomeUsuario}</p>
-                                                            {/* <p>{ ((mostrar.)) }</p> */}
-                                                        </div>
-                                                    );
-                                                }
-                                            )
+                                        { //Card 
                                         }
                                     </div>
                                 </div>
@@ -177,21 +171,30 @@ class Home extends Component {
                             <h3>Categorias</h3>
                             <div className="categorias_home">
                                 <section className="cardhome">
-                                    {
-                                        this.state.titulo_categorias.map(
-                                            function (mostrar) {
-                                                return (
-                                                    <div>
-                                                        <h3>{mostrar.nomeCategoria}</h3>
-                                                    </div>
-                                                );
-                                            }
-                                        )
-                                    }
+                                    <div className="titulos_categorias_home">
+                                        {
+                                            this.state.titulo_categorias.map(
+                                                function (mostrar) {
+                                                    return (
+                                                        <div>
+                                                            <h3>{mostrar.nomeCategoria}</h3>
+                                                        </div>
+                                                    );
+                                                }
+
+                                            )
+                                        }
+                                    </div>
+                                    <div className="imagem_categorias_home">
+                                        <img src={verdura} alt="Foto da Categoria Verdura" />
+                                        <img src={fruta} />
+                                        <img src={legume} />
+                                        <img src={cereais} />
+                                    </div>
                                 </section>
                             </div>
                             <div className="ver">
-                                <a href="./filtroProdutos.html">Ver mais</a>
+                                <a href="#">Ver mais</a>
                             </div>
                         </div>
                         <div className="roxo">
@@ -200,42 +203,42 @@ class Home extends Component {
                                     <p>RANKING</p>
                                     <div className="branco">
                                         <div className="primeiros_home">
-                                        {
-                                            this.state.usuario_1.map(
-                                                function (dados) {
-                                                    return (
-                                                        <div className="Usuarios">
-                                                            <img src={coroa_ouro} alt="Coroa de ouro" id="imagem_ranking_home"/>
-                                                            <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
-                                                        </div>
-                                                    );
-                                                }
-                                            )
-                                        }
-                                        {
-                                            this.state.usuario_2.map(
-                                                function (dados) {
-                                                    return (
-                                                        <div className="Usuarios">
-                                                            <img src={coroa_prata} alt= "Coroa de prata" id="imagem_ranking_home"/>
-                                                            <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
-                                                        </div>
-                                                    );
-                                                }
+                                            {
+                                                this.state.usuario_1.map(
+                                                    function (dados) {
+                                                        return (
+                                                            <div className="Usuarios">
+                                                                <img src={coroa_ouro} alt="Coroa de ouro" id="imagem_ranking_home" />
+                                                                <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
+                                                            </div>
+                                                        );
+                                                    }
                                                 )
                                             }
-                                        {
-                                            this.state.usuario_3.map(
-                                                function (dados) {
-                                                    return (
-                                                        <div className="Usuarios">
-                                                            <img src={coroa_bronze} alt="Coroa de bronze" id="imagem_ranking_home"/>
-                                                            <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
-                                                        </div>
-                                                    );
-                                                }
-                                            )
-                                        }
+                                            {
+                                                this.state.usuario_2.map(
+                                                    function (dados) {
+                                                        return (
+                                                            <div className="Usuarios">
+                                                                <img src={coroa_prata} alt="Coroa de prata" id="imagem_ranking_home" />
+                                                                <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
+                                                            </div>
+                                                        );
+                                                    }
+                                                )
+                                            }
+                                            {
+                                                this.state.usuario_3.map(
+                                                    function (dados) {
+                                                        return (
+                                                            <div className="Usuarios">
+                                                                <img src={coroa_bronze} alt="Coroa de bronze" id="imagem_ranking_home" />
+                                                                <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
+                                                            </div>
+                                                        );
+                                                    }
+                                                )
+                                            }
                                         </div>
                                     </div>
                                 </section>
@@ -263,7 +266,6 @@ class Home extends Component {
                 </main>
                 <Footer />
             </div>
-
         );
     }
 }
