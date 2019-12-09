@@ -31,7 +31,9 @@ class Header extends Component {
                 state : {
                     listaFiltrada: this.state.lista
                 }
-            })   
+            })  
+            
+            window.location.reload();
             
         })
         .catch(erro => {
