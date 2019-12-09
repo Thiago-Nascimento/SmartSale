@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+
 //Header
 import Footer from './../../components/footer/footer';
+
+// Importada imagem da mãe com a criança
 import img5 from './../../assets/img/img5.png';
+// Importada imagem de um produtp
 import produto from './../../assets/img/pdts/6.png';
+//Importadas coroas do ranking
+import coroa_ouro from '../../assets/img/icons/crown.png'
+import coroa_prata from '../../assets/img/icons/crown-1.png'
+import coroa_bronze from '../../assets/img/icons/crown-2.png'
 
 
 class Home extends Component {
@@ -12,7 +20,9 @@ class Home extends Component {
         this.state = {
 
             titulo_categorias: [],
-            usuario: [],
+            usuario_1: [],
+            usuario_2: [],
+            usuario_3: [],
             ongs: [],
             oferta: [],
 
@@ -21,10 +31,12 @@ class Home extends Component {
 
     componentDidMount() {
         this.getCategorias();
-        this.getUsuarios();
+        this.getUsuario_1();
+        this.getUsuario_2();
+        this.getUsuario_3();
         this.getOngs();
         this.getOfertas();
-        this.coisas();
+        this.calculodata();
     }
 
     //#region GET
@@ -34,7 +46,7 @@ class Home extends Component {
             .then(response => this.setState({ titulo_categorias: response }))
     }
 
-    getUsuarios = () => {
+    getUsuario_1 = () => {
         fetch('http://localhost:5000/api/Usuario/')
             .then(response => response.json())
             .then(response => {
@@ -44,12 +56,46 @@ class Home extends Component {
                     }
                 )
                 // Usado para fatiar a resposta, percorrendo os 3 primeiros colocados
-                var redux = order.slice(0, 3)
-
-                this.setState({ usuario: redux })
+                var redux = order.slice(0, 1)
+                this.setState({ usuario_1: redux })
             }
             )
     }
+    getUsuario_2 = () => {
+        fetch('http://localhost:5000/api/Usuario/')
+            .then(response => response.json())
+            .then(response => {
+                var order = response.sort(
+                    function (a, b) {
+                        return b.pontuacao - a.pontuacao
+                    }
+                )
+                // Usado para fatiar a resposta, percorrendo os 3 primeiros colocados
+                var redux = order.slice(1, 2)
+
+
+                this.setState({ usuario_2: redux })
+            }
+            )
+    }
+    getUsuario_3 = () => {
+        fetch('http://localhost:5000/api/Usuario/')
+            .then(response => response.json())
+            .then(response => {
+                var order = response.sort(
+                    function (a, b) {
+                        return b.pontuacao - a.pontuacao
+                    }
+                )
+                // Usado para fatiar a resposta, percorrendo os 3 primeiros colocados
+                var redux = order.slice(2, 3)
+
+                this.setState({ usuario_3: redux })
+            }
+            )
+    }
+
+
 
     getOngs = () => {
 
@@ -68,9 +114,13 @@ class Home extends Component {
     //#endregion
 
     calculodata = () => {
-        var data = new Date();
 
-    
+        var agora = new Date();
+        console.log(agora.getDay() + 1);
+
+        var validade = this.state.oferta.map(oferta => oferta.dataValidade)
+        console.log(validade)
+
     }
 
     render() {
@@ -99,7 +149,7 @@ class Home extends Component {
                         <div className="pdt">
                             <h3 id="produtos_titulo">Produtos </h3>
                             <div className="container">
-                                <div className="agora_vai">
+                                <div className="produtos_home">
                                     <div className="Produtos_home">
                                         {
                                             this.state.oferta.map(
@@ -147,17 +197,44 @@ class Home extends Component {
                                 <section className="rank">
                                     <p>RANKING</p>
                                     <div className="branco">
+                                        <div className="primeiros_home">
                                         {
-                                            this.state.usuario.map(
+                                            this.state.usuario_1.map(
                                                 function (dados) {
                                                     return (
                                                         <div className="Usuarios">
+                                                            <img src={coroa_ouro} alt="Coroa de ouro" id="imagem_ranking_home"/>
                                                             <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
                                                         </div>
                                                     );
                                                 }
                                             )
                                         }
+                                        {
+                                            this.state.usuario_2.map(
+                                                function (dados) {
+                                                    return (
+                                                        <div className="Usuarios">
+                                                            <img src={coroa_prata} alt= "Coroa de prata" id="imagem_ranking_home"/>
+                                                            <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
+                                                        </div>
+                                                    );
+                                                }
+                                                )
+                                            }
+                                        {
+                                            this.state.usuario_3.map(
+                                                function (dados) {
+                                                    return (
+                                                        <div className="Usuarios">
+                                                            <img src={coroa_bronze} alt="Coroa de bronze" id="imagem_ranking_home"/>
+                                                            <p>{dados.nomeUsuario} - {dados.pontuacao}</p>
+                                                        </div>
+                                                    );
+                                                }
+                                            )
+                                        }
+                                        </div>
                                     </div>
                                 </section>
                             </div>
