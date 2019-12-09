@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MDBBtn } from 'mdbreact';
+import Header from '../../components/header/header';
 
 class Cad_produto extends Component {
 
@@ -94,6 +95,7 @@ postSetState = (input) => {
 render() {
     return (
         <div>
+            <Header {...this.props}/>
             <div className="fundoCadastro">
                 <div className="cardCadastro">
                     <h2>Cadastro de Produto</h2>

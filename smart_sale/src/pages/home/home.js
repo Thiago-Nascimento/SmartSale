@@ -11,6 +11,7 @@ import produto from './../../assets/img/pdts/6.png';
 import coroa_ouro from '../../assets/img/icons/crown.png'
 import coroa_prata from '../../assets/img/icons/crown-1.png'
 import coroa_bronze from '../../assets/img/icons/crown-2.png'
+import Header from '../../components/header/header';
 
 
 class Home extends Component {
@@ -126,6 +127,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
+                <Header {...this.props}/>
                 <main>
                     <div className="home_pag">
                         <div className="banner-home"></div>

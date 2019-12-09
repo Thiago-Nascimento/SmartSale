@@ -1,9 +1,11 @@
 import React from 'react';
 import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 
 function Faq() {
     return (
         <div className="Faq">
+            <Header {...this.props}/>
             <main>
                 <div className="faq_pag">
                     <div className="bannerFaq">

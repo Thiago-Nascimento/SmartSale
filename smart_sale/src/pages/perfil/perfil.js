@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 
 class Perfil extends Component {
     render() {
         return (
             <div>
+                <Header {...this.props}/>
                 <div className="perfil_pag">
                     <div className="perfil_banner">
                         <img src="../SmartSale/img/icons/picture.png" alt="Trocar papel de parede" className="perfil_troca"/>
