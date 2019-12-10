@@ -748,6 +748,9 @@ header {
 .finalreserva_pag {
     padding: 1px 0px;
 }
+.Final_Reserva{
+    background-color: var(--cinza_claro);
+}
 
 .finalreserva_pag .container {
     background-color: white;
