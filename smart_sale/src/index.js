@@ -11,10 +11,10 @@ import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 //#region 
 import Cad_categoria from "./pages/cad_categoria/cad_categoria";
 import Cad_oferta from "./pages/cad_oferta/cad_oferta"
-// import Cad_produto from "./pages/cad_produto/cad_produto"
+import Cad_produto from "./pages/cad_produto/cad_produto"
 import Cad_usuario from "./pages/cad_usuario/cad_usuario"
 import Faq from "./pages/faq/faq"
-// import Final_reserva from "./pages/final_reserva/final_reserva"
+import Final_reserva from "./pages/final_reserva/final_reserva"
 import Home from "./pages/home/home"
 import Login from "./pages/login/login"
 // import NotFound from "./pages/not_found/not_found"
@@ -36,10 +36,10 @@ const Rotas = (
                 <Route path = "/login" component={Login}/>
                 <Route path = "/cadastrocategoria" component={Cad_categoria}/>
                 <Route path = "/cadastrooferta" component={Cad_oferta}/>
-                {/* <Route path = "/cadastroproduto" component={Cad_produto}/> */}
+                <Route path = "/cadastroproduto" component={Cad_produto}/>
                 <Route path = "/cadastrousuario" component={Cad_usuario}/>
                 <Route path = "/faq" component={Faq}/>
-                {/* <Route path = "/finalreserva" component={Final_reserva}/> */}
+                <Route path = "/finalreserva" component={Final_reserva}/>
                 <Route path = "/ofertas" component={Ofertas}/>
                 <Route path = "/ongs" component={Ongs}/>
                 <Route path = "/perfil" component={Perfil}/>
