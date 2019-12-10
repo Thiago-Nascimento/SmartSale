@@ -81,7 +81,6 @@ namespace backend {
                     RequestPath = "/imgOferta"
             });
 
-
             if (env.IsDevelopment ()) {
                 app.UseDeveloperExceptionPage ();
             }

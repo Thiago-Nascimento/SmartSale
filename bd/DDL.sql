@@ -30,7 +30,7 @@ CREATE table Usuario
 	Razao_Social VARCHAR(255),
 	Email varchar(255) not null,
 	Senha varchar(255) not null,
-	Foto VARCHAR(255),
+	Foto_Usuario VARCHAR(255),
 	Telefone VARCHAR(255) not null,
 	Telefone_2 VARCHAR(255),
 	Endereco varchar(255) not null,

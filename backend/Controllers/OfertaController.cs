@@ -47,7 +47,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta cadastrada</returns>
-        [Authorize (Roles = "2,1")]
+        // [Authorize (Roles = "2,1")]
         [HttpPost]
         public async Task<ActionResult<Oferta>> Post ([FromForm] Oferta oferta) {
             try {
