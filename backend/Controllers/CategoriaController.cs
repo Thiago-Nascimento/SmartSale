@@ -61,6 +61,7 @@ namespace backend.Controllers {
             // Fazemos um tratamento de erro onde o metodos Salvar precisa do parametro categoria
             try {
                 await _repositorio.Salvar (categoria);
+
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
