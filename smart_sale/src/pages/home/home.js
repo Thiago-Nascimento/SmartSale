@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from '../../components/header/header';
 import Footer from './../../components/footer/footer';
+import Card from '../../components/card/card'
 
 // Importada imagem da mãe com a criança
 import img5 from './../../assets/img/img5.png'
@@ -161,8 +162,7 @@ class Home extends Component {
                             <div className="container">
                                 <div className="produtos_home">
                                     <div className="Produtos_home">
-                                        { //Card 
-                                        }
+                                        <Card/>
                                     </div>
                                 </div>
                             </div>
