@@ -150,6 +150,7 @@ class Cad_produto extends Component {
         })
     }
 
+
     deletarProduto(id) {
         console.log("Excluindo")
         fetch("http://localhost:5000/api/Produto/" + id, {
@@ -168,6 +169,7 @@ class Cad_produto extends Component {
                 console.log(error);
             })
     }
+
 
     render() {
         return (
@@ -241,7 +243,7 @@ class Cad_produto extends Component {
                                                 {c.nomeCategoria}
                                             </option>
                                         )
-                                    })
+                                    }.bind(this))
                                 }
                             </select>
 
