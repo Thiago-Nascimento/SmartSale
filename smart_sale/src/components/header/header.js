@@ -66,8 +66,7 @@ class Header extends Component {
                                             onChange={this.atualizaEstado}
                                             id="search-bar"
                                         />
-                                        <input className="search-btn" type="submit"/>
-                                            <i className="fas fa-search"></i>
+                                        <img src={icon_search} id="search-btn" type="submit"/>
                                     </form>
                                 <div className="botao-login">
                                     <Link to="/login">

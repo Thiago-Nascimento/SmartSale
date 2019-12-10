@@ -10,7 +10,7 @@ import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 
 //#region 
 import Cad_categoria from "./pages/cad_categoria/cad_categoria";
-// import Cad_oferta from "./pages/cad_oferta/cad_oferta"
+import Cad_oferta from "./pages/cad_oferta/cad_oferta"
 // import Cad_produto from "./pages/cad_produto/cad_produto"
 import Cad_usuario from "./pages/cad_usuario/cad_usuario"
 import Faq from "./pages/faq/faq"
@@ -33,7 +33,7 @@ const Rotas = (
                 <Route exact path = "/" component={Home}/>                
                 <Route path = "/login" component={Login}/>
                 <Route path = "/cadastrocategoria" component={Cad_categoria}/>
-                {/* <Route path = "/cadastrooferta" component={Cad_oferta}/> */}
+                <Route path = "/cadastrooferta" component={Cad_oferta}/>
                 {/* <Route path = "/cadastroproduto" component={Cad_produto}/> */}
                 <Route path = "/cadastrousuario" component={Cad_usuario}/>
                 <Route path = "/faq" component={Faq}/>

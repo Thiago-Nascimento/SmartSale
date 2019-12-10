@@ -104,10 +104,6 @@ class Cad_oferta extends Component {
             .catch(error => console.log('Não foi possivel cadastrar:' + error))
     }
 
-
-
-
-
     render() {
         return (
             <div className="fundoCadastro">
@@ -127,7 +123,8 @@ class Cad_oferta extends Component {
                                 name="titulo"
                                 required
                                 value={this.state.postOferta.titulo}
-                                onChange={this.postSetState} />
+                                onChange={this.postSetState} 
+                            />
                         </div>
 
 
@@ -201,7 +198,7 @@ class Cad_oferta extends Component {
                                 <label>Doação</label>
                             </div>
                         </div>
-                        <div class="ongsDoacao">
+                        <div className="ongsDoacao">
 
                                 <option value="">Selecione uma Ong</option>
 

@@ -29,6 +29,12 @@ header {
     align-items: center;
     
 }
+#search-btn{
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    cursor: pointer;
+}
 
 .ca form .search-btn {
     width: 10%;
