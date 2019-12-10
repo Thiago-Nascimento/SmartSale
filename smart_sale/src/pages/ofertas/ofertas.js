@@ -10,7 +10,9 @@ class Ofertas extends Component {
         this.state = {
             listaProdutos: [],
             listaRegioes: [],
+            listaOrdenada: [],
             filtro: "",
+            ordenarPor: ""
         }
     }
     
@@ -24,7 +26,9 @@ class Ofertas extends Component {
             this.listarOfertas();
         } 
         console.log("listaProdutos", this.state.listaProdutos);
-        this.listarRegioes();       
+        this.listarRegioes(); 
+          
+        // this.ordenar();    
     }
 
     listarOfertas = () => {
@@ -33,6 +37,7 @@ class Ofertas extends Component {
         .then(data => {
             console.log("Mostrando a lista: ", data);
             this.setState({listaProdutos : data})
+            setTimeout(this.ordenar(), 500)
         });
     }
 
@@ -57,24 +62,75 @@ class Ofertas extends Component {
         .then(response => response.json())
         .then(response => {
             this.setState({listaProdutos : response});
-            console.log("Lista Produtos: ", this.state. listaProdutos)
+            console.log("Lista Produtos: ", this.state.listaProdutos)
         })
         .catch(erro => {
             console.log("Erro: ", erro);
         })
     }
 
-    ordenar = (e) => {
-        e.preventDefault();
-        var dataAtual = new Date()
-        var dataValidade = new Date()
-        var order = this.state.listaProdutos.sort(
-            function (oferta) {
-                dataValidade = Date(oferta.dataValidade)
-                return dataAtual - dataValidade
-                // PArei aqui
-            }
-        )
+    ordenar = (criterio) => {
+        // e.preventDefault();
+        switch (criterio) {
+            case "proximoVencimento":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if(a.dataValidade > b.dataValidade) {
+                            return 1;
+                        }
+                        if(a.dataValidade < b.dataValidade) {
+                            return -1;
+                        }
+                        return 0;
+                    }
+                )               
+                break;
+            
+            case "longeVencimento":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if(a.dataValidade > b.dataValidade) {
+                            return -1;
+                        }
+                        if(a.dataValidade < b.dataValidade) {
+                            return 1;
+                        }
+                        return 0;
+                    }
+                )
+                break;
+                    
+            case "menorPreco":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if(a.preco > b.preco) {
+                            return -1;
+                        }
+                        if(a.preco < b.preco) {
+                            return 1;
+                        }
+                        return 0;
+                    }
+                )
+                break;
+                    
+            case "maiorPreco":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if(a.preco > b.preco) {
+                            return 1;
+                        }
+                        if(a.preco < b.preco) {
+                            return -1;
+                        }
+                        return 0;
+                    }
+                )
+                break;
+
+            default:
+                break;
+        }      
     }
 
     atualizaEstadoSelect = (input) => {
@@ -88,7 +144,7 @@ class Ofertas extends Component {
             [input.target.name]: input.target.value
         })
         setTimeout(() => {
-            this.ordenar();
+            this.ordenar(this.state.ordenarPor);
         }, 500)
     }
 
@@ -124,7 +180,7 @@ class Ofertas extends Component {
                                 <label>Ordenar por: </label>
                                 <select name="ordenarPor" onChange={this.atualizaSelectOrdenar}>
                                     <option value="proximoVencimento">Mais Próximo ao Vencimento</option>
-                                    <option value="longeVe'ncimento">Mais Distante do Vencimento</option>
+                                    <option value="longeVencimento">Mais Distante do Vencimento</option>
                                     <option value="menorPreco">Menor Preço</option>
                                     <option value="maiorPreco">Maior Preço</option>
                                 </select>
