@@ -115,7 +115,10 @@ class Home extends Component {
 
         fetch('http://localhost:5000/api/Ong/')
             .then(response => response.json())
-            .then(response => this.setState({ ongs: response }))
+            .then(response => {
+                var redux = response.slice(0,4)
+                this.setState({ ongs: redux })
+            })
     }
 
     getOfertas = () => {
