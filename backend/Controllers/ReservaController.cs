@@ -48,11 +48,13 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="reserva">string nome da reserva</param>
         /// <returns>Reserva cadastrada</returns>
-        [Authorize(Roles="1,3")]
+        // [Authorize(Roles="1,3")]
         [HttpPost]
-        public async Task<ActionResult<Reserva>> Post (Reserva reserva) {
+        public async Task<ActionResult<Reserva>> Post (Reserva reserva) {   
             try {
                await _repositorio.Salvar(reserva);
+
+            //    Alterar quantidade de ofertas disponiveis
             } catch (DbUpdateConcurrencyException) {
                 throw;
             }
