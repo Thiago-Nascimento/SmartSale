@@ -377,9 +377,8 @@ header {
     transition: 0.3s;
     display: block;
 }
-.informacoes_card_oferta{
-    display: block;
-    width: 100%;
+.informacoes_card_oferta:hover{
+    display: block;    
 }
 .informacoes_card_oferta{
     display: none;
@@ -388,6 +387,7 @@ header {
     margin-bottom: -70px;
     background-color: rgba(162, 0, 203, 0.6);
     color: white;
+    width: 100%;
 }
 .informacoes_card_oferta p{
     margin-left: 5%;
@@ -2169,7 +2169,7 @@ main .paginaProduto_pag {
     .divSelects {
         width: 50%;
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
     }
     .btnAplicarFiltros {
@@ -2243,6 +2243,10 @@ main .paginaProduto_pag {
 .categorias {
     width: 95%;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 40px;
 }
 
 .categoria h2 {

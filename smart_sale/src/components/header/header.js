@@ -21,7 +21,24 @@ class Header extends Component {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ filtro: this.state.filtro })
+            body : JSON.stringify({filtro : this.state.filtro})
+        })
+        .then(response => response.json())
+        .then(response => {
+            this.setState({lista : response});
+            
+            this.props.history.push({
+                pathname:"/ofertas",
+                state : {
+                    listaFiltrada: this.state.lista
+                }
+            })  
+            
+            window.location.reload();
+            
+        })
+        .catch(erro => {
+            console.log("Erro: ", erro);
         })
             .then(response => response.json())
             .then(response => {
