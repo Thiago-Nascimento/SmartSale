@@ -31,6 +31,7 @@ class Cad_produto extends Component {
         this.postProduto = this.postProduto.bind(this);
         this.salvarAlteracoes = this.salvarAlteracoes.bind(this);
         this.postProduto = this.postProduto.bind(this);
+        this.deletarProduto = this.deletarProduto.bind(this);
     }
 
     toggle = () => {
@@ -78,7 +79,11 @@ class Cad_produto extends Component {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ nomeProduto: this.state.cadastrarProduto.nomeProduto })
+            body: JSON.stringify({ 
+                nomeProduto: this.state.cadastrarProduto.nomeProduto,
+                pontos: this.state.cadastrarProduto.pontos,
+                idCategoria: this.state.cadastrarProduto.idCategoria
+             })
         })
             .then(response => response.json())
             .then(response => {
@@ -116,8 +121,9 @@ class Cad_produto extends Component {
         event.preventDefault()
 
         let eventoput = this.state.editarModal;
+        let idprod = this.state.editarModal.idProduto;
 
-        fetch("http://localhost:5000/api/Produto/" + this.state.editarModal.idProduto, {
+        fetch("http://localhost:5000/api/Produto/" + idprod, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -142,7 +148,7 @@ class Cad_produto extends Component {
     atualizaEditarModalTitulo(input) {
         this.setState({
             // o setState tem um objeto com duas propriedades, por isso que ele não aparecia no título do modal
-            // quanado ele era chamado, a função tinha apenas as propriedades, no caso, precisa de um objeto com essas props
+            // quando ele era chamado, a função tinha apenas as propriedades, no caso, precisa de um objeto com essas props
             editarModal: {
                 idProduto: this.state.editarModal.idProduto,
                 nomeProduto: input.target.value
@@ -151,23 +157,23 @@ class Cad_produto extends Component {
     }
 
 
-    deletarProduto(id) {
+    deletarProduto(idProduto) {
         console.log("Excluindo")
-        fetch("http://localhost:5000/api/Produto/" + id, {
+        fetch("http://localhost:5000/api/produto/" + idProduto, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             }
         })
-            .then(response => response.json())
-            .then(response => {
-                console.log(response);
-                this.getProdutos();
-                this.setState(() => ({ listaProdutos: this.state.listaProdutos }))
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            this.getProdutos();
+            this.setState(() => ({ listaProdutos: this.state.listaProdutos }))
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
 
