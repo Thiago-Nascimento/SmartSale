@@ -54,50 +54,61 @@ class Produto extends Component {
     adicionaDiasHj = (dias) => {
         var result = new Date();
         result.setDate(result.getDate() + dias);
-        return result;
+        return result.toISOString().split("T")[0];
     }
 
-    reservar = (event) => {
-        event.preventDefault();
+    setReserva = () => {
         this.setState({
             reserva : {
-                ...this.state.reserva,
                 valorFinal: this.state.reserva.quantidadeComprada * this.state.produto.preco,
                 dataLimiteRetirada: this.adicionaDiasHj(3),
                 idUsuario: "1",
                 idOferta: this.state.produto.idOferta
             }
         })
+    }
 
+    reservar = (event) => {
+        event.preventDefault();
+        
         console.log(this.state.reserva)
         
-        // fetch("http://localhost:5000/api/reserva", {
-        //     method : "POST",
-        //     headers : {
-        //         "Content-Type" : "application/json"
-        //     },
-        //     body : JSON.stringify(this.state.reserva)
-        // })
-        // .then(response => response.json())
-        // .then(response => {
-        //     console.log(response);
-        //     this.props.history.push({
-        //         pathname:"/finalreserva",
-        //         state : {
-        //             reserva: this.state.reserva
-        //         }
-        //     })
-        // })
-        // .catch(error => console.log(error))
+        fetch("http://localhost:5000/api/reserva", {
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(this.state.reserva)
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            this.props.history.push({
+                pathname:"/finalreserva",
+                state : {
+                    reserva: this.state.reserva
+                }
+            })
+        })
+        .catch(error => console.log(error))
     }
 
     atualizaEstado = (input) => {
-        this.setState({
-            reserva : {
-                ...this.state.reserva,
-                [input.target.name]: input.target.value
-            }
-        })
+        // this.setState({
+        //     reserva : {
+        //         ...this.state.reserva,
+        //         [input.target.name]: input.target.value
+        //     }
+            this.setState({
+                reserva : {
+                    quantidadeComprada: input.target.value,
+                    valorFinal: this.state.reserva.quantidadeComprada * this.state.produto.preco,
+                    dataLimiteRetirada: this.adicionaDiasHj(3),
+                    idUsuario: "1",
+                    idOferta: this.state.produto.idOferta
+                }
+            })
+        // })
     }
 
     render() {
@@ -136,102 +147,6 @@ class Produto extends Component {
                         <section className="outrosProdutos">
                             <p className="relacionados">Outros Produtos</p>
                             <div className="produtos">
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
                             </div>
                         </section>
                     </div>
