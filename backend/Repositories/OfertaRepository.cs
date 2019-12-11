@@ -18,7 +18,8 @@ namespace backend.Repositories {
 
         public async Task<Oferta> BuscarPorID (int id) {
             using (BD_SmartSaleContext _contexto = new BD_SmartSaleContext ()) {
-                return await _contexto.Oferta.FindAsync (id);
+                // return await _contexto.Oferta.Include("IdUsuarioNavigation.IdRegiaoNavigation").FindAsync(id);
+                return await _contexto.Oferta.Include("IdUsuarioNavigation.IdRegiaoNavigation").FirstOrDefaultAsync(i => i.IdOferta == id);
             }
         }
 
