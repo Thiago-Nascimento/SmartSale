@@ -1146,10 +1146,11 @@ header {
     height: 260px;
 }
 .Produtos_home{
-    width: 1200px;
+    width: 1170px;
+    /* background-color: yellow; */
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 .produtos_home{
     line-height: 2.0;
@@ -1161,8 +1162,6 @@ header {
 }
 .produtos_home{
     width: 1340px;
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 .Usuarios{

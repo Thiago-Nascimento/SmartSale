@@ -20,6 +20,7 @@ import verdura from '../../assets/img/verduras.jpeg'
 import fruta from '../../assets/img/frutas.jpg'
 import legume from '../../assets/img/legume.jpg'
 import cereais from '../../assets/img/cereais.jpg'
+import { func } from 'prop-types';
 
 
 class Home extends Component {
@@ -34,6 +35,7 @@ class Home extends Component {
             usuario_3: [],
             ongs: [],
             oferta: [],
+            listaProdutos: []
 
         }
     }
@@ -44,8 +46,7 @@ class Home extends Component {
         this.getUsuario_2();
         this.getUsuario_3();
         this.getOngs();
-        this.getOfertas();
-        this.calculodata();
+        this.listarOfertas();
     }
 
     //#region GET
@@ -92,6 +93,7 @@ class Home extends Component {
             }
             )
     }
+
     getUsuario_3 = () => {
         fetch('http://localhost:5000/api/Usuario/')
             .then(response => response.json())
@@ -109,32 +111,91 @@ class Home extends Component {
             )
     }
 
-
-
     getOngs = () => {
 
         fetch('http://localhost:5000/api/Ong/')
             .then(response => response.json())
             .then(response => {
-                var redux = response.slice(0,4)
+                var redux = response.slice(0, 4)
                 this.setState({ ongs: redux })
             })
     }
 
-    getOfertas = () => {
-
-        fetch('http://localhost:5000/api/Oferta')
+    listarOfertas = () => {
+        fetch("http://localhost:5000/api/oferta")
             .then(response => response.json())
-            .then(response => this.setState({ oferta: response }))
-
+            .then(data => {
+                var redux = data.slice(0,4)
+                this.setState({ listaProdutos: redux })
+                setTimeout(this.ordenar(), 500)
+            });
     }
+
+    ordenar = (criterio) => {
+
+        switch (criterio) {
+            case "proximoVencimento":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if (a.dataValidade > b.dataValidade) {
+                            return 1;
+                        }
+                        if (a.dataValidade < b.dataValidade) {
+                            return -1;
+                        }
+                        return 0;
+                    }
+                )
+                break;
+
+            case "longeVencimento":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if (a.dataValidade > b.dataValidade) {
+                            return -1;
+                        }
+                        if (a.dataValidade < b.dataValidade) {
+                            return 1;
+                        }
+                        return 0;
+                    }
+                )
+                break;
+
+            case "menorPreco":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if (a.preco > b.preco) {
+                            return -1;
+                        }
+                        if (a.preco < b.preco) {
+                            return 1;
+                        }
+                        return 0;
+                    }
+                )
+                break;
+
+            case "maiorPreco":
+                this.state.listaProdutos.sort(
+                    function (a, b) {
+                        if (a.preco > b.preco) {
+                            return 1;
+                        }
+                        if (a.preco < b.preco) {
+                            return -1;
+                        }
+                        return 0;
+                    }
+                )
+                break;
+
+            default:
+                break;
+        }
+    }
+
     //#endregion
-
-    calculodata = () => {
-
-
-
-    }
 
     render() {
         return (
@@ -165,7 +226,19 @@ class Home extends Component {
                             <div className="container">
                                 <div className="produtos_home">
                                     <div className="Produtos_home">
-                                        <Card/>
+                                        {
+                                            this.state.listaProdutos.map(
+                                                function (oferta) {
+                                                    return (
+                                                        <div key={oferta.idOferta}>
+                                                            <Card idOferta={oferta.idOferta} foto={oferta.foto} titulo={oferta.titulo} preco={oferta.preco} quantidade={oferta.quantidade}
+                                                                bairro={oferta.idUsuarioNavigation.idRegiaoNavigation.bairro}
+                                                            />
+                                                        </div>
+                                                    );
+                                                }
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
