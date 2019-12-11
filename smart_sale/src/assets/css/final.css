@@ -1479,6 +1479,7 @@ main .paginaProduto_pag {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 }
 
 .paginaProduto_pag .cardProduto {

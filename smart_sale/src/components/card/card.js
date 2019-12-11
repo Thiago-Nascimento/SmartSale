@@ -24,11 +24,10 @@ class Card extends Component {
                             <p>Quantidade: {this.props.quantidade}</p>
                             <p>Local: {this.props.bairro}</p>
                             <div className="botao_card_oferta">
-                                {/* <a>Reserve</a> */}
-                                <Link to={{
+                                <Link onClick={() => (console.log("idOferta do card: ", this.props.idOferta))} to={{
                                     pathname : "/produto",
                                     idOferta : this.props.idOferta
-                                    }}>Reserve</Link>
+                                    }}>Reserve</Link>                                
                             </div>
                         </div>
                     </div>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
+import Card from '../../components/card/card';
 
 class Produto extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             produto: {
@@ -21,21 +22,57 @@ class Produto extends Component {
                 dataLimiteRetirada: "",
                 idUsuario: "",
                 idOferta: ""
-            }
-            
+            },
+            ofertas: [],
+            idAtual: ""
+
         }        
+    }
+
+    componentDidUpdate() {
+        if(this.state.idAtual !== this.props.location.idOferta) {
+            this.setState({idAtual: this.props.location.idOferta})
+        }
+    }
+
+    componentWillReceiveProps() {
+        // this.setState({prevId: this.props.location.idOferta})
+
+        console.log("ID OFERTA: ", this.state.idAtual)
+        
+        if(this.state.idAtual != null) {
+            console.log("NAO NULO")
+            localStorage.removeItem("persist")
+            this.getProduto(this.state.idAtual);
+        } else {
+            console.log("NULO")
+            this.getProduto(localStorage.getItem("persist"))
+        }
+
+        this.getOfertas();
     }
     
     componentDidMount(){
         console.log("Minhas props PRODUTO: ", this.props);
         console.log("Produto: ", this.props.location.idOferta)
-        this.getProduto();
+
+        if(this.props.location.idOferta != null) {
+            console.log("NAO NULO")
+            localStorage.removeItem("persist")
+            this.getProduto(this.props.location.idOferta);
+        } else {
+            console.log("NULO")
+            this.getProduto(localStorage.getItem("persist"))
+        }        
+
+        this.getOfertas();
     }
 
-    getProduto = () => {
-        fetch("http://localhost:5000/api/oferta/" + this.props.location.idOferta)
+    getProduto = (id) => {
+        fetch("http://localhost:5000/api/oferta/" + id)
         .then(response => response.json())
-        .then(data => {
+        .then(data => { 
+            localStorage.setItem("persist", data.idOferta)
             this.setState({
                 produto: {
                     idOferta: data.idOferta,
@@ -111,6 +148,15 @@ class Produto extends Component {
         // })
     }
 
+    getOfertas = () => {
+        fetch('http://localhost:5000/api/oferta')
+            .then(response => response.json())
+            .then(response => {
+                var redux = response.slice(0, 4)
+                this.setState({ ofertas: redux })
+            })
+    }
+
     render() {
         return(
             <div>
@@ -147,6 +193,18 @@ class Produto extends Component {
                         <section className="outrosProdutos">
                             <p className="relacionados">Outros Produtos</p>
                             <div className="produtos">
+                                {
+                                    this.state.ofertas.map(
+                                        function(oferta) {
+                                            return (
+                                                <div>
+                                                    <Card idOferta={oferta.idOferta} foto={oferta.foto} titulo={oferta.titulo} preco={oferta.preco} quantidade={oferta.quantidade} 
+                                                    bairro={oferta.idUsuarioNavigation.idRegiaoNavigation.bairro}/>
+                                                </div>
+                                            );
+                                        }
+                                    )
+                                }
                             </div>
                         </section>
                     </div>
