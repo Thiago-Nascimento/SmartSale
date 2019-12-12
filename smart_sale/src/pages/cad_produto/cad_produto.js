@@ -22,16 +22,13 @@ class Cad_produto extends Component {
             sucessMsg: "",
             modal: false,
 
-            editarModal: {
+            alterarProduto: {
+                idProduto: "",
                 nomeProduto: "",
-                pontos: ""
+                pontos: "",
+                idCategoria: ""
             }
         }
-
-        this.postProduto = this.postProduto.bind(this);
-        this.salvarAlteracoes = this.salvarAlteracoes.bind(this);
-        this.postProduto = this.postProduto.bind(this);
-        this.deletarProduto = this.deletarProduto.bind(this);
     }
 
     toggle = () => {
@@ -71,26 +68,27 @@ class Cad_produto extends Component {
     }
 
     // Cadastrar produto
-    postProduto(event) {
-        event.preventDeafult()
+    postProduto = (event) => {
+        event.preventDefault()
         console.log("cadastrando")
         fetch("http://localhost:5000/api/Produto", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 nomeProduto: this.state.cadastrarProduto.nomeProduto,
                 pontos: this.state.cadastrarProduto.pontos,
                 idCategoria: this.state.cadastrarProduto.idCategoria
-             })
+            })
         })
             .then(response => response.json())
             .then(response => {
-                this.listaProdutos()
+                this.getProdutos()
                 console.log(response)
             })
-            .catch(error => console.log("Não foi possível cadastrar. Erro: " + error))
+            .catch(error =>
+                console.log("Não foi possível cadastrar. Erro: " + error))
     }
 
     postSetState = (input) => {
@@ -104,78 +102,76 @@ class Cad_produto extends Component {
     }
 
     // put
+    // aqui altera o modal - chamado no botão de cada item de produtos (do lado)
     alterarProduto = (produto) => {
-        console.log(produto)
+        console.log("alterando estado do produto")
 
         this.setState({
-            editarModal: {
-                idProduto: produto.idProduto,
-                nomeProduto: produto.nomeProduto
-            }
+            alterarProduto: produto
         })
         // abre modal
         this.toggle()
     }
 
-    salvarAlteracoes(event) {
+    // permite alterar o estado do form
+    // chamado no form de alterar produto
+    atualizaEstadoAlterarProduto = (input) => {
+        console.log("alterando estado")
+
+        let dado = input.target.name;
+        
+        this.setState({
+            alterarProduto: {
+                ...this.state.alterarProduto,
+                [input.target.name]: input.target.value
+            }
+            // mostra o produto sendo alterado no console
+        }, () => console.log(this.state.alterarProduto[dado]))  
+    }
+
+    // método com fetch, apenas salva no banco
+    salvarAlteracoes = (event) => {
         event.preventDefault()
 
-        let eventoput = this.state.editarModal;
-        let idprod = this.state.editarModal.idProduto;
+        let idprod = this.state.alterarProduto.idProduto;
+        let alterarprod = this.state.alterarProduto;
 
         fetch("http://localhost:5000/api/Produto/" + idprod, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(eventoput)
+            body: JSON.stringify(alterarprod)
         })
             .then(response => response.json())
-            .then(response => {
-            })
-            .catch(error => console.log(error)
-            )
+            .catch(error => console.log("Não atualizou. Erro: " + error))
 
-        // ficou fora da requisição para atualizar assim que fechar o modal
         setTimeout(() => {
-            // console.log(response)
             this.getProdutos()
         }, 1500);
+
         // fechar modal
         this.toggle()
     }
 
-    atualizaEditarModalTitulo(input) {
-        this.setState({
-            // o setState tem um objeto com duas propriedades, por isso que ele não aparecia no título do modal
-            // quando ele era chamado, a função tinha apenas as propriedades, no caso, precisa de um objeto com essas props
-            editarModal: {
-                idProduto: this.state.editarModal.idProduto,
-                nomeProduto: input.target.value
-            }
-        })
-    }
-
-
-    deletarProduto(idProduto) {
+    deletarProduto = (produto) => {
         console.log("Excluindo")
-        fetch("http://localhost:5000/api/produto/" + idProduto, {
+        fetch("http://localhost:5000/api/Produto/" + produto, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             }
         })
-        .then(response => response.json())
-        .then(response => {
-            console.log(response);
-            this.getProdutos();
-            this.setState(() => ({ listaProdutos: this.state.listaProdutos }))
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                this.getProdutos();
+                this.setState(() => ({ listaProdutos: this.state.listaProdutos }))
+            })
+            .catch(error => {
+                console.log("Não deletou" + error)
+            })
     }
-
 
     render() {
         return (
@@ -210,14 +206,13 @@ class Cad_produto extends Component {
                                                         <MDBBtn color="primary" size="sm" onClick={() => this.alterarProduto(e)}>
                                                             Alterar
                                                         </MDBBtn>
-                                                        <MDBBtn color="danger" size="sm" onClick={() => this.deletarProduto(e.produtoId)}>
+                                                        <MDBBtn color="danger" size="sm" onClick={() => this.deletarProduto(e.idProduto)}>
                                                             Deletar
                                                         </MDBBtn>
                                                     </td>
                                                 </tr>
                                             )
-                                        }.bind(this)
-                                    )
+                                        }.bind(this))
                                 }
                             </tbody>
                         </table>
@@ -226,15 +221,27 @@ class Cad_produto extends Component {
 
                         <form id="form_cadastro_produto" onSubmit={this.postProduto}>
                             <div className="campo">
-                                <input type="text" placeholder="Nome do produto" aria-label="Digite o nome do produto" name="nome"
-                                    required />
+                                <input 
+                                type="text" 
+                                placeholder="Nome do produto" 
+                                aria-label="Digite o nome do produto" 
+                                name="nomeProduto"
+                                required 
+                                onChange={this.postSetState}
+                                value={this.alterarProduto.nomeProduto}/>
                             </div>
                             <div className="campo">
-                                <input type="text" placeholder="Pontuação do produto" aria-label="Digite a pontuação do produto" name="pontuacao"
-                                    required />
+                                <input 
+                                type="text" 
+                                placeholder="Pontuação do produto" 
+                                aria-label="Digite a pontuação do produto" 
+                                name="pontos"
+                                required 
+                                onChange={this.postSetState}
+                                value={this.alterarProduto.pontos}/>
                             </div>
                             <select id="option__categoria"
-                                name="categoriaId"
+                                name="idCategoria"
                                 value={this.state.listaCategorias.nomeCategoria}
                                 onChange={this.postSetState}
                             >
@@ -242,12 +249,7 @@ class Cad_produto extends Component {
                                 {
                                     this.state.listaCategorias.map(function (c) {
                                         return (
-                                            <option
-                                                key={c.nomeCategoria}
-                                                value={c.nomeCategoria}
-                                            >
-                                                {c.nomeCategoria}
-                                            </option>
+                                            <option key={c.idCategoria} value={c.idCategoria}>{c.nomeCategoria}</option>
                                         )
                                     }.bind(this))
                                 }
@@ -261,10 +263,15 @@ class Cad_produto extends Component {
                         <MDBContainer>
                             <form onSubmit={this.salvarAlteracoes}>
                                 <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-                                    <MDBModalHeader toggle={this.toggle}>Editar - {this.state.editarModal.nomeProduto} </MDBModalHeader>
+                                    <MDBModalHeader toggle={this.toggle}>Editar - {this.state.alterarProduto.nomeProduto} </MDBModalHeader>
                                     <MDBModalBody>
-                                        <MDBInput label="Produto" value={this.state.editarModal.nomeProduto}
-                                            onChange={this.atualizaEditarModalTitulo.bind(this)} />
+                                        <MDBInput 
+                                        label="Produto" 
+                                        name="nomeProduto"
+                                        value={this.state.alterarProduto.nomeProduto}
+                                        onChange={this.atualizaEstadoAlterarProduto} />
+
+                                        
                                     </MDBModalBody>
                                     <MDBModalFooter>
                                         <MDBBtn color="secondary" onClick={this.toggle}>Fechar</MDBBtn>

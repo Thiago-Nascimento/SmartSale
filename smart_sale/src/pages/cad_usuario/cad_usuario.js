@@ -38,7 +38,6 @@ class Cad_usuario extends Component {
     }
     //#endregion
 
-
     //#region GET
     listarGET = () => {
 
@@ -50,7 +49,6 @@ class Cad_usuario extends Component {
             })
     }
     //#endregion
-
 
     //#region POST
 
@@ -81,7 +79,6 @@ class Cad_usuario extends Component {
         }
 
         usuario.set('idRegiao', "1");
-
         usuario.set("nomeUsuario", this.state.postUsuario.nomeUsuario);
         usuario.set('idade', this.state.postUsuario.idade);
         usuario.set('documento', this.state.postUsuario.documento);
