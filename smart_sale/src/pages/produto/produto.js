@@ -24,34 +24,29 @@ class Produto extends Component {
                 idOferta: ""
             },
             ofertas: [],
-            idAtual: ""
-
         }        
     }
 
-    componentDidUpdate() {
-        if(this.state.idAtual !== this.props.location.idOferta) {
-            this.setState({idAtual: this.props.location.idOferta})
-        }
-    }
-
     componentWillReceiveProps() {
-        // this.setState({prevId: this.props.location.idOferta})
-
-        console.log("ID OFERTA: ", this.state.idAtual)
         
-        if(this.state.idAtual != null) {
-            console.log("NAO NULO")
-            localStorage.removeItem("persist")
-            this.getProduto(this.state.idAtual);
-        } else {
-            console.log("NULO")
-            this.getProduto(localStorage.getItem("persist"))
-        }
+        setTimeout(() => {
+            console.log("ID OFERTA: ", this.props.location.idOferta)
+            
+            if(this.props.location.idOferta != null) {
+                console.log("NAO NULO")
+                localStorage.removeItem("persist")
+                localStorage.setItem("persist", this.props.location.idOferta)
+            } else {
+                console.log("NULO")
+            }
+            
+            this.getProduto(localStorage.getItem("persist"));
+            this.getOfertas();
 
-        this.getOfertas();
+        }, 100);
+
     }
-    
+
     componentDidMount(){
         console.log("Minhas props PRODUTO: ", this.props);
         console.log("Produto: ", this.props.location.idOferta)
@@ -59,12 +54,12 @@ class Produto extends Component {
         if(this.props.location.idOferta != null) {
             console.log("NAO NULO")
             localStorage.removeItem("persist")
-            this.getProduto(this.props.location.idOferta);
+            localStorage.setItem("persist", this.props.location.idOferta)
         } else {
             console.log("NULO")
-            this.getProduto(localStorage.getItem("persist"))
         }        
 
+        this.getProduto(localStorage.getItem("persist"))
         this.getOfertas();
     }
 
@@ -72,7 +67,6 @@ class Produto extends Component {
         fetch("http://localhost:5000/api/oferta/" + id)
         .then(response => response.json())
         .then(data => { 
-            localStorage.setItem("persist", data.idOferta)
             this.setState({
                 produto: {
                     idOferta: data.idOferta,
@@ -131,21 +125,15 @@ class Produto extends Component {
     }
 
     atualizaEstado = (input) => {
-        // this.setState({
-        //     reserva : {
-        //         ...this.state.reserva,
-        //         [input.target.name]: input.target.value
-        //     }
-            this.setState({
-                reserva : {
-                    quantidadeComprada: input.target.value,
-                    valorFinal: this.state.reserva.quantidadeComprada * this.state.produto.preco,
-                    dataLimiteRetirada: this.adicionaDiasHj(3),
-                    idUsuario: "1",
-                    idOferta: this.state.produto.idOferta
-                }
-            })
-        // })
+        this.setState({
+            reserva : {
+                quantidadeComprada: input.target.value,
+                valorFinal: this.state.reserva.quantidadeComprada * this.state.produto.preco,
+                dataLimiteRetirada: this.adicionaDiasHj(3),
+                idUsuario: "1",
+                idOferta: this.state.produto.idOferta
+            }
+        })
     }
 
     getOfertas = () => {
