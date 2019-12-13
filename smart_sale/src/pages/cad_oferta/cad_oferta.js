@@ -100,7 +100,6 @@ class Cad_oferta extends Component {
         })
         // mostra o id da ong que ta selecionada
         console.log("checkbox: " + this.state.postOferta.doacaoOng)
-        // console.log("Data Validade: ", this.state.postOferta.dataValidade)
     }
 
 
