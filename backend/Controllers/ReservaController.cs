@@ -13,12 +13,13 @@ namespace backend.Controllers {
         // BD_SmartSaleContext _context = new BD_SmartSaleContext ();
 
         ReservaRepository _repositorio = new ReservaRepository();
+        OfertaRepository _ofertaRepo = new OfertaRepository();
 
         /// <summary>
         /// Lista as reservas cadastradas
         /// </summary>
         /// <returns>Lista de reservas</returns>
-        [Authorize(Roles="1,3")]
+        // [Authorize(Roles="1,3")]
         [HttpGet]
         public async Task<ActionResult<List<Reserva>>> Get () {
             var reservas = await _repositorio.Listar();
@@ -33,7 +34,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id da reserva desejada</param>
         /// <returns>Reserva requisitada</returns>
-        [Authorize]
+        // [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Reserva>> Get (int id) {
             var reserva = await _repositorio.BuscarPorID (id);
@@ -54,6 +55,18 @@ namespace backend.Controllers {
             try {
                await _repositorio.Salvar(reserva);
 
+               var oferta = await _ofertaRepo.BuscarPorID(reserva.IdOferta);
+               
+               oferta.Quantidade = oferta.Quantidade - reserva.QuantidadeComprada;
+
+               await _ofertaRepo.Alterar(oferta);
+
+               oferta = await _ofertaRepo.BuscarPorID(reserva.IdOferta);
+
+               if(oferta.Quantidade == 0) {
+                   await _ofertaRepo.Excluir(oferta);
+               }
+
             //    Alterar quantidade de ofertas disponiveis
             } catch (DbUpdateConcurrencyException) {
                 throw;
@@ -67,7 +80,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da reserva</param>
         /// <param name="reserva">string nome da reserva</param>
         /// <returns>reserva Modificada</returns>
-        [Authorize(Roles="1,3")]
+        // [Authorize(Roles="1,3")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Reserva>> Put (int id, Reserva reserva) {
             if (id != reserva.IdReserva) {
@@ -96,7 +109,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da reserva</param>
         /// <returns>Reserva deletada</returns>
-        [Authorize(Roles="1,3")]
+        // [Authorize(Roles="1,3")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Reserva>> Delete (int id) {
             var reserva = await _repositorio.BuscarPorID (id);
