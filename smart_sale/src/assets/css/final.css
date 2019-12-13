@@ -716,9 +716,6 @@ header {
 .desc {
     background-color: var(--roxo);
     color: white;
-    position: relative;
-    top: -64px;
-    margin-bottom: -100px;
     opacity: 0.5;
     text-transform: uppercase;
     font-weight: bold;
@@ -728,17 +725,16 @@ header {
     padding: 5px;
 }
 
-.btncompras button{
+.btncompras {
     font-weight: bold;
     color: white;
     margin: 160px 0px 0px;
     text-decoration: none;
-    background-color: #A200CB;
+    background-color: var(--laranja);
     text-align: center;
     border: 1px solid white;
     padding: 10px 50px;
     border-radius: 5px;
-    opacity: 0.6;
     width: 450px;
     font-size: 20px;
     text-transform: uppercase;
@@ -788,6 +784,7 @@ header {
 
 .finalreserva_pag .esquerdo .textos2 {
     margin-top: 50px;
+    color: var(--grafite);
 }
 
 .finalreserva_pag .direito img {
@@ -1389,6 +1386,7 @@ main .paginaProduto_pag {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
 }
 
 .paginaProduto_pag .direito {
