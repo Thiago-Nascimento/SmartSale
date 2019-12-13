@@ -6,7 +6,7 @@ class Final_reserva extends Component {
     render() {
         return (
             <div className="Final_Reserva">
-                <Header/>
+                <Header {...this.props}/>
                 <main>
                     <div class="finalreserva_pag">
                         <div class="container">
@@ -16,7 +16,7 @@ class Final_reserva extends Component {
                                 </div>
                                 <div class="textos2">
                                     <p>Detalhes da Reserva</p>
-                                    <p>Data da compra: 10/12/2019</p>
+                                    <p>Data Limite de Retirada: 10/12/2019</p>
                                     <p>Quantidade: 1</p>
                                     <p>Vendedor: Ana Cláudia Souza</p>
                                     <p>Valor final: R$50,00</p>

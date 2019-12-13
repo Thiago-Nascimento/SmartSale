@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
+import Card from '../../components/card/card';
 
 class Produto extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             produto: {
@@ -21,21 +22,51 @@ class Produto extends Component {
                 dataLimiteRetirada: "",
                 idUsuario: "",
                 idOferta: ""
-            }
-            
+            },
+            ofertas: [],
         }        
     }
-    
+
+    componentWillReceiveProps() {
+        
+        setTimeout(() => {
+            console.log("ID OFERTA: ", this.props.location.idOferta)
+            
+            if(this.props.location.idOferta != null) {
+                console.log("NAO NULO")
+                localStorage.removeItem("persist")
+                localStorage.setItem("persist", this.props.location.idOferta)
+            } else {
+                console.log("NULO")
+            }
+            
+            this.getProduto(localStorage.getItem("persist"));
+            this.getOfertas();
+
+        }, 100);
+
+    }
+
     componentDidMount(){
         console.log("Minhas props PRODUTO: ", this.props);
         console.log("Produto: ", this.props.location.idOferta)
-        this.getProduto();
+
+        if(this.props.location.idOferta != null) {
+            console.log("NAO NULO")
+            localStorage.removeItem("persist")
+            localStorage.setItem("persist", this.props.location.idOferta)
+        } else {
+            console.log("NULO")
+        }        
+
+        this.getProduto(localStorage.getItem("persist"))
+        this.getOfertas();
     }
 
-    getProduto = () => {
-        fetch("http://localhost:5000/api/oferta/" + this.props.location.idOferta)
+    getProduto = (id) => {
+        fetch("http://localhost:5000/api/oferta/" + id)
         .then(response => response.json())
-        .then(data => {
+        .then(data => { 
             this.setState({
                 produto: {
                     idOferta: data.idOferta,
@@ -54,50 +85,64 @@ class Produto extends Component {
     adicionaDiasHj = (dias) => {
         var result = new Date();
         result.setDate(result.getDate() + dias);
-        return result;
+        return result.toISOString().split("T")[0];
     }
 
-    reservar = (event) => {
-        event.preventDefault();
+    setReserva = () => {
         this.setState({
             reserva : {
-                ...this.state.reserva,
                 valorFinal: this.state.reserva.quantidadeComprada * this.state.produto.preco,
                 dataLimiteRetirada: this.adicionaDiasHj(3),
                 idUsuario: "1",
                 idOferta: this.state.produto.idOferta
             }
         })
+    }
 
+    reservar = (event) => {
+        event.preventDefault();
+        
         console.log(this.state.reserva)
         
-        // fetch("http://localhost:5000/api/reserva", {
-        //     method : "POST",
-        //     headers : {
-        //         "Content-Type" : "application/json"
-        //     },
-        //     body : JSON.stringify(this.state.reserva)
-        // })
-        // .then(response => response.json())
-        // .then(response => {
-        //     console.log(response);
-        //     this.props.history.push({
-        //         pathname:"/finalreserva",
-        //         state : {
-        //             reserva: this.state.reserva
-        //         }
-        //     })
-        // })
-        // .catch(error => console.log(error))
+        fetch("http://localhost:5000/api/reserva", {
+            method : "POST",
+            headers : {
+                "Content-Type" : "application/json"
+            },
+            body : JSON.stringify(this.state.reserva)
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            this.props.history.push({
+                pathname:"/finalreserva",
+                state : {
+                    reserva: this.state.reserva
+                }
+            })
+        })
+        .catch(error => console.log(error))
     }
 
     atualizaEstado = (input) => {
         this.setState({
             reserva : {
-                ...this.state.reserva,
-                [input.target.name]: input.target.value
+                quantidadeComprada: input.target.value,
+                valorFinal: this.state.reserva.quantidadeComprada * this.state.produto.preco,
+                dataLimiteRetirada: this.adicionaDiasHj(3),
+                idUsuario: "1",
+                idOferta: this.state.produto.idOferta
             }
         })
+    }
+
+    getOfertas = () => {
+        fetch('http://localhost:5000/api/oferta')
+            .then(response => response.json())
+            .then(response => {
+                var redux = response.slice(0, 4)
+                this.setState({ ofertas: redux })
+            })
     }
 
     render() {
@@ -136,102 +181,18 @@ class Produto extends Component {
                         <section className="outrosProdutos">
                             <p className="relacionados">Outros Produtos</p>
                             <div className="produtos">
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
-                                <div className="cardProduto">
-                                    <img src="./img/download.jpg" alt="Feijão Codil"/>
-                                    <div className="textoCard">
-                                        <p>Feijão Codil</p>
-                                        <p>R$ 10,00</p>
-                                        <p>X Unidades Disponíveis</p>
-                                        <p>Campos Elíseos - São Paulo</p>
-                                    </div>
-                                    <div className="botaoCard">
-                                        <a href="paginaProduto.html" className="btn">Reserve</a>
-                                    </div>
-                                </div>
+                                {
+                                    this.state.ofertas.map(
+                                        function(oferta) {
+                                            return (
+                                                <div>
+                                                    <Card idOferta={oferta.idOferta} foto={oferta.foto} titulo={oferta.titulo} preco={oferta.preco} quantidade={oferta.quantidade} 
+                                                    bairro={oferta.idUsuarioNavigation.idRegiaoNavigation.bairro}/>
+                                                </div>
+                                            );
+                                        }
+                                    )
+                                }
                             </div>
                         </section>
                     </div>

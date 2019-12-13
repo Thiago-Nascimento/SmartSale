@@ -1354,6 +1354,7 @@ main .paginaProduto_pag {
 
 .paginaProduto_pag {
     padding: 1px 0;
+    background-color: var(--cinza_claro);
 }
 
 .paginaProduto_pag .container {
@@ -1412,10 +1413,19 @@ main .paginaProduto_pag {
 
 .paginaProduto_pag .contQuantBotoes {
     width: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
+}
+
+.paginaProduto_pag .quantDisponivel {
+    color: var(--grafite);
+}
+
+.paginaProduto_pag .precoTotal {
+    color: var(--grafite);
+    margin-bottom: 5%;
 }
 
 .paginaProduto_pag .quantidade {
@@ -1452,6 +1462,10 @@ main .paginaProduto_pag {
 
 .paginaProduto_pag .botoes .botaoReservar {
     background-color: var(--laranja);
+    padding: 2% 16%;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .paginaProduto_pag .botoes .botaoComprar {
@@ -1479,6 +1493,7 @@ main .paginaProduto_pag {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 }
 
 .paginaProduto_pag .cardProduto {
