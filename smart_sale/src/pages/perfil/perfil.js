@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
-import foto_perfil from '../../assets/img/perfil.png'
 import { parseJwt } from '../../services/auth';
 
 class Perfil extends Component {
@@ -32,27 +31,18 @@ class Perfil extends Component {
         fetch('http://localhost:5000/api/Usuario/' + id)
             .then(response => response.json())
             .then(response => this.setState({ dados: response }))
-            .catch(error => console.log(error))
-    }
-
-    filtrar = (value) => {
-        return value.idUsuario == parseJwt().Id
-
+            .catch(error => console.log(error)
+            )
     }
 
     getOfertas = () => {
-        var header = localStorage.getItem("user-smartsale").split('.')[1]
 
         var id = parseJwt().Id
 
-        fetch("http://localhost:5000/api/oferta")
+        fetch("http://localhost:5000/api/oferta/usuario/" + id)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-                this.setState({
-                    ofertas: data.filter(this.filtrar)
-
-                })
+                this.setState({ ofertas : data })
             })
     }
 
