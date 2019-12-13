@@ -3,6 +3,45 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 
 class Final_reserva extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            produto : {
+                idOferta: "",
+                titulo: "",
+                quantDisponivel: "",
+                foto: "",
+                preco: "",
+                regiao: "",
+                vendedor: ""
+            }
+        }
+    }
+    
+    componentDidMount() {
+        console.log("Props final_reserva: ", this.props)
+        this.getOferta(this.props.location.state.reserva.dataLimiteRetirada)
+    }
+    
+    getOferta = (id) => {
+        fetch("http://localhost:5000/api/oferta/" + id)
+        .then(response => response.json())
+        .then(data => { 
+            this.setState({
+                produto: {
+                    idOferta: data.idOferta,
+                    titulo: data.titulo,
+                    quantDisponivel: data.quantidade,
+                    foto: data.foto,
+                    preco: data.preco,
+                    regiao: data.idUsuarioNavigation.idRegiaoNavigation.bairro  
+                    // vendedor: data.idUsuarioNavigation.nomeUsuario                  
+                }    
+            })
+        });
+    }
+
     render() {
         return (
             <div className="Final_Reserva">
@@ -16,10 +55,10 @@ class Final_reserva extends Component {
                                 </div>
                                 <div class="textos2">
                                     <p>Detalhes da Reserva</p>
-                                    <p>Data Limite de Retirada: 10/12/2019</p>
-                                    <p>Quantidade: 1</p>
-                                    <p>Vendedor: Ana Cláudia Souza</p>
-                                    <p>Valor final: R$50,00</p>
+                                    <p>Data Limite de Retirada: {this.props.location.state.reserva.dataLimiteRetirada}</p>
+                                    <p>Quantidade: {this.props.location.state.reserva.quantidadeComprada}</p>
+                                    <p>Vendedor: {this.state.produto.}</p>
+                                    <p>Valor final: R${this.props.location.state.reserva.valorFinal}</p>
                                 </div>
                                 <div class="btncompras">
                                     <button>Continue comprando</button>
