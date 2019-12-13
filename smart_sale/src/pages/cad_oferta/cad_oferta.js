@@ -103,6 +103,15 @@ class Cad_oferta extends Component {
     }
 
 
+
+
+
+
+
+
+
+    
+
     postOferta = (e) => {
         e.preventDefault();
 
