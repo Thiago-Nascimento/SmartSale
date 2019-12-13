@@ -23,6 +23,12 @@ namespace backend.Domains {
         public string Cor { get; set; }
         public double Preco { get; set; }
 
+        [Column ("CheckDoacao")]
+        public string CheckDoacao { get; set; }
+
+        [Column ("DoacaoOng")]
+        public int DoacaoOng { get; set; }
+
         [Required]
         [Column (TypeName = "text")]
         public string Descricao { get; set; }

@@ -29,8 +29,8 @@ namespace backend.Repositories
             using(BD_SmartSaleContext _contexto = new BD_SmartSaleContext()){
                 _contexto.Produto.Remove(produto);
                 await _contexto.SaveChangesAsync();
-                return produto;
             }
+            return produto;
         }
 
         public async Task<List<Produto>> Listar()

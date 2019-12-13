@@ -31,7 +31,7 @@ namespace backend.Domains
         [StringLength(255)]
         public string Email { get; set; }
         
-        [Column("Foto_Usuario")]
+        [Column("Foto")]
         [StringLength(255)]
         public string FotoUsuario { get ; set; }
         

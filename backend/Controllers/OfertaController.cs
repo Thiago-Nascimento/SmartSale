@@ -47,7 +47,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta cadastrada</returns>
-        [Authorize (Roles = "2,1")]
+        // [Authorize (Roles = "2,1")]
         [HttpPost]
         public async Task<ActionResult<Oferta>> Post ([FromForm] Oferta oferta) {
             try {
@@ -62,11 +62,13 @@ namespace backend.Controllers {
                 oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
                 oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
                 oferta.Titulo = Request.Form["titulo"].ToString();
+                oferta.CheckDoacao = Request.Form["checkDoacao"].ToString();
+                oferta.DoacaoOng = int.Parse(Request.Form["doacaoOng"]);
 
-                if(DateTime.Compare(oferta.DataValidade, DateTime.Now.Date) < 0) {
+                if(DateTime.Compare(oferta.DataValidade, DateTime.Now.Date) > 0) {
                     await _repositorio.Salvar (oferta);
                 } else {
-                    return BadRequest("Data de Validade Incorreta");
+                    return BadRequest("Data de Validade Incorreta" + DateTime.Compare(oferta.DataValidade, DateTime.Now.Date).ToString());
                 }
 
             } catch (DbUpdateConcurrencyException) {
@@ -81,7 +83,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da oferta</param>
         /// <param name="oferta">string nome da oferta</param>
         /// <returns>Oferta Modificada</returns>
-        [Authorize (Roles = "2,1")]
+        // [Authorize (Roles = "2,1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Oferta>> Put (int id, [FromForm] Oferta oferta) {
             if (id != oferta.IdOferta) {
@@ -99,6 +101,8 @@ namespace backend.Controllers {
                 oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
                 oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
                 oferta.Titulo = Request.Form["titulo"].ToString();
+                oferta.CheckDoacao = Request.Form["checkDoacao"].ToString();
+                oferta.DoacaoOng = int.Parse(Request.Form["doacaoOng"]);
 
                 await _repositorio.Alterar (oferta);
             } catch (DbUpdateConcurrencyException) {
@@ -117,7 +121,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da oferta</param>
         /// <returns>Oferta deletada</returns>
-        [Authorize (Roles = "2,1")]
+        // [Authorize (Roles = "2,1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Oferta>> Delete (int id) {
             var oferta = await _repositorio.BuscarPorID (id);

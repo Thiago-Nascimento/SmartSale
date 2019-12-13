@@ -22,9 +22,12 @@ class Cad_oferta extends Component {
                 idUsuario: "",
                 foto: React.createRef(),
                 doacaoOng: "",
-                checkDoacao: false
+                checkDoacao: ""
             },
         }
+    }
+    componentDidUpdate(){
+        console.log("valor do check: " + this.state.postOferta.checkDoacao)
     }
 
     componentDidMount() {
@@ -41,7 +44,7 @@ class Cad_oferta extends Component {
         this.setState({
             // [name]: value
             ...this.state.postOferta,
-            [this.state.postOferta.doacaoOng]: event.target.value
+            [this.state.postOferta.checkDoacao]: event.target.value
 
         });
 
@@ -96,7 +99,7 @@ class Cad_oferta extends Component {
             }
         })
         // mostra o id da ong que ta selecionada
-        console.log("checkbox: " + this.state.postOferta.checkDoacao)
+        console.log("checkbox: " + this.state.postOferta.doacaoOng)
         // console.log("Data Validade: ", this.state.postOferta.dataValidade)
     }
 
@@ -232,20 +235,23 @@ class Cad_oferta extends Component {
                         </div>
 
                         <hr />
+                        {/* checkbox de doação */}
                         <div className="checks" >
                             <div className="check" >
                                 <input
                                     type="checkbox"
                                     aria-label="Doação"
-                                    name="doacaoOng"
+                                    name="checkDoacao"
                                     value={this.state.postOferta.doacaoOng}
                                     onChange={this.handleInputChange} />
                                 <label>Doação</label>
                             </div>
                         </div>
+
+                        {/* seleção da ong que vai a doação */}
                         <div className="campo">
                             <select
-                            name="checkDoacao"
+                            name="doacaoOng"
                             value={this.state.postOferta.checkDoacao}
                             onChange={this.postSetState}
                             >
