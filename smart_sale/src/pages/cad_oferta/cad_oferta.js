@@ -143,8 +143,6 @@ class Cad_oferta extends Component {
     }
     //#endregion
 
-
-
     render() {
         return (
             <div className="fundoCadastro">
