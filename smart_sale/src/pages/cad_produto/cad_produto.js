@@ -249,7 +249,7 @@ class Cad_produto extends Component {
                                                 {c.nomeCategoria}
                                             </option>
                                         )
-                                    }.bind(this))
+                                    })
                                 }
                             </select>
 

@@ -8,8 +8,6 @@ import Card from '../../components/card/card'
 import img5 from './../../assets/img/img5.png'
 
 // Importada imagem de um produtp
-import produto from './../../assets/img/pdts/6.png'
-
 // Importadas coroas do ranking
 import coroa_ouro from '../../assets/img/icons/crown.png'
 import coroa_prata from '../../assets/img/icons/crown-1.png'
@@ -20,7 +18,7 @@ import verdura from '../../assets/img/verduras.jpeg'
 import fruta from '../../assets/img/frutas.jpg'
 import legume from '../../assets/img/legume.jpg'
 import cereais from '../../assets/img/cereais.jpg'
-import { func } from 'prop-types';
+
 
 
 class Home extends Component {
@@ -35,7 +33,7 @@ class Home extends Component {
             usuario_3: [],
             ongs: [],
             oferta: [],
-            listaProdutos: []
+            listaProdutos: [],
 
         }
     }
@@ -263,14 +261,14 @@ class Home extends Component {
                                     </div>
                                     <div className="imagem_categorias_home">
                                         <img src={verdura} alt="Foto da Categoria Verdura" />
-                                        <img src={fruta} />
-                                        <img src={legume} />
-                                        <img src={cereais} />
+                                        <img src={fruta} alt="Foto da Categoria Fruta"/>
+                                        <img src={legume} alt="Foto da Categoria Legume"/>
+                                        <img src={cereais} alt="Foto da Categoria Cereais"/>
                                     </div>
                                 </section>
                             </div>
                             <div className="ver">
-                                <a href="#">Ver mais</a>
+                                <a >Ver mais</a>
                             </div>
                         </div>
                         <div className="roxo">

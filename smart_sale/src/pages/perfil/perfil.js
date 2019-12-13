@@ -1,99 +1,99 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
+import { parseJwt } from '../../services/auth';
 
 class Perfil extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+
+            dados: [],
+            ofertas: []
+        }
+    }
+
+    componentDidMount() {
+        this.getDados();
+        this.getOfertas();
+    }
+
+    getDados = () => {
+
+        // Variavel que pega o token que esta armazena no localStorage, usamos o split para mostrar a parte do header, sendo o indice 1
+        var header = localStorage.getItem("user-smartsale").split('.')[1]
+
+        // Definimos uma variavel que mostra o atributo ID
+        var id = parseJwt().Id
+
+        fetch('http://localhost:5000/api/Usuario/' + id)
+            .then(response => response.json())
+            .then(response => this.setState({ dados: response }))
+            .catch(error => console.log(error)
+            )
+    }
+
+    getOfertas = () => {
+
+        var id = parseJwt().Id
+
+        fetch("http://localhost:5000/api/oferta/usuario/" + id)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ ofertas : data })
+            })
+    }
+
     render() {
         return (
             <div>
-                <Header {...this.props}/>
+                <Header {...this.props} />
                 <div className="perfil_pag">
                     <div className="perfil_banner">
-                        <img src="../SmartSale/img/icons/picture.png" alt="Trocar papel de parede" className="perfil_troca"/>
-                        <h2>Débora Nascimento</h2>
+                        {/* <img src="../SmartSale/img/icons/picture.png" alt="Trocar papel de parede" className="perfil_troca" /> */}
+                        <h2>{this.state.dados.nomeUsuario}</h2>
                     </div>
                     <div className="cont">
                         <div className="cima">
                             <section className="esquerdo">
-                                <img src="img/perfil.png" alt="foto de perfil do usuario" className="perfil_foto"/>
+                                <img src={"http://localhost:5000/" + this.state.dados.fotoUsuario} alt="foto de perfil do usuario" className="perfil_foto" />
                                 <div className="textos">
                                     <h4>Dados pessoais</h4>
-                                    <p>Endereço: Rua São Paulo, 500 - SP</p>
-                                    <p>Data de nascimento: 25/04/1990</p>
-                                    <p>Sexo: Feminino</p>
+                                    <p>Endereco: {this.state.dados.endereco}</p>
                                 </div>
                                 <div className="textos">
                                     <h4>Contato</h4>
-                                    <p>E-mail:debora.nasc@hotmail.com</p>
-                                    <p>celular:(11)94444-5678</p>
+                                    <p>E-mail: {this.state.dados.email}</p>
+                                    <p>celular: {this.state.dados.telefone}</p>
+                                    {
+                                        this.state.dados.telefone2 != null ? (<p>Telefone : {this.state.dados.telefone2}</p>) : (
+                                            null
+                                        )
+
+                                    }
                                 </div>
                                 <div className="perfil_placar_rank">
-                                    <h4>Posição ranking</h4>
+                                    <h4>Pontuação</h4>
                                     <div className="perfil_rank">
-                                        <p>100 pontos</p>
+                                        <p>{this.state.dados.pontuacao}</p>
                                     </div>
                                 </div>
                                 <div className="perfil_button_padding">
                                     <div className="perfil_btn_produto">
-                                        <p><a href="#" className="perfil_btn-medium">Cadastrar um produto</a></p>
+                                        <p><Link to="/cadastrooferta" className="perfil_btn-medium">Cadastrar um oferta</Link></p>
                                     </div>
                                 </div>
                             </section>
                             <section className="direito">
                                 <div className="direito-cards-h3">
-                                    <h3>Seus Produtos</h3>
+                                    <h3>Suas Ofertas</h3>
                                 </div>
-                                <div className="card-cursos-home">
-                                    <div className="card">
-                                        <div className="html-card-cursos-home"></div>
-                                        <div className="curso-info-home">
-                                            <h4>Pão Caseiro</h4>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="html-card-cursos-home"></div>
-                                        <div className="curso-info-home">
-                                            <h4>Pão Caseiro</h4>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="html-card-cursos-home"></div>
-                                        <div className="curso-info-home">
-                                            <h4>Pão Caseiro</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="perfil_button_padding">
+                                <div>
+                                    {/* <Card oferta={this.state.dados.oferta} /> */}
                                     <div className="perfil_btn_produto">
-                                        <p><a href="#" className="perfil_btn-medium">Ver mais</a></p>
-                                    </div>
-                                </div>
-                                <div className="direito-cards-h3">
-                                    <h3>Seus Produtos</h3>
-                                </div>
-                                <div className="card-cursos-home">
-                                    <div className="card">
-                                        <div className="html-card-cursos-home"></div>
-                                        <div className="curso-info-home">
-                                            <h4>Pão Caseiro</h4>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="html-card-cursos-home"></div>
-                                        <div className="curso-info-home">
-                                            <h4>Pão Caseiro</h4>
-                                        </div>
-                                    </div>
-                                    <div className="card">
-                                        <div className="html-card-cursos-home"></div>
-                                        <div className="curso-info-home">
-                                            <h4>Pão Caseiro</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="perfil_button_padding">
-                                    <div className="perfil_btn_produto">
-                                        <p><a href="#" className="perfil_btn-medium">Ver mais</a></p>
+                                        <p><Link to="/ofertas" className="perfil_btn-medium">Ver mais</Link></p>
                                     </div>
                                 </div>
                             </section>
@@ -105,9 +105,9 @@ class Perfil extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer/>
+                <Footer />
             </div>
         );
-    } 
+    }
 }
 export default Perfil;
