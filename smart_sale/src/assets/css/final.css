@@ -2099,6 +2099,161 @@ main .paginaProduto_pag {
     font-size: 16px;
 }
 
+/* Not Found */
+.not_found {
+    text-align: center;
+    align-items: center;
+    padding-bottom: 1px;
+}
+
+.not_found .container1 {
+    width: 900px;
+    padding-top: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.not_found .texto {
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    color: var(--roxo);
+    text-align: start;
+    align-items: flex-start;
+    padding-bottom: 50px;
+}
+
+.not_found .text {
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    color: #707070;
+    text-align: start;
+    align-items: flex-start;
+}
+
+.not_found .duvidas {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    line-height: 3.0em;
+    color: var(--grafite);
+    padding-top: 30px;
+    text-transform: uppercase;
+}
+
+.not_found input {
+    background-color: white;
+    padding: 3px;
+    border: 1px solid gray;
+    width: 600px;
+    height: 100px;
+}
+
+.not_found .enviar {
+    width: 650px;
+}
+
+.not_found button {
+    padding: 8px 60px;
+    background-color: var(--roxo);
+    border-radius: 4px;
+    border: solid 1px var(--roxo);
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.not_found h2 {
+    line-height: 2.0em;
+    font-size: 20px;
+}
+
+.not_found p {
+    line-height: 2.0em;
+    font-size: 16px;
+}
+
+.not_found .container1_perguntasfrequentes {
+    width: 1200px;
+    margin: 39px auto;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
+    padding: 30px 0px;
+}
+
+.not_found .container1_perguntasfrequentes p {
+    margin: auto;
+    margin-bottom: 3%;
+    padding-right: 5%;
+}
+
+.not_found .texto_perguntasfrequentes {
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    color: var(--roxo);
+    text-align: center;
+    align-items: center;
+    padding-bottom: 50px;
+    margin-left: 3%;
+}
+
+.not_found .text_perguntasfrequentes {
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    color: #707070;
+    text-align: center;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.not_found .duvidas_perguntasfrequentes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 3.0em;
+    color: var(--grafite);
+    padding-top: 30px;
+    text-transform: uppercase;
+    margin-left: 3%;
+    margin: auto;
+}
+
+.not_found input {
+    background-color: white;
+    padding: 3px;
+    border: 1px solid gray;
+    width: 600px;
+    height: 100px;
+}
+
+.not_found .enviar_perguntasfrequentes {
+    width: 650px;
+    margin-left: 3%;
+    margin: auto;
+}
+
+.not_found button {
+    padding: 8px 60px;
+    background-color: var(--roxo);
+    border-radius: 4px;
+    border: solid 1px var(--roxo);
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.not_found h2 {
+    line-height: 2.0em;
+}
+
+
 /* pagina quem somos */
 
 .imagem_quemsomos {
