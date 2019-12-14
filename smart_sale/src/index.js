@@ -5,6 +5,11 @@ import * as serviceWorker from './serviceWorker';
 import { usuarioAutenticado, parseJwt } from '../src/services/auth';
 
 
+
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+// import 'bootstrap-css-only/css/bootstrap.min.css';
+// import 'mdbreact/dist/css/mdb.css';
+
 // Chamado CSS
 import './assets/css/final.css'
 
@@ -70,9 +75,15 @@ const Rotas = (
             <Switch>
                 <Route exact path = "/" component={Home}/>                
                 <Route path = "/login" component={Login}/>
+<<<<<<< HEAD
+                <Route path = "/cadastrocategoria" component={Cad_categoria}/>
+                <Route path = "/cadastrooferta" component={Cad_oferta}/>
+                <Route path = "/cadastroproduto" component={Cad_produto}/>
+=======
                 <PermissaoAdmin path = "/cadastrocategoria" component={Cad_categoria}/>
                 <PermissaoAdminVendedor path = "/cadastrooferta" component={Cad_oferta}/>
                 <PermissaoAdmin path = "/cadastroproduto" component={Cad_produto}/>
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
                 <Route path = "/cadastrousuario" component={Cad_usuario}/>
                 <Route path = "/faq" component={Faq}/>
                 <Route path = "/finalreserva" component={Final_reserva}/>

@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using backend.Domains;
+using backend.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using backend.Repositories;
 
 namespace backend.Controllers {
     [Route ("api/[Controller]")]
     [ApiController]
     public class ProdutoController : ControllerBase {
-        ProdutoRepository _repositorio = new ProdutoRepository();
+        ProdutoRepository _repositorio = new ProdutoRepository ();
 
         /// <summary>
         /// Lista as produto
@@ -45,11 +45,11 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto cadastrado</returns>
-        [Authorize(Roles="1")]
+        // [Authorize(Roles="1")]
         [HttpPost]
         public async Task<ActionResult<Produto>> Post (Produto produto) {
             try {
-                await _repositorio.Salvar(produto);
+                await _repositorio.Salvar (produto);
             } catch (DbUpdateConcurrencyException) {
 
                 throw;
@@ -64,7 +64,7 @@ namespace backend.Controllers {
         /// <param name="id">int Id do produto</param>
         /// <param name="produto">string Nome do produto</param>
         /// <returns>Produto modificado</returns>
-        [Authorize(Roles="1")]
+        // [Authorize(Roles="1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Produto>> Put (int id, Produto produto) {
             if (id != produto.IdProduto) {
@@ -91,7 +91,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int Id do produto</param>
         /// <returns>Produto deletado</returns>
-        [Authorize(Roles="1")]
+        // [Authorize(Roles="1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Produto>> Delete (int id) {
             var produto = await _repositorio.BuscarPorID (id);
@@ -101,8 +101,8 @@ namespace backend.Controllers {
             try {
                 await _repositorio.Excluir (produto);
             } catch (System.Exception ex) {
-                return BadRequest(new {
-                    mensagem="Não foi possível excluir. Raw: " + ex
+                return BadRequest (new {
+                    mensagem = "Não foi possível excluir. Raw: " + ex
                 });
             }
             return produto;
