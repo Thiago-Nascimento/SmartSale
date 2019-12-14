@@ -50,24 +50,24 @@ class Ofertas extends Component {
         });
     }
 
-    filtrar = (e) => {
-        e.preventDefault();
-        fetch("http://localhost:5000/api/Oferta/FiltrarPorNome", {
-            method: "POST",
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            body : JSON.stringify({filtro : this.state.filtro})
-        })
-        .then(response => response.json())
-        .then(response => {
-            this.setState({listaProdutos : response});
-            console.log("Lista Produtos: ", this.state.listaProdutos)
-        })
-        .catch(erro => {
-            console.log("Erro: ", erro);
-        })
-    }
+    // filtrar = (e) => {
+    //     e.preventDefault();
+    //     fetch("http://localhost:5000/api/Oferta/FiltrarPorNome", {
+    //         method: "POST",
+    //         headers : {
+    //             "Content-Type" : "application/json"
+    //         },
+    //         body : JSON.stringify({filtro : this.state.filtro})
+    //     })
+    //     .then(response => response.json())
+    //     .then(response => {
+    //         this.setState({listaProdutos : response});
+    //         console.log("Lista Produtos: ", this.state.listaProdutos)
+    //     })
+    //     .catch(erro => {
+    //         console.log("Erro: ", erro);
+    //     })
+    // }
 
     ordenar = (criterio) => {
         // e.preventDefault();

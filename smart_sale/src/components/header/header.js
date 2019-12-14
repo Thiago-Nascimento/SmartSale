@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/img/Agrupar 110.png';
 import Avatar from '../../assets/img/avatar.png';
+import LogoutIcon from '../../assets/img/logout.svg'
 import icon_search from '../../assets/img/search_icon.png';
+
+import { usuarioAutenticado, parseJwt } from '../../services/auth';
 
 class Header extends Component {
     constructor(props) {
@@ -12,6 +15,12 @@ class Header extends Component {
             filtro: "",
             lista: []
         }
+    }
+
+    logout = () => {
+        localStorage.removeItem("user-smartsale");
+
+        this.props.history.push("/");
     }
 
     filtrar = (e) => {
@@ -40,21 +49,6 @@ class Header extends Component {
         .catch(erro => {
             console.log("Erro: ", erro);
         })
-            .then(response => response.json())
-            .then(response => {
-                this.setState({ lista: response });
-
-                this.props.history.push({
-                    pathname: "/ofertas",
-                    state: {
-                        listaFiltrada: this.state.lista
-                    }
-                })
-
-            })
-            .catch(erro => {
-                console.log("Erro: ", erro);
-            })
     }
 
     atualizaEstado = (event) => {
@@ -86,10 +80,24 @@ class Header extends Component {
                                         <img src={icon_search} id="search-btn" type="submit" alt="Icone logo"/>
                                     </form>
                                 <div className="botao-login">
-                                    <Link to="/login">
-                                        <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar" />
-                                        <p>Entrar</p>
-                                    </Link>
+
+                                    {usuarioAutenticado() ? (
+                                            <>
+                                            <Link onClick={this.logout} to="/">
+                                                <img src={LogoutIcon} alt="Link para fazer logout" title="Sair" id="entrar" />
+                                                <p>Sair</p>
+                                            </Link>     
+                                            </>
+                                        ) : (
+                                            <>
+                                            <Link to="/login">
+                                                <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar" />
+                                                <p>Entrar</p>
+                                            </Link>                                            
+                                            </>
+                                        )                                        
+                                    }
+
                                 </div>
                             </div>
                             <nav>
@@ -100,7 +108,11 @@ class Header extends Component {
                                         <li><Link to="/ongs" title="Smart sale ongs">ONGs</Link></li>
                                         <li><Link to="/ranking" title="Smart sale ranking">Ranking</Link></li>
                                         <li><Link to="/ofertas" title="Smart sale categorias">Ofertas</Link></li>
-                                        <li><Link to="/perfil" title="Smart sale perfil">Perfil</Link></li>
+                                        {
+                                            usuarioAutenticado() ? (
+                                                <li><Link to="/perfil" title="Smart sale perfil">Perfil</Link></li>
+                                            ) : (null)
+                                        }
                                         <li><Link to="/faq" title="Smart sale faq">FAQ</Link></li>
                                     </ul>
                                 </div>
