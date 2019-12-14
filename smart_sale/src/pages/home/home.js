@@ -267,9 +267,6 @@ class Home extends Component {
                                     </div>
                                 </section>
                             </div>
-                            <div className="ver">
-                                <a >Ver mais</a>
-                            </div>
                         </div>
                         <div className="roxo">
                             <div className="container">

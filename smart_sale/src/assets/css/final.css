@@ -1768,22 +1768,30 @@ main .paginaProduto_pag {
 }
 
 .perfil_btn-medium {
-    margin: 90px 0px 0px;
+    /* margin: 90px 0px 0px; */
     background-color: #A200CB;
     text-align: center;
     color: white;
     border: 1px solid white;
-    padding: 10px 50px;
+    padding: 8px 50px;
     border-radius: 5px;
     font-weight: lighter;
     opacity: 0.6;
-    width: 200px;
+    
 }
+#span_{
+    opacity: 0;
+}
+.produtos_usuario{
+    /* background-color: yellow; */
+    display: flex;
+}
+
 
 /* --------------teste---------------- */
 
 .direito {
-    display: flex;
+    display: flex;;
 }
 
 .cursos-home h2 {
