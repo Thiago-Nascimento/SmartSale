@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 // Chamado CSS
 import './assets/css/final.css'
 
-import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import {Route, HashRouter as Router, Switch} from 'react-router-dom';
 
 //#region 
 import Cad_categoria from "./pages/cad_categoria/cad_categoria";
@@ -22,8 +22,6 @@ import Ofertas from "./pages/ofertas/ofertas"
 import Ongs from "./pages/ongs/ongs"
 import Perfil from "./pages/perfil/perfil"
 import Produto from "./pages/produto/produto"
-// import QuemSomos from "./pages/quem_somos/quem_somos"
-// import Produto from "./pages/produto/produto"
 import QuemSomos from "./pages/quem_somos/quem_somos"
 import Ranking from "./pages/ranking/ranking"
 //#endregion
@@ -44,8 +42,6 @@ const Rotas = (
                 <Route path = "/ongs" component={Ongs}/>
                 <Route path = "/perfil" component={Perfil}/>
                 <Route path = "/produto" component={Produto}/>
-                {/* <Route path = "/quemsomos" component={QuemSomos}/> */}
-                {/* <Route path = "/produto" component={Produto}/> */}
                 <Route path = "/quemsomos" component={QuemSomos}/>
                 <Route path = "/ranking" component={Ranking}/>
                 {/* <Route component={NotFound}/> */}
