@@ -35,7 +35,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id do usuario desejavel</param>
         /// <returns>Usuario requisitado</returns>
-        [Authorize]
+        // [Authorize]
         [HttpGet ("{id}")]
         public async Task<ActionResult<Usuario>> Get (int id) {
             var usuario = await _repositorio.BuscarPorID (id);

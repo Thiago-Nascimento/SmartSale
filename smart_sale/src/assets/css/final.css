@@ -24,34 +24,49 @@ header {
 
 .ca form {
     display: flex;
-    justify-content: space-between;
     width: 630px;
     height: 35px;
     align-items: center;
+    
+}
+#search-btn{
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    cursor: pointer;
 }
 
 .ca form .search-btn {
     width: 10%;
     background-color: white;
+<<<<<<< HEAD
     border: none;
+=======
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     color: var(--cinza);
-    /* padding: 15px 32px; */
     text-align: center;
-    text-decoration: none;
     display: inline-block;
-    /* font-size: 16px; */
-    height: 33px;
+    height: 35px;
+    border: none;
+    border-color: white;
+    outline: 0px auto -webkit-focus-ring-color;
 }
-
-.ca form .search-bar {
-    width: 90%;
+.ca form #search-bar {
+    width: 700px;
+    border: none;
     height: 100%;
+<<<<<<< HEAD
 }
 
+=======
+    outline: 0px auto -webkit-focus-ring-color;
+}
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
 .separador-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 /* cadastro produto venda e doacao */
@@ -369,10 +384,15 @@ header {
     transition: 0.3s;
     display: block;
 }
+<<<<<<< HEAD
 
 .informacoes_card_oferta {
     display: block;
     width: 100%;
+=======
+.informacoes_card_oferta:hover{
+    display: block;    
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
 }
 
 .informacoes_card_oferta {
@@ -382,6 +402,7 @@ header {
     margin-bottom: -70px;
     background-color: rgba(162, 0, 203, 0.6);
     color: white;
+    width: 100%;
 }
 
 .informacoes_card_oferta p {
@@ -712,9 +733,6 @@ header {
 .desc {
     background-color: var(--roxo);
     color: white;
-    position: relative;
-    top: -64px;
-    margin-bottom: -100px;
     opacity: 0.5;
     text-transform: uppercase;
     font-weight: bold;
@@ -724,17 +742,20 @@ header {
     padding: 5px;
 }
 
+<<<<<<< HEAD
 .btncompras button {
+=======
+.btncompras {
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     font-weight: bold;
     color: white;
     margin: 160px 0px 0px;
     text-decoration: none;
-    background-color: #A200CB;
+    background-color: var(--laranja);
     text-align: center;
     border: 1px solid white;
     padding: 10px 50px;
     border-radius: 5px;
-    opacity: 0.6;
     width: 450px;
     font-size: 20px;
     text-transform: uppercase;
@@ -742,6 +763,9 @@ header {
 
 .finalreserva_pag {
     padding: 1px 0px;
+}
+.Final_Reserva{
+    background-color: var(--cinza_claro);
 }
 
 .finalreserva_pag .container {
@@ -780,6 +804,7 @@ header {
 
 .finalreserva_pag .esquerdo .textos2 {
     margin-top: 50px;
+    color: var(--grafite);
 }
 
 .finalreserva_pag .direito img {
@@ -1056,24 +1081,21 @@ header {
     margin: 4% auto;
     padding: 2% 0;
 }
-
-.home_pag .cardhome {
+.titulos_categorias_home{
     display: flex;
+    justify-content: center;
     justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 0 0 10px;
 }
-
 .home_pag .card {
     width: 270px;
     line-height: 2.0;
     margin-top: 30px;
 }
-
-.home_pag .card img {
-    border-radius: 7px;
-    width: 250px;
-    height: auto;
+.imagem_categorias_home{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 10px;
 }
 
 .home_pag .pdts2, .pdt {
@@ -1091,7 +1113,6 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 .home_pag .card p {
     text-align: center;
     padding-bottom: 20px;
@@ -1144,12 +1165,18 @@ header {
     width: 250px;
     height: 260px;
 }
+<<<<<<< HEAD
 
 .Produtos_home {
     width: 1200px;
+=======
+.Produtos_home{
+    width: 1170px;
+    /* background-color: yellow; */
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .produtos_home {
@@ -1164,8 +1191,6 @@ header {
 
 .produtos_home {
     width: 1340px;
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -1184,6 +1209,12 @@ header {
     margin: auto;
     justify-content: center;
     flex-direction: column;
+}
+.cardhome img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    
 }
 
 /* Página Ongs */
@@ -1254,6 +1285,11 @@ header {
     /* logo */
     height: 95px;
     width: 204px;
+}
+   
+#icone_header{
+    width: 30px;
+    height: 30px;
 }
 
 .botao-login {
@@ -1356,6 +1392,7 @@ main .paginaProduto_pag {
 
 .paginaProduto_pag {
     padding: 1px 0;
+    background-color: var(--cinza_claro);
 }
 
 .paginaProduto_pag .container {
@@ -1390,6 +1427,7 @@ main .paginaProduto_pag {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
 }
 
 .paginaProduto_pag .direito {
@@ -1414,10 +1452,19 @@ main .paginaProduto_pag {
 
 .paginaProduto_pag .contQuantBotoes {
     width: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
+}
+
+.paginaProduto_pag .quantDisponivel {
+    color: var(--grafite);
+}
+
+.paginaProduto_pag .precoTotal {
+    color: var(--grafite);
+    margin-bottom: 5%;
 }
 
 .paginaProduto_pag .quantidade {
@@ -1454,6 +1501,10 @@ main .paginaProduto_pag {
 
 .paginaProduto_pag .botoes .botaoReservar {
     background-color: var(--laranja);
+    padding: 2% 16%;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .paginaProduto_pag .botoes .botaoComprar {
@@ -1481,6 +1532,7 @@ main .paginaProduto_pag {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 }
 
 .paginaProduto_pag .cardProduto {
@@ -1654,10 +1706,10 @@ main .paginaProduto_pag {
 }
 
 .ranking_pag .botao {
-    width: 80%;
+    width: 100%;
     margin: auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .ranking_pag .ranking table tbody tr td {
@@ -1737,6 +1789,7 @@ main .paginaProduto_pag {
     margin-bottom: 39px;
     background-color: #fff;
     width: 1200px;
+    height: 570px;
     box-shadow: 4px 4px 15px #cccccc;
     border-radius: 0px 0px 5px 5px;
     padding-bottom: 110px;
@@ -1755,22 +1808,30 @@ main .paginaProduto_pag {
 }
 
 .perfil_btn-medium {
-    margin: 90px 0px 0px;
+    /* margin: 90px 0px 0px; */
     background-color: #A200CB;
     text-align: center;
     color: white;
     border: 1px solid white;
-    padding: 10px 50px;
+    padding: 8px 50px;
     border-radius: 5px;
     font-weight: lighter;
     opacity: 0.6;
-    width: 200px;
+    
 }
+#span_{
+    opacity: 0;
+}
+.produtos_usuario{
+    /* background-color: yellow; */
+    display: flex;
+}
+
 
 /* --------------teste---------------- */
 
 .direito {
-    display: flex;
+    display: flex;;
 }
 
 .cursos-home h2 {
@@ -1925,9 +1986,11 @@ main .paginaProduto_pag {
 .perfil_foto {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     border: white 5px solid;
-    width: 280px;
+    width: 250px;
+    height: 250px;
     margin: -132px;
     position: relative;
+    background-position: center;
     border-radius: 180px;
     top: -132px;
 }
@@ -2111,7 +2174,7 @@ main .paginaProduto_pag {
 
 .quemsomos_partetwo {
     background-color: white;
-    width: 900px;
+    width: 75%;
     margin: auto;
     margin-bottom: 30px;
 }
@@ -2130,6 +2193,7 @@ main .paginaProduto_pag {
     padding: 10px 10px;
     width: 350px;
     padding-right: 40px;
+    justify-content: center;
 }
 
 .quemsomos_esquerdo {
@@ -2171,7 +2235,7 @@ main .paginaProduto_pag {
     .divSelects {
         width: 50%;
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
     }
     .btnAplicarFiltros {
@@ -2245,6 +2309,10 @@ main .paginaProduto_pag {
 .categorias {
     width: 95%;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 40px;
 }
 
 .categoria h2 {
@@ -2538,11 +2606,6 @@ main .paginaProduto_pag {
         width: 124px;
         padding-top: 20px;
     }
-    .contHeader .container input {
-        width: 406px;
-        height: 25px;
-        margin-top: 30px;
-    }
     .botao-login p {
         margin-top: 30px;
     }
@@ -2624,9 +2687,6 @@ main .paginaProduto_pag {
 
 @media (max-width: 767px) {
     /* header */
-    header {
-        background-color: var(--laranja);
-    }
     .menu {
         display: none;
         width: 100%;
@@ -2651,9 +2711,6 @@ main .paginaProduto_pag {
         height: 75px;
         width: 164px;
         padding-top: 20px;
-    }
-    .contHeader .container input {
-        display: none;
     }
     .container {
         /* width: 100%; */
@@ -2691,17 +2748,7 @@ main .paginaProduto_pag {
         right: 10px;
         top: 0px;
     }
-    .btn-menu {
-        display: block;
-        width: 56px;
-        height: 56px;
-        margin: auto;
-        text-align: center;
-        color: #FFF;
-        border-radius: 56px;
-        cursor: pointer;
-        background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-    }
+    
     /* pagina perfil */
     .perfil_pag {
         width: 100%;

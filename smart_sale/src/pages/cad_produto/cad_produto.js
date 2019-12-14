@@ -31,6 +31,17 @@ class Cad_produto extends Component {
                 idCategoria: ""
             }
         }
+
+        this.postProduto = this.postProduto.bind(this);
+        this.salvarAlteracoes = this.salvarAlteracoes.bind(this);
+        this.postProduto = this.postProduto.bind(this);
+        this.deletarProduto = this.deletarProduto.bind(this);
+    }
+
+    toggle = () => {
+        this.setState({
+            modal: !this.state.modal
+        });
     }
 
     toggle = () => {

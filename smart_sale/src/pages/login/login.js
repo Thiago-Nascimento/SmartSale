@@ -55,14 +55,10 @@ class Login extends Component {
             this.setState({ isLoading: false })
             console.log("O token é: ", response.token);
 
-            var base64 = localStorage.getItem("user-smartsale").split('.')[1];
-
-            console.log(base64)
-
             console.log(parseJwt().Id);
-            // }
 
-            console.log()
+            this.props.history.push("/perfil")
+            
         })
         .catch(erro => {
             console.log("Erro: ", erro);

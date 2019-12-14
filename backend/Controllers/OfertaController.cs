@@ -143,8 +143,8 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns>Lista contendo as Ofertas</returns>
-        [HttpGet("FiltrarPorNome")]
-        public ActionResult<List<Oferta>> GetFiltrar (FiltroViewModel filtro){
+        [HttpPost("FiltrarPorNome")]
+        public ActionResult<List<Oferta>> PostFiltrar (FiltroViewModel filtro){
 
             List<Oferta> oferta_filtrar = _repositorio.FiltrarPorNome(filtro);
             

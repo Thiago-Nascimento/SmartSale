@@ -1,24 +1,34 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/img/Agrupar 110.png';
 import Avatar from '../../assets/img/avatar.png';
+import LogoutIcon from '../../assets/img/logout.svg'
+import icon_search from '../../assets/img/search_icon.png';
+
+import { usuarioAutenticado, parseJwt } from '../../services/auth';
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            filtro : "",
-            lista : []
+            filtro: "",
+            lista: []
         }
     }
-    
+
+    logout = () => {
+        localStorage.removeItem("user-smartsale");
+
+        this.props.history.push("/");
+    }
+
     filtrar = (e) => {
         e.preventDefault();
         fetch("http://localhost:5000/api/Oferta/FiltrarPorNome", {
             method: "POST",
-            headers : {
-                "Content-Type" : "application/json"
+            headers: {
+                "Content-Type": "application/json"
             },
             body : JSON.stringify({filtro : this.state.filtro})
         })
@@ -31,20 +41,22 @@ class Header extends Component {
                 state : {
                     listaFiltrada: this.state.lista
                 }
-            })   
+            })  
+            
+            window.location.reload();
             
         })
         .catch(erro => {
             console.log("Erro: ", erro);
         })
     }
-    
+
     atualizaEstado = (event) => {
-        this.setState({[event.target.name] : event.target.value});
+        this.setState({ [event.target.name]: event.target.value });
     }
 
     render() {
-        return(
+        return (
             <header>
                 <div className="contHeader">
                     <div className="container">
@@ -52,24 +64,40 @@ class Header extends Component {
                             <div className="separador-header">
                                 <div className="logo">
                                     <Link to="/">
-                                        <img src={Logo} title="Home Smart Sale" alt="logo smart sale"/>
+                                        <img src={Logo} title="Home Smart Sale" alt="logo smart sale" />
                                     </Link>
                                 </div>
-                                <form onSubmit={this.filtrar}>
-                                    <input type="search" 
-                                    placeholder="Buscar produtos, marcas e muito mais ..." 
-                                    aria-label="Faça uma busca" 
-                                    name="filtro"
-                                    onChange={this.atualizaEstado}
-                                    className="search-bar"
-                                    />
-                                    <input className="search-btn" type="submit"></input>    
-                                </form>                        
+                                    <form 
+                                        onSubmit={this.filtrar}
+                                    >
+                                        <input type="search"
+                                            placeholder="Buscar produtos, marcas e muito mais ..."
+                                            aria-label="Faça uma busca"
+                                            name="filtro"
+                                            onChange={this.atualizaEstado}
+                                            id="search-bar"
+                                        />
+                                        <img src={icon_search} id="search-btn" type="submit" alt="Icone logo"/>
+                                    </form>
                                 <div className="botao-login">
-                                    <Link to="/login">
-                                        <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar"/>
-                                        <p>Entrar</p>
-                                    </Link>
+
+                                    {usuarioAutenticado() ? (
+                                            <>
+                                            <Link onClick={this.logout} to="/">
+                                                <img src={LogoutIcon} alt="Link para fazer logout" title="Sair" id="entrar" />
+                                                <p>Sair</p>
+                                            </Link>     
+                                            </>
+                                        ) : (
+                                            <>
+                                            <Link to="/login">
+                                                <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar" />
+                                                <p>Entrar</p>
+                                            </Link>                                            
+                                            </>
+                                        )                                        
+                                    }
+
                                 </div>
                             </div>
                             <nav>
@@ -80,7 +108,11 @@ class Header extends Component {
                                         <li><Link to="/ongs" title="Smart sale ongs">ONGs</Link></li>
                                         <li><Link to="/ranking" title="Smart sale ranking">Ranking</Link></li>
                                         <li><Link to="/ofertas" title="Smart sale categorias">Ofertas</Link></li>
-                                        <li><Link to="/perfil" title="Smart sale perfil">Perfil</Link></li>
+                                        {
+                                            usuarioAutenticado() ? (
+                                                <li><Link to="/perfil" title="Smart sale perfil">Perfil</Link></li>
+                                            ) : (null)
+                                        }
                                         <li><Link to="/faq" title="Smart sale faq">FAQ</Link></li>
                                     </ul>
                                 </div>

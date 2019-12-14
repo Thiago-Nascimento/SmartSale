@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 
 class Cad_oferta extends Component {
 
+=======
+
+
+
+
+
+class Cad_oferta extends Component {
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     constructor() {
         super()
         this.state = {
 
             listarUsu: [],
+<<<<<<< HEAD
             listarOngs: [],
             listarProdutos: [],
             checkDoacao: false,
             erroMsg: "",
+=======
+
+            listarOngs: [],
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
 
             //Post
             postOferta: {
@@ -25,6 +39,7 @@ class Cad_oferta extends Component {
                 idProduto: "",
                 idUsuario: "",
                 foto: React.createRef(),
+<<<<<<< HEAD
                 doacaoOng: "0",
             },
         }
@@ -35,10 +50,20 @@ class Cad_oferta extends Component {
         console.log("Mensagem de erro: " + this.state.erroMsg)
         console.log("Cor: " + this.state.postOferta.cor)
         console.log("------------------------------------------------")
+=======
+                doacao: false,
+                reserva: false
+
+
+            },
+        }
+
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     }
 
     componentDidMount() {
         console.log("Carregando")
+<<<<<<< HEAD
         this.getOngs()
         this.listarGET()
         this.getProdutos()
@@ -58,10 +83,28 @@ class Cad_oferta extends Component {
     }
 
     //#region GET
+=======
+    }
+
+
+    postSetState = (input) => {
+        this.setState({
+            postOferta: {
+                ...this.state.postOferta,
+                [input.target.name]: input.target.value
+            }
+        })
+    }
+
+
+
+
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     getOngs = () => {
         fetch('http://localhost:5000/api/Ong/')
             .then(response => response.json())
             .then(data => this.setState({ listarOngs: data }))
+<<<<<<< HEAD
             .catch(error => {
                 console.log(error)
             })
@@ -71,6 +114,17 @@ class Cad_oferta extends Component {
     listarGET = () => {
 
         fetch("http://localhost:5000/api/Oferta")
+=======
+            .catch( error => {
+                console.log(error)
+            })
+
+    }
+
+    listarGET = () => {
+
+        fetch("http://localhost:5000/api/Oferta/")
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
             .then(response => response.json())
             .then(data => this.setState({ listarOferta: data }))
             .catch(error => {
@@ -78,6 +132,7 @@ class Cad_oferta extends Component {
             })
     }
 
+<<<<<<< HEAD
     getProdutos = () => {
 
         fetch("http://localhost:5000/api/Produto")
@@ -124,11 +179,38 @@ class Cad_oferta extends Component {
         fetch('http://localhost:5000/api/Oferta', {
             method: "POST",
             body: ofertaForm,
+=======
+    postOferta = (e) => {
+        e.preventDefault();
+
+        console.log(this.state.postOferta)
+
+        let oferta = new FormData();
+
+        oferta.set("titulo", this.state.postOferta.titulo);
+        oferta.set("quantidade", this.state.postOferta.quantidade);
+        oferta.set("cor", this.state.postOferta.cor);
+        oferta.set("dataValidade", this.state.postOferta.dataValidade);
+        oferta.set("preco", this.state.postOferta.preco);
+        oferta.set("descricao", this.state.postOferta.descricao);
+        oferta.set("foto", this.state.postOferta.foto.current.files[0]);
+        oferta.set("doacao", this.state.postOferta.doacao)
+        oferta.set("idProduto", this.state.postOferta.idProduto)
+        oferta.set("idUsuario", this.state.postOferta.idUsuario)
+
+
+        console.log(oferta)
+
+        fetch('http://localhost:5000/api/Oferta', {
+            method: "POST",
+            body: oferta,
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
         })
             .then(response => response.json())
             .then(response => {
                 console.log(response);
                 this.listarGET();
+<<<<<<< HEAD
                 this.setState({
                     erroMsg: "Cadastro efetuado com sucesso!"
                 })
@@ -287,6 +369,143 @@ class Cad_oferta extends Component {
 
                 </div>
                 <Footer />
+=======
+            })
+
+            .catch(error => console.log('Não foi possivel cadastrar:' + error))
+    }
+
+    render() {
+        return (
+            <div className="fundoCadastro">
+                <div className="cardCadastro">
+                    <h2>Cadastro de Oferta</h2>
+                    <div className="descricao">
+                        <p>Preencha os campos abaixo para efetuar o cadastro da sua oferta.</p>
+                        <p>Marque a opção de doação se quiser que seu produto seja doado.</p>
+                    </div>
+                    <form onSubmit={this.postOferta} method="POST" id="form_cadastro_venda">
+                        <div className="campo">
+
+                            <input
+                                type="text"
+                                placeholder="Nome do produto"
+                                aria-label="Digite seu nome"
+                                name="titulo"
+                                required
+                                value={this.state.postOferta.titulo}
+                                onChange={this.postSetState} 
+                            />
+                        </div>
+
+
+                        <div className="campo">
+
+                            <input
+                                type="text"
+                                placeholder="Quantidade"
+                                aria-label="Digite a quantidade"
+                                name="quantidade"
+                                required
+                                value={this.state.postOferta.quantidade}
+                                onChange={this.postSetState} />
+                        </div>
+                        <div className="campo">
+
+                            <input
+                                type="text"
+                                placeholder="Cor"
+                                aria-label="Digite a cor"
+                                name="cor"
+                                required
+                                value={this.state.postOferta.cor}
+                                onChange={this.postSetState} />
+                        </div>
+
+                        <div className="campo">
+
+                            <input
+                                type="date"
+                                placeholder="Data de validade"
+                                aria-label="Indique a data de validade"
+                                name="dataValidade"
+                                required
+                                value={this.state.postOferta.dataValidade}
+                                onChange={this.postSetState} />
+                        </div>
+
+                        <div className="campo">
+
+                            <input
+                                type="text"
+                                placeholder="Descrição do produto"
+                                aria-label="Descrição"
+                                name="descricao"
+                                required
+                                value={this.state.postOferta.descricao}
+                                onChange={this.postSetState} />
+                        </div>
+
+                        <div className="campo">
+
+                            <input
+                                name="preco"
+                                type="number"
+                                placeholder="Valor unitário da oferta"
+                                aria-label="Digite o valor unitário"
+                                value={this.state.postOferta.preco}
+                                onChange={this.postSetState} />
+                        </div>
+
+                        <hr />
+                        <div className="checks" >
+                            <div className="check" >
+                                <input
+                                    type="checkbox"
+                                    aria-label="Doação"
+                                    name="doacao"
+                                    checked={this.state.postOferta.doacao}
+                                    onChange={this.postSetState} />
+                                <label>Doação</label>
+                            </div>
+                        </div>
+                        <div className="ongsDoacao">
+
+                                <option value="">Selecione uma Ong</option>
+
+                                <select>
+                                        <option value="0">Selecione a Ong</option>
+                                        {
+                                            this.state.listarOngs.map(
+                                                function (o) {
+                                                    return (
+                                                        <option key={o.idOng} value="0">{o.razaoSocial}</option>
+                                                    )
+                                            })
+                                        }
+                                    </select>
+
+                        </div>
+                        <hr />
+                        <div className="fotos">
+
+                            <input
+                                type="file"
+                                accept="image/png, image/jpeg"
+                                placeholder="Adicionar fotos Você também pode arrasta-lás"
+                                aria-label="Adicionar fotos Você também pode arrasta-lás"
+                                name="foto"
+                                ref={this.state.postOferta.foto} />
+                        </div>
+                        <div className="btnCadastro">
+                            <button
+                                type="submit"
+                            >Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
             </div>
 
         );
@@ -294,4 +513,9 @@ class Cad_oferta extends Component {
 
 }
 
+<<<<<<< HEAD
 export default Cad_oferta;
+=======
+export default Cad_oferta
+    ;
+>>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181

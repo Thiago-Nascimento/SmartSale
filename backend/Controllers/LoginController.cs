@@ -36,7 +36,8 @@ namespace backend.Controllers {
                 new Claim (JwtRegisteredClaimNames.Email, userInfo.Email),
                 new Claim (ClaimTypes.Role, userInfo.IdTipoUsuario.ToString ()),
                 new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid ().ToString ()),
-                new Claim ("Id", userInfo.IdUsuario.ToString())
+                new Claim ("Id", userInfo.IdUsuario.ToString()),
+                new Claim ("Role", userInfo.IdTipoUsuario.ToString())
             };
             //configuramos nosso token e o nosso tempo de vida
             var token = new JwtSecurityToken (_config["Jwt:Issuer"],
