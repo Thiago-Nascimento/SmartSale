@@ -68,7 +68,7 @@ namespace backend.Controllers {
                 usuario.IdTipoUsuario = int.Parse (Request.Form["idTipoUsuario"]);
                 usuario.IdRegiao = int.Parse (Request.Form["idRegiao"]);
 
-                usuario.FotoUsuario = _uploadRepo.Upload (arquivo, "imgPerfil");
+                usuario.Foto = _uploadRepo.Upload (arquivo, "imgPerfil");
 
                 if (usuario.IdTipoUsuario == 2) {
                     if (_repositorio.ValidaCNPJ (usuario)) {
@@ -122,7 +122,7 @@ namespace backend.Controllers {
                 usuario.IdTipoUsuario = int.Parse (Request.Form["idTipoUsuario"]);
                 usuario.IdRegiao = int.Parse (Request.Form["idRegiao"]);
 
-                usuario.FotoUsuario = _uploadRepo.Upload (arquivo, "imgPerfil");
+                usuario.Foto = _uploadRepo.Upload (arquivo, "imgPerfil");
 
                 await _repositorio.Alterar (usuario);
 

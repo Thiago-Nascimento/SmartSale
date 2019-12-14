@@ -29,7 +29,8 @@ namespace backend.Domains
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=N-1S-DEV-02\\SQLEXPRESS; Database=BD_SmartSale; User Id=sa; Password=132;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=N-1S-DEV-02\\SQLEXPRESS; Database=BD_SmartSale;User=sa;Password=132;");
             }
         }
 
@@ -38,7 +39,7 @@ namespace backend.Domains
             modelBuilder.Entity<Categoria>(entity =>
             {
                 entity.HasKey(e => e.IdCategoria)
-                    .HasName("PK__Categori__CB90334923683C2F");
+                    .HasName("PK__Categori__CB90334949B5D8B2");
 
                 entity.Property(e => e.NomeCategoria).IsUnicode(false);
             });
@@ -46,7 +47,7 @@ namespace backend.Domains
             modelBuilder.Entity<Doacao>(entity =>
             {
                 entity.HasKey(e => e.IdDoacao)
-                    .HasName("PK__Doacao__14ECF39DDF34BE45");
+                    .HasName("PK__Doacao__14ECF39DC86EB769");
 
                 entity.HasOne(d => d.IdOfertaNavigation)
                     .WithMany(p => p.Doacao)
@@ -64,11 +65,15 @@ namespace backend.Domains
             modelBuilder.Entity<Oferta>(entity =>
             {
                 entity.HasKey(e => e.IdOferta)
-                    .HasName("PK__Oferta__6C9F2EA038499DC9");
+                    .HasName("PK__Oferta__6C9F2EA0B3040A34");
+
+                entity.Property(e => e.CheckDoacao).IsUnicode(false);
 
                 entity.Property(e => e.Cor).IsUnicode(false);
 
                 entity.Property(e => e.Foto).IsUnicode(false);
+
+                entity.Property(e => e.Titulo).IsUnicode(false);
 
                 entity.HasOne(d => d.IdProdutoNavigation)
                     .WithMany(p => p.Oferta)
@@ -86,13 +91,15 @@ namespace backend.Domains
             modelBuilder.Entity<Ong>(entity =>
             {
                 entity.HasKey(e => e.IdOng)
-                    .HasName("PK__Ong__50274C95F5500B07");
+                    .HasName("PK__Ong__50274C9506FB2010");
 
                 entity.Property(e => e.Cnpj).IsUnicode(false);
 
                 entity.Property(e => e.EmailOng).IsUnicode(false);
 
                 entity.Property(e => e.EnderecoOng).IsUnicode(false);
+
+                entity.Property(e => e.FotoOng).IsUnicode(false);
 
                 entity.Property(e => e.RazaoSocial).IsUnicode(false);
 
@@ -112,7 +119,7 @@ namespace backend.Domains
             modelBuilder.Entity<Produto>(entity =>
             {
                 entity.HasKey(e => e.IdProduto)
-                    .HasName("PK__Produto__94E704D85A02A8F4");
+                    .HasName("PK__Produto__94E704D889D3F60B");
 
                 entity.Property(e => e.NomeProduto).IsUnicode(false);
 
@@ -126,7 +133,7 @@ namespace backend.Domains
             modelBuilder.Entity<Regiao>(entity =>
             {
                 entity.HasKey(e => e.IdRegiao)
-                    .HasName("PK__Regiao__F9592B9B7A4B7C6A");
+                    .HasName("PK__Regiao__F9592B9BB243A548");
 
                 entity.Property(e => e.Bairro).IsUnicode(false);
 
@@ -136,7 +143,7 @@ namespace backend.Domains
             modelBuilder.Entity<Reserva>(entity =>
             {
                 entity.HasKey(e => e.IdReserva)
-                    .HasName("PK__Reserva__9E953BE1BFE1E250");
+                    .HasName("PK__Reserva__9E953BE176D8CB8E");
 
                 entity.HasOne(d => d.IdOfertaNavigation)
                     .WithMany(p => p.Reserva)
@@ -154,7 +161,7 @@ namespace backend.Domains
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__Tipo_Usu__622D85ABC3C86B53");
+                    .HasName("PK__Tipo_Usu__622D85AB6B6A907E");
 
                 entity.Property(e => e.Tipo).IsUnicode(false);
             });
@@ -162,7 +169,7 @@ namespace backend.Domains
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__63C76BE269871D15");
+                    .HasName("PK__Usuario__63C76BE25D6A9F10");
 
                 entity.Property(e => e.Cep).IsUnicode(false);
 
@@ -171,6 +178,8 @@ namespace backend.Domains
                 entity.Property(e => e.Email).IsUnicode(false);
 
                 entity.Property(e => e.Endereco).IsUnicode(false);
+
+                entity.Property(e => e.Foto).IsUnicode(false);
 
                 entity.Property(e => e.NomeUsuario).IsUnicode(false);
 

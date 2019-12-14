@@ -32,7 +32,7 @@ header {
 
 .ca form .search-btn {
     width: 10%;
-    background-color: white; 
+    background-color: white;
     border: none;
     color: var(--cinza);
     /* padding: 15px 32px; */
@@ -46,7 +46,7 @@ header {
 .ca form .search-bar {
     width: 90%;
     height: 100%;
-}   
+}
 
 .separador-header {
     display: flex;
@@ -271,7 +271,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
     display: flex;
     justify-content: center;
     padding: 40px 0px;
@@ -283,13 +282,11 @@ header {
     padding-bottom: 15px;
 }
 
-.login_cadlog,
-.cadastro_cadlog {
+.login_cadlog, .cadastro_cadlog {
     padding: 9px;
 }
 
-.login_cadlog input,
-.cadastro_cadlog input {
+.login_cadlog input, .cadastro_cadlog input {
     padding: 5px;
 }
 
@@ -310,7 +307,6 @@ header {
     font-size: 20px;
     text-transform: uppercase;
 }
-
 
 /* Responsivo ranking */
 
@@ -339,43 +335,47 @@ header {
         margin: auto;
         padding-top: 20px;
     }
-    table tbody tr{
+    table tbody tr {
         display: flex;
         flex-wrap: wrap;
     }
-    table tbody tr{
+    table tbody tr {
         display: flex;
         flex-direction: column;
     }
-    #ranking_pontos_table{
+    #ranking_pontos_table {
         display: none;
     }
-    #pontuacao{
+    #pontuacao {
         padding-bottom: 13px;
     }
-    .ranking_pag .descricao p{
+    .ranking_pag .descricao p {
         width: 30vw;
     }
 }
 
 /* Card Oferta */
-#titulo_card{
+
+#titulo_card {
     font-size: 20px;
 }
-.Card_Oferta img{
+
+.Card_Oferta img {
     width: 150px;
     height: 150px;
 }
 
-.img_card_oferta:hover + .informacoes_card_oferta{
+.img_card_oferta:hover+.informacoes_card_oferta {
     transition: 0.3s;
     display: block;
 }
-.informacoes_card_oferta{
+
+.informacoes_card_oferta {
     display: block;
     width: 100%;
 }
-.informacoes_card_oferta{
+
+.informacoes_card_oferta {
     display: none;
     position: absolute;
     bottom: 70px;
@@ -383,10 +383,12 @@ header {
     background-color: rgba(162, 0, 203, 0.6);
     color: white;
 }
-.informacoes_card_oferta p{
+
+.informacoes_card_oferta p {
     margin-left: 5%;
 }
-.botao_card_oferta a{
+
+.botao_card_oferta a {
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -396,14 +398,15 @@ header {
     display: flex;
     justify-content: center;
 }
-.botao_card_oferta{
+
+.botao_card_oferta {
     margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
     padding: 4% 0px;
 }
 
-.Card_Oferta{
+.Card_Oferta {
     width: 240px;
     height: 245px;
     display: flex;
@@ -415,7 +418,7 @@ header {
     box-shadow: 4px 4px 15px #cccccc;
 }
 
-.Card_ofertas{
+.Card_ofertas {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
@@ -437,7 +440,7 @@ header {
         align-items: center;
         justify-content: center;
     }
-    .ranking_pag .ranking { 
+    .ranking_pag .ranking {
         margin-top: 60px;
         width: 40vw;
         line-height: 2.1em;
@@ -445,7 +448,6 @@ header {
     .ranking_pag .descricao p {
         width: 170px;
     }
-
     .ranking_pag .descricao {
         margin-top: 60px;
     }
@@ -454,23 +456,23 @@ header {
         margin: auto;
         text-align: center;
     }
-    table tbody tr{
+    table tbody tr {
         display: flex;
         flex-wrap: wrap;
     }
-    #ranking_pontos_table{
+    #ranking_pontos_table {
         display: none;
     }
-    #pontuacao{
+    #pontuacao {
         padding-bottom: 13px;
     }
-    .ranking_pag .botao{
+    .ranking_pag .botao {
         width: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .ranking_pag .a-botao{
+    .ranking_pag .a-botao {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -718,11 +720,11 @@ header {
     font-weight: bold;
 }
 
-.desc p{
+.desc p {
     padding: 5px;
 }
 
-.btncompras button{
+.btncompras button {
     font-weight: bold;
     color: white;
     margin: 160px 0px 0px;
@@ -737,7 +739,6 @@ header {
     font-size: 20px;
     text-transform: uppercase;
 }
-
 
 .finalreserva_pag {
     padding: 1px 0px;
@@ -789,9 +790,6 @@ header {
 .finalreserva_pag .texto h3 {
     color: #A200CB
 }
-
-
-
 
 /* Home */
 
@@ -967,7 +965,8 @@ header {
     border-radius: 50px;
     padding: 0 20px;
 } */
-.home_pag .branco{
+
+.home_pag .branco {
     background-color: var(--cinza_claro);
     width: 75%;
     border-radius: 50px;
@@ -1077,7 +1076,7 @@ header {
     height: auto;
 }
 
-.home_pag .pdts2 , .pdt {
+.home_pag .pdts2, .pdt {
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     background-color: white;
@@ -1119,104 +1118,122 @@ header {
     display: flex;
     flex-direction: row;
 }
-.categorias_home{
+
+.categorias_home {
     padding-top: 15px;
-   width: 1150px;
+    width: 1150px;
 }
-.Categorias_home{
+
+.Categorias_home {
     /* width: 900px; */
     display: flex;
     justify-content: space-between;
 }
-#fotos_ongs_home{
+
+#fotos_ongs_home {
     padding: 20px 20px;
     width: 180px;
     height: 180px;
 }
-.Home{
+
+.Home {
     background-color: var(--cinza_claro);
 }
-.Produtos_home img{
+
+.Produtos_home img {
     width: 250px;
     height: 260px;
 }
-.Produtos_home{
+
+.Produtos_home {
     width: 1200px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
-.produtos_home{
+
+.produtos_home {
     line-height: 2.0;
-    margin:  20px 10px;
+    margin: 20px 10px;
     text-align: center;
 }
-#produtos_titulo{
+
+#produtos_titulo {
     margin-left: 1.2%;
 }
-.produtos_home{
+
+.produtos_home {
     width: 1340px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.Usuarios{
+
+.Usuarios {
     display: flex;
     align-items: center;
     text-align: right;
 }
-#imagem_ranking_home{
+
+#imagem_ranking_home {
     padding-right: 20px;
 }
-.primeiros_home{
+
+.primeiros_home {
     display: flex;
     margin: auto;
     justify-content: center;
     flex-direction: column;
 }
 
-
 /* Página Ongs */
-.containerOngs{
+
+.containerOngs {
     margin: auto;
     width: 1200px;
     background-color: #FFFFFF;
     border-radius: 6px;
 }
-.ongs_pag{
+
+.ongs_pag {
     background-color: var(--cinza_claro);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
 }
 
-.imagem_ong{
+.imagem_ong {
     width: 180px;
     height: 170px;
 }
-.Ongs .ongs_division{
+
+.Ongs .ongs_division {
     display: flex;
     width: 900px;
     margin: auto;
     margin-bottom: 20px;
 }
-.Ongs h1{
+
+.Ongs h1 {
     text-align: center;
     padding-top: 25px;
     font-size: 30px;
     padding-bottom: 20px;
 }
-.Ongs .ongs_division{
+
+.Ongs .ongs_division {
     display: flex;
     align-items: center;
     padding: 0px 40px;
 }
-.Ongs .ongs_division p{
+
+.Ongs .ongs_division p {
     padding-left: 30px;
     width: 550px;
     font-size: 25px;
     text-align: justify;
 }
-.Ongs{
-    padding-bottom: 20px ;
+
+.Ongs {
+    padding-bottom: 20px;
 }
 
 .container {
@@ -1606,7 +1623,7 @@ main .paginaProduto_pag {
     border-bottom: solid 2px var(--roxo);
     color: var(--roxo);
     text-transform: uppercase;
-    font-family: 'Luckiest' , cursive;
+    font-family: 'Luckiest', cursive;
     font-size: 30px;
 }
 
@@ -1643,11 +1660,11 @@ main .paginaProduto_pag {
     justify-content: flex-end;
 }
 
-.ranking_pag .ranking table tbody tr td{
-    font-family: 'Luckiest' , cursive;
+.ranking_pag .ranking table tbody tr td {
+    font-family: 'Luckiest', cursive;
 }
 
-#pontuacao{
+#pontuacao {
     color: var(--roxo);
     font-size: 20px;
 }
@@ -1671,7 +1688,6 @@ main .paginaProduto_pag {
 .ranking_pag .botao {
     justify-content: center;
 } */
-
 
 /* pagina perfil */
 
@@ -2380,7 +2396,6 @@ main .paginaProduto_pag {
     background-repeat: no-repeat;
     width: 100%;
     height: 750px;
-
 }
 
 .contCard_1_cadlog {
@@ -2425,7 +2440,7 @@ main .paginaProduto_pag {
     margin-bottom: 3%;
 } */
 
-.login_cadlog input{
+.login_cadlog input {
     border: none;
     width: 300px;
     padding: 10px;
@@ -2438,7 +2453,6 @@ main .paginaProduto_pag {
     /* margin: 5% 0; */
     width: 355px;
     padding: 10px;
-
 }
 
 .login_pag .card_1_cadlog button {
@@ -2457,15 +2471,15 @@ main .paginaProduto_pag {
     text-align: center;
 }
 
-.btn_cadastrarse{
+.btn_cadastrarse {
     text-transform: uppercase;
 }
 
-.btn_cadastrarse a:hover{
+.btn_cadastrarse a:hover {
     font-weight: bold;
 }
 
-.btn_cadlog button:hover{
+.btn_cadlog button:hover {
     background-color: white;
     color: var(--roxo);
 }
@@ -2601,7 +2615,7 @@ main .paginaProduto_pag {
         padding-top: 0;
     }
     /* Página de Login */
-    .login_pag .card_1_cadlog{
+    .login_pag .card_1_cadlog {
         width: 60vw;
     }
 }
@@ -2780,36 +2794,108 @@ main .paginaProduto_pag {
         width: auto;
     }
     /* Página de Login */
-    .login_pag .card_1_cadlog{
+    .login_pag .card_1_cadlog {
         width: 75vw;
     }
 }
 
 /* Responsivo Ongs */
-@media (max-width: 1169px){
-    .Ongs{
+
+@media (max-width: 1169px) {
+    .Ongs {
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
     }
-    .container .containerOngs .Ongs .ongs_division{
+    .container .containerOngs .Ongs .ongs_division {
         display: flex;
         flex-direction: column;
     }
-    .Ongs .ongs_division{
+    .Ongs .ongs_division {
         width: 50%;
     }
 }
 
-@media (max-width: 768px){
-    .Ongs .ongs_division{
+@media (max-width: 768px) {
+    .Ongs .ongs_division {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 50%;
     }
-    .Ongs .ongs_division p{
+    .Ongs .ongs_division p {
         width: 100%;
     }
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+#modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+
+#modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+#modal-footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+}
+
+.btnlistaproduto {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.inputprodutomodal{
+    display: block;
+    width: 97.5%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
 }

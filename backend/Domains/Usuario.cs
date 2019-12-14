@@ -30,14 +30,11 @@ namespace backend.Domains
         [Required]
         [StringLength(255)]
         public string Email { get; set; }
-        
-        [Column("Foto")]
-        [StringLength(255)]
-        public string FotoUsuario { get ; set; }
-        
         [Required]
         [StringLength(255)]
         public string Senha { get; set; }
+        [StringLength(255)]
+        public string Foto { get; set; }
         [Required]
         [StringLength(255)]
         public string Telefone { get; set; }
