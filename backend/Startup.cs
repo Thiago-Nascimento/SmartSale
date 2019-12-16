@@ -69,16 +69,23 @@ namespace backend {
             // GET de Imagem
             app.UseStaticFiles (new StaticFileOptions {
                 FileProvider = new PhysicalFileProvider (
-                    //Nome da pasta que existe
+                        //Nome da pasta que existe
                         Path.Combine (Directory.GetCurrentDirectory (), "imgOng")),
                     RequestPath = "/imgOng"
             });
 
             app.UseStaticFiles (new StaticFileOptions {
                 FileProvider = new PhysicalFileProvider (
-                    //Nome da pasta que existe
+                        //Nome da pasta que existe
                         Path.Combine (Directory.GetCurrentDirectory (), "imgOferta")),
                     RequestPath = "/imgOferta"
+            });
+
+            app.UseStaticFiles (new StaticFileOptions {
+                FileProvider = new PhysicalFileProvider (
+                        //Nome da pasta que existe
+                        Path.Combine (Directory.GetCurrentDirectory (), "imgPerfil")),
+                    RequestPath = "/imgPerfil"
             });
 
             if (env.IsDevelopment ()) {

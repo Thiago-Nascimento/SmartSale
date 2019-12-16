@@ -116,7 +116,7 @@
             <param name="id">int id da oferta</param>
             <returns>Oferta deletada</returns>
         </member>
-        <member name="M:backend.Controllers.OfertaController.GetFiltrar(backend.Domains.FiltroViewModel)">
+        <member name="M:backend.Controllers.OfertaController.PostFiltrar(backend.Domains.FiltroViewModel)">
             <summary>
             Lista as ofertas com o Filtro
             </summary>
