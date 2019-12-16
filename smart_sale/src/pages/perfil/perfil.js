@@ -25,7 +25,7 @@ class Perfil extends Component {
                 endereco: "",
                 cep: "",
                 pontuacao: "",
-                fotoUsuario: React.createRef()
+                foto: React.createRef()
             },
             ofertas: [],
             email: parseJwt().email,
@@ -43,7 +43,7 @@ class Perfil extends Component {
                 endereco: "",
                 cep: "",
                 pontuacao: "",
-                fotoUsuario: React.createRef()
+                foto: React.createRef()
             }
         }
     }
@@ -82,7 +82,7 @@ class Perfil extends Component {
                             endereco: response.endereco,
                             cep: response.cep,
                             pontuacao: response.pontuacao,
-                            fotoUsuario: response.fotoUsuario,
+                            foto: response.foto,
                         },
 
                         putimg: {
@@ -99,7 +99,7 @@ class Perfil extends Component {
                             endereco: this.state.dados.endereco,
                             cep: this.state.dados.cep,
                             pontuacao: this.state.dados.pontuacao,
-                            fotoUsuario: this.state.dados.fotoUsuario
+                            foto: this.state.dados.foto
                         }
                     })
 
@@ -138,12 +138,12 @@ class Perfil extends Component {
         let id = parseJwt().Id
         let usuario = new FormData();
 
-        if (this.state.putimg.fotoUsuario.current !== undefined) {
-            usuario.set('fotoUsuario', this.state.putimg.fotoUsuario.current.files[0], this.state.putimg.fotoUsuario.value)
-        }
+        // if (this.state.putimg.fotoUsuario.current !== undefined) {
+        //     usuario.set('fotoUsuario', this.state.putimg.fotoUsuario.current.files[0], this.state.putimg.fotoUsuario.value)
+        // }
 
-        console.log(this.state.putimg.fotoUsuario)
-        console.log("Documento: " + this.state.putimg.documento)
+        // console.log(this.state.putimg.fotoUsuario)
+        // console.log("Documento: " + this.state.putimg.documento)
 
         // if (this.state.putimg.documento.length === 14) {
         //     usuario.set("idTipoUsuario", "2")
@@ -198,7 +198,7 @@ class Perfil extends Component {
                     <div className="cont">
                         <div className="cima">
                             <section className="esquerdo">
-                                <img src={"http://localhost:5000/" + this.state.dados.fotoUsuario} alt="foto de perfil do usuario" className="perfil_foto" />
+                                <img src={"http://localhost:5000/" + this.state.dados.foto} alt="foto de perfil do usuario" className="perfil_foto" />
 
                                 <form onSubmit={this.putImagem}>
                                     <input type="file" onChange={this.putSetStateFile} ref={this.state.putimg.fotoUsuario} name="fotoUsuario" />

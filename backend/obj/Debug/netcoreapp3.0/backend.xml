@@ -324,7 +324,7 @@
             <param name="usuario">string nome do usuario</param>
             <returns>Usuario cadastrado</returns>
         </member>
-        <member name="M:backend.Controllers.UsuarioController.Put(System.Int32,backend.Domains.Usuario)">
+        <member name="M:backend.Controllers.UsuarioController.Put(System.Int32,backend.Domains.UsuarioViewModel)">
             <summary>
             Faz modificações em determinados usuarios
             </summary>
