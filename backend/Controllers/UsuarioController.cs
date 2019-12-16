@@ -155,8 +155,8 @@ namespace backend.Controllers {
             try {
                 await _repositorio.Excluir (usuario);
             } catch (Microsoft.EntityFrameworkCore.DbUpdateException ex) {
-                return BadRequest(new {
-                    mensagem="Erro! O usuário provavelmente está atrelado a algumas ofertas, não é possível excluí-lo. Raw: " + ex
+                return BadRequest (new {
+                    mensagem = "Erro! O usuário provavelmente está atrelado a algumas ofertas, não é possível excluí-lo. Raw: " + ex
                 });
             }
 
