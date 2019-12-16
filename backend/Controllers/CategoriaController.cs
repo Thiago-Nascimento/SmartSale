@@ -51,7 +51,7 @@ namespace backend.Controllers {
         /// <summary>
         /// Adiciona uma Categoria
         /// </summary>
-        /// <param name="categoria">string nome da categoria</param>
+        /// <param name="categoria">objeto da categoria</param>
         /// <returns>Categoria cadastrada</returns>
         [Authorize (Roles = "1")]
         [HttpPost]
@@ -72,7 +72,7 @@ namespace backend.Controllers {
         /// Faz a modificação de derterminada categoria
         /// </summary>
         /// <param name="id"> int id da categoria</param>
-        /// <param name="categoria">string nome da categoria</param>
+        /// <param name="categoria">objeto da categoria</param>
         /// <returns>Categoria Modificada</returns>
         [Authorize (Roles = "1")]
         [HttpPut ("{id}")]
@@ -131,7 +131,7 @@ namespace backend.Controllers {
         /// <summary>
         /// filtra as categorias por nome
         /// </summary>
-        /// <param name="FiltroPorNome"></param>
+        /// <param name="FiltroPorNome">"filtro" : "parametro para filtragem"</param>
         /// <returns>Categoria Requisitada</returns>
         [HttpGet ("FiltroPorNome")]
         public ActionResult<List<Categoria>> GetFiltro (FiltroViewModel FiltroPorNome) {
@@ -146,7 +146,10 @@ namespace backend.Controllers {
         }
 
         //api/Categoria/FiltroPorNome
-        //
+        /// <summary>
+        /// Lista as categorias ordenadas por nome
+        /// </summary>
+        /// <returns>Lista de Categorias ordenadas por nome</returns>
         [HttpGet ("Ordenar")]
         public ActionResult<List<Categoria>> GetOrdenar () {
             using (BD_SmartSaleContext _contexto = new BD_SmartSaleContext ()) {

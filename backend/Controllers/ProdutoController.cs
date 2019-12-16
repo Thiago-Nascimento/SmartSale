@@ -14,7 +14,7 @@ namespace backend.Controllers {
         ProdutoRepository _repositorio = new ProdutoRepository ();
 
         /// <summary>
-        /// Lista as produto
+        /// Lista os produtos
         /// </summary>
         /// <returns>Lista contendo os produtos</returns>
         [HttpGet]

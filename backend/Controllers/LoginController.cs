@@ -49,6 +49,11 @@ namespace backend.Controllers {
         }
 
         //usamos essa anotação para a ignorar a autenticação neste metodo já que ele é quem fara isso
+        /// <summary>
+        /// Faz login de um usuario existente na base de dados
+        /// </summary>
+        /// <param name="login">Credenciais de Login, email e senha</param>
+        /// <returns>JWT contendo as claims do usuario</returns>
         [AllowAnonymous]
         [HttpPost]
         public IActionResult Login ([FromBody] LoginViewModel login) {
