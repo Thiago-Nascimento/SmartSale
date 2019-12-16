@@ -145,7 +145,7 @@ class Cad_oferta extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header {...this.props}/>
                 <div className="fundoCadastro">
                     <div className="cardCadastro">
                         <h2>Cadastro de Oferta</h2>

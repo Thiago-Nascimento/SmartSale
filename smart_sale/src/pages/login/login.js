@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import Footer from '../../components/footer/footer';
 import {parseJwt} from '../../services/auth'
 import Header from '../../components/header/header';
+import {Link} from 'react-router-dom';
 
 class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             email : "",
@@ -90,7 +91,8 @@ class Login extends Component {
                                                 <button type="submit"><b>ACESSAR</b></button>
                                             </div>
                                             <div className="btn_cadastrarse">                                            
-                                                <a href="cadastro.html">Cadastre-se</a>
+                                                {/* <a href="cadastro.html">Cadastre-se</a> */}
+                                                <Link to="/cadastrousuario">Cadastre-se</Link>
                                             </div>
                                         </form>
                                     </div>

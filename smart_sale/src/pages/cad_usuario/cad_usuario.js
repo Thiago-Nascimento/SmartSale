@@ -5,8 +5,8 @@ import Header from '../../components/header/header';
 
 class Cad_usuario extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
 
             // Listar - Get
@@ -77,6 +77,8 @@ class Cad_usuario extends Component {
         } else if (this.state.postUsuario.documento.length === 11) {
             usuario.set("idTipoUsuario", "3")
         }
+
+        usuario.set("idTipoUsuario", "1")
 
         usuario.set('idRegiao', "1");
         usuario.set("nomeUsuario", this.state.postUsuario.nomeUsuario);

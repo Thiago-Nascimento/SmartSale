@@ -51,6 +51,7 @@ class Perfil extends Component {
     componentDidMount() {
         this.getDados();
         this.getOfertas();
+        console.log(parseJwt().Role)
     }
 
     //#region GETS
@@ -229,7 +230,7 @@ class Perfil extends Component {
                                 <div className="perfil_button_padding">
                                     <div className="perfil_btn_produto">
                                         {
-                                            parseJwt().Role == 3 &&
+                                            parseJwt().Role == 1 &&
                                             <div>
                                                 <p><Link to="/cadastrocategoria" className="perfil_btn-medium">Manipular categorias</Link></p><br/><br/>    
                                                 <p><Link to="/cadastroproduto" className="perfil_btn-medium"><span id="span_">..</span>Manipular produtos</Link></p>

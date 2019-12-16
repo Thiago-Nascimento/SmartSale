@@ -36,7 +36,7 @@ import Ranking from "./pages/ranking/ranking"
 const PermissaoAdmin = ({ component : Component }) => (
     <Route 
         render={props =>
-            usuarioAutenticado() && parseJwt().Role === "1" ? (
+            usuarioAutenticado() && parseJwt().Role == "1" ? (
                 <Component {...props}/>
             ) : (
                 <Redirect to={{ pathname : "/login"}}/>
@@ -48,7 +48,7 @@ const PermissaoAdmin = ({ component : Component }) => (
 const PermissaoAdminVendedor = ({ component : Component }) => (
     <Route 
         render={props =>
-            usuarioAutenticado() && (parseJwt().Role === "2" || parseJwt().Role === "1") ? (
+            usuarioAutenticado() && (parseJwt().Role == "2" || parseJwt().Role == "1") ? (
                 <Component {...props}/>
             ) : (
                 <Redirect to={{ pathname : "/login"}}/>
