@@ -78,7 +78,7 @@ class Cad_usuario extends Component {
             usuario.set("idTipoUsuario", "3")
         }
 
-        usuario.set("idTipoUsuario", "1")
+        // usuario.set("idTipoUsuario", "1")
 
         usuario.set('idRegiao', "1");
         usuario.set("nomeUsuario", this.state.postUsuario.nomeUsuario);
