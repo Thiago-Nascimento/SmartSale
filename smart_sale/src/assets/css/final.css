@@ -39,10 +39,7 @@ header {
 .ca form .search-btn {
     width: 10%;
     background-color: white;
-<<<<<<< HEAD
     border: none;
-=======
->>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     color: var(--cinza);
     text-align: center;
     display: inline-block;
@@ -55,13 +52,8 @@ header {
     width: 700px;
     border: none;
     height: 100%;
-<<<<<<< HEAD
-}
-
-=======
     outline: 0px auto -webkit-focus-ring-color;
 }
->>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
 .separador-header {
     display: flex;
     justify-content: space-around;
@@ -384,15 +376,8 @@ header {
     transition: 0.3s;
     display: block;
 }
-<<<<<<< HEAD
-
-.informacoes_card_oferta {
-    display: block;
-    width: 100%;
-=======
 .informacoes_card_oferta:hover{
     display: block;    
->>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
 }
 
 .informacoes_card_oferta {
@@ -742,11 +727,7 @@ header {
     padding: 5px;
 }
 
-<<<<<<< HEAD
-.btncompras button {
-=======
 .btncompras {
->>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     font-weight: bold;
     color: white;
     margin: 160px 0px 0px;
@@ -1165,15 +1146,9 @@ header {
     width: 250px;
     height: 260px;
 }
-<<<<<<< HEAD
-
-.Produtos_home {
-    width: 1200px;
-=======
 .Produtos_home{
     width: 1170px;
     /* background-color: yellow; */
->>>>>>> dc89604b20be3f9a722dbd83a5d94eea95098181
     display: flex;
     align-items: center;
     justify-content: space-around;
