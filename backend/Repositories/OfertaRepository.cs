@@ -23,6 +23,13 @@ namespace backend.Repositories {
             }
         }
 
+        public async Task<List<Oferta>> BuscarPorIdUsuario (int id) {
+            using (BD_SmartSaleContext _contexto = new BD_SmartSaleContext ()) {
+                // return await _contexto.Oferta.Include("IdUsuarioNavigation.IdRegiaoNavigation").FindAsync(id);
+                return await _contexto.Oferta.Include ("IdProdutoNavigation").Include("IdUsuarioNavigation.IdRegiaoNavigation").Include("IdUsuarioNavigation").Where(i => i.IdUsuario == id).ToListAsync(); 
+            }
+        }
+
         public async Task<Oferta> Excluir (Oferta oferta) {
             using (BD_SmartSaleContext _contexto = new BD_SmartSaleContext ()) {
                 _contexto.Oferta.Remove (oferta);

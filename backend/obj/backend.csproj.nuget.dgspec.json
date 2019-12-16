@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj": {}
+    "C:\\Users\\fic\\Desktop\\ATUALIZADA\\SmartSale\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj": {
+    "C:\\Users\\fic\\Desktop\\ATUALIZADA\\SmartSale\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Desktop\\ATUALIZADA\\SmartSale\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\fic\\Desktop\\ATUALIZADA\\SmartSale\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\SmartSale\\backend\\obj\\",
+        "outputPath": "C:\\Users\\fic\\Desktop\\ATUALIZADA\\SmartSale\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -27,9 +27,9 @@ header {
     width: 630px;
     height: 35px;
     align-items: center;
-    
 }
-#search-btn{
+
+#search-btn {
     width: 35px;
     height: 35px;
     background-color: white;
@@ -48,17 +48,18 @@ header {
     border-color: white;
     outline: 0px auto -webkit-focus-ring-color;
 }
+
 .ca form #search-bar {
     width: 700px;
     border: none;
     height: 100%;
     outline: 0px auto -webkit-focus-ring-color;
 }
+
 .separador-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
 
 /* cadastro produto venda e doacao */
@@ -73,10 +74,14 @@ header {
     justify-content: center;
 }
 
+.testebox {
+    width: 10px;
+}
+
 .cardCadastro {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 700px;
     margin: auto;
     align-items: center;
     background-color: white;
@@ -85,6 +90,48 @@ header {
     -moz-box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     box-shadow: 0px 0px 8px 0px rgba(204, 204, 204, 1);
     padding-bottom: 30px;
+}
+
+#tabela-lista th {
+    color: var(--cinza_claro);
+    padding: 7px;
+    background-color: var(--roxo);
+}
+
+#tabela-lista td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tabela-lista tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tabela-lista tr:hover {
+    background-color: #ddd;
+}
+
+#tabela-lista button {
+    border-radius: 5px;
+    background-color: var(--roxo);
+    border: solid 1px white;
+    color: white;
+    padding: 5px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#tabela-lista {
+    width: 703px;
+    border-collapse: collapse;
+}
+
+#tabela-lista-corpo td {
+    color: var(--grafite);
+    padding: 10px;
+    text-align: center;
 }
 
 .cardCadastro h2 {
@@ -100,8 +147,13 @@ header {
 }
 
 #form_cadastro_venda {
-    font-size: 20px;
-    color: var(--roxo);
+    margin: auto;
+    /* font-size: 20px; */
+    /* color: var(--roxo); */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .checks {
@@ -128,23 +180,66 @@ header {
 }
 
 #form_cadastro_venda input {
-    display: flex;
+    /* display: flex; */
     /*Flexibilizar o conteudo do input dentro do formulario*/
-    flex-direction: column;
+    /* flex-direction: column; */
     /* Coloquei em coluna e assim quebra linha*/
-    padding: 10px;
+    /* padding: 10px; */
     width: 355px;
+}
+
+.cadastro_produto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .campo {
     /* width: 500px; */
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
     padding: 10px;
 }
 
+/* .option__categoria{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+} */
+
+input[type=date], input[type=number] {
+    box-sizing: border-box;
+    width: 357px;
+    padding: 7px 20px;
+    margin: 8px 0;
+}
+
+input[type=text], select {
+    width: 357px;
+    padding: 7px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
 .campo input {
-    border: solid 1px var(--cinza);
+    border: none;
+    background-color: var(--cinza_claro);
+    border-radius: 5px;
+    width: 355px;
+    height: 28px;
+    /* border: solid 1px var(--cinza); */
 }
 
 .btnCadastro {
@@ -376,8 +471,9 @@ header {
     transition: 0.3s;
     display: block;
 }
-.informacoes_card_oferta:hover{
-    display: block;    
+
+.informacoes_card_oferta:hover {
+    display: block;
 }
 
 .informacoes_card_oferta {
@@ -745,7 +841,8 @@ header {
 .finalreserva_pag {
     padding: 1px 0px;
 }
-.Final_Reserva{
+
+.Final_Reserva {
     background-color: var(--cinza_claro);
 }
 
@@ -1062,17 +1159,20 @@ header {
     margin: 4% auto;
     padding: 2% 0;
 }
-.titulos_categorias_home{
+
+.titulos_categorias_home {
     display: flex;
     justify-content: center;
     justify-content: space-around;
 }
+
 .home_pag .card {
     width: 270px;
     line-height: 2.0;
     margin-top: 30px;
 }
-.imagem_categorias_home{
+
+.imagem_categorias_home {
     display: flex;
     justify-content: center;
     justify-content: space-around;
@@ -1094,6 +1194,7 @@ header {
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
 .home_pag .card p {
     text-align: center;
     padding-bottom: 20px;
@@ -1146,7 +1247,8 @@ header {
     width: 250px;
     height: 260px;
 }
-.Produtos_home{
+
+.Produtos_home {
     width: 1170px;
     /* background-color: yellow; */
     display: flex;
@@ -1185,11 +1287,11 @@ header {
     justify-content: center;
     flex-direction: column;
 }
-.cardhome img{
+
+.cardhome img {
     width: 200px;
     height: 200px;
     border-radius: 10px;
-    
 }
 
 /* Página Ongs */
@@ -1261,8 +1363,8 @@ header {
     height: 95px;
     width: 204px;
 }
-   
-#icone_header{
+
+#icone_header {
     width: 30px;
     height: 30px;
 }
@@ -1792,21 +1894,22 @@ main .paginaProduto_pag {
     border-radius: 5px;
     font-weight: lighter;
     opacity: 0.6;
-    
 }
-#span_{
+
+#span_ {
     opacity: 0;
 }
-.produtos_usuario{
+
+.produtos_usuario {
     /* background-color: yellow; */
     display: flex;
 }
 
-
 /* --------------teste---------------- */
 
 .direito {
-    display: flex;;
+    display: flex;
+    ;
 }
 
 .cursos-home h2 {
@@ -2115,6 +2218,7 @@ main .paginaProduto_pag {
 }
 
 /* Not Found */
+
 .not_found {
     text-align: center;
     align-items: center;
@@ -2267,7 +2371,6 @@ main .paginaProduto_pag {
 .not_found h2 {
     line-height: 2.0em;
 }
-
 
 /* pagina quem somos */
 
@@ -2878,7 +2981,6 @@ main .paginaProduto_pag {
         right: 10px;
         top: 0px;
     }
-    
     /* pagina perfil */
     .perfil_pag {
         width: 100%;
@@ -3035,7 +3137,7 @@ main .paginaProduto_pag {
     padding: 1rem;
 }
 
-#modal-footer{
+#modal-footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -3062,7 +3164,7 @@ main .paginaProduto_pag {
     border-radius: .25rem;
 }
 
-.inputprodutomodal{
+.inputprodutomodal {
     display: block;
     width: 97.5%;
     height: calc(1.5em + .75rem + 2px);

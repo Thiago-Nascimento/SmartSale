@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers {
-    
+
     [Route ("api/[controller]")]
     [ApiController]
     public class OfertaController : ControllerBase {
@@ -26,6 +26,15 @@ namespace backend.Controllers {
                 return NotFound ("Ofertas não encontradas");
             }
             return ofertas;
+        }
+
+        [HttpGet ("usuario/{id}")]
+        public async Task<ActionResult<List<Oferta>>> GetIdUsuario (int id) {
+            var lista = await _repositorio.BuscarPorIdUsuario (id);
+            if (lista == null) {
+                return NotFound ("Oferta não encontrada");
+            }
+            return lista;
         }
 
         /// <summary>
@@ -61,14 +70,14 @@ namespace backend.Controllers {
                 oferta.DataValidade = DateTime.Parse (Request.Form["dataValidade"]);
                 oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
                 oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
-                oferta.Titulo = Request.Form["titulo"].ToString();
-                oferta.CheckDoacao = Request.Form["checkDoacao"].ToString();
-                oferta.DoacaoOng = int.Parse(Request.Form["doacaoOng"]);
+                oferta.Titulo = Request.Form["titulo"].ToString ();
+                oferta.CheckDoacao = Request.Form["checkDoacao"].ToString ();
+                oferta.DoacaoOng = int.Parse (Request.Form["doacaoOng"]);
 
-                if(DateTime.Compare(oferta.DataValidade, DateTime.Now.Date) > 0) {
+                if (DateTime.Compare (oferta.DataValidade, DateTime.Now.Date) > 0) {
                     await _repositorio.Salvar (oferta);
                 } else {
-                    return BadRequest("Data de Validade Incorreta" + DateTime.Compare(oferta.DataValidade, DateTime.Now.Date).ToString());
+                    return BadRequest ("Data de Validade Incorreta" + DateTime.Compare (oferta.DataValidade, DateTime.Now.Date).ToString ());
                 }
 
             } catch (DbUpdateConcurrencyException) {
@@ -100,9 +109,9 @@ namespace backend.Controllers {
                 oferta.DataValidade = DateTime.Parse (Request.Form["dataValidade"]);
                 oferta.IdProduto = int.Parse (Request.Form["idProduto"]);
                 oferta.IdUsuario = int.Parse (Request.Form["idUsuario"]);
-                oferta.Titulo = Request.Form["titulo"].ToString();
-                oferta.CheckDoacao = Request.Form["checkDoacao"].ToString();
-                oferta.DoacaoOng = int.Parse(Request.Form["doacaoOng"]);
+                oferta.Titulo = Request.Form["titulo"].ToString ();
+                oferta.CheckDoacao = Request.Form["checkDoacao"].ToString ();
+                oferta.DoacaoOng = int.Parse (Request.Form["doacaoOng"]);
 
                 await _repositorio.Alterar (oferta);
             } catch (DbUpdateConcurrencyException) {
@@ -131,8 +140,8 @@ namespace backend.Controllers {
             try {
                 await _repositorio.Excluir (oferta);
             } catch (System.Exception ex) {
-                return BadRequest(new {
-                    mensagem="Não foi possível excluir. Raw: " + ex
+                return BadRequest (new {
+                    mensagem = "Não foi possível excluir. Raw: " + ex
                 });
             }
             return oferta;
@@ -143,11 +152,11 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="filtro"></param>
         /// <returns>Lista contendo as Ofertas</returns>
-        [HttpPost("FiltrarPorNome")]
-        public ActionResult<List<Oferta>> PostFiltrar (FiltroViewModel filtro){
+        [HttpPost ("FiltrarPorNome")]
+        public ActionResult<List<Oferta>> PostFiltrar (FiltroViewModel filtro) {
 
-            List<Oferta> oferta_filtrar = _repositorio.FiltrarPorNome(filtro);
-            
+            List<Oferta> oferta_filtrar = _repositorio.FiltrarPorNome (filtro);
+
             return oferta_filtrar;
         }
 
@@ -155,10 +164,10 @@ namespace backend.Controllers {
         /// Lista as ofertas ordenadas
         /// </summary>
         /// <returns>Listas as ofertas</returns>
-        [HttpGet("Ordenar")]
-        public ActionResult<List<Oferta>> GetOrdenar (){
-            
-            List<Oferta> oferta_ordenar = _repositorio.Ordenar();
+        [HttpGet ("Ordenar")]
+        public ActionResult<List<Oferta>> GetOrdenar () {
+
+            List<Oferta> oferta_ordenar = _repositorio.Ordenar ();
 
             return oferta_ordenar;
         }

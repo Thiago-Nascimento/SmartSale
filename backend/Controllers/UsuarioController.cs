@@ -100,31 +100,39 @@ namespace backend.Controllers {
         /// <param name="id">int id do usuario</param>
         /// <param name="usuario">string nome do usuario</param>
         /// <returns>Usuario modificado</returns>
-        [Authorize]
+        // [Authorize]
         [HttpPut ("{id}")]
-        public async Task<ActionResult<Usuario>> Put (int id, [FromForm] Usuario usuario) {
-            if (id != usuario.IdUsuario) {
-                return BadRequest ("Usuario não encontrado");
+        public async Task<ActionResult<Usuario>> Put (int id, [FromForm] UsuarioViewModel usuario) {
+            var usuarioCadastrado = await _repositorio.BuscarPorIDRetornandoCredenciais (id);
+
+            if (Request.Form.Files[0] != null) {
+                usuarioCadastrado.Foto = _uploadRepo.Upload(Request.Form.Files[0], "imgPerfil");
             }
+
+            // if (id != usuario.IdUsuario) {
+            //     return BadRequest ("Usuario não encontrado");
+            // }
+
             try {
-                var arquivo = Request.Form.Files[0];
+                // var arquivo = Request.Form.Files[0];
 
-                usuario.NomeUsuario = Request.Form["nomeUsuario"].ToString ();
-                usuario.Documento = Request.Form["documento"].ToString ();
-                usuario.RazaoSocial = Request.Form["razaoSocial"].ToString ();
-                usuario.Email = Request.Form["email"].ToString ();
-                usuario.Senha = Request.Form["senha"].ToString ();
-                usuario.Telefone = Request.Form["telefone"].ToString ();
-                usuario.Telefone2 = Request.Form["telefone2"].ToString ();
-                usuario.Endereco = Request.Form["endereco"].ToString ();
-                usuario.Cep = Request.Form["cep"].ToString ();
-                usuario.Pontuacao = int.Parse (Request.Form["pontuacao"]);
-                usuario.IdTipoUsuario = int.Parse (Request.Form["idTipoUsuario"]);
-                usuario.IdRegiao = int.Parse (Request.Form["idRegiao"]);
+                // usuario.NomeUsuario = Request.Form["nomeUsuario"].ToString ();
+                // usuario.Documento = Request.Form["documento"].ToString ();
+                // usuario.RazaoSocial = Request.Form["razaoSocial"].ToString ();
+                // usuario.Email = Request.Form["email"].ToString ();
+                // usuario.Senha = Request.Form["senha"].ToString ();
+                // usuario.Telefone = Request.Form["telefone"].ToString ();
+                // usuario.Telefone2 = Request.Form["telefone2"].ToString ();
+                // usuario.Endereco = Request.Form["endereco"].ToString ();
+                // usuario.Cep = Request.Form["cep"].ToString ();
+                // usuario.Pontuacao = int.Parse (Request.Form["pontuacao"]);
+                // usuario.IdTipoUsuario = int.Parse (Request.Form["idTipoUsuario"]);
+                // usuario.IdRegiao = int.Parse (Request.Form["idRegiao"]);
+                // usuario.Idade = int.Parse(Request.Form["idade"]);
 
-                usuario.Foto = _uploadRepo.Upload (arquivo, "imgPerfil");
+                // usuario.FotoUsuario = _uploadRepo.Upload (arquivo, "imgPerfil");
 
-                await _repositorio.Alterar (usuario);
+                await _repositorio.Alterar (usuarioCadastrado);
 
             } catch (DbUpdateConcurrencyException) {
                 var usuario_valida = await _repositorio.BuscarPorID (id);
@@ -138,6 +146,7 @@ namespace backend.Controllers {
 
             return NoContent ();
         }
+
 
         /// <summary>
         /// Deleta o usuario especificado
@@ -155,8 +164,8 @@ namespace backend.Controllers {
             try {
                 await _repositorio.Excluir (usuario);
             } catch (Microsoft.EntityFrameworkCore.DbUpdateException ex) {
-                return BadRequest(new {
-                    mensagem="Erro! O usuário provavelmente está atrelado a algumas ofertas, não é possível excluí-lo. Raw: " + ex
+                return BadRequest (new {
+                    mensagem = "Erro! O usuário provavelmente está atrelado a algumas ofertas, não é possível excluí-lo. Raw: " + ex
                 });
             }
 

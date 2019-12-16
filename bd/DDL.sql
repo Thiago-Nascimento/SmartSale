@@ -30,7 +30,7 @@ CREATE table Usuario
 	Razao_Social VARCHAR(255),
 	Email varchar(255) not null,
 	Senha varchar(255) not null,
-	Foto_Usuario VARCHAR(255),
+	Foto VARCHAR(255),
 	Telefone VARCHAR(255) not null,
 	Telefone_2 VARCHAR(255),
 	Endereco varchar(255) not null,
@@ -60,6 +60,8 @@ CREATE table Oferta
 	Data_Validade DATE not null,
 	Id_Produto int foreign key references Produto(Id_Produto) not null,
 	Id_Usuario int foreign key references Usuario(Id_Usuario) not null
+	checkDoacao VARCHAR(255),
+	doacaoOng int,
 );
 
 CREATE table Reserva

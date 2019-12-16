@@ -25,6 +25,15 @@ namespace backend.Repositories {
             }
         }
 
+         public async Task<Usuario> BuscarPorIDRetornandoCredenciais (int id) {
+            Usuario usuario = new Usuario ();
+            using (BD_SmartSaleContext _context = new BD_SmartSaleContext ()) {
+                usuario = await _context.Usuario.FindAsync (id);
+
+                return usuario;
+            }
+        }
+
         public async Task<Usuario> Excluir (Usuario usuario) {
             using (BD_SmartSaleContext _context = new BD_SmartSaleContext ()) {
                 _context.Usuario.Remove (usuario);
