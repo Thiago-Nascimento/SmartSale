@@ -333,6 +333,18 @@ input[type=text], select {
     justify-content: center;
     padding: 10px;
 }
+.campo_cadastrousuario_e{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.campo_cadastrousuario_e input{
+    border: solid 1px var(--cinza);
+    padding: 10px;
+    width: 330px;
+    border-radius: 4px;    
+}
 
 .descricao {
     font-size: 15px;
