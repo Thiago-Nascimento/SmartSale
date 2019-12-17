@@ -1375,7 +1375,7 @@ input[type=text], select {
     /* Avatar + Entrar - btn login */
     display: flex;
     justify-content: flex-start;
-    width: 204px;
+    /* width: 204px; */
 }
 
 .botao-login p {
