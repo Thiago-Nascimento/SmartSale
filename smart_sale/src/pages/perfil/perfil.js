@@ -179,6 +179,9 @@ class Perfil extends Component {
         })
             .then(() => {
                 this.setState(console.log("Imagem alterada"))
+
+                // Quando alterar a foto a pagina ira dar refresh automaticamente
+                window.location.reload(true);
             })
             .catch(error => {
                 console.log("Deu erro: " + error)
@@ -201,11 +204,10 @@ class Perfil extends Component {
                             <section className="esquerdo">
                                 <img src={"http://localhost:5000/" + this.state.dados.foto} alt="foto de perfil do usuario" className="perfil_foto" />
 
-                                <form onSubmit={this.putImagem}>
-                                    <input type="file" onChange={this.putSetStateFile} ref={this.state.putimg.fotoUsuario} name="fotoUsuario" />
+                                <form onSubmit={this.putImagem} className="form_putimg_perfil">
+                                    <input type="file" onChange={this.putSetStateFile} ref={this.state.putimg.fotoUsuario} name="fotoUsuario" id="input_file_perfil" placeholder="Foto"/>
                                     <button type="submit">Alterar</button>
                                 </form>
-
                                 <div className="textos">
                                     <h4>Dados pessoais</h4>
                                     <p>Endereco: {this.state.dados.endereco}</p>
