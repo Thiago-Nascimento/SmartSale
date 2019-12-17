@@ -3232,3 +3232,36 @@ main .paginaProduto_pag {
         height: 30%;
     }
 }
+
+/* Responsivo Perfil */
+@media (max-width: 1169px){
+    .perfil_pag .cont{
+        width: 90%;
+    }
+    .perfil_pag .direito{
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 768px){
+    .perfil_pag .cont{
+        height: 1200px;
+    }
+    .produtos_usuario{
+        display: flex;
+        flex-direction: column;
+    }
+    .Card_Oferta .img_card_oferta img{
+        width: 130px;
+        height: 120px;
+    }
+    .perfil_btn_produto{
+        display: none;
+    }
+    .perfil_banner h2{
+        display: flex;
+        align-items: flex-start;
+        height: 200px;
+        padding-left: 265px;
+    }
+}
