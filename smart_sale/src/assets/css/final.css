@@ -13,6 +13,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 header {
     height: 130px;
     display: flex;
@@ -27,11 +28,13 @@ header {
     width: 630px;
     height: 35px;
     align-items: center;
+    
 }
-
-#search-btn {
-    width: 35px;
-    height: 35px;
+#search-btn{
+    padding: 4px;
+    border-radius: 0px 5px 5px 0px;
+    width: 26px;
+    height: 26px;
     background-color: white;
     cursor: pointer;
 }
@@ -39,7 +42,6 @@ header {
 .ca form .search-btn {
     width: 10%;
     background-color: white;
-    border: none;
     color: var(--cinza);
     text-align: center;
     display: inline-block;
@@ -48,18 +50,18 @@ header {
     border-color: white;
     outline: 0px auto -webkit-focus-ring-color;
 }
-
 .ca form #search-bar {
-    width: 700px;
+    border-radius: 5px 0px 0px 5px;
+    width: 46vw;
     border: none;
     height: 100%;
     outline: 0px auto -webkit-focus-ring-color;
 }
-
 .separador-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 /* cadastro produto venda e doacao */
