@@ -271,7 +271,7 @@ class Home extends Component {
                         <div className="roxo">
                             <div className="container">
                                 <section className="rank">
-                                    <p>RANKING</p>
+                                    <h3>RANKING</h3>
                                     <div className="branco">
                                         <div className="primeiros_home">
                                             {
@@ -317,7 +317,7 @@ class Home extends Component {
                         </div>
                         <section className="container">
                             <section className="tongs">
-                                <h4>Instituições beneficiadas</h4>
+                                <h3>Instituições beneficiadas</h3>
                             </section>
                             <div className="ongs">
                                 {

@@ -30,25 +30,25 @@ class Header extends Component {
             headers: {
                 "Content-Type": "application/json"
             },
-            body : JSON.stringify({filtro : this.state.filtro})
+            body: JSON.stringify({ filtro: this.state.filtro })
         })
-        .then(response => response.json())
-        .then(response => {
-            this.setState({lista : response});
-            
-            this.props.history.push({
-                pathname:"/ofertas",
-                state : {
-                    listaFiltrada: this.state.lista
-                }
-            })  
-            
-            window.location.reload();
-            
-        })
-        .catch(erro => {
-            console.log("Erro: ", erro);
-        })
+            .then(response => response.json())
+            .then(response => {
+                this.setState({ lista: response });
+
+                this.props.history.push({
+                    pathname: "/ofertas",
+                    state: {
+                        listaFiltrada: this.state.lista
+                    }
+                })
+
+                window.location.reload();
+
+            })
+            .catch(erro => {
+                console.log("Erro: ", erro);
+            })
     }
 
     atualizaEstado = (event) => {
@@ -62,40 +62,43 @@ class Header extends Component {
                     <div className="container">
                         <div className="ca">
                             <div className="separador-header">
+                                {/* logo */}
                                 <div className="logo">
                                     <Link to="/">
                                         <img src={Logo} title="Home Smart Sale" alt="logo smart sale" />
                                     </Link>
                                 </div>
-                                    <form 
-                                        onSubmit={this.filtrar}
-                                    >
-                                        <input type="search"
-                                            placeholder="Buscar produtos, marcas e muito mais ..."
-                                            aria-label="Faça uma busca"
-                                            name="filtro"
-                                            onChange={this.atualizaEstado}
-                                            id="search-bar"
-                                        />
-                                        <img src={icon_search} id="search-btn" type="submit" alt="Icone logo"/>
-                                    </form>
+                                {/* input + botao de pesquisa */}
+                                <form
+                                    onSubmit={this.filtrar}
+                                >
+                                    <input type="search"
+                                        placeholder="Buscar produtos, marcas e muito mais ..."
+                                        aria-label="Faça uma busca"
+                                        name="filtro"
+                                        onChange={this.atualizaEstado}
+                                        id="search-bar"
+                                    />
+                                    <img src={icon_search} id="search-btn" type="submit" alt="Icone logo" />
+                                </form>
+                                {/* botão de login */}
                                 <div className="botao-login">
 
                                     {usuarioAutenticado() ? (
-                                            <>
+                                        <>
                                             <Link onClick={this.logout} to="/">
                                                 <img src={LogoutIcon} alt="Link para fazer logout" title="Sair" id="entrar" />
                                                 <p>Sair</p>
-                                            </Link>     
-                                            </>
-                                        ) : (
+                                            </Link>
+                                        </>
+                                    ) : (
                                             <>
-                                            <Link to="/login">
-                                                <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar" />
-                                                <p>Entrar</p>
-                                            </Link>                                            
+                                                <Link to="/login">
+                                                    <img src={Avatar} alt="Link para fazer login" title="Faça login" id="entrar" />
+                                                    <p>Entrar</p>
+                                                </Link>
                                             </>
-                                        )                                        
+                                        )
                                     }
 
                                 </div>

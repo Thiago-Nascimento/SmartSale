@@ -25,7 +25,7 @@ header {
 
 .ca form {
     display: flex;
-    width: 630px;
+    width: 40vw;
     height: 35px;
     align-items: center;
     
@@ -61,7 +61,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    width: 100%;
 }
 
 /* cadastro produto venda e doacao */
@@ -1002,7 +1002,7 @@ input[type=text], select {
     align-items: center;
 }
 
-.home_pag .botao-login {
+.home_pag {
     display: flex;
     justify-content: flex-end;
 }
@@ -1030,7 +1030,10 @@ input[type=text], select {
 }
 
 .home_pag .container h3 {
-    margin-left: 1.2%;
+    /* margin-left: 1.2%; */
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
 .home_pag .ver a {
@@ -1124,12 +1127,12 @@ input[type=text], select {
     align-items: center;
 }
 
-.home_pag .rank p {
-    font-size: 20px;
+.home_pag .rank h3 {
+    font-size: 1.5em;
     color: white;
     padding-bottom: 35px;
-    /* display: flex;
-    justify-content: center; */
+    color: white;
+    text-transform: uppercase;
 }
 
 .home_pag .ongs {
@@ -1226,7 +1229,7 @@ input[type=text], select {
 
 .categorias_home {
     padding-top: 15px;
-    width: 1150px;
+    width: 100%;
 }
 
 .Categorias_home {
@@ -1265,7 +1268,10 @@ input[type=text], select {
 }
 
 #produtos_titulo {
-    margin-left: 1.2%;
+    /* margin-left: 1.2%; */
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
 .produtos_home {
@@ -1375,7 +1381,6 @@ input[type=text], select {
     /* Avatar + Entrar - btn login */
     display: flex;
     justify-content: flex-start;
-    /* width: 204px; */
 }
 
 .botao-login p {
@@ -2392,6 +2397,10 @@ main .paginaProduto_pag {
 
 /* pagina quem somos */
 
+.QuemSomos {
+    background-color: var(--cinza_claro);
+}
+
 .imagem_quemsomos {
     background-image: linear-gradient(rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 0.5)), url(../img/armario_2.jpg);
     height: 500px;
@@ -2416,7 +2425,7 @@ main .paginaProduto_pag {
 .quemsomos_texto_one p {
     font-size: 20px;
     margin-top: 25px;
-    width: 800px;
+    width: 60%;
 }
 
 .quemsomos_texto_one h1 {
@@ -2447,6 +2456,14 @@ main .paginaProduto_pag {
     justify-content: center;
 }
 
+.quemsomos_esquerdo p {
+    padding: 1.5vw 0;
+}
+
+.quemsomos_esquerdo h2 {
+    padding: 1vw 0;
+}
+
 .quemsomos_esquerdo {
     color: #707070;
 }
@@ -2457,6 +2474,15 @@ main .paginaProduto_pag {
 }
 
 @media (min-width: 1170px) {
+    .quemsomos_texto_one p {
+        font-size: 20px;
+        width: 80%;
+    }
+    .quemsomos_direito {
+        width: 40%;
+        height: 40%;
+    }
+
     .filtros {
         background-position: top center;
         background-image: linear-gradient(rgba(162, 0, 203, 0.6), rgba(162, 0, 203, 0.6)), url(../img/img4.png);
@@ -2483,6 +2509,10 @@ main .paginaProduto_pag {
 }
 
 @media (min-width: 768px) {
+    .quemsomos_texto_two {
+        height: 100%;
+        flex-wrap: wrap;
+    }
     .divSelects {
         width: 50%;
         display: flex;
@@ -2841,9 +2871,28 @@ main .paginaProduto_pag {
 /* não sei, mas é menor, vai diminuindo e alinhando os elementos */
 
 @media (max-width: 1169px) {
+    .contHeader{
+        /* background-color: yellow; */
+    }
     header {
         background-color: var(--verde);
         height: 110px;
+    }
+    .Produtos_home {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .titulos_categorias_home {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imagem_categorias_home{
+        display: none;
     }
     .menu {
         width: 406px;
@@ -2876,6 +2925,32 @@ main .paginaProduto_pag {
     /* home */
     .home_pag .whitebox {
         width: 85vw;
+        padding-bottom: 4vw;
+
+    }
+    .home_pag .pdts2, .pdt {
+        margin: 4% auto;
+        flex-wrap: wrap;
+        width: 85vw;
+        flex-direction: column;
+    }
+    .home_pag #white {
+        margin: 4% auto;
+        flex-wrap: wrap;
+        width: 85vw;
+        flex-direction: column;
+    }
+    
+    .Card_Oferta {
+        width: 240px;
+        height: 245px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        border: none;
+        box-shadow: 4px 4px 15px #cccccc;
     }
     .home_pag .cnjt {
         display: flex;
@@ -2935,10 +3010,16 @@ main .paginaProduto_pag {
 }
 
 /* celular */
-
 @media (max-width: 767px) {
     /* header */
+    /* .contHeader{
+        background-color: red;
+    } */
+    .ca form{
+        display: none;
+    }
     .menu {
+        background-color: var(--laranja);
         display: none;
         width: 100%;
         height: 100%;
@@ -2961,7 +3042,7 @@ main .paginaProduto_pag {
         /* logo */
         height: 75px;
         width: 164px;
-        padding-top: 20px;
+        /* padding-top: 20px; */
     }
     .container {
         /* width: 100%; */
@@ -2974,10 +3055,14 @@ main .paginaProduto_pag {
         padding: 0 0;
     }
     #entrar {
-        display: none;
+        /* ícone do login */
+        /* display: none; */
+    }
+    .botao-login {
+        /* display: none; */
     }
     .botao-login p {
-        display: none;
+        /* display: none; */
     }
     .ca {
         display: flex;
@@ -2999,6 +3084,7 @@ main .paginaProduto_pag {
         right: 10px;
         top: 0px;
     }
+    
     /* pagina perfil */
     .perfil_pag {
         width: 100%;
