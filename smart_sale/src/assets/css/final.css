@@ -3080,7 +3080,7 @@ main .paginaProduto_pag {
     }
 }
 
-/* Responsivo Ongs */
+/* x' Ongs */
 
 @media (max-width: 1169px) {
     .Ongs {
@@ -3179,4 +3179,40 @@ main .paginaProduto_pag {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
+}
+
+/* Responsivo Quem Somos */
+@media (max-width: 1169px){
+    .quemsomos_texto_two{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .quemsomos_esquerdo p{
+        width: auto;
+        font-size: 15px;
+        height: 30%;
+    }
+    .quemsomos_direito img{
+        padding: none;
+        margin: none;
+        width: 330px;
+        height: 330px;
+    }
+    .quemsomos_texto_two{
+        height: auto;
+    }
+    .imagem_quemsomos{
+        width: 100%;
+    }
+    .quemsomos_texto_one p{
+        width: 70%;
+    }
+}
+@media (max-width: 768px){
+    .quemsomos_texto_one p{
+        font-size: 15px;
+        width: 70%;
+        height: 30%;
+    }
 }

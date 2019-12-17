@@ -6,7 +6,7 @@ import Avatar from '../../assets/img/avatar.png';
 import LogoutIcon from '../../assets/img/logout.svg'
 import icon_search from '../../assets/img/search_icon.png';
 
-import { usuarioAutenticado, parseJwt } from '../../services/auth';
+import { usuarioAutenticado } from '../../services/auth';
 
 class Header extends Component {
     constructor(props) {
