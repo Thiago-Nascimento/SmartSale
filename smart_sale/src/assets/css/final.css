@@ -1316,6 +1316,14 @@ input[type=text], select {
     background-color: #FFFFFF;
     border-radius: 6px;
 }
+.containerOngs .conteudo .texto{
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
+}
+.ongs_pag .container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
 .ongs_pag {
     background-color: var(--cinza_claro);
@@ -2414,6 +2422,12 @@ main .paginaProduto_pag {
 
 .quemsomos_pag {
     padding-bottom: 30px;
+    background-color: var(--cinza_claro);
+}
+
+.quemsomos_tudo {
+    background-color: var(--cinza_claro);
+    padding-bottom: 1px;
 }
 
 .quemsomos_texto_one {
@@ -2435,20 +2449,20 @@ main .paginaProduto_pag {
     font-size: 30px;
 }
 
-.quemsomos_partetwo {
-    background-color: white;
+.quemsomos_partetwo {   
     width: 75%;
     margin: auto;
     margin-bottom: 30px;
 }
 
 .quemsomos_texto_two {
-    border-radius: 10px;
-    box-shadow: 10px 5px 19px 0px rgba(0, 0, 0, 0.29);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 450px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 19px 0px rgba(0, 0, 0, 0.29);
+    background-color: white;
 }
 
 .quemsomos_texto_two .quemsomos_esquerdo {
