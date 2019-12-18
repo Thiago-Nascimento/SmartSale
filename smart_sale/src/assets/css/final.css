@@ -1164,6 +1164,7 @@ input[type=text], select {
     display: flex;
     justify-content: center;
     margin: 60px 0px 0px;
+    color: var(--grafite);
 }
 
 .home_pag #white {
@@ -1172,6 +1173,10 @@ input[type=text], select {
     background-color: white;
     margin: 4% auto;
     padding: 2% 0;
+}
+
+.home_pag #white h3{
+    color: var(--grafite);
 }
 
 .titulos_categorias_home {
@@ -1200,6 +1205,10 @@ input[type=text], select {
     padding: 2% 0;
     margin: 4% auto;
     width: 1200px;
+}
+
+.home_pag .pdt h3{
+    color: var(--grafite);
 }
 
 .home_pag .cardhome2 {
@@ -2906,6 +2915,11 @@ main .paginaProduto_pag {
     .home_pag .whitebox {
         width: 85vw;
     }
+
+    .txthome {
+        color: var(--grafite);
+    }
+
     .home_pag .cnjt {
         display: flex;
         flex-direction: column;
