@@ -167,6 +167,7 @@ class Ofertas extends Component {
                                                         <option key={regiao.idRegiao} value={regiao.bairro}>{regiao.bairro}</option>
                                                     )
                                                 })
+                                                
                                             }
                                         </select>
                                         <button type="submit" className="btnAplicarFiltros">Aplicar</button>
