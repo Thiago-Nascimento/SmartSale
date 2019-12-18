@@ -13,7 +13,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 header {
     height: 130px;
     display: flex;
@@ -26,11 +25,18 @@ header {
 .ca form {
     display: flex;
     width: 40vw;
-    height: 35px;
+    height: 34px;
     align-items: center;
-    
 }
-#search-btn{
+
+.separador-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#search-btn {
     padding: 4px;
     border-radius: 0px 5px 5px 0px;
     width: 26px;
@@ -50,18 +56,13 @@ header {
     border-color: white;
     outline: 0px auto -webkit-focus-ring-color;
 }
+
 .ca form #search-bar {
     border-radius: 5px 0px 0px 5px;
     width: 46vw;
     border: none;
     height: 100%;
     outline: 0px auto -webkit-focus-ring-color;
-}
-.separador-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
 }
 
 /* cadastro produto venda e doacao */
@@ -625,7 +626,7 @@ input[type=text], select {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .cardscadastrovendedor {
         width: 700px;
         margin: auto;
@@ -780,7 +781,7 @@ input[type=text], select {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .cadastroelogin_pag {
         width: 750px;
     }
@@ -1005,6 +1006,7 @@ input[type=text], select {
 .home_pag {
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
 }
 
 .home_pag #entrar {
@@ -1254,7 +1256,7 @@ input[type=text], select {
 }
 
 .Produtos_home {
-    width: 1170px;
+    width: 100%;
     /* background-color: yellow; */
     display: flex;
     align-items: center;
@@ -1263,7 +1265,7 @@ input[type=text], select {
 
 .produtos_home {
     line-height: 2.0;
-    margin: 20px 10px;
+    /* margin: 20px 10px; */
     text-align: center;
 }
 
@@ -1275,7 +1277,7 @@ input[type=text], select {
 }
 
 .produtos_home {
-    width: 1340px;
+    width: 100%;
     flex-wrap: wrap;
 }
 
@@ -1452,10 +1454,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.btnmenu, .btnclose {
-    /* display: none; */
 }
 
 /* paginaProduto */
@@ -1826,22 +1824,22 @@ main .paginaProduto_pag {
 } */
 
 /* pagina perfil */
-.form_putimg_perfil{
-    background:linear-gradient(var(--roxo));
-	background-color: var(--roxo);
-	border-radius:25px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-    font-size:17px;
-	padding:14px 27px;
-	text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
+
+.form_putimg_perfil {
+    background: linear-gradient(var(--roxo));
+    background-color: var(--roxo);
+    border-radius: 25px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 14px 27px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
     width: 200px;
     padding-left: 5px;
 }
-
 
 .perfil_pag {
     margin: auto;
@@ -2403,7 +2401,7 @@ main .paginaProduto_pag {
 
 .imagem_quemsomos {
     background-image: linear-gradient(rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 0.5)), url(../img/armario_2.jpg);
-    height: 500px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2423,13 +2421,13 @@ main .paginaProduto_pag {
 }
 
 .quemsomos_texto_one p {
-    font-size: 20px;
-    margin-top: 25px;
-    width: 60%;
+    padding: 2.5vw;
+    width: 40vw;
 }
 
 .quemsomos_texto_one h1 {
     font-size: 30px;
+    padding: 2vw 0 0 0;
 }
 
 .quemsomos_partetwo {
@@ -2445,7 +2443,7 @@ main .paginaProduto_pag {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;
+    height: auto;
 }
 
 .quemsomos_texto_two .quemsomos_esquerdo {
@@ -2473,16 +2471,15 @@ main .paginaProduto_pag {
     height: 400px;
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 1169px) {
     .quemsomos_texto_one p {
         font-size: 20px;
-        width: 80%;
+        width: 70%;
     }
     .quemsomos_direito {
         width: 40%;
         height: 40%;
     }
-
     .filtros {
         background-position: top center;
         background-image: linear-gradient(rgba(162, 0, 203, 0.6), rgba(162, 0, 203, 0.6)), url(../img/img4.png);
@@ -2508,10 +2505,20 @@ main .paginaProduto_pag {
     /* pagina Produto */
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .quemsomos_texto_two {
-        height: 100%;
+        width: 100%;
         flex-wrap: wrap;
+    }
+    .quemsomos_texto_two .quemsomos_esquerdo {
+        padding: 10px 10px;
+        width: 200px;
+        justify-content: center;
+    }
+    .quemsomos_esquerdo p {
+        width: auto;
+        font-size: 15px;
+        height: 50%;
     }
     .divSelects {
         width: 50%;
@@ -2871,9 +2878,13 @@ main .paginaProduto_pag {
 /* não sei, mas é menor, vai diminuindo e alinhando os elementos */
 
 /* tablet */
+
 @media (max-width: 1169px) {
-    .contHeader{
+    .contHeader {
         /* background-color: yellow; */
+    }
+    .separador-header {
+        width: 70vw;
     }
     header {
         background-color: var(--verde);
@@ -2882,17 +2893,31 @@ main .paginaProduto_pag {
     .Produtos_home {
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        flex-direction: row;
         align-items: center;
         justify-content: space-around;
     }
+    .rank {}
+    /* ------------------------------------------------ */
+    .Usuarios {
+        display: flex;
+        align-items: center;
+        text-align: right;
+    }
+    .home_pag .rank .branco p {
+        font-size: 1em;
+        color: black;
+        padding: 0;
+        /* background-color: yellow; */
+    }
+    /* ------------------------------------------------ */
     .titulos_categorias_home {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
-
-    .imagem_categorias_home{
+    .imagem_categorias_home {
         display: none;
     }
     .menu {
@@ -2915,7 +2940,7 @@ main .paginaProduto_pag {
     }
     .container {
         width: 85vw;
-        padding: 0px 20px;
+        padding: 0px 0px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -2927,7 +2952,6 @@ main .paginaProduto_pag {
     .home_pag .whitebox {
         width: 85vw;
         padding-bottom: 4vw;
-
     }
     .home_pag .pdts2, .pdt {
         margin: 4% auto;
@@ -2941,7 +2965,6 @@ main .paginaProduto_pag {
         width: 85vw;
         flex-direction: column;
     }
-    
     .Card_Oferta {
         width: 240px;
         height: 245px;
@@ -3011,23 +3034,23 @@ main .paginaProduto_pag {
 }
 
 /* celular */
-@media (max-width: 767px) {
+
+@media (max-width: 768px) {
     /* header */
-    header{
+    header {
         background-color: var(--laranja);
     }
-    .contHeader{
+    .contHeader {
         /* padding-bottom: 30px; */
-
     }
     .menu-centro .menu {
         display: flex;
+        z-index: 2;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.9);
-
         padding: 15px 0px;
         margin: auto;
         text-align: center;
@@ -3042,7 +3065,7 @@ main .paginaProduto_pag {
         right: 10px;
         top: 0px;
     }
-    .ca form{
+    .ca form {
         display: none;
     }
     .menu {
@@ -3106,13 +3129,14 @@ main .paginaProduto_pag {
         color: #FFF;
         float: left;
         cursor: pointer;
-        z-index: 1;
+        z-index: 2;
         position: absolute;
         right: 10px;
         top: 0px;
     }
     .btnmenu {
         display: block;
+        z-index: 1;
         color: white;
         width: 56px;
         height: 56px;
@@ -3123,14 +3147,12 @@ main .paginaProduto_pag {
         border-color: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
         background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     }
-    .quemsomos_texto_one h1{
+    .quemsomos_texto_one h1 {
         padding-top: 50px;
     }
-
-    .quemsomos_texto_one p{
+    .quemsomos_texto_one p {
         margin-bottom: 30px;
     }
-    
     /* pagina perfil */
     .perfil_pag {
         width: 100%;
@@ -3231,6 +3253,13 @@ main .paginaProduto_pag {
 /* x' Ongs */
 
 @media (max-width: 1169px) {
+    .ca form {
+        width: 30vw;
+        align-self: center;
+    }
+    .ca form #search-bar {
+        width: 30vw;
+    }
     .Ongs {
         display: flex;
         align-items: center;
@@ -3330,35 +3359,38 @@ main .paginaProduto_pag {
 }
 
 /* Responsivo Quem Somos */
-@media (max-width: 1169px){
-    .quemsomos_texto_two{
+
+@media (max-width: 1169px) {
+    .quemsomos_texto_two {
         display: flex;
         align-items: center;
         flex-direction: column;
+        height: auto;
     }
-    .quemsomos_esquerdo p{
+    .quemsomos_esquerdo p {
         width: auto;
         font-size: 15px;
         height: 30%;
     }
-    .quemsomos_direito img{
+    .quemsomos_direito img {
         padding: none;
         margin: none;
         width: 330px;
         height: 330px;
     }
-    .quemsomos_texto_two{
-        height: auto;
-    }
-    .imagem_quemsomos{
+    .imagem_quemsomos {
         width: 100%;
     }
-    .quemsomos_texto_one p{
+    .quemsomos_texto_one p {
         width: 70%;
     }
 }
-@media (max-width: 768px){
-    .quemsomos_texto_one p{
+
+@media (max-width: 768px) {
+    .quemsomos_pag {
+        /* padding-top: 120px; */
+    }
+    .quemsomos_texto_one p {
         font-size: 15px;
         width: 70%;
         height: 30%;
@@ -3366,34 +3398,53 @@ main .paginaProduto_pag {
 }
 
 /* Responsivo Perfil */
-@media (max-width: 1169px){
-    .perfil_pag .cont{
+
+@media (max-width: 1169px) {
+    .perfil_pag .cont {
         width: 90%;
     }
-    .perfil_pag .direito{
+    .perfil_pag .direito {
         display: flex;
         align-items: center;
     }
+    .home_pag .branco {
+        width: 70vw;
+    }
 }
-@media (max-width: 768px){
-    .perfil_pag .cont{
+
+@media (max-width: 768px) {
+    .perfil_pag .cont {
         height: 1200px;
     }
-    .produtos_usuario{
+    .produtos_usuario {
         display: flex;
         flex-direction: column;
     }
-    .Card_Oferta .img_card_oferta img{
+    .Card_Oferta .img_card_oferta img {
         width: 130px;
         height: 120px;
     }
-    .perfil_btn_produto{
+    .perfil_btn_produto {
         display: none;
     }
-    .perfil_banner h2{
+    .perfil_banner h2 {
         display: flex;
         align-items: flex-start;
         height: 200px;
         padding-left: 265px;
     }
 }
+
+/* Responsivo Header Tablet  */
+
+/* O botao do menu é none */
+.btnmenu{
+    display: none;
+}
+/* Quando a tela entrar no mobile  o btnmenu ira aparecer*/
+@media(max-width: 768px){
+    .btnmenu{
+        display: block;
+    }
+}
+

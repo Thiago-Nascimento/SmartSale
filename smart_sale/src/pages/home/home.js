@@ -19,8 +19,6 @@ import fruta from '../../assets/img/frutas.jpg'
 import legume from '../../assets/img/legume.jpg'
 import cereais from '../../assets/img/cereais.jpg'
 
-
-
 class Home extends Component {
 
     constructor() {
@@ -34,7 +32,6 @@ class Home extends Component {
             ongs: [],
             oferta: [],
             listaProdutos: [],
-
         }
     }
 
@@ -56,7 +53,6 @@ class Home extends Component {
 
                 this.setState({ titulo_categorias: redux })
             })
-
     }
 
     getUsuario_1 = () => {
@@ -71,8 +67,7 @@ class Home extends Component {
                 // Usado para fatiar a resposta, percorrendo os 3 primeiros colocados
                 var redux = order.slice(0, 1)
                 this.setState({ usuario_1: redux })
-            }
-            )
+            })
     }
     getUsuario_2 = () => {
         fetch('http://localhost:5000/api/Usuario/')
@@ -86,10 +81,8 @@ class Home extends Component {
                 // Usado para fatiar a resposta, percorrendo os 3 primeiros colocados
                 var redux = order.slice(1, 2)
 
-
                 this.setState({ usuario_2: redux })
-            }
-            )
+            })
     }
 
     getUsuario_3 = () => {
@@ -105,8 +98,7 @@ class Home extends Component {
                 var redux = order.slice(2, 3)
 
                 this.setState({ usuario_3: redux })
-            }
-            )
+            })
     }
 
     getOngs = () => {
