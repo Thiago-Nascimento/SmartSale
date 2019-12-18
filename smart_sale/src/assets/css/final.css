@@ -13,6 +13,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 header {
     height: 130px;
     display: flex;
@@ -27,11 +28,13 @@ header {
     width: 630px;
     height: 35px;
     align-items: center;
+    
 }
-
-#search-btn {
-    width: 35px;
-    height: 35px;
+#search-btn{
+    padding: 4px;
+    border-radius: 0px 5px 5px 0px;
+    width: 26px;
+    height: 26px;
     background-color: white;
     cursor: pointer;
 }
@@ -39,7 +42,6 @@ header {
 .ca form .search-btn {
     width: 10%;
     background-color: white;
-    border: none;
     color: var(--cinza);
     text-align: center;
     display: inline-block;
@@ -48,18 +50,18 @@ header {
     border-color: white;
     outline: 0px auto -webkit-focus-ring-color;
 }
-
 .ca form #search-bar {
-    width: 700px;
+    border-radius: 5px 0px 0px 5px;
+    width: 46vw;
     border: none;
     height: 100%;
     outline: 0px auto -webkit-focus-ring-color;
 }
-
 .separador-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 /* cadastro produto venda e doacao */
@@ -330,6 +332,18 @@ input[type=text], select {
     display: flex;
     justify-content: center;
     padding: 10px;
+}
+.campo_cadastrousuario_e{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.campo_cadastrousuario_e input{
+    border: solid 1px var(--cinza);
+    padding: 10px;
+    width: 330px;
+    border-radius: 4px;    
 }
 
 .descricao {
@@ -1373,7 +1387,7 @@ input[type=text], select {
     /* Avatar + Entrar - btn login */
     display: flex;
     justify-content: flex-start;
-    width: 204px;
+    /* width: 204px; */
 }
 
 .botao-login p {
@@ -1819,6 +1833,22 @@ main .paginaProduto_pag {
 } */
 
 /* pagina perfil */
+.form_putimg_perfil{
+    background:linear-gradient(var(--roxo));
+	background-color: var(--roxo);
+	border-radius:25px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+    font-size:17px;
+	padding:14px 27px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    width: 200px;
+    padding-left: 5px;
+}
+
 
 .perfil_pag {
     margin: auto;
@@ -3078,7 +3108,7 @@ main .paginaProduto_pag {
     }
 }
 
-/* Responsivo Ongs */
+/* x' Ongs */
 
 @media (max-width: 1169px) {
     .Ongs {
@@ -3177,4 +3207,73 @@ main .paginaProduto_pag {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
+}
+
+/* Responsivo Quem Somos */
+@media (max-width: 1169px){
+    .quemsomos_texto_two{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .quemsomos_esquerdo p{
+        width: auto;
+        font-size: 15px;
+        height: 30%;
+    }
+    .quemsomos_direito img{
+        padding: none;
+        margin: none;
+        width: 330px;
+        height: 330px;
+    }
+    .quemsomos_texto_two{
+        height: auto;
+    }
+    .imagem_quemsomos{
+        width: 100%;
+    }
+    .quemsomos_texto_one p{
+        width: 70%;
+    }
+}
+@media (max-width: 768px){
+    .quemsomos_texto_one p{
+        font-size: 15px;
+        width: 70%;
+        height: 30%;
+    }
+}
+
+/* Responsivo Perfil */
+@media (max-width: 1169px){
+    .perfil_pag .cont{
+        width: 90%;
+    }
+    .perfil_pag .direito{
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 768px){
+    .perfil_pag .cont{
+        height: 1200px;
+    }
+    .produtos_usuario{
+        display: flex;
+        flex-direction: column;
+    }
+    .Card_Oferta .img_card_oferta img{
+        width: 130px;
+        height: 120px;
+    }
+    .perfil_btn_produto{
+        display: none;
+    }
+    .perfil_banner h2{
+        display: flex;
+        align-items: flex-start;
+        height: 200px;
+        padding-left: 265px;
+    }
 }
