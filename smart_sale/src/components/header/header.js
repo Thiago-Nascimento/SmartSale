@@ -5,6 +5,7 @@ import Logo from '../../assets/img/Agrupar 110.png';
 import Avatar from '../../assets/img/avatar.png';
 import LogoutIcon from '../../assets/img/logout.svg'
 import icon_search from '../../assets/img/search_icon.png';
+import $ from "jquery";
 
 import { usuarioAutenticado } from '../../services/auth';
 
@@ -13,8 +14,30 @@ class Header extends Component {
         super(props);
         this.state = {
             filtro: "",
-            lista: []
+            lista: [],
+            menu: false,
+            btnx:false
         }
+    }
+
+    toggle = () => {
+        this.setState({
+            menu: !this.state.menu,
+            btnx: !this.state.btnx
+        });
+        console.log(this.state.menu)
+        console.log(this.state.btnx)
+    }
+
+
+
+    componentDidMount() {
+    }
+
+    abrirmenu = () => {
+
+
+
     }
 
     logout = () => {
@@ -105,24 +128,33 @@ class Header extends Component {
                             </div>
                             <nav>
                                 <div className="menu-centro">
-                                    <ul className="menu">
-                                        <li><Link to="/" title="Smart sale home">Home</Link></li>
-                                        <li><Link to="/quemsomos" title="Smart sale quem somos">Quem somos</Link></li>
-                                        <li><Link to="/ongs" title="Smart sale ongs">ONGs</Link></li>
-                                        <li><Link to="/ranking" title="Smart sale ranking">Ranking</Link></li>
-                                        <li><Link to="/ofertas" title="Smart sale categorias">Ofertas</Link></li>
-                                        {
-                                            usuarioAutenticado() ? (
-                                                <li><Link to="/perfil" title="Smart sale perfil">Perfil</Link></li>
-                                            ) : (null)
-                                        }
-                                        <li><Link to="/faq" title="Smart sale faq">FAQ</Link></li>
-                                    </ul>
+                                    {
+                                        this.state.menu &&
+
+                                        <ul className="menu">
+                                            {/* <li><Link to="/login" title="Smart sale home">Login</Link></li> */}
+                                            <li><Link to="/" title="Smart sale home">Home</Link></li>
+                                            <li><Link to="/quemsomos" title="Smart sale quem somos">Quem somos</Link></li>
+                                            <li><Link to="/ongs" title="Smart sale ongs">ONGs</Link></li>
+                                            <li><Link to="/ranking" title="Smart sale ranking">Ranking</Link></li>
+                                            <li><Link to="/ofertas" title="Smart sale categorias">Ofertas</Link></li>
+                                            {
+                                                usuarioAutenticado() ? (
+                                                    <li><Link to="/perfil" title="Smart sale perfil">Perfil</Link></li>
+                                                ) : (null)
+                                            }
+                                            <li><Link to="/faq" title="Smart sale faq">FAQ</Link></li>
+                                        </ul>
+                                    }
                                 </div>
                             </nav>
                         </div>
-                        <button className="btn-menu"><i className="fa fa-bars fa-lg"></i></button>
-                        <a className="btn-close"><i className="fa fa-times"></i></a>
+                        <button className="btnmenu" onClick={this.toggle} ref={$btnmenu => this.$btnmenu = $btnmenu}><i className="fa fa-bars fa-lg"></i></button>
+                        {
+                            this.state.btnx &&
+
+                            <a className="btnclose" onClick={this.toggle} ref={btnclose => this.btnclose = btnclose}><i className="fa fa-times"></i></a>
+                        }
                     </div>
                 </div>
             </header>

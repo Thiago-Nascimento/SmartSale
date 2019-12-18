@@ -1454,8 +1454,8 @@ footer {
     justify-content: center;
 }
 
-.btn-menu, .btn-close {
-    display: none;
+.btnmenu, .btnclose {
+    /* display: none; */
 }
 
 /* paginaProduto */
@@ -2870,6 +2870,7 @@ main .paginaProduto_pag {
 
 /* não sei, mas é menor, vai diminuindo e alinhando os elementos */
 
+/* tablet */
 @media (max-width: 1169px) {
     .contHeader{
         /* background-color: yellow; */
@@ -3012,9 +3013,35 @@ main .paginaProduto_pag {
 /* celular */
 @media (max-width: 767px) {
     /* header */
-    /* .contHeader{
-        background-color: red;
-    } */
+    header{
+        background-color: var(--laranja);
+    }
+    .contHeader{
+        /* padding-bottom: 30px; */
+
+    }
+    .menu-centro .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.9);
+
+        padding: 15px 0px;
+        margin: auto;
+        text-align: center;
+    }
+    .btnclose {
+        font-size: 1.5em;
+        color: #FFF;
+        float: left;
+        cursor: pointer;
+        z-index: 1;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
     .ca form{
         display: none;
     }
@@ -3028,12 +3055,12 @@ main .paginaProduto_pag {
         top: 0;
         left: 0;
     }
-    .menu-centro {
+    /* .menu-centro {
         flex-direction: column;
         padding: 15px 0px;
         margin: auto;
         text-align: center;
-    }
+    } */
     .menu-centro li {
         padding-top: 10px;
         padding: 20px 0px;
@@ -3074,7 +3101,7 @@ main .paginaProduto_pag {
         width: 100%;
     }
     /* Botões do menu */
-    .btn-close {
+    .btnclose {
         font-size: 1.5em;
         color: #FFF;
         float: left;
@@ -3083,6 +3110,25 @@ main .paginaProduto_pag {
         position: absolute;
         right: 10px;
         top: 0px;
+    }
+    .btnmenu {
+        display: block;
+        color: white;
+        width: 56px;
+        height: 56px;
+        margin: auto;
+        border-radius: 56px;
+        border: none;
+        cursor: pointer;
+        border-color: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+        background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+    }
+    .quemsomos_texto_one h1{
+        padding-top: 50px;
+    }
+
+    .quemsomos_texto_one p{
+        margin-bottom: 30px;
     }
     
     /* pagina perfil */
