@@ -1660,6 +1660,7 @@ main .paginaProduto_pag {
 
 .cont {
     padding: 1px 0px;
+    background-color: var(--cinza_claro);
 }
 
 .cont .container {
@@ -2159,6 +2160,7 @@ main .paginaProduto_pag {
     text-align: center;
     align-items: center;
     padding-bottom: 1px;
+    background-color: var(--cinza_claro);
 }
 
 .faq_pag .bannerFaq {
