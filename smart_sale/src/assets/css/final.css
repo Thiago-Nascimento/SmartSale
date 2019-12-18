@@ -334,6 +334,18 @@ input[type=text], select {
     justify-content: center;
     padding: 10px;
 }
+.campo_cadastrousuario_e{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.campo_cadastrousuario_e input{
+    border: solid 1px var(--cinza);
+    padding: 10px;
+    width: 330px;
+    border-radius: 4px;    
+}
 
 .descricao {
     font-size: 15px;
@@ -1157,6 +1169,7 @@ input[type=text], select {
     display: flex;
     justify-content: center;
     margin: 60px 0px 0px;
+    color: var(--grafite);
 }
 
 .home_pag #white {
@@ -1165,6 +1178,10 @@ input[type=text], select {
     background-color: white;
     margin: 4% auto;
     padding: 2% 0;
+}
+
+.home_pag #white h3{
+    color: var(--grafite);
 }
 
 .titulos_categorias_home {
@@ -1193,6 +1210,10 @@ input[type=text], select {
     padding: 2% 0;
     margin: 4% auto;
     width: 1200px;
+}
+
+.home_pag .pdt h3{
+    color: var(--grafite);
 }
 
 .home_pag .cardhome2 {
@@ -1311,6 +1332,14 @@ input[type=text], select {
     width: 1200px;
     background-color: #FFFFFF;
     border-radius: 6px;
+}
+.containerOngs .conteudo .texto{
+    box-shadow: 4px 4px 15px #cccccc;
+    border-radius: 5px;
+}
+.ongs_pag .container{
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .ongs_pag {
@@ -1651,6 +1680,7 @@ main .paginaProduto_pag {
 
 .cont {
     padding: 1px 0px;
+    background-color: var(--cinza_claro);
 }
 
 .cont .container {
@@ -2150,6 +2180,7 @@ main .paginaProduto_pag {
     text-align: center;
     align-items: center;
     padding-bottom: 1px;
+    background-color: var(--cinza_claro);
 }
 
 .faq_pag .bannerFaq {
@@ -2244,6 +2275,7 @@ main .paginaProduto_pag {
     text-align: center;
     align-items: center;
     padding-bottom: 1px;
+    background-color: var(--cinza_claro);
 }
 
 .not_found .container1 {
@@ -2409,6 +2441,12 @@ main .paginaProduto_pag {
 
 .quemsomos_pag {
     padding-bottom: 30px;
+    background-color: var(--cinza_claro);
+}
+
+.quemsomos_tudo {
+    background-color: var(--cinza_claro);
+    padding-bottom: 1px;
 }
 
 .quemsomos_texto_one {
@@ -2430,20 +2468,20 @@ main .paginaProduto_pag {
     padding: 2vw 0 0 0;
 }
 
-.quemsomos_partetwo {
-    background-color: white;
+.quemsomos_partetwo {   
     width: 75%;
     margin: auto;
     margin-bottom: 30px;
 }
 
 .quemsomos_texto_two {
-    border-radius: 10px;
-    box-shadow: 10px 5px 19px 0px rgba(0, 0, 0, 0.29);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 19px 0px rgba(0, 0, 0, 0.29);
+    background-color: white;
 }
 
 .quemsomos_texto_two .quemsomos_esquerdo {
@@ -2976,6 +3014,11 @@ main .paginaProduto_pag {
         border: none;
         box-shadow: 4px 4px 15px #cccccc;
     }
+
+    .txthome {
+        color: var(--grafite);
+    }
+
     .home_pag .cnjt {
         display: flex;
         flex-direction: column;

@@ -78,7 +78,7 @@ const Rotas = (
                 <Route path = "/ofertas" component={Ofertas}/>
                 <Route path = "/ongs" component={Ongs}/>
                 <Autenticado path = "/perfil" component={Perfil}/>
-                <Route path = "/produto" component={Produto}/>
+                <Autenticado path = "/produto" component={Produto}/>
                 <Route path = "/quemsomos" component={QuemSomos}/>
                 <Route path = "/ranking" component={Ranking}/>
                 <Route component={NotFound}/>

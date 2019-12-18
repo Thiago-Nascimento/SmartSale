@@ -174,7 +174,7 @@ class Cad_usuario extends Component {
                                             onChange={this.postSetState}
                                         />
                                     </div>
-                                    <div className="campo_cadastrousuario">
+                                    <div className="campo_cadastrousuario_e">
                                         <input
                                             type="email"
                                             placeholder="E-mail"
@@ -185,7 +185,7 @@ class Cad_usuario extends Component {
                                             onChange={this.postSetState}
                                         />
                                     </div>
-                                    <div className="campo_cadastrousuario">
+                                    <div className="campo_cadastrousuario_e">
                                         <input
                                             type="password"
                                             placeholder="Senha"
