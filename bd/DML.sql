@@ -1,4 +1,4 @@
-
+﻿
 insert into Tipo_Usuario(Tipo)
 VALUES ('Administrador');
 insert into Tipo_Usuario(Tipo)
@@ -40,25 +40,25 @@ values ('Santo André','São Paulo');
 
 
 
-insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email, Senha,Foto_Usuario,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
+insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email, Senha,Foto,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
 values ('Larissa Santos', 20, '22233344456','animal de rua', 'MeuEmail@EmailQuente.com', 'senhafraca','foto do usuario', '22334455', '33445566', 'Rua da minha casa, 18', '08452250',0, 3,1 );
 
-insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto_Usuario,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
+insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
 values ('Vitor Martins', 20, '22233344456', 'animal de rua','MeuEmail@EmailQuente.com', 'senhafraca','foto do usuario', '22334455', '33445566', 'Rua da minha casa, 18', '08452250',0, 3,2 );
 
-insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Foto_Usuario,Senha,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
+insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Foto,Senha,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
 values ('Thiago Nascimento', 20, '22233344456','animal de rua', 'MeuEmail@EmailQuente.com', 'senhafraca','foto do usuario', '22334455', '33445566', 'Rua da minha casa, 18', '08452250',0, 3,3 );
 
-insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto_Usuario,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
+insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
 values ('Marcela Alicia', 20, '22233344456','animal de rua', 'MeuEmail@EmailQuente.com',  'senhafraca','foto do usuario', '22334455', '33445566', 'Rua da minha casa, 18', '08452250',0, 3,4 );
 
-insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto_Usuario,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
+insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
 values ('Carlos Roberto', 20, '22233344456','animal de rua', 'MeuEmail@EmailQuente.com',  'senhafraca','foto do usuario','22334455', '33445566', 'Rua da minha casa, 18', '08452250',0, 3,5 );
 
-insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto_Usuario,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
+insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
 values ('Ronaldo Nascimento', 20, '22233344456', 'animal de rua','MeuEmail@EmailQuente.com','senhafraca', 'foto do usuario','22334455', '33445566', 'Rua da minha casa, 18', '08452250',0, 2,5 );
 
-insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto_Usuario,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
+insert into Usuario(Nome_Usuario,Idade,Documento,Razao_Social,Email,Senha,Foto,Telefone,Telefone_2,Endereco,Cep,Pontuacao,Id_TipoUsuario,Id_Regiao)
 values ('Leonardo Vieira', 20, '22233344456','animal de rua','MeuEmail@EmailQuente.com', 'senhafraca','foto do usuario', '22334455', '33445566', 'Rua da minha casa, 18', '08452250',0, 1,5 );
 
 
