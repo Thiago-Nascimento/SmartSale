@@ -65,6 +65,7 @@ class Final_reserva extends Component {
                                     <p>Data Limite de Retirada: {this.props.location.state.reserva.dataLimiteRetirada}</p>
                                     <p>Quantidade: {this.props.location.state.reserva.quantidadeComprada}</p>
                                     <p>Valor final: R${this.props.location.state.reserva.valorFinal}</p>
+                                    <br/>
                                     <p>Vendedor: {this.state.produto.vendedor}</p>
                                     <p>Buscar produto em: {this.state.produto.endereco} CEP: {this.state.produto.cep}</p>
                                     <p>Telefone para Contato: {this.state.produto.telefone}</p>
