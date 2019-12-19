@@ -1528,7 +1528,7 @@ main .paginaProduto_pag {
 }
 
 .paginaProduto_pag .esquerdo .imagem-produto {
-    width: 100%;
+    width: 400px;
     height: 100%;
     margin: 10% 0;
     padding-top: 0;
@@ -3073,6 +3073,10 @@ main .paginaProduto_pag {
     /* Página de Login */
     .login_pag .card_1_cadlog {
         width: 60vw;
+    }
+
+    .paginaProduto_pag .esquerdo .imagem-produto {
+        width: 350px;
     }
 }
 
