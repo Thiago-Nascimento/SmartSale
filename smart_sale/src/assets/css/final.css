@@ -910,6 +910,9 @@ input[type=text], select {
 }
 
 /* Home */
+#nomedacategoria_home{
+    text-decoration: none;
+}
 
 .home_pag {
     padding-bottom: 1px;

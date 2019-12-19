@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../../components/header/header';
 import Footer from './../../components/footer/footer';
 import Card from '../../components/card/card'
+import {Link} from 'react-router-dom';
 
 // Importada imagem da mãe com a criança
 import img5 from './../../assets/img/img5.png'
@@ -243,7 +244,7 @@ class Home extends Component {
                                                 function (mostrar) {
                                                     return (
                                                         <div>
-                                                            <h3>{mostrar.nomeCategoria}</h3>
+                                                            <Link to="/ofertas" id="nomedacategoria_home"><h3>{mostrar.nomeCategoria}</h3></Link>
                                                         </div>
                                                     );
                                                 }
