@@ -1437,6 +1437,7 @@ input[type=text], select {
 .menu-centro {
     display: flex;
     justify-content: center;
+    padding-left: 135px;
 }
 
 .ca {
