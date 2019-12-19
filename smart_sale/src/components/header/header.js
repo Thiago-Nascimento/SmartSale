@@ -5,7 +5,6 @@ import Logo from '../../assets/img/Agrupar 110.png';
 import Avatar from '../../assets/img/avatar.png';
 import LogoutIcon from '../../assets/img/logout.svg'
 import icon_search from '../../assets/img/search_icon.png';
-import $ from "jquery";
 
 import { usuarioAutenticado } from '../../services/auth';
 
