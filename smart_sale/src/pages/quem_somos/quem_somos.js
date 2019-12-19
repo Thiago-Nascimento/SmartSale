@@ -45,19 +45,12 @@ class QuemSomos extends Component {
                             <div className="quemsomos_esquerdo">
                                 <h2>Quem somos</h2>
                                 <p>
-                                    A imfroma é uma plataforma que conecta pessoas a exp
-                                    eriências únicas, desde o momento de descoberta à reali
-                                    zação do evento. Através da tecnologia, possibilitamos q
-                                    ue organizadores possam criar, organizar, gerir e divulgar e
-                                    ventos, proporcionando ao participante uma pluralidade.
+                                    A Smart Sale é uma aplicação brasileira que visa a redução do desperdício de alimentos visando pequenos e médios varejistas.
+                                    Nosso diferencial é a possiilidade os alimentos irem para ONGS ligadas a aplicação.
                                 </p>
                                 <h2>O que propomos</h2>
                                 <p>
-                                    A imfroma é uma plataforma que conecta pessoas a exp
-                                    eriências únicas, desde o momento de descoberta à reali
-                                    zação do evento. Através da tecnologia, possibilitamos q
-                                    ue organizadores possam criar, organizar, gerir e divulgar e
-                                    ventos, proporcionando ao participante uma pluralidade.
+                                    Propomos a redução do desperdício de alimentos perto de sua validade. Atuamos no ramo alimenticio e de vestuário.
                                 </p>
                             </div>
                             <div className="quemsomos_direito">
