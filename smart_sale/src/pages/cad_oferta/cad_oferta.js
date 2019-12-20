@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
+import { parseJwt } from '../../services/auth';
 
 class Cad_oferta extends Component {
 
@@ -101,11 +102,13 @@ class Cad_oferta extends Component {
         e.preventDefault();
 
         // setei o valor de Id produto para 2 por ser uma chave estrangeira que puxa do produto
+        
+        let id__ = parseJwt().Id
 
         let ofertaForm = new FormData();
 
-        ofertaForm.set("idProduto", "2")
-        ofertaForm.set("idUsuario", "2")
+        ofertaForm.set("idProduto", this.state.postOferta.idProduto)
+        ofertaForm.set("idUsuario",  id__)
         ofertaForm.set("titulo", this.state.postOferta.titulo);
         ofertaForm.set("quantidade", this.state.postOferta.quantidade);
         ofertaForm.set("cor", this.state.postOferta.cor);
@@ -167,12 +170,15 @@ class Cad_oferta extends Component {
                                 />
                             </div>
                             <div className="campo">
-                                <select>
-                                    <option value="">Produtos</option>
+                                <select name="idProduto"
+                                        value={this.state.postOferta.idProduto}
+                                        onChange={this.postSetState}
+                                    >
+                                    <option>Produtos</option>
                                     {
                                         this.state.listarProdutos.map(function (listar) {
                                             return (
-                                                <option key={listar.idProduto}>{listar.nomeProduto}</option>
+                                                <option key={listar.idProduto} value={listar.idProduto}>{listar.nomeProduto}</option>
                                             );
                                         }.bind(this))
                                     }
