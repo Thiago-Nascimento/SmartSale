@@ -14,27 +14,29 @@ class Header extends Component {
         this.state = {
             filtro: "",
             lista: [],
-            menu: false,
-            btnx: false
+            btnmenu: false,
+            btnclose: false,
+            estilo: "abc",
+            isMenuOpen: false,
         }
+    }
+    componentDidMount() {
+
     }
 
     toggle = () => {
-        this.setState({
-            menu: !this.state.menu,
-            btnx: !this.state.btnx
-        });
-        console.log(this.state.menu)
-        console.log(this.state.btnx)
-    }
 
-    componentDidMount() {
-    }
+        console.log("troca")
 
-    abrirmenu = () => {
+        this.setState(prevState => ({ isMenuOpen: !prevState.isMenuOpen }));
 
+        // Outra forma
+        // this.setState({ isMenuOpen : !this.state.isMenuOpen}, () => console.log(this.state.isMenuOpen))   
 
-
+        // this.setState({
+        //     btnmenu: !this.state.btnmenu
+        // });
+        // console.log("btn menu: " + this.state.btnmenu)
     }
 
     logout = () => {
@@ -123,9 +125,11 @@ class Header extends Component {
 
                                 </div>
                             </div>
-                            <nav>
+
+
+                            <nav id="menu-web">
                                 <div className="menu-centro">
-                                    <ul className="menu">
+                                    <ul className="menu" id="menu">
                                         {/* <li><Link to="/login" title="Smart sale home">Login</Link></li> */}
                                         <li><Link to="/" title="Smart sale home">Home</Link></li>
                                         <li><Link to="/quemsomos" title="Smart sale quem somos">Quem somos</Link></li>
@@ -141,13 +145,42 @@ class Header extends Component {
                                     </ul>
                                 </div>
                             </nav>
+                            {/* <nav id={`${this.state.isMenuOpen}` ? "menu-mobile" : "hidden"}> */}
+                            <nav id="menu-mobile" style={{ display: this.state.isMenuOpen ? "block" : "none"}}>
+                                {/* <nav id="menu-mobile"> */}
+                                <div className={`${this.state.isMenuOpen}` ? "menu-centro" : "hidden"}>
+                                    <ul className={`${this.state.isMenuOpen}` ? "menu" : "hidden"} id={`${this.state.isMenuOpen}` ? "menu" : "hidden"}>
+                                        {/* <li><Link to="/login" title="Smart sale home">Login</Link></li> */}
+                                        <li><Link to="/" title="Smart sale home">Home</Link></li>
+                                        <li><Link to="/quemsomos" title="Smart sale quem somos">Quem somos</Link></li>
+                                        <li><Link to="/ongs" title="Smart sale ongs">ONGs</Link></li>
+                                        <li><Link to="/ranking" title="Smart sale ranking">Ranking</Link></li>
+                                        <li><Link to="/ofertas" title="Smart sale categorias">Ofertas</Link></li>
+                                        {
+                                            usuarioAutenticado() ? (
+                                                <li><Link to="/perfil" title="Smart sale perfil">Perfil</Link></li>
+                                            ) : (null)
+                                        }
+                                        <li><Link to="/faq" title="Smart sale faq">FAQ</Link></li>
+                                    </ul>
+                                </div>
+                                {/* <a id="btnclose" className="btnclose" onClick={this.toggle}><i className="fa fa-times"></i></a> */}
+                                {/* <a id="btnclose" className="btnclose" onClick={this.toggle} ><i className="fa fa-times"></i></a> */}
+                                {
+                                    this.state.isMenuOpen ?
+                                    <a id="btnclose" className="btnclose" onClick={this.toggle}><i className="fa fa-times"></i></a>
+                                    : ""
+                                }
+                            </nav>
+                                <button id="btnmenu" className="btnmenu" onClick={this.toggle} ><i className="fa fa-bars fa-lg"></i></button>
+                            
+
+
+
+
                         </div>
 
-                        <button className="btnmenu" onClick={this.toggle} ref={$btnmenu => this.$btnmenu = $btnmenu}><i className="fa fa-bars fa-lg"></i></button>
-                        {
-                            this.state.btnx &&
-                            <a className="btnclose" onClick={this.toggle} ref={btnclose => this.btnclose = btnclose}><i className="fa fa-times"></i></a>
-                        }
+
                     </div>
                 </div>
             </header>

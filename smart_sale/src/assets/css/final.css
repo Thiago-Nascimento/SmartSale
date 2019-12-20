@@ -334,17 +334,18 @@ input[type=text], select {
     justify-content: center;
     padding: 10px;
 }
-.campo_cadastrousuario_e{
+
+.campo_cadastrousuario_e {
     display: flex;
     justify-content: center;
     padding: 10px;
 }
 
-.campo_cadastrousuario_e input{
+.campo_cadastrousuario_e input {
     border: solid 1px var(--cinza);
     padding: 10px;
     width: 330px;
-    border-radius: 4px;    
+    border-radius: 4px;
 }
 
 .descricao {
@@ -910,9 +911,6 @@ input[type=text], select {
 }
 
 /* Home */
-#nomedacategoria_home{
-    text-decoration: none;
-}
 
 .home_pag {
     padding-bottom: 1px;
@@ -1183,7 +1181,7 @@ input[type=text], select {
     padding: 2% 0;
 }
 
-.home_pag #white h3{
+.home_pag #white h3 {
     color: var(--grafite);
 }
 
@@ -1215,7 +1213,7 @@ input[type=text], select {
     width: 1200px;
 }
 
-.home_pag .pdt h3{
+.home_pag .pdt h3 {
     color: var(--grafite);
 }
 
@@ -1336,11 +1334,13 @@ input[type=text], select {
     background-color: #FFFFFF;
     border-radius: 6px;
 }
-.containerOngs .conteudo .texto{
+
+.containerOngs .conteudo .texto {
     box-shadow: 4px 4px 15px #cccccc;
     border-radius: 5px;
 }
-.ongs_pag .container{
+
+.ongs_pag .container {
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -1437,7 +1437,6 @@ input[type=text], select {
 .menu-centro {
     display: flex;
     justify-content: center;
-    padding-left: 135px;
 }
 
 .ca {
@@ -1532,7 +1531,7 @@ main .paginaProduto_pag {
 }
 
 .paginaProduto_pag .esquerdo .imagem-produto {
-    width: 400px;
+    width: 100%;
     height: 100%;
     margin: 10% 0;
     padding-top: 0;
@@ -2472,7 +2471,7 @@ main .paginaProduto_pag {
     padding: 2vw 0 0 0;
 }
 
-.quemsomos_partetwo {   
+.quemsomos_partetwo {
     width: 75%;
     margin: auto;
     margin-bottom: 30px;
@@ -2922,9 +2921,9 @@ main .paginaProduto_pag {
 /* tablet */
 
 @media (max-width: 1169px) {
-    .contHeader {
-        /* background-color: yellow; */
-    }
+    /* .menu-centro .menu{
+        display: block
+    } */
     .separador-header {
         width: 70vw;
     }
@@ -2940,7 +2939,6 @@ main .paginaProduto_pag {
         align-items: center;
         justify-content: space-around;
     }
-    .rank {}
     /* ------------------------------------------------ */
     .Usuarios {
         display: flex;
@@ -3018,11 +3016,9 @@ main .paginaProduto_pag {
         border: none;
         box-shadow: 4px 4px 15px #cccccc;
     }
-
     .txthome {
         color: var(--grafite);
     }
-
     .home_pag .cnjt {
         display: flex;
         flex-direction: column;
@@ -3078,21 +3074,37 @@ main .paginaProduto_pag {
     .login_pag .card_1_cadlog {
         width: 60vw;
     }
-
-    .paginaProduto_pag .esquerdo .imagem-produto {
-        width: 350px;
-    }
 }
 
 /* celular */
 
 @media (max-width: 768px) {
-    /* header */
+    /* celular */
+    /* Botões do menu */
+    .btnclose {
+        font-size: 1.5em;
+        color: #FFF;
+        float: left;
+        cursor: pointer;
+        z-index: 2;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+    }
+    .btnmenu {
+        z-index: 1;
+        color: white;
+        width: 56px;
+        height: 56px;
+        margin: auto;
+        border-radius: 56px;
+        border: none;
+        cursor: pointer;
+        border-color: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+        background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
+    }
     header {
         background-color: var(--laranja);
-    }
-    .contHeader {
-        /* padding-bottom: 30px; */
     }
     .menu-centro .menu {
         display: flex;
@@ -3155,16 +3167,6 @@ main .paginaProduto_pag {
         margin: auto;
         padding: 0 0;
     }
-    #entrar {
-        /* ícone do login */
-        /* display: none; */
-    }
-    .botao-login {
-        /* display: none; */
-    }
-    .botao-login p {
-        /* display: none; */
-    }
     .ca {
         display: flex;
         justify-content: center;
@@ -3173,30 +3175,6 @@ main .paginaProduto_pag {
         font-family: 'Segoe UI';
         margin: auto;
         width: 100%;
-    }
-    /* Botões do menu */
-    .btnclose {
-        font-size: 1.5em;
-        color: #FFF;
-        float: left;
-        cursor: pointer;
-        z-index: 2;
-        position: absolute;
-        right: 10px;
-        top: 0px;
-    }
-    .btnmenu {
-        display: block;
-        z-index: 1;
-        color: white;
-        width: 56px;
-        height: 56px;
-        margin: auto;
-        border-radius: 56px;
-        border: none;
-        cursor: pointer;
-        border-color: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
-        background: linear-gradient(to right, rgb(162, 0, 203), rgb(20, 204, 138));
     }
     .quemsomos_texto_one h1 {
         padding-top: 50px;
@@ -3438,9 +3416,6 @@ main .paginaProduto_pag {
 }
 
 @media (max-width: 768px) {
-    .quemsomos_pag {
-        /* padding-top: 120px; */
-    }
     .quemsomos_texto_one p {
         font-size: 15px;
         width: 70%;
@@ -3486,16 +3461,52 @@ main .paginaProduto_pag {
     }
 }
 
-/* Responsivo Header Tablet  */
+/* O botao do menu é none quando o tamanho é de desktop */
 
-/* O botao do menu é none */
-.btnmenu{
+.btnmenu {
     display: none;
 }
-/* Quando a tela entrar no mobile  o btnmenu ira aparecer*/
-@media(max-width: 768px){
-    .btnmenu{
-        display: block;
-    }
+
+.btnclose {
+    display: none;
 }
 
+#menu-mobile {
+    display: none;
+}
+
+/* Quando a tela entrar no mobile  o btnmenu ira aparecer*/
+
+@media(max-width: 768px) {
+    .btnmenuaparecendo {
+        display: block;
+    }
+    .btnmenudesaparecendo {
+        display: none;
+    }
+    #btnclose {
+        display: block;
+        z-index: 3;
+    }
+    /* .menu-centro .menu {
+        display: block;
+    } */
+    #btnmenu {
+        display: block;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+    }
+    #menu-web {
+        display: none;
+    }
+    #menu-mobile {
+        display: block;
+    }
+    #hidden {
+        display: none;
+    }
+    .hidden {
+        display: none;
+    }
+}
