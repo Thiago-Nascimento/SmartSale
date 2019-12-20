@@ -285,7 +285,7 @@ class Cad_produto extends Component {
                                             return (
                                                 <option key={c.idCategoria} value={c.idCategoria}>{c.nomeCategoria}</option>
                                             )
-                                        }.bind(this))
+                                        })
                                     }
                                 </select>
 

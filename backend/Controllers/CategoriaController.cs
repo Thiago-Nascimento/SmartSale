@@ -74,7 +74,7 @@ namespace backend.Controllers {
         /// <param name="id"> int id da categoria</param>
         /// <param name="categoria">objeto da categoria</param>
         /// <returns>Categoria Modificada</returns>
-        [Authorize (Roles = "1")]
+        // [Authorize (Roles = "1")]
         [HttpPut ("{id}")]
         public async Task<ActionResult<Categoria>> Put (int id, Categoria categoria) {
 
@@ -108,7 +108,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">int id da categoria</param>
         /// <returns>Categoria deletada</returns>
-        [Authorize (Roles = "1")]
+        // [Authorize (Roles = "1")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Categoria>> Delete (int id) {
             var categoria = await _repositorio.BuscarPorID (id);

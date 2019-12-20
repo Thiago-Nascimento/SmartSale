@@ -21,7 +21,7 @@
             <summary>
             Adiciona uma Categoria
             </summary>
-            <param name="categoria">string nome da categoria</param>
+            <param name="categoria">objeto da categoria</param>
             <returns>Categoria cadastrada</returns>
         </member>
         <member name="M:backend.Controllers.CategoriaController.Put(System.Int32,backend.Domains.Categoria)">
@@ -29,7 +29,7 @@
             Faz a modificação de derterminada categoria
             </summary>
             <param name="id"> int id da categoria</param>
-            <param name="categoria">string nome da categoria</param>
+            <param name="categoria">objeto da categoria</param>
             <returns>Categoria Modificada</returns>
         </member>
         <member name="M:backend.Controllers.CategoriaController.Delete(System.Int32)">
@@ -43,8 +43,14 @@
             <summary>
             filtra as categorias por nome
             </summary>
-            <param name="FiltroPorNome"></param>
+            <param name="FiltroPorNome">"filtro" : "parametro para filtragem"</param>
             <returns>Categoria Requisitada</returns>
+        </member>
+        <member name="M:backend.Controllers.CategoriaController.GetOrdenar">
+            <summary>
+            Lista as categorias ordenadas por nome
+            </summary>
+            <returns>Lista de Categorias ordenadas por nome</returns>
         </member>
         <member name="M:backend.Controllers.DoacaoController.Get">
             <summary>
@@ -80,6 +86,13 @@
             </summary>
             <param name="id">int id da doação</param>
             <returns>Doação deletada</returns>
+        </member>
+        <member name="M:backend.Controllers.LoginController.Login(backend.ViewModels.LoginViewModel)">
+            <summary>
+            Faz login de um usuario existente na base de dados
+            </summary>
+            <param name="login">Credenciais de Login, email e senha</param>
+            <returns>JWT contendo as claims do usuario</returns>
         </member>
         <member name="M:backend.Controllers.OfertaController.Get">
             <summary>
@@ -166,7 +179,7 @@
         </member>
         <member name="M:backend.Controllers.ProdutoController.Get">
             <summary>
-            Lista as produto
+            Lista os produtos
             </summary>
             <returns>Lista contendo os produtos</returns>
         </member>
