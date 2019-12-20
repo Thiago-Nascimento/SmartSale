@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import Card from '../../components/card/card';
+import { parseJwt } from '../../services/auth';
 
 class Produto extends Component {
     constructor(props) {
@@ -125,12 +126,14 @@ class Produto extends Component {
     }
 
     atualizaEstado = (input) => {
+        var id__ = parseJwt().Id
+        
         this.setState({
             reserva : {
                 quantidadeComprada: input.target.value,
                 valorFinal: this.state.reserva.quantidadeComprada * this.state.produto.preco,
                 dataLimiteRetirada: this.adicionaDiasHj(3),
-                idUsuario: "1",
+                idUsuario: id__,
                 idOferta: this.state.produto.idOferta
             }
         })

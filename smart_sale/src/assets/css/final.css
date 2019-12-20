@@ -1531,7 +1531,7 @@ main .paginaProduto_pag {
 }
 
 .paginaProduto_pag .esquerdo .imagem-produto {
-    width: 100%;
+    width: 500px;
     height: 100%;
     margin: 10% 0;
     padding-top: 0;
@@ -2591,6 +2591,10 @@ main .paginaProduto_pag {
     }
     .paginaProduto_pag .direito {
         width: 35%;
+    }
+
+    .paginaProduto_pag .esquerdo .imagem-produto {
+        width: 100%;
     }
 }
 
