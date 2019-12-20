@@ -2508,6 +2508,7 @@ main .paginaProduto_pag {
 }
 
 .quemsomos_direito img {
+    margin: -100px 0px;
     width: 380px;
     height: 400px;
 }
@@ -3403,7 +3404,7 @@ main .paginaProduto_pag {
     }
     .quemsomos_direito img {
         padding: none;
-        margin: none;
+        margin: 0px 0px;
         width: 330px;
         height: 330px;
     }
